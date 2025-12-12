@@ -22,7 +22,7 @@ Der er to primære måder at tilføje billeder til dit projekt:
 
 Brug denne indstilling til at importere individuelle billedfiler eller et lille udvalg af filer.
 
-1. Klik på knappen **&quot;Tilføj filer&quot;** øverst i filbrowserpanelet.
+1. Klik på knappen **&quot;Tilføj filer&quot;** øverst i panelet Filbrowser.
 2. Naviger til den mappe, der indeholder dine billeder.
 3. Vælg en eller flere billedfiler (hold **Ctrl** nede for at vælge flere filer).
 4. Klik på **&quot;Åbn&quot;** for at importere de valgte filer.
@@ -37,7 +37,7 @@ Brug denne indstilling til at importere alle billeder fra en mappe på én gang.
 
 ***
 
-## Om filbrowser-tabellen
+## Forståelse af filbrowser-tabellen
 
 Når billederne er importeret, vises de i en tabel med følgende kolonner:
 
@@ -96,7 +96,7 @@ Sådan fjerner du uønskede billeder fra dit projekt:
 Klik på en billedminiature i filbrowseren for at vise det i det primære forhåndsvisningsområde:
 
 1. Billedet vises i det midterste forhåndsvisningspanel
-2. Brug zoomkontrollerne til at se billeddetaljer
+2. Brug zoomkontrolknapperne til at se billeddetaljer
 3. Naviger mellem billederne ved hjælp af piletasterne
 
 ### Hurtig navigation
@@ -112,9 +112,9 @@ Klik på en billedminiature i filbrowseren for at vise det i det primære forhå
 
 Chloros registrerer og ignorerer automatisk duplikerede filer:
 
-* Filer med identiske filnavne springes over
-* Forhindrer utilsigtet dobbeltbehandling
-* Der vises en advarselsmeddelelse, når der registreres duplikater
+* Filer med identiske filnavne springes over.
+* Forhindrer utilsigtet dobbeltbehandling.
+* Der vises en advarselsmeddelelse, når der registreres duplikater.
 
 {% hint style=&quot;warning&quot; %}
 **Vigtigt**: Omdøb eller rediger ikke dine originale billedfiler, før du importerer dem. Chloros er afhængig af originale filnavne og metadata for at kunne behandle filerne korrekt.

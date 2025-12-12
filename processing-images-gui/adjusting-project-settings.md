@@ -1,6 +1,6 @@
 # Justering af projektindstillinger
 
-Inden du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine arbejdsgangskrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
+Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine arbejdsgangskrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
 
 ## Adgang til projektindstillinger
 
@@ -44,8 +44,8 @@ Styrer, hvordan Chloros identificerer kalibreringsmål i dine billeder.
 
 **Hvornår skal du justere:**
 
-* Øg prøveområdet, hvis du får falske detektioner.
-* Sænk, hvis målene ikke bliver detekteret.
+* Forøg prøveområdet, hvis du får falske detektioner.
+* Reducer, hvis målene ikke bliver detekteret.
 * Juster klyngedannelsen, hvis målene bliver opdelt i flere detektioner.
 
 ### Behandling
@@ -78,7 +78,7 @@ Konfigurer, hvilke vegetationsindekser der skal beregnes og eksporteres.
 
 **Populære indekser:**
 
-* **NDVI**: Generel vegetationstilstand (mest almindelig)
+* **NDVI**: Generel vegetationssundhed (mest almindelig)
 * **NDRE**: Tidlig stressdetektering med RedEdge
 * **GNDVI**: Følsom over for klorofylkoncentration
 * **OSAVI**: Fungerer godt med synlig jord
@@ -98,8 +98,8 @@ Styrer outputfilformat og kvalitet.
 
 **Tilgængelige formater:**
 
-* **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (0-65.535 interval)
-* **TIFF (32-bit, procent)**: Flydende reflektansværdier (0,0-1,0 interval)
+* **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (interval 0-65.535)
+* **TIFF (32-bit, procent)**: Flydende reflektansværdier (interval 0,0-1,0)
 * **PNG (8-bit)**: Tabsfri komprimering til visualisering (interval 0-255)
 * **JPG (8-bit)**: Mindste filer, tabsgivende komprimering (interval 0-255)
 
@@ -118,18 +118,18 @@ Opret genanvendelige skabeloner for ensartede arbejdsgange:
 
 **Fordele:**
 
-* Anvend identiske indstillinger på tværs af flere projekter
-* Del konfigurationer med teammedlemmer
-* Bevar konsistensen ved gentagne undersøgelser
+* Anvend identiske indstillinger på tværs af flere projekter.
+* Del konfigurationer med teammedlemmer.
+* Bevar konsistensen ved gentagne undersøgelser.
 
 ### Indlæs skabelon i nyt projekt
 
 Når du opretter et nyt projekt:
 
-1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen
-2. Vælg **&quot;Indlæs fra skabelon&quot;**
-3. Vælg din gemte skabelon
-4. Alle indstillinger anvendes automatisk
+1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen.
+2. Vælg **&quot;Indlæs fra skabelon&quot;**.
+3. Vælg din gemte skabelon.
+4. Alle indstillinger anvendes automatisk.
 
 ### Arbejdsmappe
 
@@ -179,7 +179,7 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 
 ### Projekter med flere kameraer
 
-Når du behandler billeder fra flere MAPIR-kameraer i et projekt:
+Når du behandler billeder fra flere MAPIR-kameraer i ét projekt:
 
 1. Chloros registrerer automatisk hver kameramodel
 2. Hvert kamera får den passende behandlingsprofil

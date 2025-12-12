@@ -129,7 +129,7 @@ SDK bruger samme licens som Chloros, Chloros (browser) og Chloros CLI. Aktiver �
 
 1. Åbn **Chloros eller Chloros (browser)** og log ind på fanen Bruger <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Eller åbn **CLI**.
 2. Indtast dine Chloros+-loginoplysninger og log ind
-3. Licensen gemmes lokalt (bevares efter genstart)
+3. Licensen gemmes lokalt (bevares ved genstart)
 
 {% hint style=&quot;success&quot; %}
 **Engangsopsætning**: Efter login via GUI eller CLI bruger SDK automatisk den cachelagrede licens. Der kræves ingen yderligere godkendelse!
@@ -176,9 +176,9 @@ ChlorosLocal(
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
 | `api_url`                 | str  | `"http://localhost:5000"` | URL af lokal Chloros backend          |
 | `auto_start_backend`      | bool | `True`                    | Start automatisk backend, hvis nødvendigt |
-| `backend_exe`             | str  | `None` (autodetektering)      | Sti til backend-eksekverbar fil            |
-| `timeout`                 | int  | `30`                      | Anmodningstimeout i sekunder            |
-| `backend_startup_timeout` | int  | `60`                      | Timeout for backend-opstart (sekunder) |
+| `backend_exe`             | str  | `None` (auto-detect)      | Sti til backend-eksekverbar fil            |
+| `timeout`                 | int  | `30`                      | Anmodningstidsfrist i sekunder            |
+| `backend_startup_timeout` | int  | `60`                      | Tidsfrist for backend-opstart (sekunder) |
 
 **Eksempler:**
 
@@ -211,7 +211,7 @@ Opret et nyt Chloros-projekt.
 | `project_name` | str  | Ja      | Navn på projektet                                     |
 | `camera`       | str  | Nej       | Kameraskabelon (f.eks. &quot;Survey3N\_RGN&quot;, &quot;Survey3W\_OCN&quot;) |
 
-**Returnerer:** `dict` - Svar på projektoprettelse
+**Returnerer:** `dict` - Svar på oprettelse af projekt
 
 **Eksempel:**
 
@@ -343,7 +343,7 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Hent den aktuelle projektkonfiguration.
+Henter den aktuelle projektkonfiguration.
 
 **Returnerer:** `dict` - Aktuel projektkonfiguration
 
@@ -358,7 +358,7 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Hent oplysninger om backend-status.
+Henter oplysninger om backend-status.
 
 **Returnerer:** `dict` - Backend-status
 
@@ -398,11 +398,11 @@ Enkel praktisk funktion til at behandle en mappe.
 | `project_name`            | str      | Autogenereret  | Projektnavn                   |
 | `camera`                  | str      | `None`          | Kameraskabelon                |
 | `indices`                 | liste     | `["NDVI"]`      | Indekser til beregning           |
-| `vignette_correction`     | bool     | `True`          | Aktiver vignettekorrektion     |
+| `vignette_correction`     | bool     | `True`          | Aktivér vignettekorrektion     |
 | `reflectance_calibration` | bool     | `True`          | Aktivér reflektanskalibrering |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Outputformat                  |
 | `mode`                    | str      | `"parallel"`    | Behandlingsmodus                |
-| `progress_callback`       | callable | `None`          | Fremskridts-callback              |
+| `progress_callback`       | callable | `None`          | Progress callback              |
 
 **Returnerer:** `dict` - Behandlingsresultater
 
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Eksempel 5: Brugerdefineret fremskridtsovervågning
+### Eksempel 5: Brugerdefineret overvågning af fremskridt
 
-Avanceret fremskridtssporing med logning:
+Avanceret sporing af fremskridt med logning:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -783,7 +783,7 @@ python my_processor.py "C:\Flight001" "C:\Flight002" --indices NDVI NDRE GNDVI
 
 ***
 
-## Håndtering af undtagelser
+## Undtagelseshåndtering
 
 SDK indeholder specifikke undtagelsesklasser for forskellige fejltyper:
 
@@ -863,7 +863,7 @@ print("Processing complete!")
 
 ### Hukommelsesstyring
 
-For store datasæt skal du behandle i batches:
+For store datasæt skal behandlingen foregå i batches:
 
 ```python
 from pathlib import Path
@@ -957,7 +957,7 @@ python -c "import sys; print(sys.path)"
 
 ### Behandlingstid udløbet
 
-**Problem:** Behandlingstiden udløber
+**Problem:** Behandlingstid udløbet
 
 **Løsninger:**
 
@@ -1141,7 +1141,7 @@ chloros.process(progress_callback=notebook_progress)
 
 | Funktion         | Desktop GUI | CLI Kommandolinje | Python SDK  |
 | --------------- | ----------- | ---------------- | ----------- |
-| **Interface**   | Point-click | Kommando          | Python API  |
+| **Grænseflade**   | Point-click | Kommando          | Python API  |
 | **Bedst til**    | Visuelt arbejde | Scripting        | Integration |
 | **Automatisering**  | Begrænset     | God             | Fremragende   |
 | **Fleksibilitet** | Grundlæggende       | God             | Maksimal     |
@@ -1153,8 +1153,8 @@ chloros.process(progress_callback=notebook_progress)
 
 **Svar:** SDK-kode kan integreres i dine applikationer, men:
 
-* Slutbrugerne skal have Chloros installeret.
-* Slutbrugerne skal have aktive Chloros+-licenser.
+* Slutbrugere skal have Chloros installeret.
+* Slutbrugere skal have aktive Chloros+-licenser.
 * Kommerciel distribution kræver OEM-licenser.
 
 Kontakt info@mapir.camera for spørgsmål vedrørende OEM.
@@ -1169,7 +1169,7 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### Spørgsmål: Hvor gemmes behandlede billeder?
+### Spørgsmål: Hvor gemmes de behandlede billeder?
 
 Som standard i projektstien:
 
@@ -1199,7 +1199,7 @@ Planlæg via Task Scheduler, så det kører dagligt.
 
 ### Spørgsmål: Understøtter SDK async/await?
 
-**A:** Den aktuelle version er synkron. For asynkron adfærd skal du bruge `wait=False` eller køre i en separat tråd:
+**Svar:** Den aktuelle version er synkron. For asynkron adfærd skal du bruge `wait=False` eller køre i en separat tråd:
 
 ```python
 import threading
@@ -1219,7 +1219,7 @@ thread.start()
 
 ### Dokumentation
 
-* **API Reference**: Denne side
+* **API-reference**: Denne side
 
 ### Supportkanaler
 
@@ -1229,7 +1229,7 @@ thread.start()
 
 ### Eksempelkode
 
-Alle eksempler, der er anført her, er testet og klar til brug. Kopier og tilpas dem til dit brugsscenarie.
+Alle eksempler, der er angivet her, er testet og klar til brug. Kopier og tilpas dem til dit brugsscenarie.
 
 ***
 

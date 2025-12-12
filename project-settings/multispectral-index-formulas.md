@@ -26,7 +26,7 @@ $$
 
 EVI-værdier skal ligge mellem 0 og 1 for vegetationspixels. Lyse elementer såsom skyer og hvide bygninger samt mørke elementer såsom vand kan resultere i unormale pixelværdier i et EVI-billede. Inden du opretter et EVI-billede, bør du maske skyer og lyse elementer fra reflektansbilledet og eventuelt sætte en tærskel for pixelværdierne fra 0 til 1.
 
-_Reference: Huete, A., et al. &quot;Oversigt over den radiometriske og biofysiske ydeevne af MODIS-vegetationsindekser.&quot; Remote Sensing of Environment 83 (2002):195–213._
+_Reference: Huete, A., et al. &quot;Oversigt over den radiometriske og biofysiske ydeevne af MODIS-vegetationsindekserne.&quot; Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
@@ -38,7 +38,7 @@ $$
 FCI1 = Red * RedEdge
 $$
 
-Skovområder vil have lavere FCI1-værdier på grund af træernes lavere reflektans og tilstedeværelsen af skygger i kronetaget.
+Skovområder vil have lavere FCI1-værdier på grund af træernes lavere refleksion og tilstedeværelsen af skygger i kronetaget.
 
 _Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. &quot;Robuste skovdækningsindekser for multispektrale billeder.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
 
@@ -46,13 +46,13 @@ _Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. &quot;Robus
 
 ## FCI2 - Skovdækningsindeks 2
 
-Dette indeks skelner mellem skovkroner og andre typer vegetation ved hjælp af multispektrale reflektansbilleder, der ikke inkluderer et rødt kantbånd.
+Dette indeks skelner mellem skovkroner og andre typer vegetation ved hjælp af multispektrale reflektansbilleder, der ikke indeholder et rødt kantbånd.
 
 $$
 FCI2 = Red * NIR
 $$
 
-Skovområder vil have lavere FCI2-værdier på grund af træernes lavere reflektans og tilstedeværelsen af skygger i kronlaget.
+Skovområder vil have lavere FCI2-værdier på grund af træernes lavere refleksion og tilstedeværelsen af skygger i kronetaget.
 
 _Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. &quot;Robuste skovdækningsindekser for multispektrale billeder.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
 
@@ -126,19 +126,19 @@ $$
 GNDVI = {(NIR - Green) \over (NIR + Green)  }
 $$
 
-_Reference: Gitelson, A., og M. Merzlyak. &quot;Fjernmåling af klorofylkoncentration i højere planters blade.&quot; Advances in Space Research 22 (1998): 689-692._
+_Reference: Gitelson, A., og M. Merzlyak. &quot;Fjernmåling af klorofylkoncentrationen i højere planters blade.&quot; Advances in Space Research 22 (1998): 689-692._
 
 ***
 
 ## GOSAVI - Green Optimeret jordjusteret vegetationsindeks
 
-Dette indeks blev oprindeligt designet med farve-infrarød fotografering til at forudsige kvælstofbehovet for majs. Det ligner OSAVI, men erstatter det grønne bånd med det røde.
+Dette indeks blev oprindeligt udviklet med farve-infrarød fotografering til at forudsige kvælstofbehovet for majs. Det ligner OSAVI, men erstatter det grønne bånd med det røde.
 
 $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_Reference: Sripada, R., et al. &quot;Bestemmelse af sæsonens kvælstofbehov for majs ved hjælp af luftfotografering med farve-infrarød fotografering.&quot; Ph.D.-afhandling, North Carolina State University, 2005._
+_Reference: Sripada, R., et al. &quot;Bestemmelse af kvælstofbehovet for majs i vækstsæsonen ved hjælp af luftfotografering med farve-infrarød fotografering.&quot; Ph.d.-afhandling, North Carolina State University, 2005._
 
 ***
 
@@ -150,7 +150,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Reference: Sripada, R., et al. &quot;Luftfotografering med farve-infrarød til bestemmelse af tidlige kvælstofbehov i majs i vækstsæsonen.&quot; Agronomy Journal 98 (2006): 968-977._
+_Reference: Sripada, R., et al. &quot;Luftfotografering med farve-infrarød til bestemmelse af tidlige sæsonbehov for kvælstof i majs.&quot; Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -180,7 +180,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-Høje LAI-værdier ligger typisk mellem ca. 0 og 3,5. Men når scenen indeholder skyer og andre lyse elementer, der producerer mættede pixels, kan LAI-værdierne overstige 3,5. Ideelt set bør du maske skyer og lyse elementer fra din scene, inden du opretter et LAI-billede.
+Høje LAI-værdier ligger typisk mellem ca. 0 og 3,5. Men når scenen indeholder skyer og andre lyse elementer, der producerer mættede pixels, kan LAI-værdierne overstige 3,5. Ideelt set bør du maske skyer og lyse elementer ud af din scene, før du opretter et LAI-billede.
 
 _Reference: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde og A. Thomsen. &quot;Airborne Multi-spectral Data for Quantifying Leaf Area Index, Nitrogen Concentration and Photosynthetic Efficiency in Agriculture.&quot; Remote Sensing of Environment 81, nr. 2-3 (2002): 179-193._
 
@@ -194,7 +194,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Reference: Datt, B. &quot;Fjernmåling af vandindholdet i eukalyptusblade.&quot; Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
+_Reference: Datt, B. &quot;Fjernmåling af vandindhold i eukalyptusblade.&quot; Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
 
 ***
 
@@ -260,7 +260,7 @@ _Reference: Goel, N., og W. Qin. &quot;Indflydelse af kronearkitektur på forhol
 
 ## OSAVI - Optimeret jordjusteret vegetationsindeks
 
-Dette indeks er baseret på det jordjusterede vegetationsindeks (SAVI). Det bruger en standardværdi på 0,16 for justeringsfaktoren for kronedækket. Rondeaux (1996) fastslog, at denne værdi giver større jordvariation end SAVI for lav vegetation, samtidig med at den viser øget følsomhed over for vegetation på over 50 %. Dette indeks bruges bedst i områder med relativt sparsom vegetation, hvor jorden er synlig gennem kronetaget.
+Dette indeks er baseret på det jordjusterede vegetationsindeks (SAVI). Det bruger en standardværdi på 0,16 for justeringsfaktoren for kronedækningens baggrund. Rondeaux (1996) fastslog, at denne værdi giver større jordvariation end SAVI for lav vegetation, samtidig med at den viser øget følsomhed over for vegetation på over 50 %. Dette indeks bruges bedst i områder med relativt sparsom vegetation, hvor jorden er synlig gennem kronetaget.
 
 $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
@@ -270,7 +270,7 @@ _Reference: Rondeaux, G., M. Steven og F. Baret. &quot;Optimization of Soil-Adju
 
 ***
 
-## RDVI - Renormalized Difference Vegetation Index
+## RDVI - Renormaliseret forskelsvegetationsindeks
 
 Dette indeks bruger forskellen mellem nærinfrarøde og røde bølgelængder sammen med NDVI til at fremhæve sund vegetation. Det er ufølsomt over for jordens og solens geometriske indvirkning.
 

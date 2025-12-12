@@ -74,17 +74,17 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Behandler flere billeder samtidigt
 * Multitrådet drift (op til 16 parallelle arbejdere)
-* Anvender flere CPU-kerner
+* Udnytter flere CPU-kerner
 * Valgfri GPU (CUDA)-acceleration med NVIDIA-grafikkort
 
 **Statusbjælken viser 4 faser:**
 
-1. **Detektering** – Find kalibreringsmål
-2. **Analyse** – Undersøg billedmetadata og forbered pipeline
-3. **Kalibrerer** - Anvender korrektioner og kalibreringer
-4. **Eksporterer** - Gemmer behandlede billeder og indekser
+1. **Detektering** - Find kalibreringsmål
+2. **Analyse** - Undersøger billedmetadata og forbereder pipeline
+3. **Kalibrering** - Anvender korrektioner og kalibreringer
+4. **Eksport** - Gemmer behandlede billeder og indekser
 
-**Interaktion med statusbjælken:**
+**Interaktion med statusbjælke:**
 
 * **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 trin
 * **Klik** på statusbjælken for at fastfryse dropdown-panelet
@@ -97,7 +97,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 * GPU-acceleration forbedrer hastigheden yderligere
 
 {% hint style=&quot;info&quot; %}
-**Chloros+ hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
+**Chloros+ Hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
 {% endhint %}
 
 ***
@@ -110,7 +110,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Scanner markerede målbilleder (eller alle billeder, hvis ingen er markeret)
 * Identificerer de 4 kalibreringspaneler i hvert mål
-* Uddrager reflektansværdier fra målpaneler
+* Udtager reflektansværdier fra målpaneler
 * Registrerer måltidsstempler til kalibreringsplanlægning
 
 **Varighed:** 1-30 sekunder (med markerede mål), 5-30+ minutter (umarkerede)
@@ -150,7 +150,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 **Hvad Chloros gør:**
 
-* Gemmer kalibrerede billeder i valgt format
+* Gemmer kalibrerede billeder i det valgte format
 * Eksporterer indeksbilleder med konfigurerede LUT-farver
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavne med suffikser
@@ -195,7 +195,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Når behandlingen er startet, kan den ikke sættes på pause.
 * Du kan annullere behandlingen, men fremskridtet går tabt.
 * Delvise resultater gemmes ikke.
-* Du skal starte forfra, hvis du annullerer.
+* Du skal starte forfra, hvis behandlingen annulleres.
 
 **Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.
 
@@ -222,7 +222,7 @@ Hvis du har brug for at stoppe behandlingen:
 
 1. Find **Stop/Annuller-knappen** (erstatter Start-knappen under behandlingen)
 2. Klik på Stop-knappen
-3. Behandlingen stopper øjeblikkeligt
+3. Behandlingen stoppes øjeblikkeligt
 4. Delvise resultater kasseres
 
 ### Hvornår skal du annullere
@@ -271,7 +271,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 | 1000 billeder | 4-6 timer   | 1,5-2 timer      | 40-60 min      |
 
 {% hint style=&quot;info&quot; %}
-**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
+**Første kørsel**: Den første behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
 {% endhint %}
 
 ***
@@ -284,7 +284,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 * Ingen billeder importeret
 * Backend er ikke fuldt startet
-* Forrige behandling kører stadig
+* Tidligere behandling kører stadig
 * Projektet er ikke fuldt indlæst
 
 **Løsninger:**
@@ -315,8 +315,8 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 **Mulige årsager:**
 
 * Glemt at markere målbilleder
-* Målbilleder indeholder ikke synlige mål
-* Indstillinger for måldetektering er for strenge
+* Målbillederne indeholder ikke synlige mål
+* Indstillingerne for måldetektering er for strenge
 
 **Løsninger:**
 
@@ -342,14 +342,14 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 1. **Undgå, at systemet går i dvale** – Deaktiver strømbesparende tilstande.
 2. **Hold Chloros i forgrunden** – Eller i det mindste synligt i proceslinjen.
 3. **Overvåg fremskridtet lejlighedsvis** – Kontroller for advarsler eller fejl.
-4. **Indlæs ikke andre tunge applikationer** - Især med Chloros+ parallel tilstand
+4. **Indlæs ikke andre tunge programmer** - Især med Chloros+ parallel tilstand
 
 ### Chloros+ GPU-acceleration
 
 Hvis du bruger NVIDIA GPU-acceleration:
 
 1. Opdater NVIDIA-drivere til den nyeste version
-2. Sørg for, at GPU har 4 GB+ VRAM
+2. Sørg for, at GPU&#x27;en har 4 GB+ VRAM
 3. Luk GPU-intensive programmer (spil, videoredigering)
 4. Overvåg GPU-temperaturen (sørg for tilstrækkelig køling)
 

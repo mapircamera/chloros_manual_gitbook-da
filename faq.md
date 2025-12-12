@@ -59,7 +59,7 @@ I filbrowser-tabellen kan du forudvælge målbillederne i højre kolonne, så Ch
 
 <summary>Hvis jeg vil uploade mine billeder til <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> skal jeg så behandle dem i Chloros inden upload?</summary>
 
-Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører alle de samme behandlinger og mere.
+Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører den samme behandling og mere til.
 
 </details>
 

@@ -1,6 +1,6 @@
 # Afslutning af behandlingen
 
-Når Chloros har afsluttet behandlingen, er det tid til at gennemgå dine resultater, kontrollere outputkvaliteten og forberede dine behandlede billeder til brug i dit workflow. Denne side guider dig gennem de sidste trin og de næste handlinger.
+Når Chloros har afsluttet behandlingen, er det tid til at gennemgå dine resultater, kontrollere outputkvaliteten og forberede dine behandlede billeder til brug i din arbejdsgang. Denne side guider dig gennem de sidste trin og de næste handlinger.
 
 ## Indikation for færdig behandling
 
@@ -9,7 +9,7 @@ Når behandlingen er afsluttet, vil du se flere indikatorer:
 * ✅ **Statusbjælke**: Når 100 % færdig
 * ✅ **Fejlfindingslog**: Viser meddelelsen &quot;Behandling færdig&quot;
 * ✅ **Startknap**: Bliver aktiveret igen (klar til næste behandlingskørsel)
-* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen for kameramodellen
+* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen til kameramodellen
 
 ***
 
@@ -103,11 +103,11 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 * Vignetteringskorrektion deaktiveret
 * Kamera/objektiv findes ikke i Chloros-profildatabasen
-* Ekstrem vignettering, der overstiger korrektionsmulighederne
+* Ekstrem vignettering, der overstiger korrektionsevnen
 
 **Løsninger:**
 
-1. Kontroller, at vignetteringskorrektion er aktiveret i projektindstillingerne.
+1. Kontroller, at vignettkorrektion er aktiveret i projektindstillingerne.
 2. Kontroller, at kameramodellen er registreret korrekt.
 3. Kontakt MAPIR-support, hvis vignetteringen fortsætter.
 
@@ -142,7 +142,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 2. Kontroller, at lyssensorloggen er inkluderet.
 3. Kontroller, at kalibreringsmålene er blevet registreret.
 4. Sørg for, at det korrekte kameramodel er blevet registreret.
-5. Gennemgå tidspunktet for og betingelserne for optagelse af målbilleder.
+5. Gennemgå tidspunktet og forholdene for optagelse af målbilleder.
 
 ***
 
@@ -177,7 +177,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 **Anbefalet arbejdsgang:**
 
 1. **Brug indeksbilleder med LUT-farver** til visuelle rapporter
-2. **Uddrag statistik**: Gennemsnitlig NDVI pr. felt/parcel
+2. **Udtryk statistik**: Gennemsnitlig NDVI pr. felt/parcel
 3. **Tidsserier**: Sammenlign indekser på tværs af flere sessioner
 4. **Generer rapporter**: Inkluder kort, statistikker og visualiseringer
 
@@ -290,12 +290,12 @@ Du har nu gennemført hele Chloros-behandlingsarbejdsgangen:
 ### Avancerede funktioner
 
 * [**Billedfremviser**](../image-viewer-gui/opening-an-image-full-screen.md) - Interaktiv visualisering og analyse
-* [**Indeks/LUT Sandkasse**](../image-viewer-gui/index-lut-sandbox.md) - Brugerdefineret indekstest
+* [**Indeks/LUT Sandkasse**](../image-viewer-gui/index-lut-sandbox.md) - Tilpasset indekstest
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) - Komplet indeksreference
 
 ### Automatisering og integration
 
-* [**CLI-dokumentation**](../CLI.md) – Batchbehandling via kommandolinjen
+* [**CLI-dokumentation**](../CLI.md) - Batchbehandling via kommandolinjen
 * [**Python SDK**](../api-python-sdk.md) - Programmatisk automatisering
 * [**Chloros+ Funktioner**](../#chloros) - Avancerede behandlingsfunktioner
 

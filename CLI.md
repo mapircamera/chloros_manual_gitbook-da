@@ -8,7 +8,7 @@
 * 🔗 **Integration** - Integrer i eksisterende arbejdsgange og pipelines
 * 💻 **Headless-drift** - Kør uden GUI
 * 🌍 **Flere sprog** - Understøttelse af 38 sprog
-* ⚡ **Parallel behandling** – Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
+* ⚡ **Parallel behandling** - Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
 
 ### Krav
 
@@ -17,7 +17,7 @@
 | **Operativsystem** | Windows 10/11 (64-bit)                                              |
 | **Licens**          | Chloros+ ([betalt abonnement kræves](https://cloud.mapir.camera/pricing)) |
 | **Hukommelse**           | Minimum 8 GB RAM (16 GB anbefales)                                  |
-| **Internet**         | Kræves for aktivering af licens                                     |
+| **Internet**         | Kræves til aktivering af licens                                     |
 | **Diskplads**       | Varierer afhængigt af projektets størrelse                                              |
 
 {% hint style=&quot;warning&quot; %}
@@ -102,7 +102,7 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--no-vignette`       | Flag    | -              | Deaktiver vignettekorrektion                                                            |
 | `--reflectance`       | Flag    | Aktiveret        | Aktiver reflektanskalibrering                                                         |
 | `--no-reflectance`    | Flag    | -              | Deaktiver reflektanskalibrering                                                        |
-| `--ppk`               | Flag    | Deaktiveret       | Anvend PPK-korrektioner fra .daq-lyssensordata                                      |
+| `--ppk`               | Flag    | Deaktiveret       | Anvend PPK-korrektioner fra .daq lyssensordata                                      |
 | `--format`            | Valg  | TIFF (16-bit)  | Outputformat: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size`   | Heltal | Auto           | Mindste målstørrelse i pixels til kalibreringspaneldetektion                          |
 | `--target-clustering` | Heltal | Auto           | Tærskel for målklyngedannelse (0-100)                                                    |
@@ -290,7 +290,7 @@ chloros-cli language ja
 | `sl`    | Slovensk             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedbliver i alle sessioner.
+**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedbliver på tværs af alle sessioner.
 {% endhint %}
 
 ***
@@ -576,7 +576,7 @@ if __name__ == '__main__':
 
 ### Standardworkflow
 
-1. **Indtastning**: Mappe med RAW/JPG-billedpar
+1. **Indtastning**: Mappe indeholdende RAW/JPG-billedpar
 2. **Opdagelse**: CLI scanner automatisk efter understøttede billedfiler
 3. **Behandling**: Parallel tilstand skaleres til dine CPU-kerner (Chloros+)
 4. **Output**: Opretter undermapper for kameramodeller med behandlede billeder
@@ -667,7 +667,7 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Problemer med licens/godkendelse
+### Licens-/godkendelsesproblemer
 
 **Fejl:**
 
@@ -867,7 +867,7 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Eksempel 2: Højkvalitets videnskabelig output
+### Eksempel 2: Videnskabelig output i høj kvalitet
 
 32-bit float TIFF:
 

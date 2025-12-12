@@ -10,7 +10,7 @@ Chloros er et softwareprogram fra [MAPIR](https://www.mapir.camera) til behandli
 
 ***
 
-Chloros er tilgængeligt i 4 applikationstilstande:
+Chloros er tilgængeligt i 4 programtilstande:
 
 ## Chloros: Desktop GUI-applikation
 

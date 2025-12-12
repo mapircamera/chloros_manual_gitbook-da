@@ -21,7 +21,7 @@ Disse indstillinger styrer, hvordan Chloros registrerer og behandler kalibrering
 * **Type**: Tal
 * **Interval**: 0 til 10.000 pixels
 * **Standard**: 25 pixels
-* **Beskrivelse**: Indstiller det mindste område (i pixels), der kræves for, at et detekteret område kan betragtes som en gyldig kalibreringsmålsprøve. Mindre værdier vil detektere mindre mål, men kan øge antallet af falske positiver. Større værdier kræver større, klarere målområder for detektion.
+* **Beskrivelse**: Indstiller det mindste område (i pixels), der kræves for, at et detekteret område kan betragtes som en gyldig kalibreringsmåleprøve. Mindre værdier vil detektere mindre mål, men kan øge antallet af falske positiver. Større værdier kræver større, tydeligere målområder for detektering.
 * **Hvornår skal du justere**:
   * Forøg, hvis du får falske detektioner på små billedartefakter.
   * Reducer, hvis dine kalibreringsmål vises små i dine billeder og ikke detekteres.
@@ -31,8 +31,8 @@ Disse indstillinger styrer, hvordan Chloros registrerer og behandler kalibrering
 * **Type**: Tal
 * **Interval**: 0 til 100
 * **Standard**: 60
-* **Beskrivelse**: Styrer klyngetærsklen for gruppering af lignende farvede områder, når der detekteres kalibreringsmål. Højere værdier kræver, at mere ens farver grupperes sammen, hvilket resulterer i en mere konservativ måldetektering. Lavere værdier tillader større farvevariation inden for en målgruppe.
-* **Hvornår skal det justeres**:
+* **Beskrivelse**: Styrer klyngetærsklen for gruppering af lignende farvede områder, når kalibreringsmål detekteres. Højere værdier kræver, at mere ens farver grupperes sammen, hvilket resulterer i en mere konservativ måldetektering. Lavere værdier tillader større farvevariation inden for en målgruppe.
+* **Hvornår skal du justere**:
   * Forøg, hvis kalibreringsmål opdeles i flere detektioner.
   * Reducer, hvis kalibreringsmål med farvevariation ikke detekteres fuldt ud.
 
@@ -47,30 +47,30 @@ Disse indstillinger styrer, hvordan Chloros behandler og kalibrerer dine billede
 * **Type**: Afkrydsningsfelt
 * **Standard**: Aktiveret (afkrydset)
 * **Beskrivelse**: Anvender vignettekorrektion for at kompensere for mørkfarvning af linsen i billedets kanter. Vignettering er et almindeligt optisk fænomen, hvor hjørnerne og kanterne af et billede fremstår mørkere end midten på grund af linsens egenskaber.
-* **Hvornår skal det deaktiveres**: Deaktiver kun, hvis din kamera/objektiv-kombination allerede har anvendt vignettekorrektion, eller hvis du manuelt ønsker at korrigere vignettering i efterbehandlingen.
+* **Hvornår skal det deaktiveres**: Deaktiver kun, hvis din kamera/linsekombination allerede har anvendt vignettekorrektion, eller hvis du manuelt ønsker at korrigere vignettering i efterbehandlingen.
 
 ### Reflektanskalibrering / hvidbalance
 
 * **Type**: Afkrydsningsfelt
 * **Standard**: Aktiveret (markeret)
-* **Beskrivelse**: Aktiverer automatisk reflektanskalibrering ved hjælp af detekterede kalibreringsmål i dine billeder. Dette normaliserer reflektansværdierne på tværs af dit datasæt og sikrer konsistente målinger uanset lysforholdene.
+* **Beskrivelse**: Aktiverer automatisk reflektanskalibrering ved hjælp af detekterede kalibreringsmål i dine billeder. Dette normaliserer reflektansværdierne på tværs af dit datasæt og sikrer konsistente målinger uanset lysforhold.
 * **Hvornår skal du deaktivere**: Deaktiver kun, hvis du vil behandle rå, ukalibrerede billeder, eller hvis du bruger en anden kalibreringsworkflow.
 
 ### Debayer-metode
 
 * **Type**: Dropdown-valg
-* **Indstillinger**:
-  * Høj kvalitet (hurtigere) – Den eneste tilgængelige indstilling i øjeblikket
+* **Valgmuligheder**:
+  * Høj kvalitet (hurtigere) – Den eneste valgmulighed, der er tilgængelig i øjeblikket
 * **Standard**: Høj kvalitet (hurtigere)
 * **Beskrivelse**: Vælger den demosaicing-algoritme, der bruges til at konvertere rå Bayer-mønstersensordata til fuldfarvebilleder. Metoden &quot;Høj kvalitet (hurtigere)&quot; giver en optimal balance mellem behandlingshastighed og billedkvalitet.
-* **Bemærk**: Der kan tilføjes yderligere debayer-metoder i fremtidige versioner af Chloros.
+* **Bemærk**: Yderligere debayer-metoder kan blive tilføjet i fremtidige versioner af Chloros.
 
 ### Minimumskalibreringsinterval
 
 * **Type**: Tal
 * **Interval**: 0 til 3.600 sekunder
 * **Standard**: 0 sekunder
-* **Beskrivelse**: Indstiller det minimale tidsinterval (i sekunder) mellem brug af kalibreringsmål. Når det er indstillet til 0, vil Chloros bruge alle registrerede kalibreringsmål. Når det er indstillet til en højere værdi, vil Chloros kun bruge kalibreringsmål, der er adskilt med mindst dette antal sekunder, hvilket reducerer behandlingstiden for datasæt med hyppige kalibreringsmålsoptagelser.
+* **Beskrivelse**: Indstiller det mindste tidsinterval (i sekunder) mellem brug af kalibreringsmål. Når det er indstillet til 0, vil Chloros bruge alle detekterede kalibreringsmål. Når det er indstillet til en højere værdi, vil Chloros kun bruge kalibreringsmål, der er adskilt af mindst dette antal sekunder, hvilket reducerer behandlingstiden for datasæt med hyppige kalibreringsmålsoptagelser.
 * **Hvornår skal det justeres**:
   * Indstil til 0 for maksimal kalibreringsnøjagtighed, når lysforholdene varierer.
   * Øg (f.eks. til 60-300 sekunder) for hurtigere behandling, når lyset er ensartet, og du har hyppige kalibreringsmålebilleder.
@@ -90,14 +90,14 @@ Disse indstillinger styrer, hvordan Chloros behandler og kalibrerer dine billede
 
 * **Type**: Afkrydsningsfelt
 * **Standard**: Deaktiveret (ikke markeret)
-* **Beskrivelse**: Aktiverer brugen af efterbehandlede kinematiske (PPK) korrektioner fra MAPIR DAQ-optagere, der indeholder en GPS (GNSS). Når denne funktion er aktiveret, vil Chloros bruge alle .daq-logfiler, der indeholder eksponeringspin-data i dit projektbibliotek, og anvende præcise geolokaliseringkorrektioner på dine billeder.
-* **Krav**: .daq-logfil med eksponeringspin-poster skal være til stede i dit projektbibliotek
-* **Hvornår skal det aktiveres**: Det anbefales altid at aktivere PPK-korrektion, hvis du har eksponeringsfeedback-poster i din .daq-logfil.
+* **Beskrivelse**: Aktiverer brugen af post-processed kinematic (PPK)-korrektioner fra MAPIR DAQ-optagere, der indeholder GPS (GNSS). Når denne funktion er aktiveret, vil Chloros bruge alle .daq-logfiler, der indeholder eksponeringspin-data i dit projektbibliotek, og anvende præcise geolokaliseringkorrektioner på dine billeder.
+* **Krav**: .daq-logfiler med eksponeringspin-poster skal være til stede i dit projektbibliotek.
+* **Hvornår skal funktionen aktiveres**: Det anbefales altid at aktivere PPK-korrektion, hvis du har eksponeringsfeedback-poster i din .daq-logfil.
 
 ### Eksponeringspin 1
 
 * **Type**: Dropdown-valg
-* **Synlighed**: Kun synlig, når &quot;Anvend PPK-korrektioner&quot; er aktiveret, OG eksponeringsdata er tilgængelige for pin 1
+* **Synlighed**: Kun synlig, når &quot;Anvend PPK-korrektioner&quot; er aktiveret, OG der er eksponeringsdata tilgængelige for pin 1
 * **Indstillinger**:
   * Kameramodelnavne, der er registreret i projektet
   * &quot;Brug ikke&quot; – Ignorer denne eksponeringspin
@@ -112,7 +112,7 @@ Disse indstillinger styrer, hvordan Chloros behandler og kalibrerer dine billede
 
 * **Type**: Dropdown-valg
 * **Synlighed**: Kun synlig, når &quot;Anvend PPK-korrektioner&quot; er aktiveret OG eksponeringsdata er tilgængelige for pin 2
-* **Valgmuligheder**:
+* **Indstillinger**:
   * Kameramodelnavne, der er registreret i projektet
   * &quot;Brug ikke&quot; – Ignorer denne eksponeringspin
 * **Standard**: Vælges automatisk baseret på projektkonfigurationen
@@ -121,7 +121,7 @@ Disse indstillinger styrer, hvordan Chloros behandler og kalibrerer dine billede
   * Enkelt kamera + enkelt pin: Pin 2 indstilles automatisk til &quot;Brug ikke&quot;
   * Enkelt kamera + to pins: Pin 2 indstilles automatisk til &quot;Brug ikke&quot;
   * Flere kameraer: Manuel valg kræves
-* **Bemærk**: Det samme kamera kan ikke tildeles både Pin 1 og Pin 2 samtidigt.
+* **Bemærk**: Det samme kamera kan ikke tildeles både pin 1 og pin 2 samtidigt.
 
 ***
 
@@ -136,7 +136,7 @@ Disse indstillinger giver dig mulighed for at konfigurere multispektrale indekse
 * **Tilgængelige indekser**: Systemet indeholder mere end 30 foruddefinerede multispektrale indekser, herunder:
   * NDVI (Normaliseret forskel i vegetationsindeks)
   * NDRE (Normaliseret forskel RedEdge)
-  * EVI (Forbedret vegetationsindeks)
+  * EVI (forbedret vegetationsindeks)
   * GNDVI, SAVI, OSAVI, MSAVI2
   * Og mange flere (se [Multispektrale indeksformler](multispectral-index-formulas.md) for en komplet liste)
 * **Funktioner**:
@@ -153,7 +153,7 @@ Disse indstillinger giver dig mulighed for at konfigurere multispektrale indekse
   1. I panelet Indeks konfiguration skal du finde indstillingen for brugerdefinerede formler.
   2. Definer din formel ved hjælp af båndidentifikatorer (f.eks. NIR, Red, Green, Blue).
   3. Gem formlen med et beskrivende navn.
-* **Formelsyntaks**: Standardmatematiske operationer understøttes, herunder:
+* **Formelsyntaks**: Standard matematiske operationer understøttes, herunder:
   * Aritmetik: `+`, `-`, `*`, `/`
   * Parenteser til rækkefølgen af operationer
   * Båndreferencer: NIR, Red, Green, Blue, RedEdge, Cyan, Orange, NIR1, NIR2
@@ -190,13 +190,13 @@ Denne funktion giver dig mulighed for at gemme dine aktuelle projektindstillinge
 * **Beskrivelse**: Indtast et beskrivende navn til din indstillingsmal, og klik på gem-ikonet. Malen gemmer alle dine aktuelle projektindstillinger (måldetektering, behandlingsindstillinger, indekser og eksportformat), så de nemt kan genbruges i fremtidige projekter.
 * **Anvendelsestilfælde**:
   * Opret skabeloner til forskellige kamerasystemer (RGB, multispektral, NIR)
-  * Gem standardkonfigurationer til specifikke afgrødetyper eller analyseworkflows
+  * Gem standardkonfigurationer til specifikke afgrødetyper eller analysearbejdsgange
   * Del ensartede indstillinger på tværs af et team
 * **Sådan bruges det**:
-  1. Konfigurer alle dine ønskede projektindstillinger.
-  2. Indtast et skabelonnavn (f.eks. &quot;RedEdge Survey3 NDVI Standard&quot;).
-  3. Klik på ikonet for gem.
-  4. Skabelonen kan nu indlæses, når du opretter nye projekter.
+  1. Konfigurer alle dine ønskede projektindstillinger
+  2. Indtast et skabelonnavn (f.eks. &quot;RedEdge Survey3 NDVI Standard&quot;)
+  3. Klik på ikonet for gem
+  4. Skabelonen kan nu indlæses, når der oprettes nye projekter
 
 ***
 
@@ -240,7 +240,7 @@ De fleste ændringer af indstillinger (især i kategorierne Behandling og Ekspor
 
 ## Bedste praksis
 
-1. **Start med standardindstillinger**: Standardindstillingerne fungerer godt for de fleste MAPIR-kamerasystemer og typiske arbejdsgange.
+1. **Start med standardindstillingerne**: Standardindstillingerne fungerer godt for de fleste MAPIR-kamerasystemer og typiske arbejdsgange.
 2. **Opret skabeloner**: Når du har optimeret indstillingerne for en bestemt arbejdsgang eller et bestemt kamera, skal du gemme dem som en skabelon for at sikre konsistens på tværs af projekter.
 3. **Test før fuld behandling**: Når du eksperimenterer med nye indstillinger, skal du teste på en lille delmængde af billeder, før du behandler hele datasættet.
 4. **Dokumenter dine indstillinger**: Brug beskrivende skabelonnavne, der angiver kamerasystemet, behandlingstypen og den tilsigtede anvendelse (f.eks. &quot;Survey3\_RGB\_NDVI\_Agriculture&quot;).

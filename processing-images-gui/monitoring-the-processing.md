@@ -6,7 +6,7 @@ Når behandlingen er startet, giver Chloros flere muligheder for at overvåge fr
 
 Statusbjælken i den øverste header viser behandlingsstatus og færdiggørelsesprocent i realtid.
 
-### Statusbjælke i gratis tilstand
+### Statusbjælke i fri tilstand
 
 For brugere uden Chloros+-licens:
 
@@ -34,7 +34,7 @@ For brugere med Chloros+ licens:
 
 **Interaktive funktioner:**
 
-* **Hold musen over** fremdriftsbjælken for at se det udvidede 4-trins panel
+* **Hold musen over** fremskridtsbjælken for at se det udvidede 4-trins panel
 * **Klik** på fremdriftsbjælken for at fryse/fastgøre det udvidede panel
 * **Klik igen** for at frigøre og automatisk skjule, når musen fjernes
 * Hvert trin viser individuel fremdrift (0-100 %)
@@ -57,13 +57,13 @@ For brugere med Chloros+ licens:
 * Med markerede mål: 10-60 sekunder
 * Uden markerede mål: 5-30+ minutter (scanner alle billeder)
 
-**Statusindikator:**
+**Fremskridtsindikator:**
 
 * Registrerer: 0 % → 100 %
 * Antal scannede billeder
 * Antal fundne mål
 
-**Hvad skal du være opmærksom på:**
+**Hvad skal man være opmærksom på:**
 
 * Bør være hurtigt færdigt, hvis målene er korrekt markeret
 * Hvis det tager for lang tid, er målene muligvis ikke markeret
@@ -74,15 +74,15 @@ For brugere med Chloros+ licens:
 **Hvad sker der:**
 
 * Læsning af billedets EXIF-metadata (tidsstempler, eksponeringsindstillinger)
-* Fastlæggelse af kalibreringsstrategi baseret på målets tidsstempler
+* Fastlæggelse af kalibreringsstrategi baseret på måltidsstempler
 * Organisering af billedbehandlingskøen
 * Forberedelse af parallelle behandlingsarbejdere (kun Chloros+)
 
 **Varighed:** 5-30 sekunder
 
-**Fremskridtsindikator:**
+**Statusindikator:**
 
-* Analyse: 0 % → 100 %
+* Analyserer: 0 % → 100 %
 * Hurtig fase, afsluttes normalt hurtigt
 
 **Hvad man skal være opmærksom på:**
@@ -95,7 +95,7 @@ For brugere med Chloros+ licens:
 **Hvad sker der:**
 
 * **Debayering**: Konvertering af RAW Bayer-mønster til 3 kanaler
-* **Vignettekorrektion**: Fjerner mørkningen i linsens kanter
+* **Vignettekorrektion**: Fjerner mørkfarvning i kanten af linsen
 * **Reflektanskalibrering**: Normaliserer med målværdier
 * **Indeksberegning**: Beregner multispektrale indekser
 * Behandler hvert billede gennem hele pipelinen
@@ -106,7 +106,7 @@ For brugere med Chloros+ licens:
 
 * Kalibrering: 0 % → 100 %
 * Nuværende billede behandles
-* Færdige billeder / Samlet antal billeder
+* Færdige billeder / Samlede billeder
 
 **Behandlingsadfærd:**
 
@@ -211,7 +211,7 @@ Sådan kopieres loggen til fejlfinding eller support:
 1. Åbn panelet Debug Log (Fejlfindingslog).
 2. Klik på knappen **&quot;Copy Log&quot;** (Kopier log) (eller højreklik → Vælg alt).
 3. Indsæt i tekstfil eller e-mail.
-4. Send til MAPIR support, hvis nødvendigt.
+4. Send til MAPIR-support, hvis det er nødvendigt.
 
 ***
 
@@ -316,7 +316,7 @@ Stop behandlingen, hvis du ser:
 
 **Sådan stopper du:**
 
-1. Klik på **knappen Stop/Annuller** (erstatter knappen Start)
+1. Klik på **Stop/Annuller-knappen** (erstatter Start-knappen)
 2. Behandlingen standses, og fremskridtet går tabt
 3. Løs problemerne, og start forfra
 
@@ -387,6 +387,6 @@ Når behandlingen er afsluttet:
 1. **Gennemgå resultaterne** – Se [Afslutning af behandlingen](finishing-the-processing.md)
 2. **Kontroller outputmappen** – Kontroller, at alle filer er eksporteret korrekt
 3. **Gennemgå fejlfindingsloggen** – Kontroller for advarsler eller fejl
-4. **Vis forhåndsvisning af behandlede billeder** – Brug billedviseren eller ekstern software
+4. **Se forhåndsvisning af behandlede billeder** – Brug billedviseren eller ekstern software
 
 For information om gennemgang og brug af dine behandlede resultater, se [Afslutning af behandlingen](finishing-the-processing.md).

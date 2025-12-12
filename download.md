@@ -32,7 +32,7 @@ Download den nyeste version af Chloros til Windows for at komme i gang med multi
 
 ### Seneste stabile udgivelse
 
-**Chloros Installationsprogram til Windows**
+**Chloros Installer til Windows**
 
 * **Version**: 1.0.3
 * **Udgivelsesdato**: December ?, 2025
@@ -45,11 +45,11 @@ Download den nyeste version af Chloros til Windows for at komme i gang med multi
 2. Dobbeltklik på installationsprogrammet for at starte installationen.
 3. Følg vejledningen i installationsguiden.
 4. Vælg installationsmappe (standard: `C:\Program Files\Chloros\`).
-5. Afslut installationen og start Chloros.
-6. Log ind med din MAPIR Cloud Chloros+-konto (eller fortsæt med gratisversionen)
+5. Afslut installationen, og start Chloros.
+6. Log ind med din MAPIR Cloud Chloros+ konto (eller fortsæt med gratisversionen)
 
 {% hint style=&quot;success&quot; %}
-Installationsprogrammet tilføjer automatisk `chloros-cli` til dit systems PATH for kommandolinjeadgang.
+Installationsprogrammet tilføjer automatisk `chloros-cli` til din system PATH for kommandolinjeadgang.
 {% endhint %}
 
 ***
@@ -66,7 +66,7 @@ pip install chloros-sdk
 
 **Dokumentation**: [API: Python SDK](api-python-sdk.md)
 
-**Krav**: Chloros Desktop skal være installeret, Chloros+ licens kræves
+**Krav**: Chloros Desktop skal være installeret, Chloros+ licens kræves.
 
 ***
 

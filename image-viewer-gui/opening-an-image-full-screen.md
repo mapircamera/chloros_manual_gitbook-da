@@ -1,6 +1,6 @@
 # Åbning af et billede i fuld skærm
 
-Chloros Image Viewer har en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
+Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
 
 ## Adgang til billedviseren
 
@@ -13,11 +13,11 @@ Den mest almindelige måde at åbne et billede i billedviseren:
 3. Billedet åbnes i **hovedforhåndsvisningsområdet** (midten af skærmen)
 4. Billedet er nu indlæst og klar til visning i fuld skærm
 
-### Åbning af fanen Billedfremviser
+### Åbning af fanen Image Viewer
 
 Når et billede er indlæst i forhåndsvisningsområdet:
 
-1. Klik på ikonet **Billedfremviser** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
+1. Klik på ikonet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
 2. Fanen Billedfremviser åbnes og viser det valgte billede i fuld skærm
 3. Avancerede visnings- og analyseværktøjer bliver tilgængelige i venstre sidepanel
 
@@ -30,7 +30,7 @@ Når et billede er indlæst i forhåndsvisningsområdet:
 Den største del af skærmen viser dit billede:
 
 * **Fuld opløsning**: Billeder vises i oprindelig opløsning
-* **Zoombar**: Brug kontrolelementer eller mushjulet til at zoome
+* **Zoombar**: Brug kontrolelementer eller musehjul til at zoome
 * **Panorerbar**: Klik og træk for at flytte rundt, når der er zoomet
 * **Billedformat bevaret**: Billeder skaleres proportionalt
 
@@ -44,8 +44,8 @@ Den største del af skærmen viser dit billede:
 
 Naviger gennem dit billedsæt ved hjælp af tastaturgenveje eller knapper:
 
-* **Næste billede**: Klik på →-knappen eller tryk på **→** (højrepil)-tasten
-* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstrepil)-tasten
+* **Næste billede**: Klik på →-knappen eller tryk på **→** (højre pil)-tasten
+* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstre pil)-tasten
 * **Gå til et bestemt billede**: Gå tilbage til filbrowseren og klik på den ønskede miniature
 
 #### Zoomknapper
@@ -72,7 +72,7 @@ Juster forstørrelsen for at se billeddetaljer:
 
 #### Panorering ved zoom
 
-Når der er zoomet ud over skærmstørrelsen:
+Når der zoomes ud over skærmstørrelsen:
 
 1. Flyt musemarkøren over billedet
 2. Klik og **hold venstre museknap nede**
@@ -146,8 +146,8 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Navigation
 
-* **→** (højrepil): Næste billede
-* **←** (venstrepil): Forrige billede
+* **→** (højre pil): Næste billede
+* **←** (venstre pil): Forrige billede
 * **Home**: Første billede på listen
 * **End**: Sidste billede på listen
 
@@ -186,7 +186,7 @@ Kontroller, at indekserne er beregnet korrekt:
 
 ***
 
-## Fejlfinding ved visningsproblemer
+## Fejlfinding af visningsproblemer
 
 ### Billedet kan ikke åbnes
 
@@ -213,7 +213,7 @@ Kontroller, at indekserne er beregnet korrekt:
 
 **Løsninger:**
 
-1. Kontroller pixelværdierne – hvis alle er meget lave eller meget høje, skal du justere visningsområdet.
+1. Kontroller pixelværdierne – hvis de alle er meget lave eller meget høje, skal du justere visningsområdet.
 2. Prøv at åbne i QGIS eller lignende med automatisk justering af området.
 3. Kontroller fejlfindingsloggen fra behandlingen for fejl.
 
@@ -229,7 +229,7 @@ Kontroller, at indekserne er beregnet korrekt:
 **Løsninger:**
 
 1. Kontroller, at du ser behandlet output (kontroller filnavnesuffikset)
-2. Kontroller status for procenttilstandsknappen
+2. Kontroller procenttilstandsknappens tilstand
 3. Sammenlign med kendte gode billeder fra samme datasæt
 
 ***
@@ -239,9 +239,9 @@ Kontroller, at indekserne er beregnet korrekt:
 Nu hvor du kan se billeder i fuld skærm:
 
 * [**Billedlag**](image-layers.md) – Lær om multibåndvisualisering
-* [**Indeks/LUT Sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
+* [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Få indsigt i tilgængelige indekser
 
 For arbejdsgangen for behandling, se:
 
-* [**Behandling af billeder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Komplet vejledning til behandling
+* [**Behandling af billeder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Komplet vejledning i behandling

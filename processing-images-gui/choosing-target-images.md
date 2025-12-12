@@ -10,7 +10,7 @@ Uden at markere målbilleder skal Chloros:
 
 * Scanne hvert enkelt billede i dit projekt
 * Køre måldetekteringsalgoritmer på hvert billede
-* Kontrollere hundredvis eller tusindvis af billeder unødvendigt
+* Kontrollere hundredvis eller tusindvis af billeder unødigt
 
 **Resultat**: Behandlingen kan tage betydeligt længere tid, især for store datasæt.
 
@@ -124,9 +124,9 @@ Brug denne kolonne til at kontrollere, at du har markeret mål for hver kameraty
 
 ***
 
-## Indstillinger for måldetektion
+## Indstillinger for måldetektering
 
-### Justering af detektionsfølsomhed
+### Justering af detekteringsfølsomhed
 
 Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillinger i [Projektindstillinger](adjusting-project-settings.md):
 
@@ -134,9 +134,9 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 * **Standard**: 25 pixels
 * **Forøg**, hvis der opstår falske detektioner på små artefakter
-* **Formindsk**, hvis mål ikke detekteres
+* **Reducer**, hvis mål ikke detekteres
 
-**Minimumsklustering af mål:**
+**Minimumsklyngedannelse af mål:**
 
 * **Standard**: 60
 * **Forøg**, hvis målene opdeles i flere registreringer
@@ -150,15 +150,15 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 **Mulige årsager:**
 
-* Målbillederne er ikke markeret i filbrowseren
+* Målbilleder er ikke markeret i filbrowseren
 * Målet er for lille i rammen (&lt; 30 % af billedet)
 * Dårlig belysning (skygger, blænding)
 * Indstillingerne for måldetektion er for strenge
 
 **Løsninger:**
 
-1. Kontroller, at kolonnen Mål er markeret for korrekte billeder
-2. Gennemgå målbilledkvaliteten i forhåndsvisningen
+1. Kontroller, at kolonnen Mål er markeret for de korrekte billeder
+2. Kontroller kvaliteten af målbilledet i forhåndsvisningen
 3. Genoptag målene, hvis kvaliteten er dårlig
 4. Juster indstillingerne for måldetektion, hvis det er nødvendigt
 
@@ -166,7 +166,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 **Mulige årsager:**
 
-* Hvide bygninger, køretøjer eller jorddække forveksles med mål
+* Hvide bygninger, køretøjer eller jorddækning forveksles med mål
 * Lyse pletter i vegetationen
 * Detektionsfølsomheden er for lav
 
