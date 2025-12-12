@@ -14,7 +14,9 @@ Fra hovedmenuen kan du starte et nyt projekt, åbne et eksisterende projekt elle
 
 Når den er aktiveret, starter startknappen billedbehandlingsprocessen.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Statusbjælke <img src=".gitbook/assets/image (5).png" alt="" data-size="line">I den gratis Chloros-tilstand, som behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Statusbjælke <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+
+I den gratis Chloros-tilstand, som behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
 
 I den betalte Chloros+-licenstilstand, som behandler alle filer samtidigt, viser statusbjælken fire faser: Registrering, analyse, kalibrering, eksport. Hvis du holder musemarkøren over Chloros+ fremdriftsbjælken, vises det udvidede panel med 4 fremdriftsbjælker, så du kan følge med. Hvis du klikker på den øverste fremdriftsbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigøres det.
 

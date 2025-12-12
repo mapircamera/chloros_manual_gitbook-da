@@ -6,7 +6,9 @@ Brugermenuen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> s
 
 Når du er logget ind, vises dine kontooplysninger:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Login
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+
+## CLI Login
 
 Log ind med dine Chloros+-loginoplysninger for at aktivere CLI-behandling.
 
@@ -28,7 +30,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Output:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Planens udløb
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+### Planens udløb
 
 Planens udløb i GUI&#x27;en viser, hvornår din licens bliver ugyldig. For tilbagevendende månedlige abonnementer udløber licensen ved udgangen af måneden. For årlige abonnementer udløber licensen et år efter, at du startede abonnementet. Licenskontrollen kræver en månedlig internetforbindelse for at verificere, med en 30 dages frist.
 
