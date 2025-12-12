@@ -16,7 +16,7 @@
 ## Behandler billeder (GUI)
 
 * [Justering af projektindstillinger](processing-images-gui/adjusting-project-settings.md)
-* [Tilføjelse af filer til et projekt](processing-images-gui/page-1.md)
+* [Tilføjelse af filer til et projekt](processing-images-gui/adding-files-to-a-project.md)
 * [Valg af målbilleder](processing-images-gui/choosing-target-images.md)
 * [Start af behandlingen](processing-images-gui/starting-the-processing.md)
 * [Overvågning af behandlingen](processing-images-gui/monitoring-the-processing.md)
@@ -24,11 +24,11 @@
 
 ## PROJEKTINDSTILLINGER
 
-* [Projektindstillinger](project-settings/page-2.md)
+* [Projektindstillinger](project-settings/project-settings.md)
 * [Multispektrale indeksformler](project-settings/multispectral-index-formulas.md)
 
 ## BILLEDVISER (GUI)
 
-* [Åbning af et billede i fuld skærm](image-viewer-gui/page-3.md)
+* [Åbning af et billede i fuld skærm](image-viewer-gui/opening-an-image-full-screen.md)
 * [Billedlag](image-viewer-gui/image-layers.md)
 * [Indeks/LUT Sandkasse](image-viewer-gui/index-lut-sandbox.md)
