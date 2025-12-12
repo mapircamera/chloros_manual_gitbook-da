@@ -1,43 +1,43 @@
-# Chloros+ Login
+# Chloros+ login
 
-## Chloros and Chloros (Browser) Login
+## Chloros og Chloros (Browser) Login
 
-The user <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar menu allows you to log into your Chloros+ account and unlock additional features.
+Brugermenuen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebjælke giver dig mulighed for at logge ind på din Chloros+ konto og låse op for yderligere funktioner.
 
-When logged in your account details will be shown:
+Når du er logget ind vil dine kontooplysninger blive vist:
 
 <figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
-## CLI Login
+## CLI login
 
-Login with your Chloros+ credentials to enable CLI processing.
+Log ind med dine Chloros+-legitimationsoplysninger for at aktivere CLI-behandling.
 
-**Syntax:**
+**Syntaks:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
 
-**Example:**
+**Eksempel:**
 
 ```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
 {% hint style="warning" %}
-**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
-{% endhint %}
+**Specialtegn**: Brug enkelte anførselstegn omkring adgangskoder, der indeholder tegn som `$`, `!` eller mellemrum.
+{% sluthint %}
 
-**Output:**
+**Produktion:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
-### Plan Expiration
+### Planens udløb
 
-The plan expiration in the GUI shows when your license will become invalid. For recurring monthly subscriptions the expiration is at the end of the month. For yearly subscriptions it is a year after you started the subscription. The license check requires a monthly internet connection to verify, with a 30 day grace period.
+Planens udløb i GUI viser, hvornår din licens bliver ugyldig. For tilbagevendende månedlige abonnementer er udløbet i slutningen af ​​måneden. For årlige abonnementer er det et år efter, at du startede abonnementet. Licenstjekket kræver en månedlig internetforbindelse for at verificere, med en henstandsperiode på 30 dage.
 
-### Device Limit
+### Enhedsgrænse
 
-Each Chloros+ plan offers a different number of registered devices. Each device you log into with a Chloros+ account will count towards your number of registered devices. You can rename and remove a device on your MAPIR Cloud account page.
+Hver Chloros+ plan tilbyder et forskelligt antal registrerede enheder. Hver enhed, du logger på med en Chloros+-konto, tæller med i dit antal registrerede enheder. Du kan omdøbe og fjerne en enhed på din MAPIR Cloud-kontoside.
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">COPPER</th><th align="center">BRONZE</th><th align="center">SILVER</th><th align="center">GOLD</th></tr></thead><tbody><tr><td align="right">Devices Supported</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">KOPER</th><th align="center">BRONZE</th><th align="center">SØLV</th><th align="center">GULD</th></tr></thead><tbody><tr><td align="right">Enheder Understøttet</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
