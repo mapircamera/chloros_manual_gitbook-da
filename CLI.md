@@ -8,7 +8,7 @@
 * 🔗 **Integration** - Integrer i eksisterende arbejdsgange og pipelines
 * 💻 **Headless-drift** - Kør uden GUI
 * 🌍 **Flere sprog** - Understøttelse af 38 sprog
-* ⚡ **Parallel behandling** - Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
+* ⚡ **Parallel behandling** – Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
 
 ### Krav
 
@@ -17,7 +17,7 @@
 | **Operativsystem** | Windows 10/11 (64-bit)                                              |
 | **Licens**          | Chloros+ ([betalt abonnement kræves](https://cloud.mapir.camera/pricing)) |
 | **Hukommelse**           | Minimum 8 GB RAM (16 GB anbefales)                                  |
-| **Internet**         | Kræves til aktivering af licens                                     |
+| **Internet**         | Kræves for aktivering af licens                                     |
 | **Diskplads**       | Varierer afhængigt af projektets størrelse                                              |
 
 {% hint style=&quot;warning&quot; %}
@@ -35,7 +35,7 @@ CLI er automatisk inkluderet i Chloros-installationsprogrammet:
 3. CLI installeret til: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
 {% hint style=&quot;success&quot; %}
-Installationsprogrammet tilføjer automatisk `chloros-cli` til din systems PATH. Genstart din terminal efter installationen.
+Installationsprogrammet tilføjer automatisk `chloros-cli` til din system PATH. Genstart din terminal efter installationen.
 {% endhint %}
 
 ### Første opsætning
@@ -290,7 +290,7 @@ chloros-cli language ja
 | `sl`    | Slovensk             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedvarer på tværs af alle sessioner.
+**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedbliver i alle sessioner.
 {% endhint %}
 
 ***
@@ -416,9 +416,9 @@ CLI bruger **Høj kvalitet (hurtigere)** som standard og anbefalet debayer-algor
 
 Konverterer rå sensorværdier til standardiserede reflektansprocenter ved hjælp af kalibreringspaneler.
 
-* **Aktiveret som standard** – Vigtigt for vegetationsanalyse.
+* **Aktiveret som standard** – Væsentligt for vegetationsanalyse.
 * Kræver kalibreringsmålpaneler i billeder.
-* Brug `--no-reflectance` til at deaktivere.
+* Brug `--no-reflectance` for at deaktivere.
 
 {% hint style=&quot;info&quot; %}
 **Krav**: Sørg for, at kalibreringspanelerne er korrekt eksponeret og synlige i dine billeder for at sikre nøjagtig reflektanskonvertering.
@@ -576,7 +576,7 @@ if __name__ == '__main__':
 
 ### Standardworkflow
 
-1. **Indtastning**: Mappe indeholdende RAW/JPG-billedpar
+1. **Indtastning**: Mappe med RAW/JPG-billedpar
 2. **Opdagelse**: CLI scanner automatisk efter understøttede billedfiler
 3. **Behandling**: Parallel tilstand skaleres til dine CPU-kerner (Chloros+)
 4. **Output**: Opretter undermapper for kameramodeller med behandlede billeder
@@ -746,7 +746,7 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 **Svar:** Ja! CLI kræver en betalt **Chloros+ licens**.
 
 * ❌ Standard (gratis) plan: CLI deaktiveret
-* ✅ Chloros+ (betalte) abonnementer: CLI fuldt aktiveret
+* ✅ Chloros+ (betalt) planer: CLI fuldt aktiveret
 
 Tilmeld dig på: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
@@ -777,7 +777,7 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ### Spørgsmål: Kan jeg behandle flere mapper på én gang?
 
-**A:** Ikke direkte i én kommando, men du kan bruge scripting til at behandle mapper sekventielt. Se afsnittet [Automatisering og scripting](CLI.md#automation--scripting).
+**A:** Ikke direkte med en enkelt kommando, men du kan bruge scripting til at behandle mapper sekventielt. Se afsnittet [Automatisering og scripting](CLI.md#automation--scripting).
 
 ***
 
@@ -815,7 +815,7 @@ Delvist behandlede billeder kan forblive i outputmappen.
 
 ***
 
-### Spørgsmål: Hvordan tjekker jeg CLI-versionen?
+### Spørgsmål: Hvordan kontrollerer jeg CLI-versionen?
 
 **Svar:**
 
@@ -859,7 +859,7 @@ chloros-cli language --help
 
 ### Eksempel 1: Grundlæggende behandling
 
-Behandling med standardindstillinger (vignette, refleksion):
+Behandling med standardindstillinger (vignette, reflektans):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"

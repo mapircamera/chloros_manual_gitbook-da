@@ -40,13 +40,13 @@ Styrer, hvordan Chloros identificerer kalibreringsmål i dine billeder.
 **Vigtige indstillinger:**
 
 * **Minimumskalibreringsprøveområde**: Størrelsestærskel for måldetektion (standard: 25 pixels)
-* **Minimumsklustering af mål**: Lighedstærskel for gruppering af målregioner (standard: 60)
+* **Minimum målklyngedannelse**: Lighedstærskel for gruppering af målregioner (standard: 60)
 
 **Hvornår skal du justere:**
 
-* Forøg prøveområdet, hvis du får falske detektioner.
-* Reducer, hvis målene ikke detekteres.
-* Juster klusteringen, hvis målene opdeles i flere detektioner.
+* Øg prøveområdet, hvis du får falske detektioner.
+* Sænk, hvis målene ikke bliver detekteret.
+* Juster klyngedannelsen, hvis målene bliver opdelt i flere detektioner.
 
 ### Behandling
 
@@ -98,8 +98,8 @@ Styrer outputfilformat og kvalitet.
 
 **Tilgængelige formater:**
 
-* **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (interval 0-65.535)
-* **TIFF (32-bit, procent)**: Flydende reflektansværdier (interval 0,0-1,0)
+* **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (0-65.535 interval)
+* **TIFF (32-bit, procent)**: Flydende reflektansværdier (0,0-1,0 interval)
 * **PNG (8-bit)**: Tabsfri komprimering til visualisering (interval 0-255)
 * **JPG (8-bit)**: Mindste filer, tabsgivende komprimering (interval 0-255)
 
@@ -120,7 +120,7 @@ Opret genanvendelige skabeloner for ensartede arbejdsgange:
 
 * Anvend identiske indstillinger på tværs af flere projekter
 * Del konfigurationer med teammedlemmer
-* Bevar konsistensen for gentagne undersøgelser
+* Bevar konsistensen ved gentagne undersøgelser
 
 ### Indlæs skabelon i nyt projekt
 
@@ -157,7 +157,7 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 ### Konfigurationsskridt
 
 1. Placer .daq-logfilen i din projektmappe.
-2. I Projektindstillinger skal du markere afkrydsningsfeltet **&quot;Anvend PPK-korrektioner&quot;**.
+2. I Projektindstillinger skal du aktivere afkrydsningsfeltet **&quot;Anvend PPK-korrektioner&quot;**.
 3. Indstil **&quot;Lyssensorens tidszoneforskydning&quot;**, hvis det er nødvendigt (standard: 0 for UTC).
 4. Tildel kameraer til eksponeringsstik:
    * **Enkelt kamera**: Tildeles automatisk til pin 1
@@ -170,7 +170,7 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 * Det samme kamera kan ikke tildeles til begge pins
 
 {% hint style=&quot;warning&quot; %}
-**Vigtigt**: Eksponeringsstik skal tildeles korrekt til deres respektive kameraer. Forkert tildeling vil resultere i forkerte geolokaliseringsdata.
+**Vigtigt**: Eksponeringsstifter skal tildeles korrekt til deres respektive kameraer. Forkert tildeling vil resultere i forkerte geolokaliseringsdata.
 {% endhint %}
 
 ***
@@ -179,7 +179,7 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 
 ### Projekter med flere kameraer
 
-Når du behandler billeder fra flere MAPIR-kameraer i ét projekt:
+Når du behandler billeder fra flere MAPIR-kameraer i et projekt:
 
 1. Chloros registrerer automatisk hver kameramodel
 2. Hvert kamera får den passende behandlingsprofil

@@ -34,7 +34,7 @@ For brugere med Chloros+ licens:
 
 **Interaktive funktioner:**
 
-* **Hold musen over** fremskridtsbjælken for at se det udvidede 4-trins panel
+* **Hold musen over** fremdriftsbjælken for at se det udvidede 4-trins panel
 * **Klik** på fremdriftsbjælken for at fryse/fastgøre det udvidede panel
 * **Klik igen** for at frigøre og automatisk skjule, når musen fjernes
 * Hvert trin viser individuel fremdrift (0-100 %)
@@ -43,7 +43,7 @@ For brugere med Chloros+ licens:
 
 ## Forståelse af hvert behandlingsstadium
 
-### Trin 1: Registrering (måldetektion)
+### Trin 1: Registrering (målregistrering)
 
 **Hvad sker der:**
 
@@ -57,7 +57,7 @@ For brugere med Chloros+ licens:
 * Med markerede mål: 10-60 sekunder
 * Uden markerede mål: 5-30+ minutter (scanner alle billeder)
 
-**Fremskridtsindikator:**
+**Statusindikator:**
 
 * Registrerer: 0 % → 100 %
 * Antal scannede billeder
@@ -74,7 +74,7 @@ For brugere med Chloros+ licens:
 **Hvad sker der:**
 
 * Læsning af billedets EXIF-metadata (tidsstempler, eksponeringsindstillinger)
-* Fastlæggelse af kalibreringsstrategi baseret på måltidsstempler
+* Fastlæggelse af kalibreringsstrategi baseret på målets tidsstempler
 * Organisering af billedbehandlingskøen
 * Forberedelse af parallelle behandlingsarbejdere (kun Chloros+)
 
@@ -95,7 +95,7 @@ For brugere med Chloros+ licens:
 **Hvad sker der:**
 
 * **Debayering**: Konvertering af RAW Bayer-mønster til 3 kanaler
-* **Vignettekorrektion**: Fjerner mørkningen i kanten af linsen
+* **Vignettekorrektion**: Fjerner mørkningen i linsens kanter
 * **Reflektanskalibrering**: Normaliserer med målværdier
 * **Indeksberegning**: Beregner multispektrale indekser
 * Behandler hvert billede gennem hele pipelinen
@@ -106,7 +106,7 @@ For brugere med Chloros+ licens:
 
 * Kalibrering: 0 % → 100 %
 * Nuværende billede behandles
-* Færdige billeder / Samlede billeder
+* Færdige billeder / Samlet antal billeder
 
 **Behandlingsadfærd:**
 
@@ -114,9 +114,9 @@ For brugere med Chloros+ licens:
 * **Chloros+ tilstand**: Behandler op til 16 billeder samtidigt
 * **GPU-acceleration**: Fremskynder denne fase betydeligt
 
-**Hvad man skal være opmærksom på:**
+**Hvad du skal være opmærksom på:**
 
-* Stabil fremgang gennem billedantal
+* Stabil fremgang gennem billedtælling
 * Kontroller fejlfindingsloggen for meddelelser om færdiggørelse pr. billede
 * Advarsler om billedkvalitet eller kalibreringsproblemer
 
@@ -201,7 +201,7 @@ Kritiske problemer, der kan medføre, at behandlingen mislykkes:
 | &quot;Behandler billede X af Y&quot;        | Aktuel statusopdatering                | Ingen - normalt                                         |
 | &quot;Ingen mål fundet&quot;               | Ingen kalibreringsmål fundet        | Marker målbilleder eller deaktiver reflektanskalibrering |
 | &quot;Utilstrækkelig diskplads&quot;        | Ikke nok lagerplads til output          | Frigør diskplads                                    |
-| &quot;Springer beskadiget fil over&quot;        | Billedfil er beskadiget                  | Kopier filen igen fra SD-kort                             |
+| &quot;Springer beskadiget fil over&quot;        | Billedfilen er beskadiget                  | Kopier filen igen fra SD-kortet                             |
 | &quot;PPK-data anvendt&quot;               | GPS-korrektioner fra .daq-fil anvendt | Ingen - normal                                         |
 
 ### Kopiering af logdata
@@ -211,7 +211,7 @@ Sådan kopieres loggen til fejlfinding eller support:
 1. Åbn panelet Debug Log (Fejlfindingslog).
 2. Klik på knappen **&quot;Copy Log&quot;** (Kopier log) (eller højreklik → Vælg alt).
 3. Indsæt i tekstfil eller e-mail.
-4. Send til MAPIR-support, hvis det er nødvendigt.
+4. Send til MAPIR support, hvis nødvendigt.
 
 ***
 
@@ -316,7 +316,7 @@ Stop behandlingen, hvis du ser:
 
 **Sådan stopper du:**
 
-1. Klik på **Stop/Annuller-knappen** (erstatter Start-knappen)
+1. Klik på **knappen Stop/Annuller** (erstatter knappen Start)
 2. Behandlingen standses, og fremskridtet går tabt
 3. Løs problemerne, og start forfra
 
@@ -349,13 +349,13 @@ Stop behandlingen, hvis du ser:
 3. Reducer antallet af indekser, der skal eksporteres
 4. Brug JPG-format i stedet for TIFF (mindre filer)
 
-### Hyppige &quot;Corrupted File&quot;-meddelelser
+### Hyppige &quot;korrupte fil&quot;-meddelelser
 
 **Løsninger:**
 
 1. Kopier billederne igen fra SD-kortet for at sikre integriteten
 2. Test SD-kortet for fejl
-3. Fjern beskadigede filer fra projektet
+3. Fjern korrupte filer fra projektet
 4. Fortsæt behandlingen af de resterende billeder
 
 ### Systemet bliver overophedet/throttling
@@ -384,7 +384,7 @@ Når behandlingen er færdig:
 
 Når behandlingen er afsluttet:
 
-1. **Gennemgå resultaterne** - Se [Afslutning af behandlingen](finishing-the-processing.md)
+1. **Gennemgå resultaterne** – Se [Afslutning af behandlingen](finishing-the-processing.md)
 2. **Kontroller outputmappen** – Kontroller, at alle filer er eksporteret korrekt
 3. **Gennemgå fejlfindingsloggen** – Kontroller for advarsler eller fejl
 4. **Vis forhåndsvisning af behandlede billeder** – Brug billedviseren eller ekstern software

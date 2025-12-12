@@ -1,12 +1,12 @@
 # GUI: Projekter
 
-Chloros giver dig mulighed for at oprette projekter, som kan genåbnes på et senere tidspunkt.
+Chloros giver dig mulighed for at oprette projekter, som kan genåbnes i fremtiden.
 
 ## Nyt projekt
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Vælg &quot;Nyt projekt&quot; i hovedmenuen, og indtast et unikt navn til dit projekt.
+Vælg &quot;Nyt projekt&quot; i hovedmenuen og indtast et unikt navn til dit projekt.
 
 ## Åbn projekt
 

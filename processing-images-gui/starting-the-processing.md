@@ -46,7 +46,7 @@ Start-/afspilningsknappen findes i den øverste headerbar i Chloros:
 
 Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
-### Gratis metode (sekventiel behandling)
+### Fri metode (sekventiel behandling)
 
 **Tilgængelig for alle brugere**
 
@@ -110,7 +110,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Scanner markerede målbilleder (eller alle billeder, hvis ingen er markeret)
 * Identificerer de 4 kalibreringspaneler i hvert mål
-* Udtager reflektansværdier fra målpaneler
+* Uddrager reflektansværdier fra målpaneler
 * Registrerer måltidsstempler til kalibreringsplanlægning
 
 **Varighed:** 1-30 sekunder (med markerede mål), 5-30+ minutter (umarkerede)
@@ -119,7 +119,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 **Hvad Chloros gør:**
 
-* Konverterer RAW-Bayer-mønsterdata til fulde RGB-billeder
+* Konverterer RAW Bayer-mønsterdata til fulde RGB-billeder
 * Anvender højkvalitets demosaicing-algoritme
 * Bevarer maksimal billedkvalitet og detaljer
 
@@ -169,7 +169,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Alle konfigurerede trin udføres i rækkefølge
 * Statusopdateringer vises i realtid
 
-### Computerforbrug under behandling
+### Computerbrug under behandling
 
 **Fri tilstand:**
 
@@ -179,7 +179,7 @@ Når den er startet, kører hele pipelinen automatisk:
 
 **Chloros+ Parallel tilstand:**
 
-* Høj CPU-brug (multi-threaded, op til 16 kerner)
+* Høj CPU-forbrug (multi-threaded, op til 16 kerner)
 * Med GPU-acceleration: Høj GPU-forbrug
 * Computeren kan være mindre responsiv under behandlingen
 * Undgå at starte andre CPU-intensive opgaver
@@ -195,7 +195,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Når behandlingen er startet, kan den ikke sættes på pause.
 * Du kan annullere behandlingen, men fremskridtet går tabt.
 * Delvise resultater gemmes ikke.
-* Du skal starte forfra, hvis behandlingen annulleres.
+* Du skal starte forfra, hvis du annullerer.
 
 **Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.
 
@@ -271,7 +271,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 | 1000 billeder | 4-6 timer   | 1,5-2 timer      | 40-60 min      |
 
 {% hint style=&quot;info&quot; %}
-**Første kørsel**: Den første behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
+**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
 {% endhint %}
 
 ***
@@ -283,7 +283,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 **Mulige årsager:**
 
 * Ingen billeder importeret
-* Backend er ikke fuldt opstartet
+* Backend er ikke fuldt startet
 * Forrige behandling kører stadig
 * Projektet er ikke fuldt indlæst
 
@@ -349,7 +349,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 Hvis du bruger NVIDIA GPU-acceleration:
 
 1. Opdater NVIDIA-drivere til den nyeste version
-2. Sørg for, at GPU&#x27;en har 4 GB+ VRAM
+2. Sørg for, at GPU har 4 GB+ VRAM
 3. Luk GPU-intensive programmer (spil, videoredigering)
 4. Overvåg GPU-temperaturen (sørg for tilstrækkelig køling)
 

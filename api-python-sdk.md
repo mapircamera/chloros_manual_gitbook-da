@@ -6,7 +6,7 @@
 
 * 🐍 **Native Python** - Rent, Pythonic API til billedbehandling
 * 🔧 **Fuld API-adgang** - Fuld kontrol over Chloros-behandling
-* 🚀 **Automatisering** - Opbyg tilpassede batchbehandlingsworkflows
+* 🚀 **Automatisering** - Opbyg brugerdefinerede batchbehandlingsworkflows
 * 🔗 **Integration** - Integrer Chloros i eksisterende Python-applikationer
 * 📊 **Klar til forskning** - Perfekt til videnskabelige analysepipelines
 * ⚡ **Parallel behandling** - Skaleres til dine CPU-kerner (Chloros+)
@@ -37,7 +37,7 @@ pip install chloros-sdk
 ```
 
 {% hint style=&quot;info&quot; %}
-**Første gangs opsætning**: Inden du bruger SDK, skal du aktivere din Chloros+ licens ved at åbne Chloros, Chloros (browser) eller Chloros CLI og logge ind med dine loginoplysninger. Dette behøver kun at gøres én gang.
+**Første gangs opsætning**: Inden du bruger SDK, skal du aktivere din Chloros+-licens ved at åbne Chloros, Chloros (browser) eller Chloros CLI og logge ind med dine loginoplysninger. Dette behøver kun at gøres én gang.
 {% endhint %}
 
 ### Grundlæggende brug
@@ -128,7 +128,7 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 SDK bruger samme licens som Chloros, Chloros (browser) og Chloros CLI. Aktiver én gang via GUI eller CLI:
 
 1. Åbn **Chloros eller Chloros (browser)** og log ind på fanen Bruger <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Eller åbn **CLI**.
-2. Indtast dine Chloros+ legitimationsoplysninger og log ind
+2. Indtast dine Chloros+-loginoplysninger og log ind
 3. Licensen gemmes lokalt (bevares efter genstart)
 
 {% hint style=&quot;success&quot; %}
@@ -152,7 +152,7 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API-reference
+## API Reference
 
 ### ChlorosLocal-klasse
 
@@ -176,9 +176,9 @@ ChlorosLocal(
 | ------------------------- | ---- | ------------------------- | ------------------------------------- |
 | `api_url`                 | str  | `"http://localhost:5000"` | URL af lokal Chloros backend          |
 | `auto_start_backend`      | bool | `True`                    | Start automatisk backend, hvis nødvendigt |
-| `backend_exe`             | str  | `None` (auto-detect)      | Sti til backend-eksekverbar fil            |
-| `timeout`                 | int  | `30`                      | Anmodningstidsfrist i sekunder            |
-| `backend_startup_timeout` | int  | `60`                      | Tidsfrist for opstart af backend (sekunder) |
+| `backend_exe`             | str  | `None` (autodetektering)      | Sti til backend-eksekverbar fil            |
+| `timeout`                 | int  | `30`                      | Anmodningstimeout i sekunder            |
+| `backend_startup_timeout` | int  | `60`                      | Timeout for backend-opstart (sekunder) |
 
 **Eksempler:**
 
@@ -316,7 +316,7 @@ Behandl projektbillederne.
 **Returnerer:** `dict` - Behandlingsresultater
 
 {% hint style=&quot;warning&quot; %}
-**Parallel tilstand**: Kræver Chloros+ licens. Skaleres automatisk til dine CPU-kerner (op til 16 arbejdere).
+**Parallel tilstand**: Kræver Chloros+ licens. Skalerer automatisk til dine CPU-kerner (op til 16 arbejdere).
 {% endhint %}
 
 **Eksempel:**
@@ -343,7 +343,7 @@ chloros.process(wait=False)
 
 #### `get_config()`
 
-Henter den aktuelle projektkonfiguration.
+Hent den aktuelle projektkonfiguration.
 
 **Returnerer:** `dict` - Aktuel projektkonfiguration
 
@@ -358,7 +358,7 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Henter backend-statusoplysninger.
+Hent oplysninger om backend-status.
 
 **Returnerer:** `dict` - Backend-status
 
@@ -402,7 +402,7 @@ Enkel praktisk funktion til at behandle en mappe.
 | `reflectance_calibration` | bool     | `True`          | Aktivér reflektanskalibrering |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Outputformat                  |
 | `mode`                    | str      | `"parallel"`    | Behandlingsmodus                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `progress_callback`       | callable | `None`          | Fremskridts-callback              |
 
 **Returnerer:** `dict` - Behandlingsresultater
 
@@ -470,7 +470,7 @@ print(f"Processing complete: {results}")
 
 ***
 
-### Eksempel 2: Brugerdefineret arbejdsgang
+### Eksempel 2: Tilpasset arbejdsgang
 
 Fuld kontrol over behandlingspipeline:
 
@@ -619,9 +619,9 @@ print(df)
 
 ***
 
-### Eksempel 5: Brugerdefineret overvågning af fremskridt
+### Eksempel 5: Brugerdefineret fremskridtsovervågning
 
-Avanceret fremskridtsregistrering med logning:
+Avanceret fremskridtssporing med logning:
 
 ```python
 from chloros_sdk import ChlorosLocal
@@ -863,7 +863,7 @@ print("Processing complete!")
 
 ### Hukommelsesstyring
 
-For store datasæt skal behandlingen foregå i batches:
+For store datasæt skal du behandle i batches:
 
 ```python
 from pathlib import Path
@@ -957,7 +957,7 @@ python -c "import sys; print(sys.path)"
 
 ### Behandlingstid udløbet
 
-**Problem:** Behandlingen går i timeout
+**Problem:** Behandlingstiden udløber
 
 **Løsninger:**
 
@@ -1132,7 +1132,7 @@ chloros.process(progress_callback=notebook_progress)
 **Svar:** Ja! Krav:
 
 * Windows Server 2016 eller nyere
-* Chloros installeret (engangsinstallation)
+* Chloros installeret (engangs)
 * Licens aktiveret på en hvilken som helst maskine (cachelagret licens kopieret til serveren)
 
 ***
@@ -1153,8 +1153,8 @@ chloros.process(progress_callback=notebook_progress)
 
 **Svar:** SDK-kode kan integreres i dine applikationer, men:
 
-* Slutbrugere skal have Chloros installeret.
-* Slutbrugere skal have aktive Chloros+-licenser.
+* Slutbrugerne skal have Chloros installeret.
+* Slutbrugerne skal have aktive Chloros+-licenser.
 * Kommerciel distribution kræver OEM-licenser.
 
 Kontakt info@mapir.camera for spørgsmål vedrørende OEM.
@@ -1169,7 +1169,7 @@ pip install --upgrade chloros-sdk
 
 ***
 
-### Spørgsmål: Hvor gemmes de behandlede billeder?
+### Spørgsmål: Hvor gemmes behandlede billeder?
 
 Som standard i projektstien:
 
@@ -1199,7 +1199,7 @@ Planlæg via Task Scheduler, så det kører dagligt.
 
 ### Spørgsmål: Understøtter SDK async/await?
 
-**Svar:** Den aktuelle version er synkron. For asynkron adfærd skal du bruge `wait=False` eller køre i en separat tråd:
+**A:** Den aktuelle version er synkron. For asynkron adfærd skal du bruge `wait=False` eller køre i en separat tråd:
 
 ```python
 import threading
@@ -1219,7 +1219,7 @@ thread.start()
 
 ### Dokumentation
 
-* **API-reference**: Denne side
+* **API Reference**: Denne side
 
 ### Supportkanaler
 

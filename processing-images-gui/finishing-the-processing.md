@@ -9,7 +9,7 @@ Når behandlingen er afsluttet, vil du se flere indikatorer:
 * ✅ **Statusbjælke**: Når 100 % færdig
 * ✅ **Fejlfindingslog**: Viser meddelelsen &quot;Behandling færdig&quot;
 * ✅ **Startknap**: Bliver aktiveret igen (klar til næste behandlingskørsel)
-* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen til kameramodellen
+* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen for kameramodellen
 
 ***
 
@@ -107,7 +107,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 **Løsninger:**
 
-1. Kontroller, at vignettkorrektion er aktiveret i projektindstillingerne.
+1. Kontroller, at vignetteringskorrektion er aktiveret i projektindstillingerne.
 2. Kontroller, at kameramodellen er registreret korrekt.
 3. Kontakt MAPIR-support, hvis vignetteringen fortsætter.
 
@@ -123,7 +123,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 **Løsninger:**
 
 1. Kontroller, at reflektanskalibrering er aktiveret.
-2. Kontroller meddelelsen &quot;Mål fundet&quot; i fejlfindingsloggen.
+2. Kontroller meddelelser om &quot;Mål fundet&quot; i fejlfindingsloggen.
 3. Kontroller målbilledernes kvalitet.
 4. Genbehandl med de korrekte mål markeret.
 
@@ -157,7 +157,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
    * Agisoft Metashape
    * DroneDeploy
    * WebODM
-2. **Behold EXIF-metadata**: Sørg for, at GPS-data bevares til geotagging
+2. **Bevar EXIF-metadata**: Sørg for, at GPS-data bevares til geotagging
 3. **Kalibrerede arbejdsgange**: Brug reflektansbilleder for videnskabelig nøjagtighed
 4. **Behandl indeksmosaikker**: Opret NDVI ortomosaikker fra individuelle indeksbilleder
 5. **Eksporter georefererede GeoTIFF**: Til brug i GIS-applikationer
@@ -177,7 +177,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 **Anbefalet arbejdsgang:**
 
 1. **Brug indeksbilleder med LUT-farver** til visuelle rapporter
-2. **Udtryk statistik**: Gennemsnitlig NDVI pr. felt/parcel
+2. **Uddrag statistik**: Gennemsnitlig NDVI pr. felt/parcel
 3. **Tidsserier**: Sammenlign indekser på tværs af flere sessioner
 4. **Generer rapporter**: Inkluder kort, statistikker og visualiseringer
 
@@ -249,9 +249,9 @@ Hvis resultaterne ikke er tilfredsstillende:
 3. Juster indstillingerne i panelet Projektindstillinger
 4. Behandl igen – resultaterne overskriver de tidligere resultater
 
-### Behandling af delmængde af billeder
+### Behandling af en delmængde af billeder
 
-For kun at genbehandle bestemte billeder:
+Sådan genbehandles kun bestemte billeder:
 
 1. Opret et nyt projekt
 2. Importer kun de billeder, der skal genbehandles
@@ -290,12 +290,12 @@ Du har nu gennemført hele Chloros-behandlingsarbejdsgangen:
 ### Avancerede funktioner
 
 * [**Billedfremviser**](../image-viewer-gui/opening-an-image-full-screen.md) - Interaktiv visualisering og analyse
-* [**Indeks/LUT Sandkasse**](../image-viewer-gui/index-lut-sandbox.md) - Tilpasset indeks-test
+* [**Indeks/LUT Sandkasse**](../image-viewer-gui/index-lut-sandbox.md) - Brugerdefineret indekstest
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) - Komplet indeksreference
 
 ### Automatisering og integration
 
-* [**CLI-dokumentation**](../CLI.md) - Batchbehandling via kommandolinjen
+* [**CLI-dokumentation**](../CLI.md) – Batchbehandling via kommandolinjen
 * [**Python SDK**](../api-python-sdk.md) - Programmatisk automatisering
 * [**Chloros+ Funktioner**](../#chloros) - Avancerede behandlingsfunktioner
 

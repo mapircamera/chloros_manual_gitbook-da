@@ -1,6 +1,6 @@
 # Åbning af et billede i fuld skærm
 
-Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
+Chloros Image Viewer har en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
 
 ## Adgang til billedviseren
 
@@ -10,14 +10,14 @@ Den mest almindelige måde at åbne et billede i billedviseren:
 
 1. Sørg for, at du er i fanen **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
 2. Klik på en **billedminiature** i billedgitteret
-3. Billedet åbnes i **hovedvisningsområdet** (midten af skærmen)
+3. Billedet åbnes i **hovedforhåndsvisningsområdet** (midten af skærmen)
 4. Billedet er nu indlæst og klar til visning i fuld skærm
 
-### Åbning af fanen Image Viewer
+### Åbning af fanen Billedfremviser
 
-Når et billede er indlæst i visningsområdet:
+Når et billede er indlæst i forhåndsvisningsområdet:
 
-1. Klik på ikonet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
+1. Klik på ikonet **Billedfremviser** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
 2. Fanen Billedfremviser åbnes og viser det valgte billede i fuld skærm
 3. Avancerede visnings- og analyseværktøjer bliver tilgængelige i venstre sidepanel
 
@@ -30,9 +30,9 @@ Når et billede er indlæst i visningsområdet:
 Den største del af skærmen viser dit billede:
 
 * **Fuld opløsning**: Billeder vises i oprindelig opløsning
-* **Zoombar**: Brug kontrolelementer eller musehjul til at zoome
+* **Zoombar**: Brug kontrolelementer eller mushjulet til at zoome
 * **Panorerbar**: Klik og træk for at flytte rundt, når der er zoomet
-* **Billedformat bevares**: Billeder skaleres proportionalt
+* **Billedformat bevaret**: Billeder skaleres proportionalt
 
 ***
 
@@ -44,11 +44,11 @@ Den største del af skærmen viser dit billede:
 
 Naviger gennem dit billedsæt ved hjælp af tastaturgenveje eller knapper:
 
-* **Næste billede**: Klik på knappen → eller tryk på tasten **→** (højre pil)
-* **Forrige billede**: Klik på knappen ← eller tryk på tasten **←** (venstre pil)
+* **Næste billede**: Klik på →-knappen eller tryk på **→** (højrepil)-tasten
+* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstrepil)-tasten
 * **Gå til et bestemt billede**: Gå tilbage til filbrowseren og klik på den ønskede miniature
 
-#### Zoomkontroller
+#### Zoomknapper
 
 Juster forstørrelsen for at se billeddetaljer:
 
@@ -146,9 +146,9 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Navigation
 
-* **→** (højre pil): Næste billede
-* **←** (venstre pil): Forrige billede
-* **Home**: Første billede i listen
+* **→** (højrepil): Næste billede
+* **←** (venstrepil): Forrige billede
+* **Home**: Første billede på listen
 * **End**: Sidste billede på listen
 
 ### Zoom
@@ -166,7 +166,7 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Andet
 
-* **Ctrl+S**: Gem aktuelt billede
+* **Ctrl+S**: Gem det aktuelle billede
 * **F**: Fuldskærmstilstand (hvis tilgængelig)
 
 ***
@@ -175,13 +175,13 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 Kontroller, at indekserne er beregnet korrekt:
 
-1. Åbn NDVI eller et andet indeksbillede.
+1. Åbn NDVI eller et andet indeksbillede
 2. Kontroller vegetationsområderne:
-   * **NDVI**: Skal vise 0,4-0,9 for sunde planter.
+   * **NDVI**: Skal vise 0,4-0,9 for sunde planter
    * **NDRE**: Højere værdier for kraftig vækst
    * **GNDVI**: Ligner NDVI, men er klorofylfølsom
 3. Kontroller ikke-vegetation:
-   * **Jord**: Nær 0 eller let negativ
+   * **Jord**: Tæt på 0 eller let negativ
    * **Vand**: Negative værdier (-0,5 til 0)
 
 ***
@@ -198,7 +198,7 @@ Kontroller, at indekserne er beregnet korrekt:
 
 **Løsninger:**
 
-1. Prøv at åbne i en ekstern viewer for at kontrollere filens integritet
+1. Prøv at åbne i ekstern viewer for at kontrollere filens integritet
 2. Kontroller, at filformatet svarer til den forventede type
 3. Luk andre programmer for at frigøre hukommelse
 4. Prøv med et mindre/andet billede
@@ -213,7 +213,7 @@ Kontroller, at indekserne er beregnet korrekt:
 
 **Løsninger:**
 
-1. Kontroller pixelværdierne – hvis de alle er meget lave eller meget høje, skal du justere visningsområdet.
+1. Kontroller pixelværdierne – hvis alle er meget lave eller meget høje, skal du justere visningsområdet.
 2. Prøv at åbne i QGIS eller lignende med automatisk justering af området.
 3. Kontroller fejlfindingsloggen fra behandlingen for fejl.
 
@@ -224,7 +224,7 @@ Kontroller, at indekserne er beregnet korrekt:
 * Visning af forkert billede (original vs. behandlet)
 * Kalibreringen blev ikke anvendt korrekt
 * Lyssensordata blev ikke inkluderet i input
-* Procenttilstand skiftede forkert
+* Procenttilstand skiftet forkert
 
 **Løsninger:**
 
@@ -239,7 +239,7 @@ Kontroller, at indekserne er beregnet korrekt:
 Nu hvor du kan se billeder i fuld skærm:
 
 * [**Billedlag**](image-layers.md) – Lær om multibåndvisualisering
-* [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
+* [**Indeks/LUT Sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Få indsigt i tilgængelige indekser
 
 For arbejdsgangen for behandling, se:

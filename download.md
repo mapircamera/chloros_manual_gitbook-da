@@ -45,11 +45,11 @@ Download den nyeste version af Chloros til Windows for at komme i gang med multi
 2. Dobbeltklik på installationsprogrammet for at starte installationen.
 3. Følg vejledningen i installationsguiden.
 4. Vælg installationsmappe (standard: `C:\Program Files\Chloros\`).
-5. Afslut installationen, og start Chloros.
-6. Log ind med din MAPIR Cloud Chloros+ konto (eller fortsæt med gratis versionen)
+5. Afslut installationen og start Chloros.
+6. Log ind med din MAPIR Cloud Chloros+-konto (eller fortsæt med gratisversionen)
 
 {% hint style=&quot;success&quot; %}
-Installationsprogrammet tilføjer automatisk `chloros-cli` til din system PATH for kommandolinjeadgang.
+Installationsprogrammet tilføjer automatisk `chloros-cli` til dit systems PATH for kommandolinjeadgang.
 {% endhint %}
 
 ***
@@ -103,7 +103,7 @@ Få adgang til avancerede funktioner med et Chloros+ abonnement:
 
 * Sørg for, at du har administratorrettigheder.
 * Deaktiver midlertidigt antivirussoftware.
-* Kontroller, at du opfylder minimumskravene til systemet.
+* Kontroller, at du opfylder minimumssystemkravene.
 
 **Applikationen starter ikke:**
 

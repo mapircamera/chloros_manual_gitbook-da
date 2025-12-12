@@ -10,7 +10,7 @@ Når du er logget ind, vises dine kontooplysninger:
 
 ## CLI Login
 
-Log ind med dine Chloros+-loginoplysninger for at aktivere CLI-behandling.
+Log ind med dine Chloros+ loginoplysninger for at aktivere CLI-behandling.
 
 **Syntaks:**
 

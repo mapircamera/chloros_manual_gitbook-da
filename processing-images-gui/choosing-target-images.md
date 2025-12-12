@@ -32,7 +32,7 @@ Når du markerer kolonnen Mål for bestemte billeder:
 
 ### Trin 1: Identificer dine målbilleder
 
-Gennemse dine importerede billeder i filbrowseren, og identificer, hvilke billeder der indeholder kalibreringsmål.
+Gennemse dine importerede billeder i filbrowseren og identificer, hvilke billeder der indeholder kalibreringsmål.
 
 **Almindelige scenarier:**
 
@@ -136,7 +136,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 * **Forøg**, hvis der opstår falske detektioner på små artefakter
 * **Formindsk**, hvis mål ikke detekteres
 
-**Minimumsklyngedannelse af mål:**
+**Minimumsklustering af mål:**
 
 * **Standard**: 60
 * **Forøg**, hvis målene opdeles i flere registreringer
@@ -150,15 +150,15 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 **Mulige årsager:**
 
-* Målbilleder er ikke markeret i filbrowseren
+* Målbillederne er ikke markeret i filbrowseren
 * Målet er for lille i rammen (&lt; 30 % af billedet)
 * Dårlig belysning (skygger, blænding)
 * Indstillingerne for måldetektion er for strenge
 
 **Løsninger:**
 
-1. Kontroller, at kolonnen Mål er markeret for de korrekte billeder
-2. Kontroller kvaliteten af målbilledet i forhåndsvisningen
+1. Kontroller, at kolonnen Mål er markeret for korrekte billeder
+2. Gennemgå målbilledkvaliteten i forhåndsvisningen
 3. Genoptag målene, hvis kvaliteten er dårlig
 4. Juster indstillingerne for måldetektion, hvis det er nødvendigt
 
@@ -167,7 +167,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 **Mulige årsager:**
 
 * Hvide bygninger, køretøjer eller jorddække forveksles med mål
-* Lysende pletter i vegetationen
+* Lyse pletter i vegetationen
 * Detektionsfølsomheden er for lav
 
 **Løsninger:**

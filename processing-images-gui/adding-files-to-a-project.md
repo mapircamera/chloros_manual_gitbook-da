@@ -16,13 +16,13 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 
 ## Tilføjelse af billeder til dit projekt
 
-Der er to primære måder at tilføje billeder til dit projekt på:
+Der er to primære måder at tilføje billeder til dit projekt:
 
 ### Metode 1: Tilføj filer
 
 Brug denne indstilling til at importere individuelle billedfiler eller et lille udvalg af filer.
 
-1. Klik på knappen **&quot;Tilføj filer&quot;** øverst i panelet Filbrowser.
+1. Klik på knappen **&quot;Tilføj filer&quot;** øverst i filbrowserpanelet.
 2. Naviger til den mappe, der indeholder dine billeder.
 3. Vælg en eller flere billedfiler (hold **Ctrl** nede for at vælge flere filer).
 4. Klik på **&quot;Åbn&quot;** for at importere de valgte filer.
@@ -95,8 +95,8 @@ Sådan fjerner du uønskede billeder fra dit projekt:
 
 Klik på en billedminiature i filbrowseren for at vise det i det primære forhåndsvisningsområde:
 
-1. Billedet vises i det centrale forhåndsvisningspanel
-2. Brug zoomkontrolknapperne til at se billeddetaljer
+1. Billedet vises i det midterste forhåndsvisningspanel
+2. Brug zoomkontrollerne til at se billeddetaljer
 3. Naviger mellem billederne ved hjælp af piletasterne
 
 ### Hurtig navigation
@@ -154,7 +154,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 * Inkluder altid 1-2 kalibreringsmålbilleder pr. session.
 * Tag billeder af målene før og efter optagelsessessionen.
 * Placer målene under de samme lysforhold som optagelsesområdet.
-* Marker målbilleder ved hjælp af afkrydsningsfeltet Mål for at fremskynde behandlingen.
+* Marker målbillederne ved hjælp af afkrydsningsfeltet Mål for at fremskynde behandlingen.
 
 ***
 

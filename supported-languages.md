@@ -45,14 +45,14 @@ Chloros understøtter følgende sprog:
 | 37 | 🇪🇪 Estisk | Eesti | `et` |
 | 38 | 🇸🇮 Slovensk | Slovenščina | `sl` |
 
-## Sådan ændres sproget
+## Sådan ændrer du sprog
 
 ### I Chloros Desktop/Browser
 
 1. Åbn applikationsindstillingerne.
 2. Gå til menuen for sprogvalg.
 3. Vælg dit foretrukne sprog fra listen.
-4. Interfacet opdateres øjeblikkeligt.
+4. Grænsefladen opdateres øjeblikkeligt.
 
 ### I Chloros CLI
 

@@ -1,6 +1,6 @@
 # GUI: Navigation
 
-Når du starter Chloros og Chloros (browser) for første gang, starter backend-delen. Når den er klar, vises ikonet for hovedmenuen øverst til venstre. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Når du starter Chloros og Chloros (Browser) for første gang, starter dets backend. Når det er klar, vises ikonet for hovedmenuen øverst til venstre. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -16,9 +16,9 @@ Når den er aktiveret, starter startknappen billedbehandlingsprocessen.
 
 ### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Statusbjælke <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
-I den gratis Chloros-tilstand, som behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
+I den gratis Chloros-tilstand, der behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
 
-I den betalte Chloros+-licenstilstand, som behandler alle filer samtidigt, viser statusbjælken fire faser: Registrering, analyse, kalibrering, eksport. Hvis du holder musemarkøren over Chloros+ fremdriftsbjælken, vises det udvidede panel med 4 fremdriftsbjælker, så du kan følge med. Hvis du klikker på den øverste fremdriftsbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigøres det.
+I den betalte Chloros+-licenstilstand, der behandler alle filer samtidigt, viser statusbjælken fire faser: Registrering, analyse, kalibrering, eksport. Hvis du holder musemarkøren over Chloros+ fremdriftsbjælken, vises det udvidede panel med 4 fremdriftsbjælker, så du kan følge med. Hvis du klikker på den øverste fremdriftsbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigøres det.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
