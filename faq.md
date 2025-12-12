@@ -1,5 +1,5 @@
 ---
-description: Ofte stillede spørgsmål
+description: Frequently Asked Questions
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
@@ -9,25 +9,25 @@ metaLinks:
 
 <details>
 
-<summary>Kan jeg behandle billeder fra kameraer, der ikke er MAPIR-mærket med Chloros?</summary>
+<summary>Kan jeg behandle billeder fra kameraer, der ikke er af mærket MAPIR, med Chloros?</summary>
 
-Nej, Chloros understøtter kun behandling af MAPIR-kamerabilleder. Se venligst listen over [understøttede kameramodeller](supported-cameras.md) for at få flere oplysninger. Vi tilbyder behandling af andre kameraer på MAPIR Cloud, se den fulde liste [her](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
-
-</details>
-
-<details>
-
-<summary>Kan jeg kalibrere mine billeder til reflektans uden et kalibreringsmål?</summary>
-
-Nej. Uden et billede af kalibreringsmålet, der er optaget, når de ikke-målbilleder er optaget, vil du ikke være i stand til at relatere billedets pixelværdier til en kendt reflektansprocent. Hvis du heller ikke inkluderer loggen fra en MAPIR-lyssensor, vil det omgivende lysspektrum ikke blive målt, og reflektansresultaterne vil ikke være nøjagtige.
+Nej, Chloros understøtter kun behandling af billeder fra MAPIR-kameraer. Se listen over [understøttede kameramodeller](supported-cameras.md) for mere information. Vi tilbyder behandling af andre kameraer på MAPIR Cloud, se den fulde liste [her](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
 <details>
 
-<summary>Kan jeg redigere mine billeder før behandling i Chloros?</summary>
+<summary>Kan jeg kalibrere mine billeder for refleksion uden et kalibreringsmål?</summary>
 
-Nej. Chloros antager, at inputdata ikke er blevet ændret. Ændre ikke filnavnene.
+Nej. Uden et billede af kalibreringsmålet, der er taget omkring det tidspunkt, hvor de ikke-målbilleder er taget, vil du ikke være i stand til at relatere billedets pixelværdier til en kendt reflektansprocent. Hvis du heller ikke inkluderer loggen fra en MAPIR lyssensor, vil det omgivende lysspektrum ikke blive målt, og reflektansresultaterne vil ikke være nøjagtige.
+
+</details>
+
+<details>
+
+<summary>Kan jeg redigere mine billeder inden behandling i Chloros?</summary>
+
+Nej. Chloros antager, at inputdataene ikke er blevet ændret. Du må ikke ændre filnavnene.
 
 </details>
 
@@ -35,31 +35,31 @@ Nej. Chloros antager, at inputdata ikke er blevet ændret. Ændre ikke filnavnen
 
 <summary>Kan jeg indstille mine MAPIR Survey3-kameraer til automatisk eksponering og behandle billederne i Chloros?</summary>
 
-Nej. Survey3 billeddatasæt skal have en fast/låst eksponering, så ingen automatisk lukkertid eller auto ISO. Alle billeder af samme kameramodel skal have identisk lukkertid og ISO (eksponering).
+Nej. Survey3-billeddatasæt skal have en fast/låst eksponering, så der må ikke være automatisk lukkertid eller automatisk ISO. Alle billeder fra samme kameramodel skal have identisk lukkertid og ISO (eksponering).
 
 </details>
 
 <details>
 
-<summary>Kan Chloros behandle eller analysere ortomosaiske billeder?</summary>
+<summary>Kan Chloros behandle eller analysere ortomosaikbilleder?</summary>
 
-Nej. Kun individuelle MAPIR-kamerabilleder understøttes, ikke sammensatte billeder som et ortomosaisk kort.
-
-</details>
-
-<details>
-
-<summary>Hvordan kan jeg fremskynde måldetektionstrinnet for Chloros?</summary>
-
-Forudvælgelse af målbillederne i den højre kolonne i filbrowsertabellen vil fortælle Chloros kun at søge i disse billeder for kalibreringsmål, hvilket i høj grad fremskynder behandlingen.
+Nej. Kun individuelle MAPIR-kamerabilleder understøttes, ikke sammensatte billeder som et ortomosaik-kort.
 
 </details>
 
 <details>
 
-<summary>Hvis jeg vil uploade mine billeder til <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> skal jeg behandle i Chloros før upload?</summary>
+<summary>Hvordan kan jeg fremskynde måldetekteringstrinnet i Chloros?</summary>
 
-Hvis du planlægger at uploade til vores online-behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud vil udføre den samme behandling og mere.
+I filbrowser-tabellen kan du forudvælge målbillederne i højre kolonne, så Chloros kun søger efter kalibreringsmål i disse billeder, hvilket fremskynder behandlingen betydeligt.
+
+</details>
+
+<details>
+
+<summary>Hvis jeg vil uploade mine billeder til <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> skal jeg så behandle dem i Chloros inden upload?</summary>
+
+Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører alle de samme behandlinger og mere.
 
 </details>
 
@@ -67,6 +67,6 @@ Hvis du planlægger at uploade til vores online-behandlingsplatform [MAPIR Cloud
 
 <summary>Vil MAPIR nogensinde understøtte X-funktionen? Jeg ville virkelig ønske, at MAPIR tilbød X.</summary>
 
-Vi er altid interesserede i at modtage feedback på vores produkter. Hvis du finder et problem med vores produkter eller har et forslag til, hvordan vi kan forbedre vores produkter, bedes du [KONTAKT OS](https://www.mapir.camera/community/contact) dele dine tanker. Det meste af vores R\&D er styret af at lytte til vores kunders største behov.
+Vi er altid interesserede i at modtage feedback om vores produkter. Hvis du finder et problem med vores produkter eller har et forslag til, hvordan vi kan forbedre vores produkter, bedes du [KONTAKTE OS](https://www.mapir.camera/community/contact) for at dele dine tanker. Det meste af vores forskning og udvikling er baseret på at lytte til vores kunders største behov.
 
 </details>

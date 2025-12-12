@@ -6,14 +6,14 @@
 * [CLI: Kommandolinje](CLI.md)
 * [API: Python SDK](api-python-sdk.md)
 * [Understøttede kameraer](supported-cameras.md)
-* [Output billedformater](output-image-formats.md)
-* [Chloros+ login](chloros+-login.md)
+* [Output-billedformater](output-image-formats.md)
+* [Chloros+ Login](chloros+-login.md)
 * [Kalibreringsmål](calibration-targets.md)
 * [Understøttede sprog](supported-languages.md)
 * [Download](download.md)
 * [FAQ](faq.md)
 
-## Behandler billeder (GUI)
+## Behandling af billeder (GUI)
 
 * [Justering af projektindstillinger](processing-images-gui/adjusting-project-settings.md)
 * [Tilføjelse af filer til et projekt](processing-images-gui/adding-files-to-a-project.md)
@@ -31,4 +31,4 @@
 
 * [Åbning af et billede i fuld skærm](image-viewer-gui/opening-an-image-full-screen.md)
 * [Billedlag](image-viewer-gui/image-layers.md)
-* [Indeks/LUT Sandkasse](image-viewer-gui/index-lut-sandbox.md)
+* [Indeks/LUT-sandkasse](image-viewer-gui/index-lut-sandbox.md)

@@ -1,86 +1,86 @@
-# Index/LUT Sandbox
+# Indeks/LUT Sandkasse
 
-The Index/LUT Sandbox is an interactive workspace within the Chloros Image Viewer that allows you to experiment with multispectral index calculations and color visualizations in real-time. This powerful tool helps you test different indices, refine value ranges, and create publication-ready visualizations without reprocessing your entire dataset.
+Indeks/LUT Sandkasse er et interaktivt arbejdsområde i Chloros Image Viewer, der giver dig mulighed for at eksperimentere med multispektrale indeksberegninger og farvevisualiseringer i realtid. Dette kraftfulde værktøj hjælper dig med at teste forskellige indekser, finjustere værdiintervaller og oprette publikationsklare visualiseringer uden at skulle genbehandle hele dit datasæt.
 
-## What is the Index/LUT Sandbox?
+## Hvad er Index/LUT Sandbox?
 
-### Purpose
+### Formål
 
-The Sandbox provides:
+Sandbox tilbyder:
 
-* **Real-time index calculation** - Apply any vegetation index instantly
-* **Interactive LUT adjustment** - Fine-tune color gradients and ranges
-* **Workflow optimization** - Determine best settings before batch processing
+* **Indeksberegning i realtid** – Anvend ethvert vegetationsindeks med det samme
+* **Interaktiv LUT-justering** – Finjuster farvegradienter og -intervaller
+* **Workflowoptimering** – Bestem de bedste indstillinger inden batchbehandling
 
-### Sandbox vs. Project Processing
+### Sandkasse vs. projektbehandling
 
-**Index/LUT Sandbox (Interactive):**
+**Index/LUT Sandkasse (interaktiv):**
 
-* Single image at a time
-* Instant feedback
-* Experimental and iterative
-* No permanent changes to files
-* Perfect for exploring and testing
+* Et enkelt billede ad gangen
+* Øjeblikkelig feedback
+* Eksperimenterende og iterativ
+* Ingen permanente ændringer af filer
+* Perfekt til udforskning og test
 
-**Project Processing (Batch):**
+**Projektbehandling (batch):**
 
-* Entire dataset at once
-* Pre-configured settings
-* Permanent output files
-* Time-intensive
-* Best when settings are finalized
+* Hele datasættet på én gang
+* Forudkonfigurerede indstillinger
+* Permanente outputfiler
+* Tidskrævende
+* Bedst, når indstillingerne er færdiggjort
 
-{% hint style="success" %}
-**Best Workflow**: Use the Sandbox to experiment and find optimal index and LUT settings, then apply those settings during Project Processing for your entire dataset.
+{% hint style=&quot;success&quot; %}
+**Bedste arbejdsgang**: Brug Sandbox til at eksperimentere og finde optimale indeks- og LUT-indstillinger, og anvend derefter disse indstillinger under projektbehandling for hele dit datasæt.
 {% endhint %}
 
 ***
 
-## Working with the Index/LUT Sandbox
+## Arbejde med indeks/LUT Sandbox
 
-### Understanding Pre-Calculated Indices
+### Forståelse af forudberegnede indekser
 
-In Chloros, indices can be applied during project processing. To determine which index and LUT settings you want to apply to exports it is easiest to use the image viewer sandbox.
+I Chloros kan indekser anvendes under projektbehandling. For at bestemme, hvilke indeks- og LUT-indstillinger du vil anvende på eksport, er det nemmest at bruge billedvisningssandkassen.
 
-The sandbox allows you to:
+Sandkassen giver dig mulighed for at:
 
-* **Apply new index and color gradients (LUTs)** to visualize the data
-* **Adjust visualization settings** interactively
-* **View** already-calculated index images
-* **Inspect** pixel values at all zoom levels
+* **Anvende nye indekser og farvegradienter (LUT&#x27;er)** til at visualisere dataene
+* **Justere visualiseringsindstillinger** interaktivt
+* **Se** allerede beregnede indeksbilleder
+* **Inspicere** pixelværdier på alle zoomniveauer
 
-### Opening the Sandbox
+### Åbning af sandkassen
 
-The Index/LUT Sandbox is accessed in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar tab:
+Indeks/LUT-sandkassen åbnes i **Billedviseren** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælkefanen:
 
-1. Click an image in the file browser image grid, it opens in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab
-2. Click **the Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab to open the left pop-out sidebar if it's not already open
+1. Klik på et billede i filbrowseren, så åbnes det i **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> fanen
+2. Klik på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> for at åbne den venstre pop-out sidebjælke, hvis den ikke allerede er åben
 
-### Selecting an Image to Apply an Index/LUT to
+### Valg af et billede, som der skal anvendes et indeks/LUT på
 
-To work with an index in the Image Viewer <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandbox:
+For at arbejde med et indeks i billedviseren <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandkasse:
 
-1. **Open an image** from the main image grid by clicking on it
-2. The **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab will then open
-3. Click the **Layer dropdown** (top-right of viewer)
-4. Select the layer from the dropdown:
+1. **Åbn et billede** fra hovedbilledgitteret ved at klikke på det
+2. Fanen **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> åbnes derefter
+3. Klik på **Layer dropdown** (øverst til højre i viseren)
+4. Vælg laget fra dropdown-menuen:
    * RAW (Reflectance)
 
-### Applying an Index to an Image
+### Anvendelse af et indeks på et billede
 
-Once the image is fullscreen and the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar is open:
+Når billedet er i fuld skærm, og sidebjælken **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> er åben:
 
-1. Check the Index box at the top of the sidebar
-2. Choose your camera's filter from the left dropdown
-3. Choose the desired index formula from the right dropdown
-4. Drag the filter channel color circles to the locations in the index formula below
-5. Once the formula is valid the image will update and show the index values
-6. Move your mouse cursor around to see the values at the cursor's location
-7. Zoom in to see individual pixels and their associated values
+1. Marker afkrydsningsfeltet Indeks øverst i sidepanelet
+2. Vælg dit kameras filter fra dropdown-menuen til venstre
+3. Vælg den ønskede indeksformel fra dropdown-menuen til højre
+4. Træk filterkanalens farvecirkler til placeringerne i indeksformlen nedenfor
+5. Når formlen er gyldig, opdateres billedet og viser indeksværdierne
+6. Flyt musemarkøren rundt for at se værdierne på markørens placering
+7. Zoom ind for at se de enkelte pixels og deres tilknyttede værdier.
 
-Each index has a specific value range and meaning:
+Hvert indeks har et specifikt værdiområde og en specifik betydning:
 
-#### NDVI Example
+#### NDVI Eksempel
 
 ```
 Formula: (NIR - Red) / (NIR + Red)
@@ -96,293 +96,293 @@ Bare soil: 0.0 to 0.2
 Water: -0.1 to 0.1
 ```
 
-For complete index formula documentation, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
+For en komplet dokumentation af indeksformler, se [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md).
 
 ***
 
-## Working with LUTs (Look-Up Tables)
+## Arbejde med LUT&#x27;er (opslagstabeller)
 
-### What is a LUT?
+### Hvad er en LUT?
 
-A **Look-Up Table (LUT)** maps numerical index values to colors for visualization:
+En **opslagstabel (LUT)** kortlægger numeriske indeksværdier til farver til visualisering:
 
-* **Input**: Index pixel value (e.g., NDVI 0.65)
-* **Output**: RGB color (e.g., bright green)
-* **Purpose**: Make patterns easier to see and interpret
+* **Indgang**: Indekspixelværdi (f.eks. NDVI 0,65)
+* **Output**: RGB farve (f.eks. lysegrøn)
+* **Formål**: Gør mønstre lettere at se og fortolke
 
-**Grayscale vs. Color LUT:**
+**Gråtoner vs. farve-LUT:**
 
-* Grayscale: Scientific and neutral, shows raw data
-* Color LUT: Intuitive and impactful, highlights patterns and differences
+* Gråtoner: Videnskabelig og neutral, viser rådata
+* Farve-LUT: Intuitiv og effektfuld, fremhæver mønstre og forskelle
 
-{% hint style="success" %}
-**Visualization Power**: Applying a color LUT to a grayscale index image makes it dramatically easier to identify patterns, anomalies, and areas of interest at a glance.
+{% hint style=&quot;success&quot; %}
+**Visualiseringskraft**: Anvendelse af en farve-LUT på et gråtonet indeksbillede gør det betydeligt nemmere at identificere mønstre, afvigelser og områder af interesse med et enkelt blik.
 {% endhint %}
 
-### Applying a LUT to an Index Image
+### Anvendelse af en LUT på et indeksbillede
 
-Once you have an index image showing
+Når du har et indeksbillede, der viser
 
-1. Click the <img src="../.gitbook/assets/image.png" alt="" data-size="line"> "+Add LUT" button
-2. Select the color gradient
-3. Adjust the clipping min/max end points
-4. Adjust the Clipping Mode
-5. Check the Index box in the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> tab sidebar to apply the LUT
+1. Klik på <img src="../.gitbook/assets/image.png" alt="" data-size="line"> knappen &quot;+Tilføj LUT&quot;
+2. Vælg farvegradienten
+3. Juster minimums-/maksimumsendepunkterne for beskæring
+4. Juster beskæringsfunktionen
+5. Marker afkrydsningsfeltet Indeks i **Billedviseren** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> -fanen i sidepanelet for at anvende LUT&#x27;en.
 
-### Choosing a Color Gradient
+### Valg af farvegradient
 
-**Selecting a gradient:**
+**Valg af gradient:**
 
-1. In the LUT panel, locate the **colored gradient bar**
-2. Hover your mouse over it to view available gradient presets
-3. Select desired gradient
-4. The image **updates immediately** with new colors when the Index box is checked
+1. Find den **farvede gradientbjælke** i LUT-panelet.
+2. Hold musen over den for at se de tilgængelige gradientforudindstillinger.
+3. Vælg den ønskede gradient.
+4. Billedet **opdateres straks** med nye farver, når afkrydsningsfeltet Indeks er markeret.
 
-{% hint style="success" %}
-**Best Practice**: For vegetation indices like NDVI, the Red-Yellow-Green gradient is most intuitive because it aligns with natural color associations (green=healthy, yellow=moderate, red=stressed).
+{% hint style=&quot;success&quot; %}
+**Bedste praksis**: For vegetationsindekser som NDVI er Red-Yellow-Green-gradienten mest intuitiv, da den stemmer overens med naturlige farveassociationer (grøn = sund, gul = moderat, rød = stresset).
 {% endhint %}
 
-### Adjusting Color Classes
+### Justering af farveklasser
 
-The **Classes control** determines how many discrete color steps appear in your gradient:
+**Klassekontrollen** bestemmer, hvor mange diskrete farvetrin der vises i din gradient:
 
-**Class count options:**
+**Valgmuligheder for antal klasser:**
 
-* **2-5 classes**: Very broad categories, distinct zones
-* **6-10 classes**: Balanced, good for classification
-* **11-20 classes**: Smooth gradients, continuous appearance
-* **20+ classes**: Near-continuous, maximum smoothness
+* **2-5 klasser**: Meget brede kategorier, tydelige zoner
+* **6-10 klasser**: Afbalanceret, godt til klassificering
+* **11-20 klasser**: Glatte gradienter, kontinuerligt udseende
+* **20+ klasser**: Næsten kontinuerlig, maksimal glathed
 
-**How to adjust:**
+**Sådan justeres:**
 
-1. In the LUT panel, locate the **color swatch squares below the gradient bar**
-2. Adjust the number of classes by adding with the + button
-3. Remove the number of classes by double clicking on a color swatch
-4. The gradient updates **in real-time** on the image
+1. I LUT-panelet skal du finde **farveprøvefelterne under gradientbjælken**
+2. Juster antallet af klasser ved at tilføje med +-knappen
+3. Fjern antallet af klasser ved at dobbeltklikke på en farveprøve
+4. Gradienten opdateres **i realtid** på billedet
 
-**Effect on visualization:**
+**Effekt på visualisering:**
 
-* **Fewer classes** (3-5): Creates distinct zones, simplified classification, easier to distinguish categories
-* **Medium classes** (6-10): Balanced approach, good for most applications
-* **More classes** (15-20): Smooth transitions, detailed variation, photographic appearance
+* **Færre klasser** (3-5): Skaber tydelige zoner, forenklet klassificering, lettere at skelne mellem kategorier
+* **Mellemstore klasser** (6-10): Afbalanceret tilgang, god til de fleste anvendelser
+* **Flere klasser** (15-20): Glidende overgange, detaljerede variationer, fotografisk udseende
 
-**When to use:**
+**Hvornår skal det bruges:**
 
-* **Few classes (3-5)**: Presentation slides, classification maps, simple reports
-* **Medium classes (6-10)**: General analysis, balanced detail, standard reports
-* **Many classes (15-20)**: Scientific analysis, detailed inspection, publication-quality outputs
+* **Få klasser (3-5)**: Præsentationsslides, klassifikationskort, enkle rapporter
+* **Mellemstore klasser (6-10)**: Generel analyse, afbalancerede detaljer, standardrapporter
+* **Mange klasser (15-20)**: Videnskabelig analyse, detaljeret inspektion, output i publikationskvalitet
 
-### Fine-Tuning Value Ranges
+### Finjustering af værdiintervaller
 
-The **value range controls** determine which index values map to which colors in your gradient:
+**Værdiintervalkontrollerne** bestemmer, hvilke indeksværdier der skal knyttes til hvilke farver i din gradient:
 
-**Range controls in LUT panel:**
+**Intervalkontroller i LUT-panelet:**
 
-* **Minimum value**: Lower bound of the color scale
-* **Maximum value**: Upper bound of the color scale
-* **Intermediate values**: Automatically distributed between min and max (based on class count)
+* **Minimumsværdi**: Nedre grænse for farveskalaen
+* **Maksimumsværdi**: Øvre grænse for farveskalaen
+* **Mellemværdier**: Fordeles automatisk mellem min. og maks. (baseret på antal klasser)
 
-#### Adjusting Min/Max Values
+#### Justering af min./maks. værdier
 
-**To adjust value ranges:**
+**Sådan justeres værdiintervaller:**
 
-1. In the LUT panel, locate the **Min Value** and **Max Value** input fields
-2. Click the **Min Value** field
-3. Type the desired minimum value (e.g., `0.2`)
-4. Press **Enter** or click outside the field
-5. Repeat for **Max Value** field (e.g., `0.9`)
-6. The visualization **updates immediately**
+1. Find indtastningsfelterne **Min. værdi** og **Maks. værdi** i LUT-panelet.
+2. Klik på feltet **Min. værdi**.
+3. Indtast den ønskede minimumsværdi (f.eks. `0.2`).
+4. Tryk på **Enter** eller klik uden for feltet.
+5. Gentag for feltet **Maks. værdi** (f.eks. `0.9`).
+6. Visualiseringen **opdateres straks**.
 
-{% hint style="info" %}
-**Auto-Scaling**: When you first apply a LUT, Chloros automatically sets the min/max to the actual data range in the image. You can then narrow this range to focus on specific value ranges of interest.
+{% hint style=&quot;info&quot; %}
+**Automatisk skalering**: Når du først anvender en LUT, indstiller Chloros automatisk min/maks til det faktiske datainterval i billedet. Du kan derefter indsnævre dette interval for at fokusere på specifikke værdiintervaller af interesse.
 {% endhint %}
 
-**Example NDVI range adjustments:**
+**Eksempel på NDVI-intervaljusteringer:**
 
-* **Full range**: `-1.0` to `1.0` (show all possible values)
-* **Vegetation-focused**: `0.2` to `0.9` (exclude bare soil and water)
-* **Healthy vegetation only**: `0.5` to `0.9` (highlight only vigorous plants)
-* **Stress detection**: `0.2` to `0.5` (emphasize problem areas)
-* **Custom range**: Adjust based on your observed pixel values
+* **Fuldt interval**: `-1.0` til `1.0` (vis alle mulige værdier)
+* **Fokuseret på vegetation**: `0.2` til `0.9` (ekskluder bar jord og vand)
+* **Kun sund vegetation**: `0.5` til `0.9` (fremhæv kun frodige planter)
+* **Stressdetektering**: `0.2` til `0.5` (fremhæv problemområder)
+* **Brugerdefineret interval**: Juster ud fra dine observerede pixelværdier
 
-**Why adjust ranges?**
+**Hvorfor justere intervaller?**
 
-* **Increase contrast** in your area of interest
-* **Exclude irrelevant values** (e.g., water bodies, bare soil)
-* **Standardize visualization** across multiple images or dates
-* **Emphasize subtle differences** within a narrow value range
+* **Forøg kontrasten** i dit interesseområde
+* **Udeluk irrelevante værdier** (f.eks. vandområder, bar jord)
+* **Standardiser visualiseringen** på tværs af flere billeder eller datoer
+* **Fremhæv subtile forskelle** inden for et snævert værdiområde
 
-### Clipping Out-of-Range Values
+### Klipning af værdier uden for området
 
-When pixel values fall outside your defined min/max range, you can control how they're displayed using **clipping modes**.
+Når pixelværdier falder uden for dit definerede min./maks.-område, kan du kontrollere, hvordan de vises, ved hjælp af **klipningstilstande**.
 
-#### **Available clipping mode options:**
+#### **Tilgængelige beskæringsindstillinger:**
 
-#### 1. Minimum and Maximum
+#### 1. Minimum og maksimum
 
-* Pixels **below minimum** → display using the **first color** in gradient (e.g., red)
-* Pixels **above maximum** → display using the **last color** in gradient (e.g., green)
-* **Use case**: Emphasize extremes, show full data range with saturated colors at limits
-* **Example**: NDVI values below 0.2 all appear red, values above 0.9 all appear green
+* Pixels **under minimum** → vises ved hjælp af den **første farve** i gradienten (f.eks. rød)
+* Pixels **over maksimum** → vises ved hjælp af den **sidste farve** i gradienten (f.eks. grøn)
+* **Anvendelsestilfælde**: Fremhæv ekstreme værdier, vis hele dataintervallet med mættede farver ved grænserne
+* **Eksempel**: NDVI-værdier under 0,2 vises alle røde, værdier over 0,9 vises alle grønne
 
-#### 2. Transparent Background
+#### 2. Gennemsigtig baggrund
 
-* Pixels **outside the range** become **fully transparent**
-* Only pixels **within range** show color gradient
-* **Use case**: GIS overlay, isolating specific value ranges, highlighting only areas of interest
-* **Example**: Show only NDVI 0.4-0.7 in color, everything else transparent
+* Pixels **uden for området** bliver **fuldstændig transparente**
+* Kun pixels **inden for området** viser farvegradient
+* **Anvendelsestilfælde**: GIS-overlay, isolering af specifikke værdiområder, fremhævning af kun områder af interesse
+* **Eksempel**: Vis kun NDVI 0,4-0,7 i farve, alt andet transparent
 
-{% hint style="warning" %}
-**Transparency Limitation**: Transparent pixels will appear as the background color in the viewer. When exported during processing, transparency is preserved in PNG format but not in JPG.
+{% hint style=&quot;warning&quot; %}
+**Begrænsning af gennemsigtighed**: Gennemsigtige pixels vises som baggrundsfarven i visningsprogrammet. Når de eksporteres under behandlingen, bevares gennemsigtigheden i PNG-format, men ikke i JPG.
 {% endhint %}
 
-#### 3. Index Background
+#### 3. Indeksbaggrund
 
-* Pixels **outside range** display in **grayscale** (showing raw index values)
-* Pixels **within range** show **color gradient**
-* **Use case**: Subtle highlighting, maintain context while emphasizing areas of interest
-* **Example**: Color-highlight stressed vegetation (NDVI 0.3-0.5) while showing healthy areas in gray
+* Pixels **uden for området** vises i **gråtoner** (viser rå indeksværdier)
+* Pixels **inden for området** viser **farvegradient**
+* **Anvendelsestilfælde**: Subtil fremhævning, bevar konteksten, mens områder af interesse fremhæves
+* **Eksempel**: Fremhæv stresset vegetation med farve (NDVI 0,3-0,5), mens sunde områder vises i gråt
 
-#### 4. Original Background
+#### 4. Original baggrund
 
-* Pixels **outside range** display the **original multispectral image**
-* Pixels **within range** show **color gradient**
-* **Use case**: Most intuitive - combines natural image context with analytical color overlay
-* **Example**: See the actual field/crop appearance with color-coded stress areas overlaid
+* Pixels **uden for området** viser det **originale multispektrale billede**
+* Pixels **inden for området** viser **farvegradient**
+* **Anvendelsestilfælde**: Mest intuitivt – kombinerer naturlig billedkontekst med analytisk farveoverlay
+* **Eksempel**: Se det faktiske udseende af marken/afgrøden med farvekodede stressområder overlejret
 
-### Choosing the Right Clipping Mode
+### Valg af den rigtige beskæringsfunktion
 
-| Clipping Mode              | Best For                                   | Visualization Style          |
+| Beskæringsfunktion              | Bedst til                                   | Visualiseringsstil          |
 | -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum and Maximum**    | Full data display, scientific analysis     | All pixels colored           |
-| **Transparent Background** | GIS overlays, isolating specific ranges    | Color on range, blank beyond |
-| **Index Background**       | Subtle emphasis, maintaining data context  | Color on range, gray beyond  |
-| **Original Background**    | Reports, presentations, intuitive analysis | Color on range, photo beyond |
+| **Minimum og maksimum**    | Fuld datavisning, videnskabelig analyse     | Alle pixels farvelagte           |
+| **Gennemsigtig baggrund** | GIS-overlejringer, isolering af specifikke områder    | Farve på området, tomt udenfor |
+| **Indeksbaggrund**       | Subtil fremhævning, bevarelse af datakontekst  | Farve på området, gråt udenfor  |
+| **Original baggrund**    | Rapporter, præsentationer, intuitiv analyse | Farve på området, foto udenfor |
 
-### Creating Custom LUT Colors
+### Oprettelse af brugerdefinerede LUT-farver
 
-For full control over your visualization, you can create **custom color gradients** by editing individual color stops.
+For at få fuld kontrol over din visualisering kan du oprette **brugerdefinerede farveovergange** ved at redigere individuelle farvestop.
 
-**To create a custom gradient:**
+**Sådan opretter du en brugerdefineret farveovergang:**
 
-1. In the LUT panel, locate the **gradient preview bar**
-2. Look for **color swatch squares** below the gradient
-3. **Click a color stop** to select it
-4. A **color picker** opens
-5. Choose a new color using:
-   * **Color wheel**: Visual color selection
-   * **RGB/HSV sliders**: Precise color control
-   * **Hex code entry**: Exact color specification (e.g., `#FF0000` for red)
-6. Click off the color picker **to apply the new color**
-7. The gradient **updates immediately** on the image
+1. Find **farveovergangsvisningsbjælken** i LUT-panelet.
+2. Se efter **farveprøvefelterne** under farveovergangen.
+3. **Klik på et farvestop** for at vælge det.
+4. En **farvevælger** åbnes.
+5. Vælg en ny farve ved hjælp af:
+   * **Farvehjul**: Visuel farvevalg
+   * **RGB/HSV-skydeknapper**: Præcis farvekontrol
+   * **Indtastning af hex-kode**: Præcis farvespecifikation (f.eks. `#FF0000` for rød)
+6. Klik uden for farvevælgeren **for at anvende den nye farve**
+7. Gradienten **opdateres straks** på billedet
 
-**Adding or removing color stops:**
+**Tilføjelse eller fjernelse af farvestop:**
 
-* **Add a stop**: Click the + icon to add a new swatch at the end
-* **Remove a stop**: Double click the color square to remove the swatch
+* **Tilføj et stop**: Klik på +-ikonet for at tilføje en ny farveprøve i slutningen
+* **Fjern et stop**: Dobbeltklik på farvefeltet for at fjerne farveprøven
 
-**Customization strategies:**
+**Tilpasningsstrategier:**
 
-* **Invert gradient**: Flip color order to reverse the meaning (e.g., green=low, red=high)
-* **Brand colors**: Match your organization's color palette for reports
-* **Colorblind-friendly**: Use orange-blue or purple-yellow combinations
-* **Print optimization**: Choose colors that work in both color and grayscale printing
-* **Multi-threshold**: Use distinct colors at specific value thresholds for classification
+* **Inverter gradient**: Vend farverejorden for at vende betydningen (f.eks. grøn=lav, rød=høj)
+* **Brandfarver**: Tilpas din organisations farvepalet til rapporter
+* **Farveblindvenlig**: Brug orange-blå eller lilla-gul kombinationer
+* **Udskriftsoptimering**: Vælg farver, der fungerer i både farve- og gråtonet udskrivning
+* **Multi-tærskel**: Brug forskellige farver ved specifikke værditærskler til klassificering
 
-{% hint style="info" %}
-**Saving Custom Gradients**: Custom gradients can be saved and reused. Click the save icon in the LUT panel to preserve your custom color schemes for future use.
+{% hint style=&quot;info&quot; %}
+**Gemning af tilpassede gradienter**: Tilpassede gradienter kan gemmes og genbruges. Klik på gem-ikonet i LUT-panelet for at gemme dine tilpassede farveskemaer til fremtidig brug.
 {% endhint %}
 
 ***
 
-## Interactive Workflow
+## Interaktivt workflow
 
-### Real-Time Updates
+### Opdateringer i realtid
 
-All LUT adjustments in the sandbox update the image **instantly and interactively**:
+Alle LUT-justeringer i sandkassen opdaterer billedet **øjeblikkeligt og interaktivt**:
 
-* **Switch layer** → Image changes immediately
-* **Select gradient** → Colors update instantly
-* **Adjust value range** → Contrast changes in real-time
-* **Change classes** → Gradient smoothness updates immediately
-* **Modify clipping** → Background display changes instantly
-* **Edit colors** → Custom gradient applies immediately
+* **Skift lag** → Billedet ændres med det samme
+* **Vælg gradient** → Farverne opdateres øjeblikkeligt
+* **Juster værdiinterval** → Kontrasten ændres i realtid
+* **Skift klasser** → Gradientens glathed opdateres med det samme
+* **Rediger klipning** → Baggrundsvisningen ændres med det samme
+* **Rediger farver** → Brugerdefineret gradient anvendes med det samme
 
-**No "Apply" button needed** - all changes are live and interactive!
+**Ingen &quot;Anvend&quot;-knap nødvendig** – alle ændringer er live og interaktive!
 
-{% hint style="success" %}
-**Live Feedback**: The instant visual feedback allows you to rapidly experiment with different settings until you find the optimal visualization for your analysis needs.
+{% hint style=&quot;success&quot; %}
+**Live feedback**: Den øjeblikkelige visuelle feedback giver dig mulighed for hurtigt at eksperimentere med forskellige indstillinger, indtil du finder den optimale visualisering til dine analysebehov.
 {% endhint %}
 
-### Iterative Refinement Workflow
+### Iterativ forfiningsworkflow
 
-**Typical LUT optimization workflow:**
+**Typisk LUT-optimeringsworkflow:**
 
-1. **Select index layer** (e.g., RAW (Reflectance))
-2. **Apply index** - Choose camera filter and index formula, drag colored circles to appropriate location in the index formula
-3. **Apply LUT gradient** - Start with Red-Yellow-Green preset
-4. **Inspect pixel values** - Move cursor around, note value ranges
-5. **Adjust min/max** - Narrow to focus on vegetation (e.g., 0.2 to 0.9)
-6. **Choose clipping** - Try "Original Background" for context
-7. **Refine colors** - Customize gradient if needed for specific emphasis
-8. **Finalize settings** - Document settings and copy to Project Settings for export processing
+1. **Vælg indekslag** (f.eks. RAW (Reflektans))
+2. **Anvend indeks** - Vælg kamerafilter og indeksformel, træk farvede cirkler til det rette sted i indeksformlen
+3. **Anvend LUT-gradient** - Start med Red-Yellow-Green-forudindstilling
+4. **Kontroller pixelværdier** – Flyt markøren rundt, og bemærk værdiintervallerne
+5. **Juster min/maks** – Indsnævr for at fokusere på vegetation (f.eks. 0,2 til 0,9)
+6. **Vælg beskæring** - Prøv &quot;Original baggrund&quot; for kontekst
+7. **Finjuster farver** - Tilpas gradienten, hvis det er nødvendigt for at fremhæve noget specifikt
+8. **Afslut indstillinger** - Dokumenter indstillingerne og kopier dem til projektindstillingerne til eksportbehandling
 
-### Pixel Value Inspection
+### Inspektion af pixelværdier
 
-Understanding actual pixel values is crucial for setting effective LUT ranges:
+Det er afgørende at forstå de faktiske pixelværdier for at kunne indstille effektive LUT-intervaller:
 
-**How to inspect values:**
+**Sådan inspiceres værdier:**
 
-1. Pixel values show when the image has either the Index, or both the Index and LUT **boxes checked**.
-2. **Move your cursor** over different areas of the image
-3. **Observe pixel values** displayed in the legend as you hover
-4. Zoom in to see individual pixels highlighted with a floating value
-5. **Take notes** of value ranges for different features:
-   * **Healthy vegetation**: e.g., NDVI 0.55-0.85
-   * **Stressed vegetation**: e.g., NDVI 0.30-0.50
-   * **Bare soil**: e.g., NDVI 0.05-0.25
-   * **Water** (if present): e.g., NDVI -0.05 to 0.10
+1. Pixelværdier vises, når billedet har enten indeks eller både indeks og LUT **markeret**.
+2. **Flyt markøren** over forskellige områder af billedet
+3. **Observer pixelværdier**, der vises i legenden, når du holder markøren over dem
+4. Zoom ind for at se individuelle pixels fremhævet med en flydende værdi
+5. **Notér** værdiintervaller for forskellige funktioner:
+   * **Sund vegetation**: f.eks. NDVI 0,55-0,85
+   * **Stresset vegetation**: f.eks. NDVI 0,30-0,50
+   * **Bare jord**: f.eks. NDVI 0,05-0,25
+   * **Vand** (hvis til stede): f.eks. NDVI -0,05 til 0,10
 
-**Using pixel values to set LUT ranges:**
+**Brug af pixelværdier til at indstille LUT-intervaller:**
 
-After inspecting pixel values, adjust your LUT min/max accordingly:
+Efter at have inspiceret pixelværdierne skal du justere din LUT min/max i overensstemmelse hermed:
 
-**Example scenario:**
+**Eksempel på scenario:**
 
-* **Observation**: Soil values = 0.05-0.25, Stressed = 0.25-0.50, Healthy = 0.50-0.85
-* **Goal**: Visualize only plant health (exclude soil)
-* **LUT settings**: Min = `0.25`, Max = `0.85`
-* **Clipping**: "Original Background" to see soil in natural color
-* **Result**: Color gradient only applies to vegetation, soil shows as original image
+* **Observation**: Jordværdier = 0,05-0,25, Stresset = 0,25-0,50, Sund = 0,50-0,85
+* **Mål**: Visualiser kun planters sundhed (ekskluder jord)
+* **LUT-indstillinger**: Min = `0.25`, Max = `0.85`
+* **Klipning**: &quot;Original baggrund&quot; for at se jorden i naturlige farver
+* **Resultat**: Farvegradient gælder kun for vegetation, jord vises som originalbillede
 
-{% hint style="info" %}
-**Dynamic Range**: Different crops, seasons, and growth stages will have different value ranges. Always inspect pixel values in your specific dataset before setting LUT ranges.
+{% hint style=&quot;info&quot; %}
+**Dynamisk rækkevidde**: Forskellige afgrøder, årstider og vækststadier vil have forskellige værdiintervaller. Kontroller altid pixelværdierne i dit specifikke datasæt, før du indstiller LUT-intervaller.
 {% endhint %}
 
 ***
 
-## Custom Indices (Chloros+)
+## Brugerdefinerede indekser (Chloros+)
 
-### Creating Custom Index Formulas
+### Oprettelse af brugerdefinerede indeksformler
 
-{% hint style="info" %}
-**Where to Create**: Custom indices can be configured in **Project Settings** before processing, as well as in the Image Viewer sandbox sidebar.
+{% hint style=&quot;info&quot; %}
+**Hvor skal de oprettes**: Brugerdefinerede indekser kan konfigureres i **Projektindstillinger** før behandling samt i sidepanelet i Image Viewer-sandkassen.
 {% endhint %}
 
-**To create a custom index:**
+**Sådan oprettes en brugerdefineret indeks:**
 
-1. **Open Project Settings** (before processing) or Image Viewer sandbox sidebar
-2. Navigate to the **Index formula dropdown**
-3. Look for **"Custom"** option (must be logged in with Chloros+ license)
-4. **Define your formula** using band variables:
-   * Band names: `NIR`, `Red`, `Green`, `Blue`, `RedEdge`, etc.
-   * Operators: `+`, `-`, `*`, `/`, `^` (exponent)
-   * Functions: `sqrt()`, `abs()`, etc. (if supported)
-   * Parentheses: `()` for order of operations
-5. **Name your index** (e.g., "MyIndex" or "CustomNDVI")
-6. **Save the configuration**
+1. **Åbn Projektindstillinger** (inden behandling) eller billedvisningssandkassens sidepanel
+2. Naviger til **dropdown-menuen Indeksformel**
+3. Find **&quot;Brugerdefineret&quot;** (du skal være logget ind med Chloros+ licens)
+4. **Definer din formel** ved hjælp af båndvariabler:
+   * Båndnavne: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` osv.
+   * Operatører: `+`, `-`, `*`, `/`, `^` (eksponent)
+   * Funktioner: `sqrt()`, `abs()` osv. (hvis understøttet)
+   * Parenteser: `()` for rækkefølgen af operationer
+5. **Navngiv dit indeks** (f.eks. &quot;MyIndex&quot; eller &quot;CustomNDVI&quot;)
+6. **Gem konfigurationen**
 
-**Example custom formulas:**
+**Eksempler på brugerdefinerede formler:**
 
 ```
 Modified NDVI with offset:
@@ -398,22 +398,22 @@ Exponential index:
 (NIR / Red) ^ 2
 ```
 
-{% hint style="warning" %}
-**Formula Validation**: Ensure your formula uses bands available in your camera. For example, RedEdge is only available on cameras with a RedEdge filter.
+{% hint style=&quot;warning&quot; %}
+**Formelvalidering**: Sørg for, at din formel bruger bånd, der er tilgængelige i dit kamera. F.eks. er RedEdge kun tilgængelig på kameraer med et RedEdge-filter.
 {% endhint %}
 
 ***
 
-## Next Steps
+## Næste trin
 
-Now that you understand the Index/LUT Sandbox:
+Nu hvor du forstår Index/LUT Sandbox:
 
-* **Apply to processing**: Use discovered settings in [Project Settings](../project-settings/page-2.md)
-* **Batch process**: Apply optimized indices to full datasets
-* **Learn more**: Read [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md)
+* **Anvend til behandling**: Brug de fundne indstillinger i [Projektindstillinger](../project-settings/project-settings.md)
+* **Batchbehandling**: Anvend optimerede indekser til hele datasæt
+* **Få mere at vide**: Læs [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md)
 
-Related documentation:
+Relateret dokumentation:
 
-* [**Image Layers**](image-layers.md) - Layer management and visualization
-* [**Opening an Image Full Screen**](page-3.md) - Image Viewer basics
-* [**Processing Images (GUI)**](../processing-images-gui/page-1.md) - Full processing workflow
+* [**Billedlag**](image-layers.md) - Lagstyring og visualisering
+* [**Åbning af et billede i fuld skærm**](opening-an-image-full-screen.md) - Grundlæggende om billedvisning
+* [**Behandling af billeder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Fuld behandlingsworkflow

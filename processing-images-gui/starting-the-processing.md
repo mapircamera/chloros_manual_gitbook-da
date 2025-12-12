@@ -1,366 +1,366 @@
-# Starting the Processing
+# Start af behandlingen
 
-Once you've imported your images, marked your calibration targets, and configured your project settings, you're ready to begin processing. This page guides you through initiating the Chloros processing pipeline.
+Når du har importeret dine billeder, markeret dine kalibreringsmål og konfigureret dine projektindstillinger, er du klar til at begynde behandlingen. Denne side guider dig gennem opstart af Chloros-behandlingsprocessen.
 
-## Pre-Processing Checklist
+## Tjekliste før behandling
 
-Before clicking the Start button, verify that everything is ready:
+Før du klikker på Start-knappen, skal du kontrollere, at alt er klar:
 
-* [ ] **Files imported** - All images appear in File Browser
-* [ ] **Target images marked** - Target column checked for calibration images
-* [ ] **Camera models detected** - Camera Model column shows correct cameras
-* [ ] **Settings configured** - Project Settings reviewed and adjusted
-* [ ] **Indices selected** - Desired multispectral indices added (if needed)
-* [ ] **Export format chosen** - Output format appropriate for your workflow
+* [ ] **Filer importeret** - Alle billeder vises i filbrowseren
+* [ ] **Målbilleder markeret** - Målkolonnen er markeret for kalibreringsbilleder
+* [ ] **Kameramodeller registreret** - Kameramodel-kolonnen viser de korrekte kameraer
+* [ ] **Indstillinger konfigureret** - Projektindstillinger gennemgået og justeret
+* [ ] **Indekser valgt** - Ønskede multispektrale indekser tilføjet (hvis nødvendigt)
+* [ ] **Eksportformat valgt** - Outputformat, der passer til din arbejdsgang
 
-{% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
+{% hint style=&quot;info&quot; %}
+**Tip**: Klik på et par billeder i filbrowseren for at kontrollere, at de er indlæst korrekt, inden du fortsætter med behandlingen.
 {% endhint %}
 
 ***
 
-## Starting the Processing
+## Start af behandlingen
 
-### Locate the Start Button
+### Find startknappen
 
-The Start/Play button is located in the top header bar of Chloros:
+Start-/afspilningsknappen findes i den øverste headerbar i Chloros:
 
-* Position: Top center of the window
-* Icon: **Play/Start button** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
-* Status: Button is enabled (bright) when ready to process
+* Placering: Øverst i midten af vinduet
+* Ikon: **Afspil-/startknap** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* Status: Knappen er aktiveret (lys), når den er klar til behandling
 
-### Click to Start
+### Klik for at starte
 
-1. Click the **Play/Start button** in the top header
-2. Processing begins immediately
-3. The button becomes disabled (grayed out) during processing
-4. Progress bar updates, showing processing status
+1. Klik på **Afspil/Start-knappen** i den øverste header
+2. Behandlingen starter med det samme
+3. Knappen bliver deaktiveret (grå) under behandlingen
+4. Statusbjælken opdateres og viser behandlingsstatus
 
-{% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
+{% hint style=&quot;success&quot; %}
+**Behandling startet**: Når der er klikket, håndterer Chloros automatisk alle behandlingstrin – måldetektering, debayering, kalibrering, indeksberegning og eksport.
 {% endhint %}
 
 ***
 
-## Understanding Processing Modes
+## Forståelse af behandlingsmetoder
 
-Chloros operates in two different processing modes depending on your license:
+Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
-### Free Mode (Sequential Processing)
+### Gratis metode (sekventiel behandling)
 
-**Available to all users**
+**Tilgængelig for alle brugere**
 
-**How it works:**
+**Sådan fungerer det:**
 
-* Processes images one at a time, sequentially
-* Single-threaded operation
-* Lower memory usage
+* Behandler billederne et ad gangen, sekventielt
+* Enkelt-trådet drift
+* Lavere hukommelsesforbrug
 
-**Progress bar shows 2 stages:**
+**Statusbjælken viser 2 faser:**
 
-1. **Target Detect** - Scanning for calibration targets
-2. **Processing** - Applying calibration and exporting images
+1. **Måldetektion** - Scanning efter kalibreringsmål
+2. **Behandling** - Anvendelse af kalibrering og eksport af billeder
 
-**Processing time:**
+**Behandlingstid:**
 
-* Much slower than Chloros+ parallel mode
-* Suitable for small to medium datasets (< 200 images)
+* Meget langsommere end Chloros+ parallel tilstand
+* Egnet til små til mellemstore datasæt (&lt; 200 billeder)
 
-### Chloros+ Mode (Parallel Processing)
+### Chloros+ tilstand (parallel behandling)
 
-**Requires Chloros+ license**
+**Kræver Chloros+ licens**
 
-**How it works:**
+**Sådan fungerer det:**
 
-* Processes multiple images simultaneously
-* Multi-threaded operation (up to 16 parallel workers)
-* Utilizes multiple CPU cores
-* Optional GPU (CUDA) acceleration with NVIDIA graphics cards
+* Behandler flere billeder samtidigt
+* Multitrådet drift (op til 16 parallelle arbejdere)
+* Anvender flere CPU-kerner
+* Valgfri GPU (CUDA)-acceleration med NVIDIA-grafikkort
 
-**Progress bar shows 4 stages:**
+**Statusbjælken viser 4 faser:**
 
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining image metadata and preparing pipeline
-3. **Calibrating** - Applying corrections and calibrations
-4. **Exporting** - Saving processed images and indices
+1. **Detektering** – Find kalibreringsmål
+2. **Analyse** – Undersøg billedmetadata og forbered pipeline
+3. **Kalibrerer** - Anvender korrektioner og kalibreringer
+4. **Eksporterer** - Gemmer behandlede billeder og indekser
 
-**Progress bar interaction:**
+**Interaktion med statusbjælken:**
 
-* **Hover mouse** over bar to see detailed 4-stage dropdown panel
-* **Click** progress bar to freeze the dropdown panel in place
-* **Click again** to unfreeze and hide panel
+* **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 trin
+* **Klik** på statusbjælken for at fastfryse dropdown-panelet
+* **Klik igen** for at frigøre og skjule panelet
 
-**Processing time:**
+**Behandlingstid:**
 
-* Significantly faster than free mode
-* Scales with CPU core count
-* GPU acceleration further improves speed
+* Betydeligt hurtigere end fri tilstand
+* Skaleres med CPU-kerneantal
+* GPU-acceleration forbedrer hastigheden yderligere
 
-{% hint style="info" %}
-**Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
+{% hint style=&quot;info&quot; %}
+**Chloros+ hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
 {% endhint %}
 
 ***
 
-## What Happens During Processing
+## Hvad sker der under behandlingen?
 
-### Stage 1: Target Detection
+### Trin 1: Målregistrering
 
-**What Chloros does:**
+**Hvad Chloros gør:**
 
-* Scans marked target images (or all images if none marked)
-* Identifies the 4 calibration panels in each target
-* Extracts reflectance values from target panels
-* Records target timestamps for calibration scheduling
+* Scanner markerede målbilleder (eller alle billeder, hvis ingen er markeret)
+* Identificerer de 4 kalibreringspaneler i hvert mål
+* Udtager reflektansværdier fra målpaneler
+* Registrerer måltidsstempler til kalibreringsplanlægning
 
-**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
+**Varighed:** 1-30 sekunder (med markerede mål), 5-30+ minutter (umarkerede)
 
-### Stage 2: Debayering (RAW Conversion)
+### Trin 2: Debayering (RAW-konvertering)
 
-**What Chloros does:**
+**Hvad Chloros gør:**
 
-* Converts RAW Bayer pattern data to full RGB images
-* Applies high-quality demosaicing algorithm
-* Preserves maximum image quality and detail
+* Konverterer RAW-Bayer-mønsterdata til fulde RGB-billeder
+* Anvender højkvalitets demosaicing-algoritme
+* Bevarer maksimal billedkvalitet og detaljer
 
-**Duration:** Varies by image count and CPU speed
+**Varighed:** Varierer afhængigt af antal billeder og CPU-hastighed
 
-### Stage 3: Calibration
+### Trin 3: Kalibrering
 
-**What Chloros does:**
+**Hvad Chloros gør:**
 
-* **Vignette correction**: Removes lens darkening at edges
-* **Reflectance calibration**: Normalizes using target reflectance values
-* Applies corrections across all bands/channels
-* Uses appropriate calibration target for each image based on timestamp
+* **Vignettekorrektion**: Fjerner mørkfarvning af linsen i kanterne
+* **Reflektanskalibrering**: Normaliserer ved hjælp af målreflektansværdier
+* Anvender korrektioner på tværs af alle bånd/kanaler
+* Anvender passende kalibreringsmål for hvert billede baseret på tidsstempel
 
-**Duration:** Majority of processing time
+**Varighed:** Størstedelen af behandlingstiden
 
-### Stage 4: Index Calculation
+### Trin 4: Indeksberegning
 
-**What Chloros does:**
+**Hvad Chloros gør:**
 
-* Calculates configured multispectral indices (NDVI, NDRE, etc.)
-* Applies band math to calibrated images
-* Generates index images for each selected index
+* Beregner konfigurerede multispektrale indekser (NDVI, NDRE osv.)
+* Anvender båndmatematik på kalibrerede billeder
+* Genererer indeksbilleder for hvert valgt indeks
 
-**Duration:** A few seconds per image
+**Varighed:** Et par sekunder pr. billede
 
-### Stage 5: Export
+### Trin 5: Eksport
 
-**What Chloros does:**
+**Hvad Chloros gør:**
 
-* Saves calibrated images in selected format
-* Exports index images with configured LUT colors
-* Writes files to camera model subfolders
-* Preserves original filenames with suffixes
+* Gemmer kalibrerede billeder i valgt format
+* Eksporterer indeksbilleder med konfigurerede LUT-farver
+* Skriver filer til undermapper for kameramodeller
+* Bevarer originale filnavne med suffikser
 
-**Duration:** Varies by export format and file size
+**Varighed:** Varierer afhængigt af eksportformat og filstørrelse
 
 ***
 
-## Processing Behavior
+## Behandlingsadfærd
 
-### Automatic Processing Pipeline
+### Automatisk behandlingspipeline
 
-Once started, the entire pipeline runs automatically:
+Når den er startet, kører hele pipelinen automatisk:
 
-* No user interaction needed
-* All configured steps execute in sequence
-* Progress updates shown in real-time
+* Ingen brugerinteraktion nødvendig
+* Alle konfigurerede trin udføres i rækkefølge
+* Statusopdateringer vises i realtid
 
-### Computer Usage During Processing
+### Computerforbrug under behandling
 
-**Free Mode:**
+**Fri tilstand:**
 
-* Relatively low CPU usage (single-threaded)
-* Computer remains responsive for other tasks
-* Safe to minimize Chloros and work in other applications
+* Relativt lav CPU-brug (enkelt-threaded)
+* Computeren forbliver responsiv for andre opgaver
+* Det er sikkert at minimere Chloros og arbejde i andre applikationer
 
-**Chloros+ Parallel Mode:**
+**Chloros+ Parallel tilstand:**
 
-* High CPU usage (multi-threaded, up to 16 cores)
-* With GPU acceleration: High GPU usage
-* Computer may be less responsive during processing
-* Avoid starting other CPU-intensive tasks
+* Høj CPU-brug (multi-threaded, op til 16 kerner)
+* Med GPU-acceleration: Høj GPU-forbrug
+* Computeren kan være mindre responsiv under behandlingen
+* Undgå at starte andre CPU-intensive opgaver
 
-{% hint style="warning" %}
-**Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
+{% hint style=&quot;warning&quot; %}
+**Tip til ydeevne**: For at opnå den bedste ydeevne for Chloros+, skal du lukke andre programmer og lade Chloros bruge alle systemressourcer.
 {% endhint %}
 
-### Processing Cannot Be Paused
+### Behandlingen kan ikke sættes på pause
 
-**Important limitations:**
+**Vigtige begrænsninger:**
 
-* Once started, processing cannot be paused
-* You can cancel processing, but progress is lost
-* Partial results are not saved
-* Must restart from beginning if canceled
+* Når behandlingen er startet, kan den ikke sættes på pause.
+* Du kan annullere behandlingen, men fremskridtet går tabt.
+* Delvise resultater gemmes ikke.
+* Du skal starte forfra, hvis behandlingen annulleres.
 
-**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
-
-***
-
-## Monitoring Your Processing
-
-While processing runs, you can:
-
-* **Watch progress bar** - See overall completion percentage
-* **View current stage** - Detect, Analyze, Calibrate, or Export
-* **Check log tab** - See detailed processing messages and warnings
-* **Preview completed images** - Some export files may appear during processing
-
-For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
+**Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.
 
 ***
 
-## Canceling Processing
+## Overvågning af din behandling
 
-If you need to stop processing:
+Mens behandlingen kører, kan du:
 
-### How to Cancel
+* **Se statusbjælken** – Se den samlede procentdel af færdiggørelsen
+* **Se det aktuelle trin** – Registrer, analyser, kalibrer eller eksporter
+* **Kontroller fanen Log** – Se detaljerede behandlingsmeddelelser og advarsler
+* **Se færdige billeder** – Nogle eksportfiler kan vises under behandlingen
 
-1. Locate the **Stop/Cancel button** (replaces Start button during processing)
-2. Click the Stop button
-3. Processing halts immediately
-4. Partial results are discarded
+For detaljerede oplysninger om overvågning, se [Overvågning af behandlingen](monitoring-the-processing.md).
 
-### When to Cancel
+***
 
-**Valid reasons to cancel:**
+## Annullering af behandlingen
 
-* Realized incorrect settings were used
-* Forgot to mark target images
-* Wrong images imported
-* System running too slow or unresponsive
+Hvis du har brug for at stoppe behandlingen:
 
-**After canceling:**
+### Sådan annulleres
 
-* Review and fix any issues
-* Adjust settings as needed
-* Restart processing from the beginning
-* For the cleanest experience, completely close Chloros and restart
+1. Find **Stop/Annuller-knappen** (erstatter Start-knappen under behandlingen)
+2. Klik på Stop-knappen
+3. Behandlingen stopper øjeblikkeligt
+4. Delvise resultater kasseres
 
-{% hint style="warning" %}
-**No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
+### Hvornår skal du annullere
+
+**Gyldige grunde til at annullere:**
+
+* Du har opdaget, at der er blevet brugt forkerte indstillinger
+* Du har glemt at markere målbilleder
+* Der er importeret forkerte billeder
+* Systemet kører for langsomt eller reagerer ikke
+
+**Efter annullering:**
+
+* Gennemgå og løse eventuelle problemer
+* Juster indstillingerne efter behov
+* Genstart behandlingen fra begyndelsen
+* For at få den bedste oplevelse skal du lukke Chloros helt og genstarte
+
+{% hint style=&quot;warning&quot; %}
+**Ingen delvise resultater**: Annullering kasserer al fremgang. Chloros gemmer ikke delvist behandlede billeder.
 {% endhint %}
 
 ***
 
-## Processing Time Estimates
+## Estimater for behandlingstid
 
-Actual processing time varies greatly based on:
+Den faktiske behandlingstid varierer meget afhængigt af:
 
-* Number of images
-* Image resolution
-* RAW vs JPG input format
-* Processing mode (Free vs Chloros+)
-* CPU speed and core count
-* GPU availability (Chloros+ only)
-* Number of indices to calculate
-* Export format complexity
+* Antal billeder
+* Billedopløsning
+* RAW vs. JPG-indgangsformat
+* Behandlingsmode (Free vs. Chloros+)
+* CPU-hastighed og antal kerner
+* GPU-tilgængelighed (kun Chloros+)
+* Antal indekser, der skal beregnes
+* Eksportformatets kompleksitet
 
-### Rough Estimates (Chloros+, 12MP images, modern CPU)
+### Grove estimater (Chloros+, 12 MP-billeder, moderne CPU)
 
-| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
+| Antal billeder | Gratis tilstand | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
+| 50 billeder   | 15-20 min | 5-8 min        | 3-5 min        |
+| 100 billeder  | 30-40 min | 10-15 min      | 5-8 min        |
+| 200 billeder  | 1-1,5 time | 20-30 min      | 10-15 min      |
+| 500 billeder  | 2-3 timer   | 45-60 min      | 20-30 min      |
+| 1000 billeder | 4-6 timer   | 1,5-2 timer      | 40-60 min      |
 
-{% hint style="info" %}
-**First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
+{% hint style=&quot;info&quot; %}
+**Første kørsel**: Den første behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
 {% endhint %}
 
 ***
 
-## Common Issues at Start
+## Almindelige problemer ved opstart
 
-### Start Button Disabled (Grayed Out)
+### Startknappen er deaktiveret (grå)
 
-**Possible causes:**
+**Mulige årsager:**
 
-* No images imported
-* Backend not fully started
-* Previous processing still running
-* Project not fully loaded
+* Ingen billeder importeret
+* Backend er ikke fuldt opstartet
+* Forrige behandling kører stadig
+* Projektet er ikke fuldt indlæst
 
-**Solutions:**
+**Løsninger:**
 
-1. Wait for backend to fully initialize (check main menu icon)
-2. Verify images are imported in File Browser
-3. Restart Chloros if button remains disabled
-4. Check Debug Log for error messages
+1. Vent på, at backend er fuldt initialiseret (kontroller ikonet i hovedmenuen)
+2. Kontroller, at billederne er importeret i filbrowseren
+3. Genstart Chloros, hvis knappen fortsat er deaktiveret
+4. Kontroller fejlfindingsloggen for fejlmeddelelser
 
-### Processing Starts Then Immediately Fails
+### Behandlingen starter og mislykkes derefter straks
 
-**Possible causes:**
+**Mulige årsager:**
 
-* No valid images in project
-* Corrupted image files
-* Insufficient disk space
-* Insufficient memory (RAM)
+* Ingen gyldige billeder i projektet
+* Korrupte billedfiler
+* Utilstrækkelig diskplads
+* Utilstrækkelig hukommelse (RAM)
 
-**Solutions:**
+**Løsninger:**
 
-1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for error messages
-2. Verify disk space available
-3. Try processing a smaller subset of images
-4. Verify images are not corrupted
+1. Kontroller fejlfindingsloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for fejlmeddelelser
+2. Kontroller, at der er tilstrækkelig diskplads
+3. Prøv at behandle en mindre delmængde af billeder
+4. Kontroller, at billederne ikke er beskadigede
 
-### "No Targets Detected" Warning
+### Advarsel &quot;Ingen mål fundet&quot;
 
-**Possible causes:**
+**Mulige årsager:**
 
-* Forgot to mark target images
-* Target images don't contain visible targets
-* Target detection settings too strict
+* Glemt at markere målbilleder
+* Målbilleder indeholder ikke synlige mål
+* Indstillinger for måldetektering er for strenge
 
-**Solutions:**
+**Løsninger:**
 
-1. Review [Choosing Target Images](choosing-target-images.md)
-2. Mark appropriate images in Target column
-3. Verify targets are visible in marked images
-4. Adjust target detection settings if needed
-
-***
-
-## Tips for Successful Processing
-
-### Before Starting
-
-1. **Test with small subset first** - Process 10-20 images to verify settings
-2. **Check available disk space** - Ensure 2-3x dataset size free
-3. **Close unnecessary applications** - Free up system resources
-4. **Verify target images** - Preview marked targets to ensure quality
-5. **Save project** - Project auto-saves, but good practice to save manually
-
-### During Processing
-
-1. **Avoid system sleep** - Disable power saving modes
-2. **Keep Chloros in foreground** - Or at least visible in taskbar
-3. **Monitor progress occasionally** - Check for warnings or errors
-4. **Don't load other heavy applications** - Especially with Chloros+ parallel mode
-
-### Chloros+ GPU Acceleration
-
-If using NVIDIA GPU acceleration:
-
-1. Update NVIDIA drivers to latest version
-2. Ensure GPU has 4GB+ VRAM
-3. Close GPU-intensive applications (games, video editing)
-4. Monitor GPU temperature (ensure adequate cooling)
+1. Gennemgå [Valg af målbilleder](choosing-target-images.md)
+2. Marker de relevante billeder i kolonnen Mål
+3. Kontroller, at målene er synlige i de markerede billeder
+4. Juster indstillingerne for måldetektering, hvis det er nødvendigt
 
 ***
 
-## Next Steps
+## Tips til vellykket behandling
 
-Once processing has started:
+### Før du starter
 
-1. **Monitor the progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-2. **Wait for completion** - Processing runs automatically
-3. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
+1. **Test først med en lille delmængde** – Behandl 10-20 billeder for at kontrollere indstillingerne
+2. **Kontroller ledig diskplads** – Sørg for, at der er 2-3 gange datasættets størrelse ledig
+3. **Luk unødvendige programmer** – Frigør systemressourcer
+4. **Kontroller målbilleder** – Se et eksempel på markerede mål for at sikre kvaliteten
+5. **Gem projektet** – Projektet gemmes automatisk, men det er god praksis at gemme manuelt.
 
-For information about what to do during processing, see [Monitoring the Processing](monitoring-the-processing.md).
+### Under behandlingen
+
+1. **Undgå, at systemet går i dvale** – Deaktiver strømbesparende tilstande.
+2. **Hold Chloros i forgrunden** – Eller i det mindste synligt i proceslinjen.
+3. **Overvåg fremskridtet lejlighedsvis** – Kontroller for advarsler eller fejl.
+4. **Indlæs ikke andre tunge applikationer** - Især med Chloros+ parallel tilstand
+
+### Chloros+ GPU-acceleration
+
+Hvis du bruger NVIDIA GPU-acceleration:
+
+1. Opdater NVIDIA-drivere til den nyeste version
+2. Sørg for, at GPU&#x27;en har 4 GB+ VRAM
+3. Luk GPU-intensive programmer (spil, videoredigering)
+4. Overvåg GPU-temperaturen (sørg for tilstrækkelig køling)
+
+***
+
+## Næste trin
+
+Når behandlingen er startet:
+
+1. **Overvåg fremskridtet** - Se [Overvågning af behandlingen](monitoring-the-processing.md)
+2. **Vent på færdiggørelse** – Behandlingen kører automatisk
+3. **Gennemgå resultaterne** – Se [Afslutning af behandlingen](finishing-the-processing.md)
+
+For information om, hvad du skal gøre under behandlingen, se [Overvågning af behandlingen](monitoring-the-processing.md).
