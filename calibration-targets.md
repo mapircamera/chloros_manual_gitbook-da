@@ -9,11 +9,15 @@ metaLinks:
 
 MAPIR tilbyder forskellige kalibreringsmål til en række forskellige anvendelser. Den kompakte T4-R50, som ses nedenfor, indeholder 4 paneler, der er målt for lysrefleksion fra 250 til 2.500 nm.
 
-<figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>T4-diffuse referencemål har følgende refleksionskurver, [data kan downloades her](https://cdn.shopify.com/s/files/1/0972/5566/files/MAPIR_Diffuse_Reflectance_Standard_Calibration_Target_Data_T4.xlsx?v=1741759157):
+<figure><img src=".gitbook/assets/t4-r50_2.jpg" alt=""><figcaption><p>MAPIR T4-R50</p></figcaption></figure>
+
+T4-diffuse referencemål har følgende refleksionskurver, [data kan downloades her](https://cdn.shopify.com/s/files/1/0972/5566/files/MAPIR_Diffuse_Reflectance_Standard_Calibration_Target_Data_T4.xlsx?v=1741759157):
 
 <figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance Standard Calibration Target Data T4 (250-2500nm).png" alt=""><figcaption><p>MAPIR T4 Reflektans :: 250-2500 nm</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance Standard Calibration Target Data T4 (400-1000nm).png" alt=""><figcaption><p>MAPIR T4 Reflektans :: 400-1000 nm</p></figcaption></figure>Når man ser på reflektansgrafen, kan man se, at værdierne er bølgelængde (x-aksen) mod reflektansprocent (y-aksen). Når vi tager et billede af kalibreringsmålet, opretter vi derefter en sammenhæng mellem pixelværdi og reflektansprocent inden for det spektrum, som hvert af kameraets sensorbaner er følsomme over for.
+<figure><img src=".gitbook/assets/MAPIR Diffuse Reflectance Standard Calibration Target Data T4 (400-1000nm).png" alt=""><figcaption><p>MAPIR T4 Reflektans :: 400-1000 nm</p></figcaption></figure>
+
+Når man ser på reflektansgrafen, kan man se, at værdierne er bølgelængde (x-aksen) mod reflektansprocent (y-aksen). Når vi tager et billede af kalibreringsmålet, opretter vi derefter en sammenhæng mellem pixelværdi og reflektansprocent inden for det spektrum, som hvert af kameraets sensorbaner er følsomme over for.
 
 Det betyder, at du med hvert billede, du tager med vores kameraer, kan bruge et foto af vores reflektansmål, såsom [T4-R50](https://www.mapir.camera/collections/calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t3-r50) eller [T4-R125](https://www.mapir.camera/collections/multispectral-reflectance-reference-calibration-targets/products/diffuse-reflectance-standard-calibration-target-package-t4-r125) til at kalibrere billederne for reflektans. Når billedet er kalibreret, svarer hver pixel i billedet til procentvis reflektans.
 
