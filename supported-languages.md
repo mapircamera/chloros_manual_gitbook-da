@@ -4,61 +4,82 @@ Chloros tilbyder fuld interface-understøttelse på **38 sprog verden over**, hv
 
 Chloros understøtter følgende sprog:
 
-1. 🇺🇸 **Engelsk**
-2. 🇪🇸 **Español** (spansk)
-3. 🇵🇹 **Português** (portugisisk)
-4. 🇫🇷 **Français** (fransk)
-5. 🇩🇪 **Deutsch** (tysk)
-6. 🇮🇹 **Italiano** (italiensk)
-7. 🇯🇵 **日本語** (japansk)
-8. 🇰🇷 **한국어** (koreansk)
-9. 🇨🇳 **简体中文** (forenklet kinesisk)
-10. 🇹🇼 **繁體中文** (Traditionelt kinesisk)
-11. 🇷🇺 **Русский** (Russisk)
-12. 🇳🇱 **Nederlands** (Hollandsk)
-13. 🇸🇦 **العربية** (Arabisk)
-14. 🇵🇱 **Polski** (polsk)
-15. 🇹🇷 **Türkçe** (tyrkisk)
-16. 🇮🇳 **हिंदी** (hindi)
-17. 🇮🇩 **Bahasa Indonesia** (indonesisk)
-18. 🇻🇳 **Tiếng Việt** (vietnamesisk)
-19. 🇹🇭 **ไทย** (thailandsk)
-20. 🇸🇪 **Svenska** (svensk)
-21. 🇩🇰 **Dansk** (dansk)
-22. 🇳🇴 **Norsk** (norsk)
-23. 🇫🇮 **Suomi** (finsk)
-24. 🇬🇷 **Ελληνικά** (græsk)
-25. 🇨🇿 **Čeština** (Tjekkisk)
-26. 🇭🇺 **Magyar** (Ungarsk)
-27. 🇷🇴 **Română** (Rumænsk)
-28. 🇺🇦 **Українська** (Ukrainsk)
-29. 🇧🇷 **Português Brasileiro** (brasiliansk portugisisk)
-30. 🇭🇰 **粵語** (kantonesisk)
-31. 🇲🇾 **Bahasa Melayu** (malaysisk)
-32. 🇸🇰 **Slovenčina** (Slovakisk)
-33. 🇧🇬 **Български** (Bulgarsk)
-34. 🇭🇷 **Hrvatski** (Kroatisk)
-35. 🇱🇹 **Lietuvių** (Litauisk)
-36. 🇱🇻 **Latviešu** (lettisk)
-37. 🇪🇪 **Eesti** (estisk)
-38. 🇸🇮 **Slovenščina** (slovensk)
+| # | Sprog | Indfødt navn | CLI-kode |
+|---|----------|-------------|----------|
+| 1 | 🇺🇸 Engelsk | Engelsk | `en` |
+| 2 | 🇪🇸 Spansk | Español | `es` |
+| 3 | 🇵🇹 Portugisisk | Português | `pt` |
+| 4 | 🇫🇷 Fransk | Français | `fr` |
+| 5 | 🇩🇪 Tysk | Deutsch | `de` |
+| 6 | 🇮🇹 Italiensk | Italiano | `it` |
+| 7 | 🇯🇵 Japansk | 日本語 | `ja` |
+| 8 | 🇰🇷 Koreansk | 한국어 | `ko` |
+| 9 | 🇨🇳 Kinesisk (forenklet) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Kinesisk (traditionelt) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 Russisk | Русский | `ru` |
+| 12 | 🇳🇱 Hollandsk | Nederlands | `nl` |
+| 13 | 🇸🇦 Arabisk | العربية | `ar` |
+| 14 | 🇵🇱 Polsk | Polski | `pl` |
+| 15 | 🇹🇷 Tyrkisk | Türkçe | `tr` |
+| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
+| 17 | 🇮🇩 Indonesisk | Bahasa Indonesia | `id` |
+| 18 | 🇻🇳 Vietnamesisk | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 Thai | ไทย | `th` |
+| 20 | 🇸🇪 Svensk | Svenska | `sv` |
+| 21 | 🇩🇰 Dansk | Dansk | `da` |
+| 22 | 🇳🇴 Norsk | Norsk | `no` |
+| 23 | 🇫🇮 Finsk | Suomi | `fi` |
+| 24 | 🇬🇷 Græsk | Ελληνικά | `el` |
+| 25 | 🇨🇿 Tjekkisk | Čeština | `cs` |
+| 26 | 🇭🇺 Ungarsk | Magyar | `hu` |
+| 27 | 🇷🇴 Rumænsk | Română | `ro` |
+| 28 | 🇺🇦 Ukrainsk | Українська | `uk` |
+| 29 | 🇧🇷 Brasiliansk portugisisk | Português Brasileiro | `pt-BR` |
+| 30 | 🇭🇰 Kantonesisk | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 Malay | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 Slovak | Slovenčina | `sk` |
+| 33 | 🇧🇬 Bulgarsk | Български | `bg` |
+| 34 | 🇭🇷 Kroatisk | Hrvatski | `hr` |
+| 35 | 🇱🇹 Litauisk | Lietuvių | `lt` |
+| 36 | 🇱🇻 Lettisk | Latviešu | `lv` |
+| 37 | 🇪🇪 Estisk | Eesti | `et` |
+| 38 | 🇸🇮 Slovensk | Slovenščina | `sl` |
 
-## Sådan ændrer du sprog
+## Sådan ændres sproget
 
 ### I Chloros Desktop/Browser
 
-1. Åbn applikationsindstillingerne
-2. Gå til menuen for sprogvalg
-3. Vælg dit foretrukne sprog fra listen
-4. Grænsefladen opdateres øjeblikkeligt
+1. Åbn applikationsindstillingerne.
+2. Gå til menuen for sprogvalg.
+3. Vælg dit foretrukne sprog fra listen.
+4. Interfacet opdateres øjeblikkeligt.
 
 ### I Chloros CLI
 
-Brug sprogparameteren sammen med dine kommandoer for at indstille grænsefladesproget.
+Brug kommandoen `language` til at se eller ændre sproget i CLI-grænsefladen:
+
+```bash
+# View current language
+chloros-cli language
+
+# Change to Spanish
+chloros-cli language es
+
+# Change to Chinese (Simplified)
+chloros-cli language zh
+
+# Change to Brazilian Portuguese
+chloros-cli language pt-BR
+
+# List all available languages
+chloros-cli language --list
+```
+
+Se [CLI-dokumentationen](CLI.md) for flere detaljer.
 
 ### I Chloros Python SDK
 
-Indstil sprogparameteren, når du initialiserer SDK for at få meddelelser og output på dit foretrukne sprog.
+Indstil sprogparameteren, når du initialiserer SDK, for at få meddelelser og output på dit foretrukne sprog.
 
 ## Dækning
 
