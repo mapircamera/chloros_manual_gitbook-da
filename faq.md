@@ -1,10 +1,9 @@
 ---
-description: Frequently Asked Questions
+description: Ofte stillede spørgsmål
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-
 # Ofte stillede spørgsmål
 
 <details>
@@ -59,7 +58,7 @@ I filbrowser-tabellen kan du forudvælge målbillederne i højre kolonne, så Ch
 
 <summary>Hvis jeg vil uploade mine billeder til <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> skal jeg så behandle dem i Chloros inden upload?</summary>
 
-Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører den samme behandling og mere til.
+Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører alle de samme behandlinger og mere.
 
 </details>
 
@@ -67,6 +66,6 @@ Hvis du planlægger at uploade til vores online behandlingsplatform [MAPIR Cloud
 
 <summary>Vil MAPIR nogensinde understøtte X-funktionen? Jeg ville virkelig ønske, at MAPIR tilbød X.</summary>
 
-Vi er altid interesserede i at modtage feedback på vores produkter. Hvis du finder et problem med vores produkter eller har et forslag til, hvordan vi kan forbedre vores produkter, bedes du [KONTAKTE OS](https://www.mapir.camera/community/contact) for at dele dine tanker. Det meste af vores forskning og udvikling er styret af at lytte til vores kunders største behov.
+Vi er altid interesserede i at modtage feedback på vores produkter. Hvis du finder et problem med vores produkter eller har et forslag til, hvordan vi kan forbedre vores produkter, bedes du [KONTAKTE OS](https://www.mapir.camera/community/contact) for at dele dine tanker. Det meste af vores forskning og udvikling er baseret på at lytte til vores kunders største behov.
 
 </details>
