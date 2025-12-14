@@ -10,7 +10,7 @@ Når du er logget ind, vises dine kontooplysninger:
 
 ## CLI Login
 
-Log ind med dine Chloros+ loginoplysninger for at aktivere CLI-behandling.
+Log ind med dine Chloros+-loginoplysninger for at aktivere CLI-behandling.
 
 **Syntaks:**
 
@@ -34,7 +34,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### Planens udløb
 
-Planens udløb i GUI&#x27;en viser, hvornår din licens bliver ugyldig. For tilbagevendende månedlige abonnementer udløber licensen ved udgangen af måneden. For årlige abonnementer udløber licensen et år efter, at du har startet abonnementet. Licenskontrollen kræver en månedlig internetforbindelse for at blive verificeret, med en 30 dages frist.
+Planens udløb i GUI&#x27;en viser, hvornår din licens bliver ugyldig. For tilbagevendende månedlige abonnementer udløber licensen ved udgangen af måneden. For årlige abonnementer udløber licensen et år efter, at du startede abonnementet. Licenskontrollen kræver en månedlig internetforbindelse for at verificere, med en 30 dages frist.
 
 ### Enhedsbegrænsning
 

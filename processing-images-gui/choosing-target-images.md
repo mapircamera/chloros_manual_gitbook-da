@@ -32,7 +32,7 @@ Når du markerer kolonnen Mål for bestemte billeder:
 
 ### Trin 1: Identificer dine målbilleder
 
-Gennemse dine importerede billeder i filbrowseren og identificer, hvilke billeder der indeholder kalibreringsmål.
+Gennemse dine importerede billeder i filbrowseren, og identificer, hvilke billeder der indeholder kalibreringsmål.
 
 **Almindelige scenarier:**
 
@@ -72,7 +72,7 @@ Før behandlingen skal du dobbelttjekke:
 
 **Kameraposition:**
 
-* Hold kameraet over målet, så det er centreret og fylder ca. 40-60 % af billedets midte.
+* Hold kameraet over målet, så det er centreret og fylder omkring 40-60 % af billedets midte.
 * Hold kameraet parallelt/nadir med måloverfladen
 
 **Belysning:**
@@ -134,7 +134,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 * **Standard**: 25 pixels
 * **Forøg**, hvis der opstår falske detektioner på små artefakter
-* **Reducer**, hvis mål ikke detekteres
+* **Formindsk**, hvis mål ikke detekteres
 
 **Minimumsklyngedannelse af mål:**
 
@@ -157,7 +157,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 
 **Løsninger:**
 
-1. Kontroller, at kolonnen Mål er markeret for de korrekte billeder
+1. Kontroller, at kolonnen Mål er markeret for korrekte billeder
 2. Kontroller kvaliteten af målbilledet i forhåndsvisningen
 3. Genoptag målene, hvis kvaliteten er dårlig
 4. Juster indstillingerne for måldetektion, hvis det er nødvendigt
@@ -167,7 +167,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 **Mulige årsager:**
 
 * Hvide bygninger, køretøjer eller jorddækning forveksles med mål
-* Lyse pletter i vegetationen
+* Lysende pletter i vegetationen
 * Detektionsfølsomheden er for lav
 
 **Løsninger:**
@@ -185,7 +185,7 @@ Før du starter behandlingen, skal du kontrollere dit valg af målbilleder:
 
 * [ ] Mindst 1 målbillede markeret pr. session
 * [ ] Afkrydsningsfelterne i målkolonnen er markeret for alle målbilleder
-* [ ] Målbilleder optaget inden for samme tidsramme som undersøgelsen
+* [ ] Målbilleder taget inden for samme tidsramme som undersøgelsen
 * [ ] Målene er tydeligt synlige i forhåndsvisningen, når der klikkes på dem
 * [ ] Alle 4 kalibreringspaneler er synlige i hvert målbillede
 * [ ] Ingen skygger eller forhindringer på målene

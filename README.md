@@ -1,7 +1,6 @@
 ---
 metaLinks: {}
 ---
-
 # Kom godt i gang
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
@@ -10,7 +9,7 @@ Chloros er et softwareprogram fra [MAPIR](https://www.mapir.camera) til behandli
 
 ***
 
-Chloros er tilgængeligt i 4 programtilstande:
+Chloros er tilgængelig i 4 programtilstande:
 
 ## Chloros: Desktop GUI-applikation
 

@@ -6,7 +6,7 @@
 
 * 🐍 **Native Python** - Rent, Pythonic API til billedbehandling
 * 🔧 **Fuld API-adgang** - Fuld kontrol over Chloros-behandling
-* 🚀 **Automatisering** - Opbyg brugerdefinerede batchbehandlingsworkflows
+* 🚀 **Automatisering** - Opbyg tilpassede batchbehandlingsworkflows
 * 🔗 **Integration** - Integrer Chloros i eksisterende Python-applikationer
 * 📊 **Klar til forskning** - Perfekt til videnskabelige analysepipelines
 * ⚡ **Parallel behandling** - Skaleres til dine CPU-kerner (Chloros+)
@@ -129,7 +129,7 @@ SDK bruger samme licens som Chloros, Chloros (browser) og Chloros CLI. Aktiver �
 
 1. Åbn **Chloros eller Chloros (browser)** og log ind på fanen Bruger <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> . Eller åbn **CLI**.
 2. Indtast dine Chloros+-loginoplysninger og log ind
-3. Licensen gemmes lokalt (bevares ved genstart)
+3. Licensen gemmes lokalt (bevares efter genstart)
 
 {% hint style=&quot;success&quot; %}
 **Engangsopsætning**: Efter login via GUI eller CLI bruger SDK automatisk den cachelagrede licens. Der kræves ingen yderligere godkendelse!
@@ -152,7 +152,7 @@ print(f"Backend running: {status['running']}")
 
 ***
 
-## API Reference
+## API-reference
 
 ### ChlorosLocal-klasse
 
@@ -211,7 +211,7 @@ Opret et nyt Chloros-projekt.
 | `project_name` | str  | Ja      | Navn på projektet                                     |
 | `camera`       | str  | Nej       | Kameraskabelon (f.eks. &quot;Survey3N\_RGN&quot;, &quot;Survey3W\_OCN&quot;) |
 
-**Returnerer:** `dict` - Svar på oprettelse af projekt
+**Returnerer:** `dict` - Svar på projektoprettelse
 
 **Eksempel:**
 
@@ -310,13 +310,13 @@ Behandl projektbillederne.
 | ------------------- | -------- | ------------ | ----------------------------------------- |
 | `mode`              | str      | `"parallel"` | Behandlingsmodus: &quot;parallel&quot; eller &quot;seriel&quot;   |
 | `wait`              | bool     | `True`       | Vent på færdiggørelse                       |
-| `progress_callback` | callable | `None`       | Fremskridts-callback-funktion (progress, msg) |
+| `progress_callback` | callable | `None`       | Fremskridts-callback-funktion(fremskridt, msg) |
 | `poll_interval`     | float    | `2.0`        | Polling-interval for fremskridt (sekunder)   |
 
 **Returnerer:** `dict` - Behandlingsresultater
 
 {% hint style=&quot;warning&quot; %}
-**Parallel tilstand**: Kræver Chloros+ licens. Skalerer automatisk til dine CPU-kerner (op til 16 arbejdere).
+**Parallel tilstand**: Kræver Chloros+ licens. Skaleres automatisk til dine CPU-kerner (op til 16 arbejdere).
 {% endhint %}
 
 **Eksempel:**
@@ -398,11 +398,11 @@ Enkel praktisk funktion til at behandle en mappe.
 | `project_name`            | str      | Autogenereret  | Projektnavn                   |
 | `camera`                  | str      | `None`          | Kameraskabelon                |
 | `indices`                 | liste     | `["NDVI"]`      | Indekser til beregning           |
-| `vignette_correction`     | bool     | `True`          | Aktivér vignettekorrektion     |
-| `reflectance_calibration` | bool     | `True`          | Aktivér reflektanskalibrering |
+| `vignette_correction`     | bool     | `True`          | Aktiver vignettekorrektion     |
+| `reflectance_calibration` | bool     | `True`          | Aktiver reflektanskalibrering |
 | `export_format`           | str      | &quot;TIFF (16-bit)&quot; | Outputformat                  |
 | `mode`                    | str      | `"parallel"`    | Behandlingsmodus                |
-| `progress_callback`       | callable | `None`          | Progress callback              |
+| `progress_callback`       | callable | `None`          | Fremskridts-callback              |
 
 **Returnerer:** `dict` - Behandlingsresultater
 
@@ -863,7 +863,7 @@ print("Processing complete!")
 
 ### Hukommelsesstyring
 
-For store datasæt skal behandlingen foregå i batches:
+For store datasæt skal du behandle i batches:
 
 ```python
 from pathlib import Path
@@ -957,7 +957,7 @@ python -c "import sys; print(sys.path)"
 
 ### Behandlingstid udløbet
 
-**Problem:** Behandlingstid udløbet
+**Problem:** Behandlingstiden udløber
 
 **Løsninger:**
 
@@ -1123,7 +1123,7 @@ chloros.process(progress_callback=notebook_progress)
 
 ### Spørgsmål: Kræver SDK en internetforbindelse?
 
-**Svar:** Kun til den første licensaktivering. Efter login via Chloros, Chloros (browser) eller Chloros CLI gemmes licensen lokalt og fungerer offline i 30 dage.
+**Svar:** Kun til den første licensaktivering. Efter login via Chloros, Chloros (browser) eller Chloros CLI gemmes licensen lokalt i cachen og fungerer offline i 30 dage.
 
 ***
 
@@ -1157,7 +1157,7 @@ chloros.process(progress_callback=notebook_progress)
 * Slutbrugere skal have aktive Chloros+-licenser.
 * Kommerciel distribution kræver OEM-licenser.
 
-Kontakt info@mapir.camera for spørgsmål vedrørende OEM.
+Kontakt info@mapir.camera for OEM-forespørgsler.
 
 ***
 
@@ -1235,6 +1235,6 @@ Alle eksempler, der er angivet her, er testet og klar til brug. Kopier og tilpas
 
 ## Licens
 
-**Proprietær software** - Copyright (c) 2025 MAPIR Inc.
+**Proprietær software** - Ophavsret (c) 2025 MAPIR Inc.
 
 SDK kræver et aktivt Chloros+-abonnement. Uautoriseret brug, distribution eller ændring er forbudt.

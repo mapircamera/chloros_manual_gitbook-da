@@ -8,7 +8,7 @@
 * 🔗 **Integration** - Integrer i eksisterende arbejdsgange og pipelines
 * 💻 **Headless-drift** - Kør uden GUI
 * 🌍 **Flere sprog** - Understøttelse af 38 sprog
-* ⚡ **Parallel behandling** - Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
+* ⚡ **Parallel behandling** – Skaleres dynamisk til din CPU (op til 16 parallelle arbejdere)
 
 ### Krav
 
@@ -290,7 +290,7 @@ chloros-cli language ja
 | `sl`    | Slovensk             | Slovenščina      |
 
 {% hint style=&quot;success&quot; %}
-**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedbliver på tværs af alle sessioner.
+**Automatisk vedvarende**: Din sprogpræference gemmes i `~/.chloros/cli_language.json` og vedvarer på tværs af alle sessioner.
 {% endhint %}
 
 ***
@@ -390,7 +390,7 @@ Chloros+ CLI **skalerer automatisk** parallel behandling, så den passer til din
 | **Lavklasse**   | 4-7 kerner  | 8-15 GB  | 4-8      | God hastighed      |
 
 {% hint style=&quot;success&quot; %}
-**Automatisk optimering**: CLI registrerer automatisk dit systems specifikationer og konfigurerer optimal parallelbehandling. Ingen manuel konfiguration nødvendig!
+**Automatisk optimering**: CLI registrerer automatisk dine systemspecifikationer og konfigurerer optimal parallelbehandling. Ingen manuel konfiguration nødvendig!
 {% endhint %}
 
 ### Debayer-metoder
@@ -405,8 +405,8 @@ CLI bruger **Høj kvalitet (hurtigere)** som standard og anbefalet debayer-algor
 
 **Hvad gør det:** Korrigerer lysfald ved billedkanterne (mørkere hjørner, som er almindelige i kamerabilleder).
 
-* **Aktiveret som standard** - De fleste brugere bør holde denne funktion aktiveret.
-* Brug `--no-vignette` for at deaktivere.
+* **Aktiveret som standard** - De fleste brugere bør holde denne funktion aktiveret
+* Brug `--no-vignette` for at deaktivere
 
 {% hint style=&quot;success&quot; %}
 **Anbefaling**: Aktiver altid vignettekorrektion for at sikre ensartet lysstyrke i hele billedet.
@@ -416,9 +416,9 @@ CLI bruger **Høj kvalitet (hurtigere)** som standard og anbefalet debayer-algor
 
 Konverterer rå sensorværdier til standardiserede reflektansprocenter ved hjælp af kalibreringspaneler.
 
-* **Aktiveret som standard** – Væsentligt for vegetationsanalyse.
-* Kræver kalibreringsmålpaneler i billeder.
-* Brug `--no-reflectance` for at deaktivere.
+* **Aktiveret som standard** – Væsentligt for vegetationsanalyse
+* Kræver kalibreringsmålpaneler i billeder
+* Brug `--no-reflectance` for at deaktivere
 
 {% hint style=&quot;info&quot; %}
 **Krav**: Sørg for, at kalibreringspanelerne er korrekt eksponeret og synlige i dine billeder for at sikre nøjagtig reflektanskonvertering.
@@ -576,7 +576,7 @@ if __name__ == '__main__':
 
 ### Standardworkflow
 
-1. **Indtastning**: Mappe indeholdende RAW/JPG-billedpar
+1. **Indtastning**: Mappe med RAW/JPG-billedpar
 2. **Opdagelse**: CLI scanner automatisk efter understøttede billedfiler
 3. **Behandling**: Parallel tilstand skaleres til dine CPU-kerner (Chloros+)
 4. **Output**: Opretter undermapper for kameramodeller med behandlede billeder
@@ -594,7 +594,7 @@ MyProject/
     └── ...
 ```
 
-### Anslået behandlingstid
+### Estimater for behandlingstid
 
 Typisk behandlingstid for 100 billeder (12 MP hver):
 
@@ -667,7 +667,7 @@ chloros-cli --restart process "C:\Datasets\Field_A"
 
 ***
 
-### Licens-/godkendelsesproblemer
+### Problemer med licens/godkendelse
 
 **Fejl:**
 
@@ -705,13 +705,13 @@ No images found in the specified folder
 **Løsninger:**
 
 1. Kontroller, at mappen indeholder understøttede formater (.RAW, .TIF, .JPG)
-2. Kontroller, at mappestien er korrekt (brug anførselstegn for stier med mellemrum)
+2. Kontroller, at mappestien er korrekt (brug anførselstegn til stier med mellemrum)
 3. Sørg for, at du har læsetilladelse til mappen.
 4. Kontroller, at filtypenavnene er korrekte.
 
 ***
 
-### Behandlingen går i stå eller hænger
+### Behandlingen går i stå eller fryser
 
 **Løsninger:**
 
@@ -777,7 +777,7 @@ chloros-cli process "C:\Input" -o "D:\Output"
 
 ### Spørgsmål: Kan jeg behandle flere mapper på én gang?
 
-**A:** Ikke direkte med en enkelt kommando, men du kan bruge scripting til at behandle mapper sekventielt. Se afsnittet [Automatisering og scripting](CLI.md#automation--scripting).
+**A:** Ikke direkte med én kommando, men du kan bruge scripting til at behandle mapper sekventielt. Se afsnittet [Automatisering og scripting](CLI.md#automation--scripting).
 
 ***
 
@@ -867,7 +867,7 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Eksempel 2: Videnskabelig output i høj kvalitet
+### Eksempel 2: Højkvalitets videnskabelig output
 
 32-bit float TIFF:
 

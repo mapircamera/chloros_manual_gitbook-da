@@ -8,7 +8,7 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 2. Klik på ikonet **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> i venstre sidepanel
 3. Filbrowseren viser dit projekts filliste
 
-{% hint style=&quot;info&quot; %}
+{% tip style=&quot;info&quot; %}
 **Understøttede filtyper**: Chloros understøtter RAW+JPG- og JPG-billedfiler fra MAPIR Survey3W og Survey3N kameraer. Kun RAW+JPG anbefales.
 {% endhint %}
 
@@ -16,7 +16,7 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 
 ## Tilføjelse af billeder til dit projekt
 
-Der er to primære måder at tilføje billeder til dit projekt:
+Der er to primære måder at tilføje billeder til dit projekt på:
 
 ### Metode 1: Tilføj filer
 
@@ -37,7 +37,7 @@ Brug denne indstilling til at importere alle billeder fra en mappe på én gang.
 
 ***
 
-## Forståelse af filbrowser-tabellen
+## Om filbrowser-tabellen
 
 Når billederne er importeret, vises de i en tabel med følgende kolonner:
 
@@ -85,7 +85,7 @@ Sådan fjerner du uønskede billeder fra dit projekt:
 
 * **Sorter efter kolonne**: Klik på en kolonneoverskrift for at sortere billeder
 * **Sorter efter tidsstempel**: Nyttigt til at organisere kronologiske optagelsessekvenser
-* **Filter efter kameramodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer
+* **Kamerafiltermodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer
 
 ***
 
@@ -112,9 +112,9 @@ Klik på en billedminiature i filbrowseren for at vise det i det primære forhå
 
 Chloros registrerer og ignorerer automatisk duplikerede filer:
 
-* Filer med identiske filnavne springes over.
-* Forhindrer utilsigtet dobbeltbehandling.
-* Der vises en advarselsmeddelelse, når der registreres duplikater.
+* Filer med identiske filnavne springes over
+* Forhindrer utilsigtet dobbeltbehandling
+* Der vises en advarselsmeddelelse, når der registreres duplikater
 
 {% hint style=&quot;warning&quot; %}
 **Vigtigt**: Omdøb eller rediger ikke dine originale billedfiler, før du importerer dem. Chloros er afhængig af originale filnavne og metadata for at kunne behandle filerne korrekt.
@@ -170,7 +170,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 
 **Løsning**: Kontroller filformatet og kameraets kompatibilitet.
 
-### Kameramodel ikke fundet
+### Kameramodel ikke registreret
 
 **Mulige årsager:**
 

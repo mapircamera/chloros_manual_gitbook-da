@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/output-image-formats
 ---
-
 # Output-billedformater
 
 ### TIFF (16-bit)
@@ -20,5 +19,5 @@ metaLinks:
 
 ### **PNG (8-bit)**
 
-8-bit (pixel digital number 0 - 255) PNG (.png) format output. Tabsfri komprimering, der er velegnet til visning og visualisering på internettet.
+8-bit (pixel digital number 0 - 255) PNG (.png) format output. Tabsfri komprimering egnet til visning og visualisering på internettet.
 

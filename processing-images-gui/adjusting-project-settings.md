@@ -1,6 +1,6 @@
 # Justering af projektindstillinger
 
-Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine arbejdsgangskrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
+Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine workflowkrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
 
 ## Adgang til projektindstillinger
 
@@ -40,13 +40,13 @@ Styrer, hvordan Chloros identificerer kalibreringsmål i dine billeder.
 **Vigtige indstillinger:**
 
 * **Minimumskalibreringsprøveområde**: Størrelsestærskel for måldetektion (standard: 25 pixels)
-* **Minimum målklyngedannelse**: Lighedstærskel for gruppering af målregioner (standard: 60)
+* **Minimumsklustering af mål**: Lighedstærskel for gruppering af målregioner (standard: 60)
 
 **Hvornår skal du justere:**
 
 * Forøg prøveområdet, hvis du får falske detektioner.
-* Reducer, hvis målene ikke bliver detekteret.
-* Juster klyngedannelsen, hvis målene bliver opdelt i flere detektioner.
+* Formindsk, hvis målene ikke bliver detekteret.
+* Juster klusteringen, hvis målene bliver opdelt i flere detektioner.
 
 ### Behandling
 
@@ -118,18 +118,18 @@ Opret genanvendelige skabeloner for ensartede arbejdsgange:
 
 **Fordele:**
 
-* Anvend identiske indstillinger på tværs af flere projekter.
-* Del konfigurationer med teammedlemmer.
-* Bevar konsistensen ved gentagne undersøgelser.
+* Anvend identiske indstillinger på tværs af flere projekter
+* Del konfigurationer med teammedlemmer
+* Bevar konsistensen for gentagne undersøgelser
 
 ### Indlæs skabelon i nyt projekt
 
 Når du opretter et nyt projekt:
 
-1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen.
-2. Vælg **&quot;Indlæs fra skabelon&quot;**.
-3. Vælg din gemte skabelon.
-4. Alle indstillinger anvendes automatisk.
+1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen
+2. Vælg **&quot;Indlæs fra skabelon&quot;**
+3. Vælg din gemte skabelon
+4. Alle indstillinger anvendes automatisk
 
 ### Arbejdsmappe
 
@@ -216,7 +216,7 @@ Før du begynder at behandle, skal du gennemgå disse vigtige indstillinger:
 * [ ] Kameramodel korrekt registreret i filbrowseren
 * [ ] Vignettekorrektion aktiveret
 * [ ] Reflektanskalibrering aktiveret
-* [ ] Mindst et kalibreringsmålbillede importeret
+* [ ] Mindst ét kalibreringsmålbillede importeret
 * [ ] Ønskede multispektrale indekser tilføjet
 * [ ] Eksportformat, der passer til din arbejdsgang
 * [ ] PPK-indstillinger konfigureret (hvis du bruger .daq med eksponeringshændelser)

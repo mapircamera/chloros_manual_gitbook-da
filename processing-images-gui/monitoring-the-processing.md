@@ -6,7 +6,7 @@ Når behandlingen er startet, giver Chloros flere muligheder for at overvåge fr
 
 Statusbjælken i den øverste header viser behandlingsstatus og færdiggørelsesprocent i realtid.
 
-### Statusbjælke i fri tilstand
+### Statusbjælke i gratis tilstand
 
 For brugere uden Chloros+-licens:
 
@@ -34,7 +34,7 @@ For brugere med Chloros+ licens:
 
 **Interaktive funktioner:**
 
-* **Hold musen over** fremskridtsbjælken for at se det udvidede 4-trins panel
+* **Hold musen over** fremdriftsbjælken for at se det udvidede 4-trins panel
 * **Klik** på fremdriftsbjælken for at fryse/fastgøre det udvidede panel
 * **Klik igen** for at frigøre og automatisk skjule, når musen fjernes
 * Hvert trin viser individuel fremdrift (0-100 %)
@@ -73,14 +73,14 @@ For brugere med Chloros+ licens:
 
 **Hvad sker der:**
 
-* Læsning af billedets EXIF-metadata (tidsstempler, eksponeringsindstillinger)
-* Fastlæggelse af kalibreringsstrategi baseret på måltidsstempler
-* Organisering af billedbehandlingskøen
-* Forberedelse af parallelle behandlingsarbejdere (kun Chloros+)
+* Læser billedets EXIF-metadata (tidsstempler, eksponeringsindstillinger)
+* Bestemmer kalibreringsstrategi baseret på måltidsstempler
+* Organiserer billedbehandlingskøen
+* Forbereder parallelle behandlingsarbejdere (kun Chloros+)
 
 **Varighed:** 5-30 sekunder
 
-**Statusindikator:**
+**Fremskridtsindikator:**
 
 * Analyserer: 0 % → 100 %
 * Hurtig fase, afsluttes normalt hurtigt
@@ -116,7 +116,7 @@ For brugere med Chloros+ licens:
 
 **Hvad du skal være opmærksom på:**
 
-* Stabil fremgang gennem billedtælling
+* Stabil fremgang gennem billedantal
 * Kontroller fejlfindingsloggen for meddelelser om færdiggørelse pr. billede
 * Advarsler om billedkvalitet eller kalibreringsproblemer
 
@@ -137,7 +137,7 @@ For brugere med Chloros+ licens:
 * Filer, der skrives
 * Eksportformat og destination
 
-**Hvad man skal være opmærksom på:**
+**Hvad du skal være opmærksom på:**
 
 * Advarsler om diskplads
 * Fejl ved filskrivning
@@ -206,12 +206,12 @@ Kritiske problemer, der kan medføre, at behandlingen mislykkes:
 
 ### Kopiering af logdata
 
-Sådan kopieres loggen til fejlfinding eller support:
+Sådan kopieres log til fejlfinding eller support:
 
 1. Åbn panelet Debug Log (Fejlfindingslog).
 2. Klik på knappen **&quot;Copy Log&quot;** (Kopier log) (eller højreklik → Vælg alt).
 3. Indsæt i tekstfil eller e-mail.
-4. Send til MAPIR-support, hvis det er nødvendigt.
+4. Send til MAPIR support, hvis nødvendigt.
 
 ***
 
@@ -249,7 +249,7 @@ Sådan kopieres loggen til fejlfinding eller support:
 **Hvis hukommelsen er lav:**
 
 * Behandl mindre batcher
-* Luk andre applikationer
+* Luk andre programmer
 * Opgrader RAM, hvis du regelmæssigt behandler store datasæt
 
 ### GPU-forbrug (Chloros+ med CUDA)
@@ -300,9 +300,9 @@ Når GPU-acceleration er aktiveret:
 
 **Systemet reagerer ikke:**
 
-* Chloros+ parallel tilstand bruger for mange ressourcer
+* Chloros+ parallel mode bruger for mange ressourcer
 * Overvej at reducere samtidige opgaver eller opgradere hardware
-* Fri tilstand er mindre ressourcekrævende
+* Free mode er mindre ressourcekrævende
 
 ### Hvornår skal behandlingen stoppes
 
@@ -329,7 +329,7 @@ Stop behandlingen, hvis du ser:
 **Mulige årsager:**
 
 * Umærkede målbilleder (scanning af alle billeder)
-* HDD i stedet for SSD-lager
+* HDD i stedet for SSD-lagerplads
 * Utilstrækkelige systemressourcer
 * Mange indekser konfigureret
 * Adgang til netværksdrev
@@ -362,10 +362,10 @@ Stop behandlingen, hvis du ser:
 
 **Løsninger:**
 
-1. Sørg for tilstrækkelig ventilation.
-2. Rengør computeren for støv.
-3. Reducer behandlingsbelastningen (brug Free-tilstand i stedet for Chloros+).
-4. Behandl i de køligere timer af døgnet.
+1. Sørg for tilstrækkelig ventilation
+2. Rengør computeren for støv
+3. Reducer behandlingsbelastningen (brug Free-tilstand i stedet for Chloros+)
+4. Behandl i de køligere timer af døgnet
 
 ***
 
@@ -387,6 +387,6 @@ Når behandlingen er afsluttet:
 1. **Gennemgå resultaterne** – Se [Afslutning af behandlingen](finishing-the-processing.md)
 2. **Kontroller outputmappen** – Kontroller, at alle filer er eksporteret korrekt
 3. **Gennemgå fejlfindingsloggen** – Kontroller for advarsler eller fejl
-4. **Se forhåndsvisning af behandlede billeder** – Brug billedviseren eller ekstern software
+4. **Vis forhåndsvisning af behandlede billeder** – Brug billedviseren eller ekstern software
 
 For information om gennemgang og brug af dine behandlede resultater, se [Afslutning af behandlingen](finishing-the-processing.md).

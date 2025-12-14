@@ -1,6 +1,6 @@
 # Afslutning af behandlingen
 
-Når Chloros har afsluttet behandlingen, er det tid til at gennemgå dine resultater, kontrollere outputkvaliteten og forberede dine behandlede billeder til brug i din arbejdsgang. Denne side guider dig gennem de sidste trin og de næste handlinger.
+Når Chloros har afsluttet behandlingen, er det tid til at gennemgå dine resultater, kontrollere outputkvaliteten og forberede dine behandlede billeder til brug i dit workflow. Denne side guider dig gennem de sidste trin og de næste handlinger.
 
 ## Indikation for færdig behandling
 
@@ -103,7 +103,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 * Vignetteringskorrektion deaktiveret
 * Kamera/objektiv findes ikke i Chloros-profildatabasen
-* Ekstrem vignettering, der overstiger korrektionsevnen
+* Ekstrem vignettering, der overstiger korrektionsmulighederne
 
 **Løsninger:**
 
@@ -115,9 +115,9 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 **Mulige årsager:**
 
-* Der er ikke registreret nogen kalibreringsmål.
-* Der er valgt en forkert kalibreringsmålmodel.
-* Reflektanskalibrering er deaktiveret.
+* Ingen kalibreringsmål registreret.
+* Forkert kalibreringsmålmodel valgt.
+* Reflektanskalibrering deaktiveret.
 * Målbilleder af dårlig kvalitet.
 
 **Løsninger:**
@@ -142,7 +142,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 2. Kontroller, at lyssensorloggen er inkluderet.
 3. Kontroller, at kalibreringsmålene er blevet registreret.
 4. Sørg for, at det korrekte kameramodel er blevet registreret.
-5. Gennemgå tidspunktet og forholdene for optagelse af målbilleder.
+5. Gennemgå tidspunktet for og betingelserne for optagelse af målbilledet.
 
 ***
 
@@ -177,7 +177,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 **Anbefalet arbejdsgang:**
 
 1. **Brug indeksbilleder med LUT-farver** til visuelle rapporter
-2. **Udtryk statistik**: Gennemsnitlig NDVI pr. felt/parcel
+2. **Uddrag statistik**: Gennemsnitlig NDVI pr. felt/parcel
 3. **Tidsserier**: Sammenlign indekser på tværs af flere sessioner
 4. **Generer rapporter**: Inkluder kort, statistikker og visualiseringer
 
@@ -220,14 +220,14 @@ For flere sessioner/datasæt:
 
 **Mulighed 1: GUI - Flere projekter**
 
-* Opret separate projekter for hver session
-* Brug ensartede skabelonindstillinger
-* Behandl én ad gangen
+* Opret separate projekter for hver session.
+* Brug ensartede skabelonindstillinger.
+* Behandl én ad gangen.
 
 **Mulighed 2: Chloros CLI (kun Chloros+)**
 
-* Automatiser batchbehandling
-* Behandl flere mapper med scripts
+* Automatiser batchbehandling.
+* Behandl flere mapper med scripts.
 * Se [CLI-dokumentation](../CLI.md)
 
 **Mulighed 3: Python SDK (kun Chloros+)**
@@ -249,9 +249,9 @@ Hvis resultaterne ikke er tilfredsstillende:
 3. Juster indstillingerne i panelet Projektindstillinger
 4. Behandl igen – resultaterne overskriver de tidligere resultater
 
-### Behandling af en delmængde af billeder
+### Behandling af delmængde af billeder
 
-Sådan genbehandles kun bestemte billeder:
+For kun at genbehandle bestemte billeder:
 
 1. Opret et nyt projekt
 2. Importer kun de billeder, der skal genbehandles

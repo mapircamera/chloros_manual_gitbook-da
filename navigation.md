@@ -1,6 +1,6 @@
 # GUI: Navigation
 
-Når du starter Chloros og Chloros (Browser) for første gang, starter dets backend. Når det er klar, vises ikonet for hovedmenuen øverst til venstre. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Når du starter Chloros og Chloros (browser) for første gang, starter dets backend. Når det er klar, vises ikonet for hovedmenuen øverst til venstre. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -16,9 +16,9 @@ Når den er aktiveret, starter startknappen billedbehandlingsprocessen.
 
 ### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Statusbjælke <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
-I den gratis Chloros-tilstand, der behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
+I den gratis Chloros-tilstand, som behandler alle filer sekventielt, viser statusbjælken to faser: Målregistrering og behandling.
 
-I den betalte Chloros+-licenstilstand, der behandler alle filer samtidigt, viser statusbjælken fire faser: Registrering, analyse, kalibrering, eksport. Hvis du holder musemarkøren over Chloros+ fremskridtsbjælken, vises det udvidede panel med 4 fremskridtsbjælker, så du kan følge med. Hvis du klikker på den øverste fremskridtsbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigøres det.
+I den betalte Chloros+-licenstilstand, som behandler alle filer samtidigt, viser statusbjælken fire faser: Registrering, analyse, kalibrering, eksport. Hvis du holder musemarkøren over Chloros+ fremskridtsbjælken, vises det udvidede panel med 4 fremskridtsbjælker, så du kan følge med. Hvis du klikker på den øverste fremskridtsbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigøres det.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -32,7 +32,7 @@ Under fanen Projektindstillinger kan du justere de globale projektindstillinger 
 
 #### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> Filbrowser
 
-Tilføj filer/mapper og fjern filer fra projektet. Duplikerede filer ignoreres. Markér målkolonnen for ethvert målbillede, og behandlingen vil kun se på markerede billeder som mål, hvilket i høj grad fremskynder din behandlingstid.
+Tilføj filer/mapper og fjern filer fra projektet. Duplikerede filer ignoreres. Markér målkolonnefeltet for ethvert målbillede, og behandlingen vil kun se på markerede billeder som mål, hvilket i høj grad fremskynder din behandlingstid.
 
 #### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Billedfremviser](image-viewer-gui/opening-an-image-full-screen.md)
 

@@ -74,20 +74,20 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Behandler flere billeder samtidigt
 * Multitrådet drift (op til 16 parallelle arbejdere)
-* Udnytter flere CPU-kerner
+* Anvender flere CPU-kerner
 * Valgfri GPU (CUDA)-acceleration med NVIDIA-grafikkort
 
 **Statusbjælken viser 4 faser:**
 
-1. **Detektering** - Find kalibreringsmål
-2. **Analyse** - Undersøger billedmetadata og forbereder pipeline
-3. **Kalibrering** - Anvender korrektioner og kalibreringer
-4. **Eksport** - Gemmer behandlede billeder og indekser
+1. **Detektering** – Find kalibreringsmål
+2. **Analyse** – Undersøg billedmetadata og forbered pipeline
+3. **Kalibrering** – Anvender korrektioner og kalibreringer
+4. **Eksport** – Gemmer behandlede billeder og indekser
 
-**Interaktion med statusbjælke:**
+**Interaktion med fremskridtsbjælken:**
 
 * **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 trin
-* **Klik** på statusbjælken for at fastfryse dropdown-panelet
+* **Klik** på fremskridtsbjælken for at fastfryse dropdown-panelet
 * **Klik igen** for at frigøre og skjule panelet
 
 **Behandlingstid:**
@@ -97,7 +97,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 * GPU-acceleration forbedrer hastigheden yderligere
 
 {% hint style=&quot;info&quot; %}
-**Chloros+ Hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
+**Chloros+ hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
 {% endhint %}
 
 ***
@@ -150,7 +150,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 **Hvad Chloros gør:**
 
-* Gemmer kalibrerede billeder i det valgte format
+* Gemmer kalibrerede billeder i valgt format
 * Eksporterer indeksbilleder med konfigurerede LUT-farver
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavne med suffikser
@@ -185,7 +185,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Undgå at starte andre CPU-intensive opgaver
 
 {% hint style=&quot;warning&quot; %}
-**Tip til ydeevne**: For at opnå den bedste ydeevne for Chloros+, skal du lukke andre programmer og lade Chloros bruge alle systemressourcer.
+**Tip til ydeevne**: For at opnå den bedste ydeevne for Chloros+ skal du lukke andre programmer og lade Chloros bruge alle systemressourcer.
 {% endhint %}
 
 ### Behandlingen kan ikke sættes på pause
@@ -195,7 +195,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Når behandlingen er startet, kan den ikke sættes på pause.
 * Du kan annullere behandlingen, men fremskridtet går tabt.
 * Delvise resultater gemmes ikke.
-* Du skal starte forfra, hvis behandlingen annulleres.
+* Du skal starte forfra, hvis du annullerer.
 
 **Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.
 
@@ -207,7 +207,7 @@ Mens behandlingen kører, kan du:
 
 * **Se statusbjælken** – Se den samlede procentdel af færdiggørelsen
 * **Se det aktuelle trin** – Registrer, analyser, kalibrer eller eksporter
-* **Kontroller fanen Log** – Se detaljerede behandlingsmeddelelser og advarsler
+* **Tjek fanen Log** – Se detaljerede behandlingsmeddelelser og advarsler
 * **Se færdige billeder** – Nogle eksportfiler kan vises under behandlingen
 
 For detaljerede oplysninger om overvågning, se [Overvågning af behandlingen](monitoring-the-processing.md).
@@ -222,7 +222,7 @@ Hvis du har brug for at stoppe behandlingen:
 
 1. Find **Stop/Annuller-knappen** (erstatter Start-knappen under behandlingen)
 2. Klik på Stop-knappen
-3. Behandlingen stoppes øjeblikkeligt
+3. Behandlingen stopper øjeblikkeligt
 4. Delvise resultater kasseres
 
 ### Hvornår skal du annullere
@@ -271,7 +271,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 | 1000 billeder | 4-6 timer   | 1,5-2 timer      | 40-60 min      |
 
 {% hint style=&quot;info&quot; %}
-**Første kørsel**: Den første behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
+**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
 {% endhint %}
 
 ***
@@ -284,7 +284,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 * Ingen billeder importeret
 * Backend er ikke fuldt startet
-* Tidligere behandling kører stadig
+* Forrige behandling kører stadig
 * Projektet er ikke fuldt indlæst
 
 **Løsninger:**
@@ -307,7 +307,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 1. Kontroller fejlfindingsloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for fejlmeddelelser
 2. Kontroller, at der er tilstrækkelig diskplads
-3. Prøv at behandle en mindre delmængde af billeder
+3. Prøv at behandle et mindre udsnit af billederne
 4. Kontroller, at billederne ikke er beskadigede
 
 ### Advarsel &quot;Ingen mål fundet&quot;
@@ -334,7 +334,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 1. **Test først med en lille delmængde** – Behandl 10-20 billeder for at kontrollere indstillingerne
 2. **Kontroller ledig diskplads** – Sørg for, at der er 2-3 gange datasættets størrelse ledig
 3. **Luk unødvendige programmer** – Frigør systemressourcer
-4. **Kontroller målbilleder** – Se et eksempel på markerede mål for at sikre kvaliteten
+4. **Kontroller målbilleder** – Se en forhåndsvisning af markerede mål for at sikre kvaliteten
 5. **Gem projektet** – Projektet gemmes automatisk, men det er god praksis at gemme manuelt.
 
 ### Under behandlingen

@@ -11,7 +11,7 @@
 * [Kalibreringsmål](calibration-targets.md)
 * [Understøttede sprog](supported-languages.md)
 * [Download](download.md)
-* [FAQ](faq.md)
+* [Ofte stillede spørgsmål](faq.md)
 
 ## Behandling af billeder (GUI)
 

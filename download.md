@@ -3,7 +3,6 @@ metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/download
 ---
-
 # Download
 
 Download den nyeste version af Chloros til Windows for at komme i gang med multispektral billedbehandling.
@@ -21,7 +20,7 @@ Download den nyeste version af Chloros til Windows for at komme i gang med multi
 | **Internet**         | Kræves til aktivering af licens | Kræves til aktivering af licens |
 
 {% hint style=&quot;info&quot; %}
-**GPU-acceleration**: Chloros+ brugere med NVIDIA GPU&#x27;er (4 GB+ VRAM) kan bruge CUDA-acceleration for betydeligt hurtigere behandling.
+**GPU-acceleration**: Chloros+ brugere med NVIDIA GPU&#x27;er (4 GB+ VRAM) kan bruge CUDA-acceleration til betydeligt hurtigere behandling.
 {% endhint %}
 
 ***
@@ -46,10 +45,10 @@ Download den nyeste version af Chloros til Windows for at komme i gang med multi
 3. Følg vejledningen i installationsguiden.
 4. Vælg installationsmappe (standard: `C:\Program Files\Chloros\`).
 5. Afslut installationen, og start Chloros.
-6. Log ind med din MAPIR Cloud Chloros+ konto (eller fortsæt med gratisversionen)
+6. Log ind med din MAPIR Cloud Chloros+ konto (eller fortsæt med gratis versionen)
 
 {% hint style=&quot;success&quot; %}
-Installationsprogrammet tilføjer automatisk `chloros-cli` til din system PATH for kommandolinjeadgang.
+Installationsprogrammet tilføjer automatisk `chloros-cli` til dit systems PATH for kommandolinjeadgang.
 {% endhint %}
 
 ***
@@ -93,7 +92,7 @@ Få adgang til avancerede funktioner med et Chloros+ abonnement:
 * 📱 **Flere enheder** - Brug på 2-10+ enheder (afhængigt af abonnement)
 * 🧮 **Brugerdefinerede formler** - Opret brugerdefinerede multispektrale indekser
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Se Chloros+ Planer og priser</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Se Chloros+ abonnementer og priser</a></p>***
 
 ## Hjælp til installation
 
@@ -117,7 +116,7 @@ Få adgang til avancerede funktioner med et Chloros+ abonnement:
 
 * Sørg for, at internetforbindelsen er aktiv
 * Kontroller legitimationsoplysningerne på [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Kontroller, at firewall ikke blokerer Chloros
+* Kontroller, at firewallen ikke blokerer Chloros
 * Se [Chloros+ Login](chloros+-login.md) for detaljerede instruktioner
 
 ### Få support
@@ -166,3 +165,5 @@ Uautoriseret brug, distribution eller ændring er forbudt.
 **Gratis version**: Tilgængelig til personlig og kommerciel brug med begrænsede funktioner.
 
 **Chloros+**: Abonnementsbaseret licens til avancerede funktioner og kommerciel brug.
+
+<figure><img src=".gitbook/assets/t3-125_2.jpg" alt=""><figcaption></figcaption></figure>

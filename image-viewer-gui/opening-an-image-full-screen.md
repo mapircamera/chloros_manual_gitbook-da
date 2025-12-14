@@ -1,6 +1,6 @@
 # Åbning af et billede i fuld skærm
 
-Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
+Chloros Image Viewer har en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
 
 ## Adgang til billedviseren
 
@@ -30,7 +30,7 @@ Når et billede er indlæst i forhåndsvisningsområdet:
 Den største del af skærmen viser dit billede:
 
 * **Fuld opløsning**: Billeder vises i oprindelig opløsning
-* **Zoombar**: Brug kontrolelementer eller musehjul til at zoome
+* **Zoombar**: Brug kontrolelementer eller mushjulet til at zoome
 * **Panorerbar**: Klik og træk for at flytte rundt, når der er zoomet
 * **Billedformat bevaret**: Billeder skaleres proportionalt
 
@@ -44,11 +44,11 @@ Den største del af skærmen viser dit billede:
 
 Naviger gennem dit billedsæt ved hjælp af tastaturgenveje eller knapper:
 
-* **Næste billede**: Klik på →-knappen eller tryk på **→** (højre pil)-tasten
-* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstre pil)-tasten
+* **Næste billede**: Klik på →-knappen eller tryk på **→** (højrepil)-tasten
+* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstrepil)-tasten
 * **Gå til et bestemt billede**: Gå tilbage til filbrowseren og klik på den ønskede miniature
 
-#### Zoomknapper
+#### Zoomkontroller
 
 Juster forstørrelsen for at se billeddetaljer:
 
@@ -56,13 +56,13 @@ Juster forstørrelsen for at se billeddetaljer:
 
 * Klik på knappen **+** (plus)
 * Tryk på tasten **+** eller **=**
-* Rul musehjulet **op**
+* Rul musehjulet **opad**
 
 **Zoom ud:**
 
 * Klik på knappen **−** (minus)
 * Tryk på tasten **−** (minus)
-* Rul musehjulet **ned**
+* Rul musehjulet **nedad**
 
 **Tilpas til skærm:**
 
@@ -92,7 +92,7 @@ Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:
 **Værdiens placering:**
 
 * **Flydende tal og rød linje i højre side af indeks LUT-gradientlegende**
-* **Når du zoomer yderligere ind, vises den flydende værdi nær markøren og den fremhævede pixel**
+* **Når der zoomes yderligere ind, vises flydende værdi nær markøren og fremhævet pixel**
 * Viser værdier for pixel **under markøren eller fremhævet**
 * Opdateres, når du bevæger musen
 
@@ -146,8 +146,8 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Navigation
 
-* **→** (højre pil): Næste billede
-* **←** (venstre pil): Forrige billede
+* **→** (højrepil): Næste billede
+* **←** (venstrepil): Forrige billede
 * **Home**: Første billede på listen
 * **End**: Sidste billede på listen
 
@@ -166,7 +166,7 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Andet
 
-* **Ctrl+S**: Gem det aktuelle billede
+* **Ctrl+S**: Gem aktuelt billede
 * **F**: Fuldskærmstilstand (hvis tilgængelig)
 
 ***
@@ -181,7 +181,7 @@ Kontroller, at indekserne er beregnet korrekt:
    * **NDRE**: Højere værdier for kraftig vækst
    * **GNDVI**: Ligner NDVI, men er klorofylfølsom
 3. Kontroller ikke-vegetation:
-   * **Jord**: Tæt på 0 eller let negativ
+   * **Jord**: Nær 0 eller let negativ
    * **Vand**: Negative værdier (-0,5 til 0)
 
 ***
@@ -201,19 +201,19 @@ Kontroller, at indekserne er beregnet korrekt:
 1. Prøv at åbne i ekstern viewer for at kontrollere filens integritet
 2. Kontroller, at filformatet svarer til den forventede type
 3. Luk andre programmer for at frigøre hukommelse
-4. Prøv med et mindre/andet billede
+4. Prøv et mindre/andet billede
 
 ### Sort eller hvid billedvisning
 
 **Mulige årsager:**
 
-* Værdiområdet ligger uden for skærmens kapacitet
+* Værdiområde uden for skærmens kapacitet
 * 32-bit float-billede med usædvanlige værdier
 * Indeksberegningsfejl
 
 **Løsninger:**
 
-1. Kontroller pixelværdierne – hvis de alle er meget lave eller meget høje, skal du justere visningsområdet.
+1. Kontroller pixelværdierne – hvis alle er meget lave eller meget høje, skal du justere visningsområdet.
 2. Prøv at åbne i QGIS eller lignende med automatisk justering af området.
 3. Kontroller fejlfindingsloggen fra behandlingen for fejl.
 
@@ -224,12 +224,12 @@ Kontroller, at indekserne er beregnet korrekt:
 * Visning af forkert billede (original vs. behandlet)
 * Kalibreringen blev ikke anvendt korrekt
 * Lyssensordata blev ikke inkluderet i input
-* Procenttilstand skiftet forkert
+* Procenttilstand skiftede forkert
 
 **Løsninger:**
 
-1. Kontroller, at du ser behandlet output (kontroller filnavnesuffikset)
-2. Kontroller procenttilstandsknappens tilstand
+1. Kontroller, at du ser det behandlede output (kontroller filnavnesuffikset)
+2. Kontroller status for procenttilstandsknappen
 3. Sammenlign med kendte gode billeder fra samme datasæt
 
 ***
@@ -239,7 +239,7 @@ Kontroller, at indekserne er beregnet korrekt:
 Nu hvor du kan se billeder i fuld skærm:
 
 * [**Billedlag**](image-layers.md) – Lær om multibåndvisualisering
-* [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
+* [**Indeks/LUT Sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
 * [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Få indsigt i tilgængelige indekser
 
 For arbejdsgangen for behandling, se:
