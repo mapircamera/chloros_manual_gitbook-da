@@ -6,7 +6,7 @@ Brugermenuen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> s
 
 Når du er logget ind, vises dine kontooplysninger:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Login
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>## CLI Login
 
 Log ind med dine Chloros+ loginoplysninger for at aktivere CLI-behandling.
 

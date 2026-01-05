@@ -88,7 +88,7 @@ Fanen Kort understøtter to fliseudbydere til baggrundskortbilleder:
 
 Du kan vælge kortlagstypen (fra venstre mod højre):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terræn
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terræn
 
 Viser højdeprofiler og kortfliser med detaljer (veje osv.)
 
