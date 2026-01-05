@@ -9,16 +9,15 @@ Når behandlingen er afsluttet, vil du se flere indikatorer:
 * ✅ **Statusbjælke**: Når 100 % færdig
 * ✅ **Fejlfindingslog**: Viser meddelelsen &quot;Behandling færdig&quot;
 * ✅ **Startknap**: Bliver aktiveret igen (klar til næste behandlingskørsel)
-* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen til kameramodellen
-
-***
+* ✅ **Outputfiler**: Alle behandlede billeder gemmes i undermappen til kameramodellen***
 
 ## Find dine behandlede billeder
 
 ### Åbn outputmappen
 
-1. Klik på **Hovedmenu** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> (øverst til venstre)
+1. Klik på **Hovedmenu** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> (øverst til venstre)
 2. Vælg **&quot;Åbn projektmappe&quot;**
+
 3. Din filudforsker åbner projektmappen
 4. Find dit projekt ved hjælp af navnet
 
@@ -37,10 +36,8 @@ Når behandlingen er afsluttet, vil du se flere indikatorer:
 
 ### Forhåndsvisning i eksterne billedvisere
 
-**Anbefalede billedvisere:**
-
-* **QGIS** – Gratis GIS-software (bedst til georefereret multispektral analyse)
-* **IrfanView** – Hurtig, letvægts billedviser (understøtter TIFF)
+**Anbefalede visere:*** **QGIS** - Gratis GIS-software (bedst til georefereret multispektral analyse)
+* **IrfanView** - Hurtig, letvægts billedviser (understøtter TIFF)
 * **Adobe Photoshop** - Professionel redigering (understøtter TIFF)
 * **GIMP** - Gratis alternativ til Photoshop
 * **Windows Photos** - Grundlæggende visning (understøtter muligvis ikke 16-bit TIFF)
@@ -72,7 +69,8 @@ Se [Image Viewer](../image-viewer-gui/opening-an-image-full-screen.md) for detal
 
 For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
-1. Klik på knappen **&quot;Kopier&quot;** eller **&quot;Download&quot;**
+1. Klik på knappen **&quot;Kopier&quot;**eller**&quot;Download&quot;**
+
 2. Gem som tekstfil i projektmappen
 3. Vedlæg projektdokumentationen
 4. Send til MAPIR support, hvis der opstår problemer
@@ -115,9 +113,9 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 **Mulige årsager:**
 
-* Ingen kalibreringsmål registreret.
-* Forkert kalibreringsmålmodel valgt.
-* Reflektanskalibrering deaktiveret.
+* Der er ikke registreret nogen kalibreringsmål.
+* Der er valgt en forkert kalibreringsmålmodel.
+* Reflektanskalibrering er deaktiveret.
 * Målbilleder af dårlig kvalitet.
 
 **Løsninger:**
@@ -127,22 +125,18 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 3. Kontroller målbilledernes kvalitet.
 4. Genbehandl med de korrekte mål markeret.
 
-### Problem: NDVI-værdierne synes at være forkerte.
+### Problem: NDVI-værdier synes forkerte
 
-**Forventede NDVI-intervaller:**
-
-* **Vand, sten, jord**: -0,1 til 0,2
+**Forventede NDVI-intervaller:*** **Vand, sten, jord**: -0,1 til 0,2
 * **Sparsom/usund vegetation**: 0,2 til 0,4
 * **Moderat vegetation**: 0,4 til 0,6
-* **Sund, tæt vegetation**: 0,6 til 0,9
-
-**Hvis værdierne ligger uden for disse intervaller:**
+* **Sund, tæt vegetation**: 0,6 til 0,9**Hvis værdierne ligger uden for disse intervaller:**
 
 1. Kontroller, at reflektanskalibrering er blevet anvendt.
 2. Kontroller, at lyssensorloggen er inkluderet.
 3. Kontroller, at kalibreringsmålene er blevet registreret.
 4. Sørg for, at det korrekte kameramodel er blevet registreret.
-5. Gennemgå tidspunktet for og betingelserne for optagelse af målbilledet.
+5. Gennemgå tidspunktet for og betingelserne for optagelse af målbilleder.
 
 ***
 
@@ -152,7 +146,7 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 **Anbefalet arbejdsgang:**
 
-1. **Importer kalibrerede reflektansbilleder** til fotogrammetri-software:
+1.**Importer kalibrerede reflektansbilleder** til fotogrammetri-software:
    * Pix4Dmapper
    * Agisoft Metashape
    * DroneDeploy
@@ -166,42 +160,33 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR Support:
 
 **Anbefalet arbejdsgang:**
 
-1. **Indlæs i QGIS, ArcGIS eller lignende**
-2. **Brug 16-bit TIFF** reflektansbilleder til multibåndsanalyse
+1.**Indlæs i QGIS, ArcGIS eller lignende**
+
+2.**Brug 16-bit TIFF** reflektansbilleder til multibåndsanalyse
 3. **Brug indeksbilleder** (NDVI, NDRE) som brugsklare vegetationslag
-4. **Rasterberegner**: Kombiner bånd til brugerdefineret analyse
+4. **Rasterregnemaskine**: Kombiner bånd til brugerdefineret analyse
 5. **Eksport**: Opret klassificeringskort, ændringsdetektering, kort over vegetationens sundhedstilstand
 
 ### Til direkte analyse/rapportering
 
 **Anbefalet arbejdsgang:**
 
-1. **Brug indeksbilleder med LUT-farver** til visuelle rapporter
-2. **Uddrag statistik**: Gennemsnitlig NDVI pr. felt/parcel
+1.**Brug indeksbilleder med LUT-farver** til visuelle rapporter
+2. **Udtryk statistik**: Gennemsnitlig NDVI pr. felt/parcel
 3. **Tidsserier**: Sammenlign indekser på tværs af flere sessioner
-4. **Generer rapporter**: Inkluder kort, statistikker og visualiseringer
-
-***
+4. **Generer rapporter**: Inkluder kort, statistikker og visualiseringer***
 
 ## Arkivering og sikkerhedskopiering
 
 ### Anbefalet sikkerhedskopieringsstrategi
 
-**Hvad skal gemmes:**
-
-* ✅ **Originale RAW/JPG-billeder** – Arkiver på separat drev/cloud
-* ✅ **Behandlede output** – Opbevar kalibrerede billeder og indekser
+**Hvad skal gemmes:*** ✅ **Originale RAW/JPG-billeder** – Arkiver på separat drev/cloud
+* ✅ **Behandlede output** – Gem kalibrerede billeder og indekser
 * ✅ **Projektfil** – Indeholder alle indstillinger til genbehandling, hvis det er nødvendigt
 * ✅ **Fejlfindingslog** – Dokumenterer behandlingsdetaljer
-* ✅ **Kalibreringsmålbilleder** – Til verifikation og genbehandling
-
-**Anbefalinger til opbevaring:**
-
-* **Øjeblikkelig sikkerhedskopi**: Ekstern harddisk
+* ✅ **Kalibreringsmålbilleder** – Til verifikation og genbehandling**Anbefalinger til opbevaring:*** **Øjeblikkelig sikkerhedskopi**: Ekstern harddisk
 * **Langtidsarkiv**: Cloud-opbevaring (Google Drive, Dropbox osv.)
-* **Kritiske data**: Opbevar 2-3 kopier på forskellige steder
-
-***
+* **Kritiske data**: Opbevar 2-3 kopier på forskellige steder***
 
 ## Næste behandlingskørsler
 
@@ -212,22 +197,21 @@ Hvis du behandler lignende datasæt i fremtiden:
 1. **Gem projektmal** (hvis ikke allerede gjort)
 2. **Opret nyt projekt** ved hjælp af gemt mal
 3. **Importer nye billeder**
-4. **Behandl** med identiske indstillinger for konsistens
+
+4.**Behandl**med identiske indstillinger for konsistens
 
 ### Batchbehandling af flere sessioner
 
-For flere sessioner/datasæt:
+For flere sessioner/datasæt:**Mulighed 1: GUI - Flere projekter**
 
-**Mulighed 1: GUI - Flere projekter**
-
-* Opret separate projekter for hver session.
-* Brug ensartede skabelonindstillinger.
-* Behandl én ad gangen.
+* Opret separate projekter for hver session
+* Brug ensartede skabelonindstillinger
+* Behandl én ad gangen
 
 **Mulighed 2: Chloros CLI (kun Chloros+)**
 
-* Automatiser batchbehandling.
-* Behandl flere mapper med scripts.
+* Automatiser batchbehandling
+* Behandl flere mapper med scripts
 * Se [CLI-dokumentation](../CLI.md)
 
 **Mulighed 3: Python SDK (kun Chloros+)**
@@ -251,7 +235,7 @@ Hvis resultaterne ikke er tilfredsstillende:
 
 ### Behandling af delmængde af billeder
 
-For kun at genbehandle bestemte billeder:
+Sådan genbehandles kun bestemte billeder:
 
 1. Opret et nyt projekt
 2. Importer kun de billeder, der skal genbehandles
@@ -265,9 +249,7 @@ Hvis du støder på problemer:
 * 📧 **E-mail**: info@mapir.camera (inkluder fejlfindingslog)
 * 🌐 **Support**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **FAQ**: [Ofte stillede spørgsmål](../faq.md)
-* 📖 **Dokumentation**: [Chloros Manual](../)
-
-***
+* 📖 **Dokumentation**: [Chloros Manual](../)***
 
 ## Resumé: Komplet arbejdsgang
 
@@ -279,9 +261,7 @@ Du har nu gennemført hele Chloros-behandlingsarbejdsgangen:
 4. ✅ **Markerede mål** - Se [Valg af målbilleder](choosing-target-images.md)
 5. ✅ **Startet behandling** - Se [Start af behandlingen](starting-the-processing.md)
 6. ✅ **Overvåget fremskridt** - Se [Overvågning af behandlingen](monitoring-the-processing.md)
-7. ✅ **Gennemgåede resultater** - Denne side
-
-**Dine kalibrerede, reflektanskorrigerede multispektrale billeder er klar til analyse!**
+7. ✅ **Gennemgåede resultater** - Denne side**Dine kalibrerede, reflektanskorrigerede multispektrale billeder er klar til analyse!**
 
 ***
 

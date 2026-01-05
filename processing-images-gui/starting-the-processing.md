@@ -26,7 +26,7 @@ Før du klikker på Start-knappen, skal du kontrollere, at alt er klar:
 Start-/afspilningsknappen findes i den øverste headerbar i Chloros:
 
 * Placering: Øverst i midten af vinduet
-* Ikon: **Afspil-/startknap** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">
+* Ikon: **Afspil-/startknap** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 * Status: Knappen er aktiveret (lys), når den er klar til behandling
 
 ### Klik for at starte
@@ -37,7 +37,7 @@ Start-/afspilningsknappen findes i den øverste headerbar i Chloros:
 4. Statusbjælken opdateres og viser behandlingsstatus
 
 {% hint style=&quot;success&quot; %}
-**Behandling startet**: Når der er klikket, håndterer Chloros automatisk alle behandlingstrin – måldetektering, debayering, kalibrering, indeksberegning og eksport.
+**Behandling startet**: Når der er klikket, håndterer Chloros automatisk alle behandlingstrin – måldetektion, debayering, kalibrering, indeksberegning og eksport.
 {% endhint %}
 
 ***
@@ -58,10 +58,8 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 **Statusbjælken viser 2 faser:**
 
-1. **Måldetektion** - Scanning efter kalibreringsmål
-2. **Behandling** - Anvendelse af kalibrering og eksport af billeder
-
-**Behandlingstid:**
+1.**Måldetektion** - Scanning efter kalibreringsmål
+2. **Behandling** - Anvendelse af kalibrering og eksport af billeder**Behandlingstid:**
 
 * Meget langsommere end Chloros+ parallel tilstand
 * Egnet til små til mellemstore datasæt (&lt; 200 billeder)
@@ -74,30 +72,24 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Behandler flere billeder samtidigt
 * Multitrådet drift (op til 16 parallelle arbejdere)
-* Anvender flere CPU-kerner
+* Udnytter flere CPU-kerner
 * Valgfri GPU (CUDA)-acceleration med NVIDIA-grafikkort
 
 **Statusbjælken viser 4 faser:**
 
-1. **Detektering** – Find kalibreringsmål
+1.**Detektering** – Find kalibreringsmål
 2. **Analyse** – Undersøg billedmetadata og forbered pipeline
-3. **Kalibrering** – Anvender korrektioner og kalibreringer
-4. **Eksport** – Gemmer behandlede billeder og indekser
-
-**Interaktion med fremskridtsbjælken:**
-
-* **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 trin
+3. **Kalibrerer** - Anvender korrektioner og kalibreringer
+4. **Eksporterer** - Gemmer behandlede billeder og indekser**Interaktion med fremskridtsbjælken:*** **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 trin
 * **Klik** på fremskridtsbjælken for at fastfryse dropdown-panelet
-* **Klik igen** for at frigøre og skjule panelet
-
-**Behandlingstid:**
+* **Klik igen** for at frigøre og skjule panelet**Behandlingstid:**
 
 * Betydeligt hurtigere end fri tilstand
 * Skaleres med CPU-kerneantal
 * GPU-acceleration forbedrer hastigheden yderligere
 
 {% hint style=&quot;info&quot; %}
-**Chloros+ hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
+**Chloros+ Hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
 {% endhint %}
 
 ***
@@ -110,7 +102,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 * Scanner markerede målbilleder (eller alle billeder, hvis ingen er markeret)
 * Identificerer de 4 kalibreringspaneler i hvert mål
-* Udtager reflektansværdier fra målpaneler
+* Uddrager reflektansværdier fra målpaneler
 * Registrerer måltidsstempler til kalibreringsplanlægning
 
 **Varighed:** 1-30 sekunder (med markerede mål), 5-30+ minutter (umarkerede)
@@ -127,9 +119,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 ### Trin 3: Kalibrering
 
-**Hvad Chloros gør:**
-
-* **Vignettekorrektion**: Fjerner mørkfarvning af linsen i kanterne
+**Hvad Chloros gør:*** **Vignettekorrektion**: Fjerner mørkfarvning af linsen i kanterne
 * **Reflektanskalibrering**: Normaliserer ved hjælp af målreflektansværdier
 * Anvender korrektioner på tværs af alle bånd/kanaler
 * Anvender passende kalibreringsmål for hvert billede baseret på tidsstempel
@@ -155,9 +145,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 * Skriver filer til undermapper for kameramodeller
 * Bevarer originale filnavne med suffikser
 
-**Varighed:** Varierer afhængigt af eksportformat og filstørrelse
-
-***
+**Varighed:** Varierer afhængigt af eksportformat og filstørrelse***
 
 ## Behandlingsadfærd
 
@@ -169,7 +157,7 @@ Når den er startet, kører hele pipelinen automatisk:
 * Alle konfigurerede trin udføres i rækkefølge
 * Statusopdateringer vises i realtid
 
-### Computerbrug under behandling
+### Computerforbrug under behandling
 
 **Fri tilstand:**
 
@@ -179,13 +167,13 @@ Når den er startet, kører hele pipelinen automatisk:
 
 **Chloros+ Parallel tilstand:**
 
-* Høj CPU-forbrug (multi-threaded, op til 16 kerner)
+* Høj CPU-brug (multi-threaded, op til 16 kerner)
 * Med GPU-acceleration: Høj GPU-forbrug
 * Computeren kan være mindre responsiv under behandlingen
 * Undgå at starte andre CPU-intensive opgaver
 
 {% hint style=&quot;warning&quot; %}
-**Tip til ydeevne**: For at opnå den bedste ydeevne for Chloros+ skal du lukke andre programmer og lade Chloros bruge alle systemressourcer.
+**Tip til ydeevne**: For at opnå den bedste ydeevne for Chloros+, skal du lukke andre programmer og lade Chloros bruge alle systemressourcer.
 {% endhint %}
 
 ### Behandlingen kan ikke sættes på pause
@@ -195,11 +183,9 @@ Når den er startet, kører hele pipelinen automatisk:
 * Når behandlingen er startet, kan den ikke sættes på pause.
 * Du kan annullere behandlingen, men fremskridtet går tabt.
 * Delvise resultater gemmes ikke.
-* Du skal starte forfra, hvis du annullerer.
+* Du skal starte forfra, hvis behandlingen annulleres.
 
-**Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.
-
-***
+**Planlægningstip:** Ved meget store projekter kan du overveje at behandle i batches eller bruge CLI for bedre kontrol.***
 
 ## Overvågning af din behandling
 
@@ -271,7 +257,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 | 1000 billeder | 4-6 timer   | 1,5-2 timer      | 40-60 min      |
 
 {% hint style=&quot;info&quot; %}
-**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
+**Første kørsel**: Den første behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil være hurtigere.
 {% endhint %}
 
 ***
@@ -307,7 +293,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 1. Kontroller fejlfindingsloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for fejlmeddelelser
 2. Kontroller, at der er tilstrækkelig diskplads
-3. Prøv at behandle et mindre udsnit af billederne
+3. Prøv at behandle en mindre delmængde af billeder
 4. Kontroller, at billederne ikke er beskadigede
 
 ### Advarsel &quot;Ingen mål fundet&quot;
@@ -315,8 +301,8 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 **Mulige årsager:**
 
 * Glemt at markere målbilleder
-* Målbillederne indeholder ikke synlige mål
-* Indstillingerne for måldetektering er for strenge
+* Målbilleder indeholder ikke synlige mål
+* Indstillinger for måldetektering er for strenge
 
 **Løsninger:**
 

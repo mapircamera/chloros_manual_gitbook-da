@@ -8,7 +8,7 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 2. Klik på ikonet **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> i venstre sidepanel
 3. Filbrowseren viser dit projekts filliste
 
-{% tip style=&quot;info&quot; %}
+{% hint style=&quot;info&quot; %}
 **Understøttede filtyper**: Chloros understøtter RAW+JPG- og JPG-billedfiler fra MAPIR Survey3W og Survey3N kameraer. Kun RAW+JPG anbefales.
 {% endhint %}
 
@@ -22,44 +22,37 @@ Der er to primære måder at tilføje billeder til dit projekt på:
 
 Brug denne indstilling til at importere individuelle billedfiler eller et lille udvalg af filer.
 
-1. Klik på knappen **&quot;Tilføj filer&quot;** øverst i panelet Filbrowser.
-2. Naviger til den mappe, der indeholder dine billeder.
-3. Vælg en eller flere billedfiler (hold **Ctrl** nede for at vælge flere filer).
-4. Klik på **&quot;Åbn&quot;** for at importere de valgte filer.
+1. Klik på knappen **&quot;Tilføj filer&quot;** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> øverst i filbrowserpanelet
+2. Naviger til den mappe, der indeholder dine billeder
+3. Vælg en eller flere billedfiler (hold **Ctrl** nede for at vælge flere filer)
+4. Klik på **&quot;Åbn&quot;** for at importere de valgte filer
 
 ### Metode 2: Tilføj mappe
 
 Brug denne indstilling til at importere alle billeder fra en mappe på én gang.
 
-1. Klik på knappen **&quot;Tilføj mappe&quot;** øverst i filbrowserpanelet.
-2. Naviger til og vælg den mappe, der indeholder dine billedoptagelser.
-3. Klik på **&quot;Vælg mappe&quot;** for at importere alle understøttede billeder fra den pågældende mappe.
-
-***
+1. Klik på knappen **&quot;Tilføj mappe&quot;** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> øverst i filbrowserpanelet.
+2. Naviger til og vælg den mappe, der indeholder dine billeder fra optagelsessessionen.
+3. Klik på **&quot;Vælg mappe&quot;** for at importere alle understøttede billeder fra den pågældende mappe.***
 
 ## Om filbrowser-tabellen
 
 Når billederne er importeret, vises de i en tabel med følgende kolonner:
 
-### Miniaturebillede
-
-* Lille forhåndsvisning af hvert billede.
-* Klik på miniaturebilledet for at se det fulde billede i det primære forhåndsvisningsområde.
-
 ### Filnavn
 
-* Originalt filnavn fra kameraet.
-* Overholder kameraets navngivningskonvention (f.eks. IMG\_0001.RAW).
+* Oprindeligt filnavn fra kameraet
+* Overholder kameraets navngivningskonvention (f.eks. IMG\_0001.RAW)
 
 ### Tidsstempel
 
-* Dato og klokkeslæt for billedets optagelse.
-* Uddrag fra billedets EXIF-metadata.
-* Bruges til PPK-synkronisering og kalibreringsmåldetektering
+* Dato og klokkeslæt for billedets optagelse
+* Uddrag fra billedets EXIF-metadata
+* Anvendes til PPK-synkronisering og kalibreringsmåldetektering
 
 ### Kameramodel
 
-* Automatisk detekteret kamera- og filterkonfiguration
+* Automatisk registreret kamera- og filterkonfiguration
 * Eksempler: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
 * Bruges til at anvende korrekte behandlingsprofiler
 
@@ -78,24 +71,22 @@ Når billederne er importeret, vises de i en tabel med følgende kolonner:
 Sådan fjerner du uønskede billeder fra dit projekt:
 
 1. Vælg et eller flere billeder i tabellen Filbrowser
-2. Klik på knappen **&quot;Fjern valgte&quot;**
-3. Bekræft fjernelsen (filerne slettes ikke fra disken, men fjernes kun fra projektet)
+2. Klik på knappen **&quot;Fjern valgte&quot;** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> .
+3. Bekræft fjernelsen (filerne slettes ikke fra disken, men fjernes kun fra projektet).
 
 ### Sortering og filtrering
 
-* **Sorter efter kolonne**: Klik på en kolonneoverskrift for at sortere billeder
-* **Sorter efter tidsstempel**: Nyttigt til at organisere kronologiske optagelsessekvenser
-* **Kamerafiltermodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer
-
-***
+* **Sorter efter kolonne**: Klik på en kolonneoverskrift for at sortere billederne.
+* **Sorter efter tidsstempel**: Nyttigt til at organisere kronologiske optagelsessekvenser.
+* **Kamerafiltermodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer***
 
 ## Billedforhåndsvisning
 
-### Visning af hele billedet
+### Visning af fuldt billede
 
 Klik på en billedminiature i filbrowseren for at vise det i det primære forhåndsvisningsområde:
 
-1. Billedet vises i det midterste forhåndsvisningspanel
+1. Billedet vises i det centrale forhåndsvisningspanel
 2. Brug zoomkontrolknapperne til at se billeddetaljer
 3. Naviger mellem billederne ved hjælp af piletasterne
 
@@ -104,17 +95,15 @@ Klik på en billedminiature i filbrowseren for at vise det i det primære forhå
 * **Forrige billede**: Klik på venstre pil eller tryk på ←-tasten
 * **Næste billede**: Klik på højre pil eller tryk på →-tasten
 * **Zoom ind/ud**: Brug musehjulet eller zoomknapperne
-* **Panorer**: Klik og træk på billedet, når det er zoomet ind
-
-***
+* **Panorer**: Klik og træk på billedet, når det er zoomet ind***
 
 ## Håndtering af duplikerede filer
 
 Chloros registrerer og ignorerer automatisk duplikerede filer:
 
-* Filer med identiske filnavne springes over
-* Forhindrer utilsigtet dobbeltbehandling
-* Der vises en advarselsmeddelelse, når der registreres duplikater
+* Filer med identiske filnavne springes over.
+* Forhindrer utilsigtet dobbeltbehandling.
+* Der vises en advarselsmeddelelse, når der registreres duplikater.
 
 {% hint style=&quot;warning&quot; %}
 **Vigtigt**: Omdøb eller rediger ikke dine originale billedfiler, før du importerer dem. Chloros er afhængig af originale filnavne og metadata for at kunne behandle filerne korrekt.
@@ -131,9 +120,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 3. Filbrowseren viser kameramodellen i kolonnen Kameramodel.
 4. Behandlingen anvender de korrekte indstillinger for hver kameratype.
 
-**Eksempel på scenario**: Survey3W RGN + Survey3N OCN opsætning med to kameraer.
-
-***
+**Eksempel på scenario**: Survey3W RGN + Survey3N OCN opsætning med to kameraer.***
 
 ## Bedste praksis
 
@@ -170,7 +157,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 
 **Løsning**: Kontroller filformatet og kameraets kompatibilitet.
 
-### Kameramodel ikke registreret
+### Kameramodel ikke fundet
 
 **Mulige årsager:**
 
@@ -187,9 +174,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 * Kameraets ur er ikke indstillet korrekt
 * EXIF-data fjernet af ekstern software
 
-**Løsning**: Kontroller, at kameraets tidsindstillinger var korrekte under optagelsen
-
-***
+**Løsning**: Kontroller, at kameraets tidsindstillinger var korrekte under optagelsen***
 
 ## Næste trin
 

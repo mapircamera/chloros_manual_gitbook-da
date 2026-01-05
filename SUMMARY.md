@@ -11,7 +11,7 @@
 * [Kalibreringsmål](calibration-targets.md)
 * [Understøttede sprog](supported-languages.md)
 * [Download](download.md)
-* [Ofte stillede spørgsmål](faq.md)
+* [FAQ](faq.md)
 
 ## Behandling af billeder (GUI)
 
@@ -29,6 +29,8 @@
 
 ## BILLEDVISER (GUI)
 
+* [Billedgitter](image-viewer-gui/image-grid.md)
 * [Åbning af et billede i fuld skærm](image-viewer-gui/opening-an-image-full-screen.md)
 * [Billedlag](image-viewer-gui/image-layers.md)
 * [Indeks/LUT-sandkasse](image-viewer-gui/index-lut-sandbox.md)
+* [Kortmarkører](image-viewer-gui/map-markers.md)

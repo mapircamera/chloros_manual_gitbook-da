@@ -2,21 +2,23 @@
 
 ## Chloros og Chloros (Browser) Login
 
-Brugermenuen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebjælkemenuen kan du logge ind på din Chloros+-konto og låse op for yderligere funktioner.
+Brugermenuen <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> sidebar-menuen giver dig mulighed for at logge ind på din Chloros+-konto og låse op for yderligere funktioner.
 
 Når du er logget ind, vises dine kontooplysninger:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>## CLI Login
 
-## CLI Login
-
-Log ind med dine Chloros+-loginoplysninger for at aktivere CLI-behandling.
+Log ind med dine Chloros+ loginoplysninger for at aktivere CLI-behandling.
 
 **Syntaks:**
 
 ```bash
 chloros-cli login <email> <password>
 ```
+
+{% hint style=&quot;info&quot; %}
+**SDK-brugere**: Python SDK tilbyder også en programmatisk `logout()`-metode til at rydde cachelagrede loginoplysninger. Se [Python SDK dokumentationen](api-python-sdk.md#logout) for detaljer.
+{% endhint %}
 
 **Eksempel:**
 
@@ -30,9 +32,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 **Output:**
 
-<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
-
-### Planens udløb
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>### Planens udløb
 
 Planens udløb i GUI&#x27;en viser, hvornår din licens bliver ugyldig. For tilbagevendende månedlige abonnementer udløber licensen ved udgangen af måneden. For årlige abonnementer udløber licensen et år efter, at du startede abonnementet. Licenskontrollen kræver en månedlig internetforbindelse for at verificere, med en 30 dages frist.
 
