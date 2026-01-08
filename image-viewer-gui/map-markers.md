@@ -2,14 +2,16 @@
 
 Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-koordinater. Dette giver et geografisk overblik over din optagelsessession og hjælper dig med at visualisere den geografiske dækning. Det er også nyttigt, når du først importerer dine billeder, så du hurtigt kan fjerne de billeder, du ikke har brug for at behandle.
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## Adgang til fanen Kort
 
 1. Åbn eller opret et projekt i Chloros.
 2. Importer billeder, der indeholder GPS-metadata.
-3. Klik på fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> i venstre sidepanel.
-4. Kortet viser markører ved hvert billedes GPS-placering.
+3. Klik på fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> i venstre sidepanel
+4. Kortet viser markører ved hvert billedes GPS-placering
 
-{% hint style=&quot;info&quot; %}
+{% hint style="info" %}
 **GPS påkrævet**: Kun billeder med indlejrede GPS-koordinater i deres EXIF-metadata vises på kortet. Sørg for, at GPS er aktiveret på dit kamera under optagelsen.
 {% endhint %}
 
@@ -17,11 +19,11 @@ Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-
 
 ## Justering af billeder fra fanen Kort
 
-Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme tilføjelses-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
+Fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme tilføjelses-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
 
 ### Filnavn
 
-* Originalt filnavn fra kameraet
+* Oprindeligt filnavn fra kameraet
 * Overholder kameraets navngivningskonvention (f.eks. IMG\_0001.RAW)
 
 ### Breddegrad
@@ -36,8 +38,8 @@ Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line
 
 * Billedets højde
 
-{% hint style=&quot;info&quot; %}
-Ved at klikke på kolonneoverskrifterne i tabellen sorteres også rækkeoplysningerne.
+{% hint style="info" %}
+Ved at klikke på kolonneoverskrifterne i tabellen sorteres også række dataene
 {% endhint %}
 
 ***
@@ -52,21 +54,21 @@ Hvert billede med GPS-data er repræsenteret af en markør på kortet:
 * Grupperede markører kan samles, når du zoomer ud.
 * Zoom ind for at se de enkelte billedplaceringer.
 
-{% hint style=&quot;success&quot; %}
-SUPER-ZOOM: Når du når det maksimale zoomniveau fra kortfliseleverandøren, forstørres flisen ved yderligere zoom, så du kan se markører, der ligger tæt på hinanden.
+{% hint style="success" %}
+SUPERZOOM: Når du når det maksimale zoomniveau fra kortfliseleverandøren, forstørres flisen ved yderligere zoom, så du kan se markører, der ligger tæt på hinanden.
 {% endhint %}
 
 ### Hover-forhåndsvisning
 
-* **Hold musen** over en markør for at se en miniaturevisning af det pågældende billede.
+* **Hold musen** over en markør for at se en miniatureforhåndsvisning af det pågældende billede.
 * Dette giver mulighed for hurtig visuel identifikation uden at forlade kortvisningen.
-* Nyttigt til at finde specifikke billeder i en stor optagelsessession.
+* Nyttigt til at finde specifikke billeder inden for en stor optagelsessession.
 
 ***
 
 ## Kortfliseudbydere
 
-{% hint style=&quot;success&quot; %}
+{% hint style="success" %}
 **Automatisk valg**: Chloros vælger automatisk den flisetjeneste, der giver det bedste zoomniveau for din aktuelle kortplacering. Du kan manuelt skifte mellem udbydere, hvis du ønsker det.
 {% endhint %}
 
@@ -115,7 +117,9 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 ### Panorering
 
-* **Panorering**: Klik og træk for at flytte rundt på kortet.***
+* **Panorering**: Klik og træk for at flytte rundt på kortet.
+
+***
 
 ## Anvendelsestilfælde
 
@@ -123,7 +127,7 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 * Se dækningsområdet for droneoptagelser
 * Identificer huller i billeddækningen
-* Bekræft udførelsen af flyvevejen
+* Kontroller udførelsen af flyvevejen
 
 ### Gennemgang af jordundersøgelser
 
