@@ -10,18 +10,18 @@ Download den nyeste version af Chloros for at komme i gang med multispektral bil
 
 ### Systemkrav
 
-| Krav          | Minimum                         | Anbefalet                     |
-| -------------------- | ------------------------------- | ------------------------------- |
-| **Operativsystem** | Windows 10 (64-bit)             | Windows 11 (64-bit)             |
-| **Processor**        | Intel Core i5 eller tilsvarende     | Intel Core i7 eller bedre         |
-| **Hukommelse (RAM)**     | 8 GB                             | 16 GB eller mere                    |
-| **Grafikkort**    | DirectX 11-kompatibelt           | NVIDIA GPU med 4 GB+ VRAM       |
-| **Lagring**          | 6 GB ledig plads                  | SSD med 10 GB+ ledig plads       |
-| **Skærm**          | 1920x1080                       | 2560x1440 eller højere             |
-| **Internet**         | Kræves til aktivering af licens | Kræves til aktivering af licens |
+| Krav          | Minimum                                              | Anbefalet                                          |
+| -------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| **Operativsystem** | Windows 10 (64-bit)                                  | Windows 11 (64-bit)                                  |
+| **Processor**        | Intel Core i5 eller tilsvarende                          | Intel Core i7 eller bedre                              |
+| **Hukommelse (RAM)**     | 8 GB                                                  | 16 GB eller mere                                         |
+| **Grafikkort**    | DirectX 11-kompatibelt                                | NVIDIA GPU med 4 GB+ VRAM                            |
+| **Lagring**          | 6 GB ledig plads                                       | SSD med 10 GB+ ledig plads                            |
+| **Skærm**          | 1920x1080                                            | 2560x1440 eller højere                                  |
+| **Internet**         | Kræves til \[valgfri] Chloros+ licensaktivering | Kræves til \[valgfri] Chloros+ licensaktivering |
 
-{% hint style=&quot;info&quot; %}
-**GPU-acceleration**: Chloros+-brugere med NVIDIA GPU&#x27;er (4 GB+ VRAM) kan bruge CUDA-acceleration til betydeligt hurtigere behandling. Chloros+-brugere får også multithreaded behandling for maksimal hastighed.
+{% hint style="info" %}
+**GPU-acceleration**: Chloros+-brugere med NVIDIA GPU&#x27;er kan bruge CUDA-acceleration til betydeligt hurtigere behandling. Chloros+-brugere får også multithreaded-behandling for maksimal hastighed.
 {% endhint %}
 
 ***
@@ -32,9 +32,9 @@ Download den nyeste version af Chloros for at komme i gang med multispektral bil
 
 ### Seneste stabile udgivelse
 
-**Chloros Installer til Windows*** **Version**: 1.0.4
-* **Udgivelsesdato**: 5. januar 2026
-* **Filstørrelse (download)**: 1,8 GB
+**Chloros-installationsprogram til Windows*** **Version**: 1.0.5
+* **Udgivelsesdato**: 10. februar 2026
+* **Filstørrelse (download)**: 1,6 GB
 * **Filstørrelse (installeret)**: 5,7 GB
 * **Filtype**: .exe (Windows-installationsprogram)
 
@@ -44,11 +44,11 @@ Download den nyeste version af Chloros for at komme i gang med multispektral bil
 2. Dobbeltklik på installationsprogrammet for at starte installationen
 3. Følg vejledningen i installationsguiden
 4. Vælg installationsmappe (standard: `C:\Program Files\[USER]\Chloros\`)
-5. Afslut installationen, og start Chloros, Chloros (browser) eller Chloros CLI
-6. Log ind med din [MAPIR Cloud Chloros+ konto](https://cloud.mapir.camera/pricing) (eller fortsæt med gratisversionen)
+5. Afslut installationen og start Chloros eller Chloros CLI
+6. Log ind med din [MAPIR Cloud Chloros+ konto](https://cloud.mapir.camera/pricing) (eller fortsæt med gratis versionen)
 
-{% hint style=&quot;success&quot; %}
-Installationsprogrammet tilføjer automatisk `chloros-cli` til din systems PATH for kommandolinjeadgang.
+{% hint style="success" %}
+Installationsprogrammet tilføjer automatisk `chloros-cli` til dit systems PATH for kommandolinjeadgang.
 {% endhint %}
 
 ***
@@ -69,21 +69,21 @@ pip install chloros-sdk
 
 Chloros-installationen inkluderer:
 
-* ✅ **Chloros** - Grafisk interface med alle funktioner
-* ✅ **Chloros (Browser)** - Webbaseret interface til systemer med lavere specifikationer
+* ✅ **Chloros** - Grafisk brugergrænseflade (GUI) med alle funktioner
 * ✅ **Chloros CLI** - Kommandolinjegrænseflade (kræver Chloros+ licens)
 * ✅ **Chloros SDK** - Python API (kræver Chloros+ licens)
 * ✅ **Kameraprofiler** - Forudkonfigurerede MAPIR kameraskabeloner***
 
-## Opgrader til Chloros
+## Opgrader til Chloros+
 
 Få adgang til avancerede funktioner med et Chloros+ abonnement:
 
 * 🚀 **Multitrådet behandling** - Behandl billeder parallelt
 * ⚡ **GPU (CUDA) acceleration** - Udnyt NVIDIA GPU-kraft
-* 💻 **CLI-adgang** – Automatiser med kommandolinjeværktøjer
-* 🐍 **Python SDK** – Programmatisk API-adgang
-* 📱 **Flere enheder** – Brug på 2-10+ enheder (afhængigt af abonnement)
+* 💻 **CLI-adgang** - Automatiser med kommandolinjeværktøjer
+* 🐍 **Python SDK** - Programmatisk API-adgang
+* 📱 **Flere enheder** - Brug på 2-10+ enheder (afhængigt af abonnement)
+* **🐻 Avanceret teksturbevidst debayer-metode** – en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayering-støj. 
 * 🧮 **Brugerdefinerede formler** – Opret brugerdefinerede multispektrale indekser
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Se Chloros+ Planer og priser</a></p>***
@@ -100,7 +100,6 @@ Få adgang til avancerede funktioner med et Chloros+ abonnement:
 
 **Applikationen starter ikke:**
 
-* Prøv Chloros (browser) versionen
 * Kontroller, at Windows 10/11 (64-bit) er installeret
 * Opdater grafikkortdrivere
 * Kontroller Windows Event Viewer for detaljer om fejlen
@@ -110,7 +109,7 @@ Få adgang til avancerede funktioner med et Chloros+ abonnement:
 
 * Sørg for, at internetforbindelsen er aktiv
 * Kontroller legitimationsoplysningerne på [https://cloud.mapir.camera](https://cloud.mapir.camera)
-* Kontroller, at firewallen ikke blokerer Chloros
+* Kontroller, at firewall ikke blokerer Chloros
 * Se [Chloros+ Login](chloros+-login.md) for detaljerede instruktioner
 
 ### Få support
@@ -126,11 +125,22 @@ Brug for hjælp til installation eller opsætning?
 
 <details>
 
+<summary>Version 1.0.5</summary>
+
+#### **Udgivelsesdato**: 10. februar 2026**Nye funktioner*** **Teksturbevidst debayer-metode \[Chloros+ Kun] -** Teksturbevidst bruger en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayering-støj.
+* **Understøttelse af T4P-kalibreringsmål*** **Hurtigere Chloros+ GPU-behandling, bedre hukommelsesstyring**
+
+**Fejlrettelser*** Helt nyt frontend (GUI), bør nu fungere på alle Windows-computere.
+
+</details>
+
+<details>
+
 <summary>Version 1.0.4</summary>
 
-#### **Udgivelsesdato**: 5. januar 2026**Nye funktioner*** **Skift mellem billede og metadata**: Der er tilføjet en skiftefunktion i filbrowseren, så du kan se metadata for det valgte billede i en tabel i stedet for i billedgitteret.
-* **Zoom-skyder til billedgitter**: Ny UI-skyder til justering af miniaturebilleder (understøtter også CTRL + musehjul)
-* **Knapper til eksport af billedgitter**: Knapper i den øverste række til at skifte mellem JPG-miniaturer og behandlede eksporter (mål, reflektans, indeks, LUT)
+#### **Udgivelsesdato**: 5. januar 2026**Nye funktioner*** **Skift mellem billede/metadata**: Tilføjet skift i filbrowseren for at se det valgte billedes metadata i en tabel i stedet for billedgitteret
+* **Zoom-skyder til billedgitter**: Ny UI-skyder til justering af miniaturestørrelse (understøtter også CTRL + musehjul)
+* **Knapper til eksport af billedgitter**: Knapper i den øverste række til at skifte miniaturer fra JPG til behandlede eksporter (mål, reflektans, indeks, LUT)
 * **Kortfane**: Nyt interaktivt 2D-kort, der viser billedets GPS-positionsmarkører
   * Understøtter Google Maps og ESRI-kortfliser (vælger automatisk den bedste flisetjeneste baseret på tilgængelighed af zoomniveau)
   * Musemarkør-miniaturevisning på kortmarkører
@@ -153,7 +163,7 @@ Brug for hjælp til installation eller opsætning?
 
 </details>***
 
-## Licensaftale**Proprietær software** - Copyright (c) 2025 MAPIR Inc.
+## Licensaftale**Proprietær software** - Copyright (c) 2026 MAPIR Inc.
 
 Uautoriseret brug, distribution eller ændring er forbudt.
 

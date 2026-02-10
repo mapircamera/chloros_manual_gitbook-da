@@ -1,6 +1,6 @@
 # Åbning af et billede i fuld skærm
 
-Chloros Image Viewer har en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du ser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
+Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
 
 ## Adgang til billedviseren
 
@@ -13,11 +13,11 @@ Den mest almindelige måde at åbne et billede i billedviseren:
 3. Billedet åbnes i **hovedforhåndsvisningsområdet** (midten af skærmen)
 4. Billedet er nu indlæst og klar til visning i fuld skærm
 
-### Åbning af fanen Image Viewer
+### Åbning af fanen Billedfremviser
 
 Når et billede er indlæst i forhåndsvisningsområdet:
 
-1. Klik på ikonet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
+1. Klik på ikonet **Billedfremviser** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
 2. Fanen Billedfremviser åbnes og viser det valgte billede i fuld skærm
 3. Avancerede visnings- og analyseværktøjer bliver tilgængelige i venstre sidepanel
 
@@ -32,9 +32,7 @@ Den største del af skærmen viser dit billede:
 * **Fuld opløsning**: Billeder vises i oprindelig opløsning
 * **Zoombar**: Brug kontrolelementer eller musehjul til at zoome
 * **Panorerbar**: Klik og træk for at flytte rundt, når der er zoomet
-* **Billedformat bevaret**: Billeder skaleres proportionalt
-
-***
+* **Billedformat bevaret**: Billeder skaleres proportionalt***
 
 ## Visningsindstillinger
 
@@ -44,25 +42,20 @@ Den største del af skærmen viser dit billede:
 
 Naviger gennem dit billedsæt ved hjælp af tastaturgenveje eller knapper:
 
-* **Næste billede**: Klik på →-knappen eller tryk på **→** (højre pil)-tasten
-* **Forrige billede**: Klik på ←-knappen eller tryk på **←** (venstre pil)-tasten
+* **Næste billede**: Klik på knappen → eller tryk på tasten**→** (højre pil)
+* **Forrige billede**: Klik på knappen ← eller tryk på tasten**←** (venstre pil)
 * **Gå til et bestemt billede**: Gå tilbage til filbrowseren og klik på den ønskede miniature
 
 #### Zoomkontroller
 
 Juster forstørrelsen for at se billeddetaljer:
 
-**Zoom ind:**
+**Zoom ind:*** Klik på knappen **+** (plus)
+* Tryk på tasten **+**eller**=*** Rul musehjulet **opad**
 
-* Klik på **+** (plus)-knappen
-* Tryk på **+** eller **=**-tasten
-* Rul musehjulet **op**
-
-**Zoom ud:**
-
-* Klik på **−** (minus)-knappen
-* Tryk på **−** (minus)-tasten
-* Rul musehjulet **ned**
+**Zoom ud:*** Klik på knappen **−** (minus)
+* Tryk på tasten **−** (minus)
+* Rul musehjulet **nedad**
 
 #### Panorering ved zoom
 
@@ -70,25 +63,17 @@ Når der er zoomet ud over skærmstørrelsen:
 
 1. Flyt musemarkøren over billedet
 2. Klik og **hold venstre museknap nede**
-3. **Træk** for at flytte billedet rundt
+
+3.**Træk** for at flytte billedet rundt
 4. Slip for at stoppe panoreringen
 
-**Alternativ**: Brug piletasterne til at panorere i små trin
-
-***
+**Alternativ**: Brug piletasterne til at panorere i små trin***
 
 ## Inspektion af pixelværdier
 
 ### Visning af pixelværdier ved markøren
 
-Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:
-
-**Værdiens placering:**
-
-* **Flydende tal og rød linje i højre side af indeks LUT-gradientlegende**
-* **Når du zoomer yderligere ind, vises en flydende værdi nær markøren og den fremhævede pixel**
-* Viser værdier for pixel **under markøren eller fremhævet**
-* Opdateres, når du bevæger musen
+Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:**Værdiens placering:*** **Flydende tal og rød linje i højre side af indeks LUT-gradientlegende*** **Når du zoomer yderligere ind, vises en flydende værdi nær markøren og den fremhævede pixel*** Viser værdier for pixel **under markøren eller fremhævet*** Opdateres, når du bevæger musen
 
 ***
 
@@ -128,7 +113,7 @@ Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:
 
 Anvend multispektrale indekser og farve-Look-Up-tabeller:
 
-1. Find **Index/LUT Sandbox** i **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælke
+1. Find **Index/LUT Sandbox**i**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælke
 2. Vælg vegetationsindeks (NDVI, NDRE osv.)
 3. Vælg multispektral formel, eller opret din egen brugerdefinerede formel (kun Chloros+)
 4. Anvend farve-LUT-gradient til visualisering
@@ -149,11 +134,9 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Zoom
 
-* **+** eller **=**: Zoom ind
+* **+**eller**=**: Zoom ind
 * **−**: Zoom ud
-* **Mushjul**: Zoom ind/ud
-
-***
+* **Mushjul**: Zoom ind/ud***
 
 ### Bekræftelse af indeksberegninger
 
@@ -165,10 +148,8 @@ Kontroller, at indekserne er beregnet korrekt:
    * **NDRE**: Højere værdier for kraftig vækst
    * **GNDVI**: Ligner NDVI, men er klorofylfølsom
 3. Kontroller ikke-vegetation:
-   * **Jord**: Nær 0 eller let negativ
-   * **Vand**: Negative værdier (-0,5 til 0)
-
-***
+   * **Jord**: Tæt på 0 eller let negativ
+   * **Vand**: Negative værdier (-0,5 til 0)***
 
 ## Fejlfinding ved visningsproblemer
 
@@ -177,7 +158,7 @@ Kontroller, at indekserne er beregnet korrekt:
 **Mulige årsager:**
 
 * Filen er beskadiget under behandlingen
-* Ikke-understøttet filformat
+* Filformatet understøttes ikke
 * Utilstrækkelig hukommelse til store billeder
 
 **Løsninger:**
@@ -197,7 +178,7 @@ Kontroller, at indekserne er beregnet korrekt:
 
 **Løsninger:**
 
-1. Kontroller pixelværdierne – hvis de alle er meget lave eller meget høje, skal du justere visningsområdet.
+1. Kontroller pixelværdierne – hvis alle er meget lave eller meget høje, skal du justere visningsområdet.
 2. Prøv at åbne i QGIS eller lignende med automatisk justering af området.
 3. Kontroller fejlfindingsloggen fra behandlingen for fejl.
 

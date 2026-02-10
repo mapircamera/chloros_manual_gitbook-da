@@ -1,6 +1,6 @@
 # Justering af projektindstillinger
 
-Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine workflowkrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
+Inden du behandler dine billeder, er det vigtigt at konfigurere dine projektindstillinger, så de passer til dine arbejdsgangskrav. Projektindstillingspanelet <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> giver omfattende kontrol over kalibrering, behandlingsindstillinger, multispektrale indekser og eksportformater.
 
 ## Adgang til projektindstillinger
 
@@ -8,7 +8,7 @@ Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindst
 2. Klik på ikonet **Projektindstillinger** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> i venstre sidepanel
 3. Panelet Projektindstillinger viser alle konfigurationsmuligheder
 
-{% hint style=&quot;info&quot; %}
+{% hint style="info" %}
 **Indstillingerne gemmes automatisk** sammen med dit projekt. Når du genåbner et projekt, gendannes alle indstillinger.
 {% endhint %}
 
@@ -18,11 +18,11 @@ Før du behandler dine billeder, er det vigtigt at konfigurere dine projektindst
 
 ### Standardindstillinger (anbefales til de fleste brugere)
 
-For typiske MAPIR Survey3 kamera-arbejdsgange fungerer standardindstillingerne godt:
+Til typiske MAPIR Survey3 kamera-arbejdsgange fungerer standardindstillingerne godt:
 
 * ✅ **Vignettekorrektion**: Aktiveret
-* ✅ **Reflektanskalibrering**: Aktiveret (kræver billeder af MAPIR mål)
-* ✅ **Debayer-metode**: Høj kvalitet (hurtigere)
+* ✅ **Reflektanskalibrering**: Aktiveret (kræver billeder af MAPIR-mål)
+* ✅ **Debayer-metode**: Standard (hurtig, medium kvalitet)
 * ✅ **Eksportformat**: TIFF (16-bit)
 
 Du skal blot importere dine billeder og starte behandlingen med disse standardindstillinger.
@@ -37,33 +37,35 @@ Panelet Projektindstillinger er inddelt i flere kategorier. Nedenfor findes en o
 
 Styrer, hvordan Chloros identificerer kalibreringsmål i dine billeder.
 
-**Vigtige indstillinger:**
+**Vigtige indstillinger:*** **Minimumskalibreringsprøveområde**: Størrelsestærskel for måldetektion (standard: 25 pixels)
+* **Minimumsklustering af mål**: Lighedstærskel for gruppering af målregioner (standard: 60)**Hvornår skal du justere:**
 
-* **Minimumskalibreringsprøveområde**: Størrelsestærskel for måldetektion (standard: 25 pixels)
-* **Minimumsklustering af mål**: Lighedstærskel for gruppering af målregioner (standard: 60)
-
-**Hvornår skal du justere:**
-
-* Forøg prøveområdet, hvis du får falske detektioner.
-* Formindsk, hvis målene ikke bliver detekteret.
-* Juster klusteringen, hvis målene bliver opdelt i flere detektioner.
+* Forøg prøveområdet, hvis du får falske detektioner
+* Sænk, hvis mål ikke detekteres
+* Juster gruppering, hvis mål opdeles i flere detektioner
 
 ### Behandling
 
-Vigtigste billedbehandlings- og kalibreringsindstillinger.
+Hovedindstillinger for billedbehandling og kalibrering.
 
-**Vigtige indstillinger:**
-
-* **Vignettekorrektion**: Kompenserer for mørkfarvning af linsen i kanterne ✅ Anbefales
+**Vigtige indstillinger:*** **Vignettekorrektion**: Kompenserer for mørkfarvning af linsen i kanterne ✅ Anbefales
 * **Reflektanskalibrering**: Normaliserer værdier ved hjælp af kalibreringsmål ✅ Anbefales
 * **Debayer-metode**: Algoritme til konvertering af RAW til 3-kanals multispektral
-* **Minimumskalibreringsinterval**: Tid mellem brug af kalibreringsmål (0 = brug alle)
-
-**Avancerede indstillinger:**
-
-* **Lyssensor-tidszoneforskydning**: Til PPK-tidssynkronisering (standard: 0)
+* **Minimumskalibreringsinterval**: Tid mellem brug af kalibreringsmål (0 = brug alle)**Avancerede indstillinger:*** **Lyssensor-tidszoneforskydning**: Til PPK-tidssynkronisering (standard: 0)
 * **Anvend PPK-korrektioner**: Bruger GPS/eksponeringspin-data fra .daq-filer
 * **Eksponeringspin 1/2**: Tildeler kameraer til eksponeringspins til opsætninger med to kameraer
+
+### Debayer-metode
+
+Vi tilbyder i øjeblikket 2 debayering-metoder i Chloros:
+
+#### Standard (hurtig, medium kvalitet)
+
+Standard debayer behandler hurtigt, men viser debayering-farvestøj, hvilket resulterer i mindre nøjagtige og mere støjende billeder.
+
+#### Teksturbevidst (langsom, højeste kvalitet) \[Chloros+ Kun]
+
+Teksturbevidst bruger en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayering-støj. Teksturbevidst-modellen kræver GPU-hukommelse (VRAM) for at køre. Vi anbefaler at bruge den, når du har &gt;4 GB VRAM til rådighed for hurtigere behandling.
 
 ### Indeks (multispektrale indekser)
 
@@ -71,20 +73,17 @@ Konfigurer, hvilke vegetationsindekser der skal beregnes og eksporteres.
 
 **Sådan tilføjes indekser:**
 
-1. Klik på knappen **&quot;Tilføj indeks&quot;**
+1. Klik på knappen**&quot;Tilføj indeks&quot;**
+
 2. Vælg et indeks fra rullemenuen (NDVI, NDRE, GNDVI osv.)
 3. Konfigurer visualiseringsindstillinger (LUT-farver, værdiintervaller)
 4. Tilføj flere indekser efter behov
 
-**Populære indekser:**
-
-* **NDVI**: Generel vegetationssundhed (mest almindelig)
+**Populære indekser:*** **NDVI**: Generel vegetationstilstand (mest almindelig)
 * **NDRE**: Tidlig stressdetektering med RedEdge
 * **GNDVI**: Følsom over for klorofylkoncentration
 * **OSAVI**: Fungerer godt med synlig jord
-* **EVI**: Regioner med højt bladarealindeks (LAI)
-
-**Brugerdefinerede formler (kun Chloros+):**
+* **EVI**: Regioner med højt bladarealindeks (LAI)**Brugerdefinerede formler (kun Chloros+):**
 
 * Opret brugerdefinerede multispektrale indeksformler
 * Brug båndmatematik med alle billedkanaler
@@ -96,14 +95,10 @@ Se [Multispektrale indeksformler](../project-settings/multispectral-index-formul
 
 Styrer outputfilformat og kvalitet.
 
-**Tilgængelige formater:**
-
-* **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (interval 0-65.535)
-* **TIFF (32-bit, procent)**: Flydende reflektansværdier (interval 0,0-1,0)
-* **PNG (8-bit)**: Tabsfri komprimering til visualisering (interval 0-255)
-* **JPG (8-bit)**: Mindste filer, tabsgivende komprimering (interval 0-255)
-
-***
+**Tilgængelige formater:*** **TIFF (16-bit)**: Anbefales til GIS og videnskabelig analyse (0-65.535 interval)
+* **TIFF (32-bit, procent)**: Flydende reflektansværdier (0,0-1,0 interval)
+* **PNG (8-bit)**: Tabsfrit komprimering til visualisering (interval 0-255)
+* **JPG (8-bit)**: Mindste filer, tabsfyldt komprimering (interval 0-255)***
 
 ## Gemme og indlæse indstillinger
 
@@ -111,25 +106,25 @@ Styrer outputfilformat og kvalitet.
 
 Opret genanvendelige skabeloner for ensartede arbejdsgange:
 
-1. Konfigurer alle ønskede indstillinger i panelet Projektindstillinger.
-2. Rul ned til afsnittet **&quot;Gem projekt skabelon&quot;** nederst.
-3. Indtast et beskrivende navn på skabelonen (f.eks. &quot;Survey3N\_RGN\_Landbrug&quot;).
-4. Klik på ikonet for gem.
+1. Konfigurer alle ønskede indstillinger i panelet Projektindstillinger
+2. Rul ned til afsnittet **&quot;Gem projekt skabelon&quot;** nederst
+3. Indtast et beskrivende skabelonnavn (f.eks. &quot;Survey3N\_RGN\_Agriculture&quot;)
+4. Klik på ikonet for gem
 
 **Fordele:**
 
-* Anvend identiske indstillinger på tværs af flere projekter
-* Del konfigurationer med teammedlemmer
-* Bevar konsistensen for gentagne undersøgelser
+* Anvend identiske indstillinger på tværs af flere projekter.
+* Del konfigurationer med teammedlemmer.
+* Oprethold konsistens ved gentagne undersøgelser.
 
 ### Indlæs skabelon i nyt projekt
 
 Når du opretter et nyt projekt:
 
-1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen
-2. Vælg **&quot;Indlæs fra skabelon&quot;**
-3. Vælg din gemte skabelon
-4. Alle indstillinger anvendes automatisk
+1. Vælg **&quot;Nyt projekt&quot;** i hovedmenuen.
+2. Vælg **&quot;Indlæs fra skabelon&quot;**.
+3. Vælg din gemte skabelon.
+4. Alle indstillinger anvendes automatisk.
 
 ### Arbejdsmappe
 
@@ -137,7 +132,7 @@ Indstillingen **&quot;Gem projektmappe&quot;** angiver, hvor nye projekter opret
 
 * **Standardplacering**: `C:\Users\[Username]\Chloros Projects`
 * **Skift placering**: Klik på redigeringsikonet, og vælg en ny mappe
-* **Hvornår skal du skifte**:
+* **Hvornår skal du ændre**:
   * Netværksdrev til teamsamarbejde
   * Et andet drev med mere lagerplads
   * Organiseret mappestruktur efter år/kunde
@@ -152,25 +147,22 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 
 * MAPIR DAQ med GPS (GNSS)-modul
 * .daq-logfil med eksponeringspin-indtastninger
-* Kamera tilsluttet DAQ-eksponeringsstik under optagelsessessionen
+* Kamera tilsluttet DAQ-eksponeringspins under optagelsessessionen
 
-### Konfigurationsskridt
+### Konfigurations trin
 
-1. Placer .daq-logfilen i din projektmappe.
-2. I Projektindstillinger skal du aktivere afkrydsningsfeltet **&quot;Anvend PPK-korrektioner&quot;**.
-3. Indstil **&quot;Lyssensorens tidszoneforskydning&quot;**, hvis det er nødvendigt (standard: 0 for UTC).
+1. Placer .daq-logfilen i din projektmappe
+2. I Projektindstillinger skal du aktivere afkrydsningsfeltet **&quot;Anvend PPK-korrektioner&quot;**
+
+3. Indstil**&quot;Lyssensor-tidszoneforskydning&quot;**, hvis det er nødvendigt (standard: 0 for UTC)
 4. Tildel kameraer til eksponeringsstik:
-   * **Enkelt kamera**: Tildeles automatisk til pin 1
-   * **To kameraer**: Tildel hvert kamera manuelt til den korrekte pin
-
-**Tildeling af eksponeringspins:**
-
-* **Eksponeringspin 1**: Vælg kameramodel fra rullemenuen
+   * **Enkelt kamera**: Tildeles automatisk til stik 1
+   * **Dobbelt kameraer**: Tildel hvert kamera manuelt til det korrekte stik**Tildeling af eksponeringsstik:*** **Eksponeringspin 1**: Vælg kameramodel fra rullemenuen
 * **Eksponeringspin 2**: Vælg andet kamera eller &quot;Brug ikke&quot;
-* Det samme kamera kan ikke tildeles til begge pins
+* Det samme kamera kan ikke tildeles begge pins
 
-{% hint style=&quot;warning&quot; %}
-**Vigtigt**: Eksponeringsstifter skal tildeles korrekt til deres respektive kameraer. Forkert tildeling vil resultere i forkerte geolokaliseringsdata.
+{% hint style="warning" %}
+**Vigtigt**: Eksponeringspins skal tildeles korrekt til deres respektive kameraer. Forkert tildeling vil resultere i forkerte geolokaliseringsdata.
 {% endhint %}
 
 ***
@@ -216,7 +208,7 @@ Før du begynder at behandle, skal du gennemgå disse vigtige indstillinger:
 * [ ] Kameramodel korrekt registreret i filbrowseren
 * [ ] Vignettekorrektion aktiveret
 * [ ] Reflektanskalibrering aktiveret
-* [ ] Mindst ét kalibreringsmålbillede importeret
+* [ ] Mindst et kalibreringsmålbillede importeret
 * [ ] Ønskede multispektrale indekser tilføjet
 * [ ] Eksportformat, der passer til din arbejdsgang
 * [ ] PPK-indstillinger konfigureret (hvis du bruger .daq med eksponeringshændelser)

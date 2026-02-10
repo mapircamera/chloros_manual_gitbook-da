@@ -6,8 +6,8 @@ Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-
 
 ## Adgang til fanen Kort
 
-1. Åbn eller opret et projekt i Chloros.
-2. Importer billeder, der indeholder GPS-metadata.
+1. Åbn eller opret et projekt i Chloros
+2. Importer billeder, der indeholder GPS-metadata
 3. Klik på fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> i venstre sidepanel
 4. Kortet viser markører ved hvert billedes GPS-placering
 
@@ -19,11 +19,11 @@ Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-
 
 ## Justering af billeder fra fanen Kort
 
-Fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme tilføjelses-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
+Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme tilføjelses-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
 
 ### Filnavn
 
-* Oprindeligt filnavn fra kameraet
+* Original filnavn fra kameraet
 * Overholder kameraets navngivningskonvention (f.eks. IMG\_0001.RAW)
 
 ### Breddegrad
@@ -39,7 +39,7 @@ Fanen **Kort** <img src="../.gitbook/assets/image (3).png" alt="" data-size="lin
 * Billedets højde
 
 {% hint style="info" %}
-Ved at klikke på kolonneoverskrifterne i tabellen sorteres også række dataene
+Ved at klikke på kolonneoverskrifterne i tabellen sorteres også rækkeoplysningerne
 {% endhint %}
 
 ***
@@ -52,7 +52,7 @@ Hvert billede med GPS-data er repræsenteret af en markør på kortet:
 
 * Markører angiver de nøjagtige GPS-koordinater, hvor hvert billede blev taget.
 * Grupperede markører kan samles, når du zoomer ud.
-* Zoom ind for at se de enkelte billedplaceringer.
+* Zoom ind for at se de enkelte billeders placeringer.
 
 {% hint style="success" %}
 SUPERZOOM: Når du når det maksimale zoomniveau fra kortfliseleverandøren, forstørres flisen ved yderligere zoom, så du kan se markører, der ligger tæt på hinanden.
@@ -90,7 +90,7 @@ Fanen Kort understøtter to fliseudbydere til baggrundskortbilleder:
 
 Du kan vælge kortlagstypen (fra venstre mod højre):
 
- <img src="../.gitbook/assets/image (23).png" alt="" data-size="line">### Terræn
+ <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terræn
 
 Viser højdeprofiler og kortfliser med detaljer (veje osv.)
 
@@ -117,9 +117,7 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 ### Panorering
 
-* **Panorering**: Klik og træk for at flytte rundt på kortet.
-
-***
+* **Panorering**: Klik og træk for at flytte rundt på kortet.***
 
 ## Anvendelsestilfælde
 
@@ -127,7 +125,7 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 * Se dækningsområdet for droneoptagelser
 * Identificer huller i billeddækningen
-* Kontroller udførelsen af flyvevejen
+* Bekræft udførelsen af flyvevejen
 
 ### Gennemgang af jordundersøgelser
 

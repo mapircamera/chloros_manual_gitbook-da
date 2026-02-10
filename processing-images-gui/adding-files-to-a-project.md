@@ -5,7 +5,7 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 ## Adgang til filbrowseren
 
 1. Åbn eller opret et projekt i Chloros
-2. Klik på ikonet **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> i venstre sidepanel
+2. Klik på **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> i venstre sidepanel
 3. Filbrowseren viser dit projekts filliste
 
 {% hint style="info" %}
@@ -29,13 +29,11 @@ Brug denne indstilling til at importere individuelle billedfiler eller et lille 
 
 ### Metode 2: Tilføj mappe
 
-Brug denne indstilling til at importere alle billeder fra en mappe på én gang.
+Brug denne mulighed til at importere alle billeder fra en mappe på én gang.
 
 1. Klik på knappen **&quot;Tilføj mappe&quot;** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> øverst i filbrowserpanelet.
 2. Naviger til og vælg den mappe, der indeholder dine billeder fra optagelsessessionen.
-3. Klik på **&quot;Vælg mappe&quot;** for at importere alle understøttede billeder fra den pågældende mappe.
-
-***
+3. Klik på **&quot;Vælg mappe&quot;** for at importere alle understøttede billeder fra den mappe.***
 
 ## Forståelse af filbrowser-tabellen
 
@@ -86,9 +84,7 @@ Sådan fjerner du uønskede billeder fra dit projekt:
 
 * **Sorter efter kolonne**: Klik på en kolonneoverskrift for at sortere billederne.
 * **Sorter efter tidsstempel**: Nyttigt til at organisere kronologiske optagelsessekvenser.
-* **Kamerafiltermodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer.
-
-***
+* **Kamerafiltermodel**: Gruppér billeder efter kameratype, hvis du bruger flere kameraer.***
 
 ## Billedforhåndsvisning
 
@@ -105,9 +101,7 @@ Klik på en billedminiature i filbrowseren for at vise det i det primære forhå
 * **Forrige billede**: Klik på venstre pil eller tryk på ←-tasten
 * **Næste billede**: Klik på højrepilen eller tryk på →-tasten
 * **Zoom ind/ud**: Brug musehjulet eller zoomknapperne
-* **Panorer**: Klik og træk på billedet, når det er zoomet ind
-
-***
+* **Panorer**: Klik og træk på billedet, når det er zoomet ind***
 
 ## Håndtering af duplikerede filer
 
@@ -115,7 +109,7 @@ Chloros registrerer og ignorerer automatisk duplikerede filer:
 
 * Filer med identiske filnavne springes over
 * Forhindrer utilsigtet dobbeltbehandling
-* Der vises en advarselsmeddelelse, når der opdages duplikater
+* Der vises en advarselsmeddelelse, når duplikater opdages
 
 {% hint style="warning" %}
 **Vigtigt**: Omdøb eller rediger ikke dine originale billedfiler, før du importerer dem. Chloros er afhængig af originale filnavne og metadata for at kunne behandle dem korrekt.
@@ -132,9 +126,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 3. Filbrowseren viser kameramodellen i kolonnen Kameramodel
 4. Behandlingen anvender de korrekte indstillinger for hver kameratype
 
-**Eksempel på scenario**: Survey3W RGN + Survey3N OCN opsætning med to kameraer
-
-***
+**Eksempel på scenario**: Survey3W RGN + Survey3N OCN opsætning med to kameraer***
 
 ## Bedste praksis
 
@@ -188,9 +180,7 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 * Kameraets ur er ikke indstillet korrekt
 * EXIF-data fjernet af ekstern software
 
-**Løsning**: Kontroller, at kameraets tidsindstillinger var korrekte under optagelsen
-
-***
+**Løsning**: Kontroller, at kameraets tidsindstillinger var korrekte under optagelsen***
 
 ## Næste trin
 
