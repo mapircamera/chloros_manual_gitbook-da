@@ -1,12 +1,12 @@
 # Understøttede sprog
 
-Chloros tilbyder fuld interface-understøttelse på **38 sprog verden over**, hvilket gør det tilgængeligt for brugere over hele kloden. Du kan skifte sprog med det samme på alle grænseflader: Desktop, Browser, CLI og Python SDK.
+Chloros tilbyder fuld understøttelse af brugergrænsefladen på **38 sprog verden over**, hvilket gør det tilgængeligt for brugere over hele kloden. Du kan skifte sprog med det samme på alle grænseflader: Desktop, Browser, CLI og Python SDK.
 
 Chloros understøtter følgende sprog:
 
-| # | Sprog | Indfødt navn | CLI-kode |
+| # | Sprog | Navn på originalsproget | CLI-kode |
 |---|----------|-------------|----------|
-| 1 | 🇺🇸 Engelsk | Engelsk | `en` |
+| 1 | 🇺🇸 Engelsk | English | `en` |
 | 2 | 🇪🇸 Spansk | Español | `es` |
 | 3 | 🇵🇹 Portugisisk | Português | `pt` |
 | 4 | 🇫🇷 Fransk | Français | `fr` |
@@ -15,7 +15,7 @@ Chloros understøtter følgende sprog:
 | 7 | 🇯🇵 Japansk | 日本語 | `ja` |
 | 8 | 🇰🇷 Koreansk | 한국어 | `ko` |
 | 9 | 🇨🇳 Kinesisk (forenklet) | 简体中文 | `zh` |
-| 10 | 🇹🇼 Kinesisk (traditionelt) | 繁體中文 | `zh-TW` |
+| 10 | 🇹🇼 Kinesisk (traditionel) | 繁體中文 | `zh-TW` |
 | 11 | 🇷🇺 Russisk | Русский | `ru` |
 | 12 | 🇳🇱 Hollandsk | Nederlands | `nl` |
 | 13 | 🇸🇦 Arabisk | العربية | `ar` |
@@ -37,7 +37,7 @@ Chloros understøtter følgende sprog:
 | 29 | 🇧🇷 Brasiliansk portugisisk | Português Brasileiro | `pt-BR` |
 | 30 | 🇭🇰 Kantonesisk | 粵語 | `zh-HK` |
 | 31 | 🇲🇾 Malay | Bahasa Melayu | `ms` |
-| 32 | 🇸🇰 Slovak | Slovenčina | `sk` |
+| 32 | 🇸🇰 Slovakisk | Slovenčina | `sk` |
 | 33 | 🇧🇬 Bulgarsk | Български | `bg` |
 | 34 | 🇭🇷 Kroatisk | Hrvatski | `hr` |
 | 35 | 🇱🇹 Litauisk | Lietuvių | `lt` |
@@ -45,14 +45,14 @@ Chloros understøtter følgende sprog:
 | 37 | 🇪🇪 Estisk | Eesti | `et` |
 | 38 | 🇸🇮 Slovensk | Slovenščina | `sl` |
 
-## Sådan ændres sproget
+## Sådan ændrer du sprog
 
 ### I Chloros Desktop/Browser
 
-1. Åbn applikationsindstillingerne.
-2. Gå til menuen for sprogvalg.
-3. Vælg dit foretrukne sprog fra listen.
-4. Grænsefladen opdateres øjeblikkeligt.
+1. Åbn programindstillingerne
+2. Gå til sprogvalgmenuen
+3. Vælg dit foretrukne sprog fra listen
+4. Brugergrænsefladen opdateres øjeblikkeligt
 
 ### I Chloros CLI
 
@@ -83,9 +83,9 @@ Indstil sprogparameteren, når du initialiserer SDK, for at få meddelelser og o
 
 ## Dækning
 
-Alle 38 sprog understøttes fuldt ud på tværs af:
+Alle 38 sprog understøttes fuldt ud på:
 
-* **Chloros Desktop** - Komplet GUI-oversættelse
+* **Chloros Desktop** - Komplet oversættelse af GUI
 * **Chloros Browser** - Webgrænseflade på alle sprog
 * **Chloros CLI** - Kommandolinjegrænseflade og outputmeddelelser
 * **Chloros Python SDK** - API-meddelelser og dokumentation

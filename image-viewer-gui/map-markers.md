@@ -1,6 +1,6 @@
 # Kortmarkører
 
-Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-koordinater. Dette giver et geografisk overblik over din optagelsessession og hjælper dig med at visualisere den geografiske dækning. Det er også nyttigt, når du først importerer dine billeder, så du hurtigt kan fjerne de billeder, du ikke har brug for at behandle.
+Fanen »Kort« viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-koordinater. Dette giver et geografisk overblik over din optagelsessession og hjælper dig med at visualisere den geografiske dækning. Det er også nyttigt, når du først importerer dine billeder, så du hurtigt kan fjerne de billeder, du ikke har brug for at behandle.
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
@@ -19,12 +19,12 @@ Fanen Kort viser dine billeder på et interaktivt 2D-kort baseret på deres GPS-
 
 ## Justering af billeder fra fanen Kort
 
-Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har de samme tilføjelses-  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filknapper som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
+Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> har den samme tilføj  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  og fjern  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  filer som fanen [**Filbrowser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> . Den viser også den samme liste over projektfiler, men med andre kolonneoverskrifter:
 
 ### Filnavn
 
-* Original filnavn fra kameraet
-* Overholder kameraets navngivningskonvention (f.eks. IMG\_0001.RAW)
+* Det originale filnavn fra kameraet
+* Bevarer kameraets navngivningskonvention (f.eks. IMG\_0001.RAW)
 
 ### Breddegrad
 
@@ -39,7 +39,7 @@ Fanen **Kort**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line
 * Billedets højde
 
 {% hint style="info" %}
-Ved at klikke på kolonneoverskrifterne i tabellen sorteres også rækkeoplysningerne
+Ved at klikke på tabelkolonneoverskrifterne sorteres rækkeoplysningerne også
 {% endhint %}
 
 ***
@@ -48,47 +48,47 @@ Ved at klikke på kolonneoverskrifterne i tabellen sorteres også rækkeoplysnin
 
 Hvert billede med GPS-data er repræsenteret af en markør på kortet:
 
-### Markørvisning
+### Visning af markører
 
-* Markører angiver de nøjagtige GPS-koordinater, hvor hvert billede blev taget.
-* Grupperede markører kan samles, når du zoomer ud.
-* Zoom ind for at se de enkelte billeders placeringer.
+* Markører angiver de nøjagtige GPS-koordinater, hvor hvert billede blev taget
+* Markører, der ligger tæt sammen, kan grupperes, når der zoomes ud
+* Zoom ind for at se de enkelte billedplaceringer
 
 {% hint style="success" %}
-SUPERZOOM: Når du når det maksimale zoomniveau fra kortfliseleverandøren, forstørres flisen ved yderligere zoom, så du kan se markører, der ligger tæt på hinanden.
+SUPER-ZOOM: Når du når det maksimale zoomniveau fra kortudbyderen, forstørres kortflisen ved yderligere zoom, så du kan se markører, der ligger tæt sammen.
 {% endhint %}
 
-### Hover-forhåndsvisning
+### Forhåndsvisning ved musemarkering
 
-* **Hold musen** over en markør for at se en miniatureforhåndsvisning af det pågældende billede.
-* Dette giver mulighed for hurtig visuel identifikation uden at forlade kortvisningen.
-* Nyttigt til at finde specifikke billeder inden for en stor optagelsessession.
+* **Hold musen** over en markør for at se en miniatureforhåndsvisning af det pågældende billede
+* Dette giver mulighed for hurtig visuel identifikation uden at forlade kortvisningen
+* Nyttigt til at finde specifikke billeder i en stor optagelsessession
 
 ***
 
-## Kortfliseudbydere
+## Kortfliseleverandører
 
 {% hint style="success" %}
-**Automatisk valg**: Chloros vælger automatisk den flisetjeneste, der giver det bedste zoomniveau for din aktuelle kortplacering. Du kan manuelt skifte mellem udbydere, hvis du ønsker det.
+**Automatisk valg**: Chloros vælger automatisk den flisetjeneste, der giver det bedste zoomniveau for din aktuelle kortplacering. Du kan skifte manuelt mellem udbydere, hvis du ønsker det.
 {% endhint %}
 
-Fanen Kort understøtter to fliseudbydere til baggrundskortbilleder:
+Fanen Kort understøtter to fliseudbydere til baggrundskortbillederne:
 
 ### Google Maps
 
 * Standard satellit- og kortbilleder fra Google
-* Bedst til generel dækning af hele verden
+* Bedst til generel dækning på verdensplan
 
 ### ESRI
 
 * Satellit- og luftfotos fra ESRI ArcGIS
-* Leverer ofte billeder med højere opløsning i visse regioner
+* Tilbyder ofte billeder med højere opløsning i visse regioner
 
 ***
 
 ## Kortflisetyper
 
-Du kan vælge kortlagstypen (fra venstre mod højre):
+Du kan vælge kortlagstype (fra venstre mod højre):
 
  <img src="../.gitbook/assets/image (23).png" alt="" data-size="original">### Terræn
 
@@ -112,12 +112,12 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 ### Zoomkontroller
 
-* **Zoom ind/ud**: Brug musens rullehjul eller zoomknapperne.
-* **Fuld skærm**: Vis kortet i fuld skærm.
+* **Zoom ind/ud**: Brug musens rullehjul eller zoomknapperne
+* **Fuld skærm**: Vis kortet i fuld skærm
 
-### Panorering
+### Panoreringskontroller
 
-* **Panorering**: Klik og træk for at flytte rundt på kortet.***
+* **Panorer**: Klik og træk for at bevæge dig rundt på kortet***
 
 ## Anvendelsestilfælde
 
@@ -127,17 +127,17 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 * Identificer huller i billeddækningen
 * Bekræft udførelsen af flyvevejen
 
-### Gennemgang af jordundersøgelser
+### Gennemgang af jordbaseret kortlægning
 
 * Se den geografiske fordeling af jordbaserede optagelser
-* Find kalibreringsmålbilleder i forhold til undersøgelsesområdet
+* Find kalibreringsmålbilleder i forhold til kortlægningsområdet
 * Planlæg yderligere optagelsessteder
 
 ### Kvalitetskontrol
 
-* Identificer hurtigt billeder, der er taget på uventede steder.
-* Kontroller GPS-nøjagtigheden på tværs af datasættet.
-* Krydshenvis billedplaceringer med feltnoter.
+* Identificer hurtigt billeder, der er optaget på uventede steder
+* Bekræft GPS-nøjagtigheden på tværs af datasættet
+* Krydshenvis billedplaceringer med feltnoter
 
 ***
 
@@ -147,17 +147,17 @@ Viser satellitkortfliser med tilføjede detaljer (veje osv.)
 
 **Mulige årsager:**
 
-* Billederne indeholder ikke GPS-metadata.
-* GPS var deaktiveret på kameraet under optagelsen.
-* EXIF-data blev fjernet af ekstern software.
+* Billederne indeholder ikke GPS-metadata
+* GPS var deaktiveret på kameraet under optagelsen
+* EXIF-data blev fjernet af ekstern software
 
-**Løsning**: Kontroller, at GPS er aktiveret på dit kamera, og importer de originale filer igen.
+**Løsning**: Kontroller, at GPS er aktiveret på dit kamera, og importer de originale filer igen
 
-### Markører på forkert sted
+### Markører på forkert placering
 
 **Mulige årsager:**
 
-* Kameraets GPS havde dårlig satellitfix.
-* GPS-afvigelse under optagelse.
+* Kameraets GPS havde dårlig satellitposition
+* GPS-afvigelse under optagelsen
 
-**Løsning**: Dette er typisk et problem med optagelsestidspunktet. Overvej at bruge PPK/RTK GPS til præcisionsapplikationer.
+**Løsning**: Dette er typisk et problem ved optagelsestidspunktet; overvej at bruge PPK/RTK GPS til præcisionsanvendelser

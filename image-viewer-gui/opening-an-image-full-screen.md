@@ -1,38 +1,38 @@
 # Åbning af et billede i fuld skærm
 
-Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du viser originale billeder eller behandlede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
+Chloros Image Viewer tilbyder en dedikeret fuldskærmsgrænseflade til visning, analyse og redigering af dine multispektrale billeder. Uanset om du ser originale billeder eller bearbejdede resultater, tilbyder Image Viewer kraftfulde værktøjer til inspektion og analyse.
 
 ## Adgang til billedviseren
 
 ### Fra filbrowseren
 
-Den mest almindelige måde at åbne et billede i billedviseren:
+Den mest almindelige måde at åbne et billede i billedviseren på:
 
-1. Sørg for, at du er i fanen **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Klik på en **billedminiature** i billedgitteret
-3. Billedet åbnes i **hovedforhåndsvisningsområdet** (midten af skærmen)
+1. Sørg for, at du er på fanen **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Klik på en vilkårlig **billedminiature** i billedgitteret
+3. Billedet åbnes i **hovedvisningsområdet** (midten af skærmen)
 4. Billedet er nu indlæst og klar til visning i fuld skærm
 
-### Åbning af fanen Billedfremviser
+### Åbning af fanen Image Viewer
 
-Når et billede er indlæst i forhåndsvisningsområdet:
+Når et billede er indlæst i visningsområdet:
 
-1. Klik på ikonet **Billedfremviser** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
+1. Klik på ikonet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> i venstre sidepanel
 2. Fanen Billedfremviser åbnes og viser det valgte billede i fuld skærm
 3. Avancerede visnings- og analyseværktøjer bliver tilgængelige i venstre sidepanel
 
 ***
 
-## Oversigt over billedfremviserens grænseflade
+## Oversigt over Billedfremviser-grænsefladen
 
 ### Hovedvisningsområde
 
 Den største del af skærmen viser dit billede:
 
 * **Fuld opløsning**: Billeder vises i oprindelig opløsning
-* **Zoombar**: Brug kontrolelementer eller musehjul til at zoome
+* **Zoombar**: Brug kontrolelementer eller musehjulet til at zoome
 * **Panorerbar**: Klik og træk for at flytte rundt, når der er zoomet
-* **Billedformat bevaret**: Billeder skaleres proportionalt***
+* **Billedformat bevares**: Billeder skaleres proportionalt***
 
 ## Visningsindstillinger
 
@@ -42,24 +42,25 @@ Den største del af skærmen viser dit billede:
 
 Naviger gennem dit billedsæt ved hjælp af tastaturgenveje eller knapper:
 
-* **Næste billede**: Klik på knappen → eller tryk på tasten**→** (højre pil)
-* **Forrige billede**: Klik på knappen ← eller tryk på tasten**←** (venstre pil)
+* **Næste billede**: Klik på →-knappen eller tryk på**→** (højrepil)-tasten
+* **Forrige billede**: Klik på ←-knappen eller tryk på**←** (venstrepil)-tasten
 * **Gå til et bestemt billede**: Gå tilbage til filbrowseren og klik på den ønskede miniature
 
 #### Zoomkontroller
 
 Juster forstørrelsen for at se billeddetaljer:
 
-**Zoom ind:*** Klik på knappen **+** (plus)
-* Tryk på tasten **+**eller**=*** Rul musehjulet **opad**
+**Zoom ind:*** Klik på **+** (plus)-knappen
+* Tryk på **+**- eller**=**-tasten
+* Rul musehjulet **opad**
 
-**Zoom ud:*** Klik på knappen **−** (minus)
-* Tryk på tasten **−** (minus)
+**Zoom ud:*** Klik på **−** (minus)-knappen
+* Tryk på **−** (minus)-tasten
 * Rul musehjulet **nedad**
 
 #### Panorering ved zoom
 
-Når der er zoomet ud over skærmstørrelsen:
+Når der er zoomet ind ud over skærmstørrelsen:
 
 1. Flyt musemarkøren over billedet
 2. Klik og **hold venstre museknap nede**
@@ -73,7 +74,7 @@ Når der er zoomet ud over skærmstørrelsen:
 
 ### Visning af pixelværdier ved markøren
 
-Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:**Værdiens placering:*** **Flydende tal og rød linje i højre side af indeks LUT-gradientlegende*** **Når du zoomer yderligere ind, vises en flydende værdi nær markøren og den fremhævede pixel*** Viser værdier for pixel **under markøren eller fremhævet*** Opdateres, når du bevæger musen
+Når du bevæger musemarkøren over billedet, vises pixelværdierne i realtid:**Placering af værdivisning:*** **Flydende tal og rød linje i indeks-LUT-gradientlegenden til højre*** **Når der zoomes yderligere ind, vises en flydende værdi nær markøren og den fremhævede pixel*** Viser værdier for pixel **under markøren eller den fremhævede*** Opdateres, når du bevæger musen
 
 ***
 
@@ -83,39 +84,39 @@ Når du flytter musemarkøren over billedet, vises pixelværdierne i realtid:**V
 
 **JPG-billeder fra kamera:**
 
-* Vis JPG-data som forhåndsvisning
-* Vis originale, ukorrigerede værdier
+* Viser JPG-data som forhåndsvisning
+* Viser originale, ukorrigerede værdier
 * Nyttigt til at kontrollere billedkvaliteten før behandling
 
-### RAW (original)
+### RAW (Original)
 
-### RAW (reflektans)
+### RAW (Reflektans)
 
 **Efter behandling:**
 
-* Vignette korrigeret
+* Vignettering korrigeret
 * Reflektans kalibreret
 * Multibånd TIFF (Red, Green, NIR osv.)
 * Videnskabelige data klar til analyse
 
-### RAW (indeks)
+### RAW (Indeks)
 
 **NDVI, NDRE, GNDVI osv. (\_NDVI.tif-filer):**
 
-* Enkeltbånds gråtonebilleder
+* Enkeltbåndsgråtonebilleder
 * Pixelværdier repræsenterer indeksberegningsresultater
 * Interval typisk -1 til +1 for normaliserede indekser
 * Kan anvende farve-LUT&#x27;er til visualisering
 
 ***
 
-## Indeks- og LUT-anvendelse
+## Anvendelse af indeks og LUT
 
 Anvend multispektrale indekser og farve-Look-Up-tabeller:
 
 1. Find **Index/LUT Sandbox**i**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælke
 2. Vælg vegetationsindeks (NDVI, NDRE osv.)
-3. Vælg multispektral formel, eller opret din egen brugerdefinerede formel (kun Chloros+)
+3. Vælg multispektral formel, eller opret din egen brugerdefinerede (kun Chloros+)
 4. Anvend farve-LUT-gradient til visualisering
 5. Juster værdiintervaller og tærskler
 
@@ -127,28 +128,28 @@ Se [Index/LUT Sandbox](index-lut-sandbox.md) for detaljerede instruktioner.
 
 ### Navigation
 
-* **→** (højre pil): Næste billede
-* **←** (venstre pil): Forrige billede
-* **Home**: Første billede på listen
-* **End**: Sidste billede på listen
+* **→** (højrepil): Næste billede
+* **←** (venstrepil): Forrige billede
+* **Home**: Første billede i listen
+* **End**: Sidste billede i listen
 
 ### Zoom
 
 * **+**eller**=**: Zoom ind
 * **−**: Zoom ud
-* **Mushjul**: Zoom ind/ud***
+* **Musens rullehjul**: Zoom ind/ud***
 
-### Bekræftelse af indeksberegninger
+### Verificering af indeksberegninger
 
 Kontroller, at indekserne er beregnet korrekt:
 
 1. Åbn NDVI eller et andet indeksbillede
-2. Kontroller vegetationsområderne:
+2. Kontroller vegetationsområder:
    * **NDVI**: Bør vise 0,4-0,9 for sunde planter
    * **NDRE**: Højere værdier for kraftig vækst
    * **GNDVI**: Ligner NDVI, men er klorofylfølsom
 3. Kontroller ikke-vegetation:
-   * **Jord**: Tæt på 0 eller let negativ
+   * **Jord**: Nær 0 eller let negativ
    * **Vand**: Negative værdier (-0,5 til 0)***
 
 ## Fejlfinding ved visningsproblemer
@@ -157,30 +158,30 @@ Kontroller, at indekserne er beregnet korrekt:
 
 **Mulige årsager:**
 
-* Filen er beskadiget under behandlingen
+* Filen er blevet beskadiget under behandlingen
 * Filformatet understøttes ikke
 * Utilstrækkelig hukommelse til store billeder
 
 **Løsninger:**
 
-1. Prøv at åbne i en ekstern viewer for at kontrollere filens integritet.
-2. Kontroller, at filformatet svarer til den forventede type.
-3. Luk andre programmer for at frigøre hukommelse.
-4. Prøv med et mindre/andet billede.
+1. Prøv at åbne i en ekstern viewer for at kontrollere filens integritet
+2. Kontroller, at filformatet matcher den forventede type
+3. Luk andre programmer for at frigøre hukommelse
+4. Prøv et mindre/andet billede
 
 ### Sort eller hvid billedvisning
 
 **Mulige årsager:**
 
-* Værdiområdet ligger uden for skærmens kapacitet.
-* 32-bit float-billede med usædvanlige værdier.
-* Indeksberegningsfejl.
+* Værdiinterval uden for visningskapaciteten
+* 32-bit float-billede med usædvanlige værdier
+* Fejl i indeksberegningen
 
 **Løsninger:**
 
-1. Kontroller pixelværdierne – hvis alle er meget lave eller meget høje, skal du justere visningsområdet.
-2. Prøv at åbne i QGIS eller lignende med automatisk justering af området.
-3. Kontroller fejlfindingsloggen fra behandlingen for fejl.
+1. Kontroller pixelværdierne – hvis de alle er meget lave eller meget høje, skal du justere visningsområdet
+2. Prøv at åbne i QGIS eller lignende med automatisk justering af området
+3. Kontroller fejlloggen fra behandlingen for fejl
 
 ### Pixelværdierne ser forkerte ud
 
@@ -188,14 +189,14 @@ Kontroller, at indekserne er beregnet korrekt:
 
 * Visning af forkert billede (original vs. behandlet)
 * Kalibreringen blev ikke anvendt korrekt
-* Lyssensordata blev ikke inkluderet i input
-* Procenttilstand skiftede forkert
+* Lyssensordata blev ikke inkluderet i inputtet
+* Procenttilstand blev skiftet forkert
 
 **Løsninger:**
 
-1. Kontroller, at du ser behandlet output (kontroller filnavnesuffikset)
-2. Kontroller procenttilstandsknappens tilstand
-3. Sammenlign med kendte gode billeder fra samme datasæt
+1. Kontroller, at du ser det behandlede output (tjek filnavnets endelse)
+2. Kontroller status for procenttilstandsknappen
+3. Sammenlign med billeder, du ved er korrekte, fra samme datasæt
 
 ***
 
@@ -203,10 +204,10 @@ Kontroller, at indekserne er beregnet korrekt:
 
 Nu hvor du kan se billeder i fuld skærm:
 
-* [**Billedlag**](image-layers.md) – Lær om multibåndvisualisering
+* [**Billedlag**](image-layers.md) – Lær om multibåndsvisualisering
 * [**Indeks/LUT-sandkasse**](index-lut-sandbox.md) – Anvend brugerdefinerede indekser og farvekortlægning
-* [**Multispektrale indeksformler**](../project-settings/multispectral-index-formulas.md) – Få indsigt i tilgængelige indekser
+* [**Formler til multispektrale indekser**](../project-settings/multispectral-index-formulas.md) – Få indsigt i de tilgængelige indekser
 
-For arbejdsgangen for behandling, se:
+Se følgende for arbejdsgangen ved behandling:
 
 * [**Behandling af billeder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) – Komplet vejledning til behandling
