@@ -1,369 +1,293 @@
-# Indeks/LUT-sandkasse
+# Index/LUT-sandkasse
 
-Indeks/LUT-sandkassen er et interaktivt arbejdsområde i Chloros Image Viewer, der giver dig mulighed for at eksperimentere med beregning af multispektrale indekser og farvevisualiseringer i realtid. Dette kraftfulde værktøj hjælper dig med at afprøve forskellige indekser, finjustere værdiintervaller og oprette visualiseringer, der er klar til offentliggørelse, uden at skulle genbehandle hele dit datasæt.
+Index/LUT-sandkassen er det interaktive arbejdsområde i sidepanelet i Chloros Image Viewer. Du vælger en formel, knytter kameraets kanaler til den, farvelægger den med en farveovergang og justerer værdiområdet — og billedet opdateres i realtid, mens du arbejder. Siden version 1.2.0 kan du også **gemme det, du har lavet**, enten for et enkelt billede eller for hele projektet, uden at skulle genbehandle det.
 
-## Hvad er Index/LUT Sandbox?
+## Hvad Sandboxen bruges til
 
-### Formål
-
-Sandboxen tilbyder:
-
-* **Indeksberegning i realtid** – Anvend ethvert vegetationsindeks med det samme
-* **Interaktiv LUT-justering** – Finjuster farvegradienter og -intervaller
-* **Optimering af arbejdsgangen** – Bestem de bedste indstillinger inden batchbehandling
-
-### Sandkasse vs. projektbehandling
-
-**Indeks/LUT-sandkasse (interaktiv):**
-
-* Ét billede ad gangen
-* Øjeblikkelig feedback
-* Eksperimentel og iterativ
-* Ingen permanente ændringer af filer
-* Perfekt til udforskning og test
-
-**Projektbehandling (batch):**
-
-* Hele datasættet på én gang
-* Forudkonfigurerede indstillinger
-* Permanente outputfiler
-* Tidskrævende
-* Bedst, når indstillingerne er endelige
+| Index/LUT Sandbox (interaktiv)        | Projektbehandling (batch)       |
+| -------------------------------------- | -------------------------------- |
+| Ét billede ad gangen, øjeblikkelig feedback  | Hele datasættet i én gennemkørsel     |
+| Eksperimentelt og iterativt             | Forudkonfigurerede indstillinger          |
+| Renderer live; gemmer kun, når du beder om det  | Skriver altid produktfiler      |
+| Perfekt til at finde de rigtige indstillinger | Bedst, når indstillingerne er endelige |
 
 {% hint style="success" %}
-**Bedste arbejdsgang**: Brug Sandbox til at eksperimentere og finde optimale indeks- og LUT-indstillinger, og anvend derefter disse indstillinger under projektbehandling for hele dit datasæt.
+**Den sædvanlige arbejdsgang**: finjuster i Sandbox, indtil visualiseringen ser ud, som du ønsker, og eksporter derefter enten direkte fra Sandbox, eller kopier de samme indeks- og LUT-indstillinger til [Projektindstillinger](../project-settings/project-settings.md), så den næste behandlingskørsel indarbejder dem i hvert billede.
 {% endhint %}
 
 ***
 
-## Arbejde med indeks/LUT-sandkassen
+## Åbning af Sandbox
 
-### Forståelse af forudberegnede indekser
+1. Klik på et billede i gitteret — det åbnes i fuld skærm i fanen **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. Klik på ikonet **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> for at skubbe venstre sidepanel frem, hvis det ikke allerede er åbent
+3. Vælg et multibåndslag fra lag-rullemenuen øverst til højre — **RAW (Reflektans)** er det sædvanlige valg, da indeksværdier beregnet på baggrund af kalibreret reflektans er sammenlignelige på tværs af billeder
 
-I Chloros kan indekser anvendes under projektbehandlingen. For at afgøre, hvilke indeks- og LUT-indstillinger du vil anvende på eksportfiler, er det nemmest at bruge billedfremviserens sandkasse.
+Sidepanelet viser, fra top til bund:
 
-Sandkassen giver dig mulighed for at:
+* billedets navn og dets kameramodel
+* knappen **Eksporter/Gem billede(r)** — vises, når *Index* eller *LUT* er markeret
+* afkrydsningsfelterne **Index**og**LUT**
+* konfigurationspanelet for indeks
+* panelet **Cursorværdier** med aflæsning, histogram og GSD-kontrol
 
-* **Anvende nye indekser og farvegradienter (LUT&#x27;er)** til at visualisere dataene
-* **Justere visualiseringsindstillinger** interaktivt
-* **Se** allerede beregnede indeksbilleder
-* **Undersøge** pixelværdier på alle zoomniveauer
+{% hint style="warning" %}
+**Ikke tilgængeligt for monokameraer.** På et LATTICE M3M-billede med et enkelt bånd er begge afkrydsningsfelter deaktiveret, med værktøjstipet _&quot;Ikke tilgængeligt for mono (M3M)-sensorer&quot;_ — et multibåndsindeks er udefineret på et enkelt bånd. For at beregne indekser fra M3M-kameraer skal du kombinere to eller flere til en justeret multibåndsstak og bruge LATTICE-indeksmotoren.
+{% endhint %}
 
-### Åbning af sandkassen
+***
 
-Du får adgang til indeks-/LUT-sandkassen i **billedfremviseren** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælkefanen:
+## Anvendelse af et indeks
 
-1. Klik på et billede i filbrowserens billedgitter, så åbnes det i fanen **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> fanen
-2. Klik på **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> for at åbne den venstre pop-out-sidebjælke, hvis den ikke allerede er åben
+1. Markér afkrydsningsfeltet **Indeks** øverst i sidepanelet
+2. Vælg dit kameras filter fra rullemenuen til venstre (`RGN`, `OCN`, `NGB`, `RGB`, `RE`, `NIR`)
+3. Vælg en indeksformel fra rullemenuen til højre — 27 indbyggede formler samt eventuelle brugerdefinerede formler, du har gemt
+4. Formlen vises som matematisk udtryk nedenfor med en tom cirkel ved hvert båndfelt. **Træk en farvet kanalcirkel over på et felt** for at knytte den til det
+5. Når alle pladser, som formlen bruger, er bundet, opdateres billedet og viser indeksværdier
+6. Hold markøren over billedet for at aflæse værdier; panelet **Markørværdier** tilføjer en indeksrække med værdien under markøren
 
-### Valg af et billede, som indeks/LUT skal anvendes på
+Dobbeltklik på en bundet plads for at rydde den. En ufuldstændig formel er en normal tilstand under trækningen, ikke en fejl — billedet opdateres ganske enkelt ikke, før formlen er færdig.
 
-Sådan arbejder du med et indeks i <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandkasse:
+Kanalcirklerne er farvekodede: rød = Red, grøn = Green, blå = Blue, orange = Orange, cyan = Cyan, lilla = NIR, magenta = RE. De samme farver bruges til kanalprikkerne og histogramkurverne i panelet »Cursor Values«.
 
-1. **Åbn et billede** fra hovedbilledgitteret ved at klikke på det
-2. Fanen **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> fanen åbnes derefter
-3. Klik på **Layer-dropdownmenuen** (øverst til højre i visningen)
-4. Vælg laget fra dropdownmenuen:
-   * RAW (Reflectance)
-
-### Anvendelse af et indeks på et billede
-
-Når billedet er i fuldskærm, og **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebjælken er åben:
-
-1. Marker feltet Indeks øverst i sidebjælken
-2. Vælg dit kameras filter fra dropdown-menuen til venstre
-3. Vælg den ønskede indeksformel fra dropdown-menuen til højre
-4. Træk filterkanalens farvecirkler til placeringerne i indeksformlen nedenfor
-5. Når formlen er gyldig, opdateres billedet og viser indeksværdierne
-6. Flyt musemarkøren rundt for at se værdierne ved markørens placering
-7. Zoom ind for at se de enkelte pixels og deres tilhørende værdier
-
-Hvert indeks har et specifikt værdiinterval og en specifik betydning:
-
-#### NDVI Eksempel
+### Eksempel på NDVI
 
 ```
 
 Formula: (NIR - Red) / (NIR + Red)
 
-For Survey3W RGN camera:
-NIR = 850nm band
-Red = 661nm band
+For a Survey3W RGN camera:
+  NIR = 850 nm band
+  Red = 661 nm band
 
-Result range: -1.0 to +1.0
-Typical vegetation: 0.4 to 0.9
-Stressed vegetation: 0.2 to 0.4
-Bare soil: 0.0 to 0.2
-Water: -0.1 to 0.1
+Result range:          -1.0 to +1.0
+Typical vegetation:     0.4 to 0.9
+Stressed vegetation:    0.2 to 0.4
+Bare soil:              0.0 to 0.2
+Water:                 -0.1 to 0.1
 ```
 
-For fuldstændig dokumentation af indeksformler, se [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md).
+For den komplette formeloversigt — alle tre forudindstillede lister og hvilke navne der fungerer hvor — se [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md).
 
-***
+### Med Indeks markeret, men uden LUT
+
+Billedet tegnes i **gråtoner**, strakt mellem de to tærskelværdier. Dette er bevidst: indeksbilledet er skalardata, og gråtoner er den ægte gengivelse af det. Tilføj en LUT, når du ønsker farve.***
 
 ## Arbejde med LUT&#x27;er (opslagstabeller)
 
-### Hvad er en LUT?
+En **opslagstabel** knytter indeksværdier til farver: indtast NDVI 0,65, og der vises en bestemt grøn farve. Det ændrer ikke dataene — det ændrer blot, hvordan du fortolker dem.
 
-En **opslagstabel (LUT)** knytter numeriske indeksværdier til farver med henblik på visualisering:
+### Tilføjelse af en LUT
 
-* **Indgang**: Indekspixelværdi (f.eks. NDVI 0,65)
-* **Output**: RGB-farve (f.eks. lysegrøn)
-* **Formål**: Gør mønstre lettere at se og fortolke**Gråtoner vs. farve-LUT:**
+1. Klik på knappen **&quot;+ Tilføj LUT&quot;** under formlen <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">
+2. Vælg en farvegradient
+3. Indstil minimums- og maksimumsværdier for beskæring
+4. Vælg en beskæringsmodus
+5. Markér afkrydsningsfeltet **LUT** i sidepanelet for at gengive den
 
-* Gråtoner: Videnskabeligt og neutralt, viser rådata
-* Farve-LUT: Intuitivt og effektfuldt, fremhæver mønstre og forskelle
-
-{% hint style="success" %}
-**Visualiseringskraft**: Anvendelse af en farve-LUT på et gråtone-indeksbillede gør det markant nemmere at identificere mønstre, afvigelser og områder af interesse med et enkelt blik.
-{% endhint %}
-
-### Anvendelse af en LUT på et indeksbillede
-
-Når du har et indeksbillede, der viser
-
-1. Klik på <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> &quot;+Tilføj LUT&quot;-knappen
-2. Vælg farveovergangen
-3. Juster klipningens minimums- og maksimumsendepunkter
-4. Juster klipningstilstanden
-5. Marker afkrydsningsfeltet Indeks i **Billedfremviser** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> for at anvende LUT&#x27;en
+Afkrydsningsfeltet **LUT** forbliver deaktiveret, indtil en LUT rent faktisk er blevet konfigureret på indekset.
 
 ### Valg af farvegradient
 
-**Valg af gradient:**
+Hold markøren over **gradientbjælken**for at åbne listen over forudindstillinger — Chloros leveres med**syv** forudindstillede gradienter:
 
-1. Find den**farvede gradientbjælke** i LUT-panelet
-2. Hold musen over den for at se de tilgængelige gradientforudindstillinger
-3. Vælg den ønskede gradient
-4. Billedet **opdateres straks** med nye farver, når afkrydsningsfeltet Indeks er markeret
+| # | Gradient                            | Form                                                               |
+| - | ----------------------------------- | ------------------------------------------------------------------- |
+| 1 | Red → Gul → Green (**standard**)  | Divergerende — svarer til den sædvanlige opfattelse af vegetation, hvor grønt = sundt |
+| 2 | Lilla → Gul → Green             | Divergerende, med en tydelig lav ende                                  |
+| 3 | Brun → Hvid → Blue                | Divergerende omkring et lyst midtpunkt                                   |
+| 4 | Sort → Lilla → Lyserød → Lysegul | Sekventiel, fra mørk til lys                                           |
+| 5 | Red → Gul → Blue                 | Afvigende omkring et lyst midtpunkt                                   |
+| 6 | Lilla → Blue → Green → Gul      | Sekventielt, fra mørkt til lyst                                           |
+| 7 | Orange → Hvid → Lilla             | Divergerende omkring et lyst midtpunkt                                   |
 
-{% hint style="success" %}
-**Bedste praksis**: For vegetationsindekser som NDVI er farveovergangen Red-Gul-Green mest intuitiv, da den stemmer overens med naturlige farveassociationer (grøn = sund, gul = moderat, rød = stresset).
-{% endhint %}
+En **divergerende**farveovergang placerer en neutral farve i midten af dit vindue, hvilket fungerer godt, når midtpunktet har en betydning (en tærskel, en basisdato). En**sekventiel** farveovergang forløber monotont fra mørkt til lyst, hvilket fungerer godt for en mængde, der kun har &quot;mere&quot; og &quot;mindre&quot;.
 
-### Justering af farveklasser
+Hver forudindstilling har syv farvestop. Klik på en forudindstilling, og billedet opdateres straks (når LUT-feltet er markeret).
 
-**Kontrolelementet Klasser**bestemmer, hvor mange diskrete farvestrinn der vises i din gradient:**Indstillinger for antal klasser:*** **2-5 klasser**: Meget brede kategorier, tydelige zoner
-* **6-10 klasser**: Afbalanceret, godt til klassificering
-* **11-20 klasser**: Glatte farveovergange, kontinuerligt udseende
-* **20+ klasser**: Næsten kontinuerlig, maksimal glathed**Sådan justeres:**
+### Redigering af farvestoppene
 
-1. Find**farveprøvefelterne under farveovergangsstangen** i LUT-panelet
-2. Juster antallet af klasser ved at tilføje med +-knappen
-3. Fjern antallet af klasser ved at dobbeltklikke på en farveprøve
-4. Gradienten opdateres **i realtid** på billedet**Effekt på visualiseringen:*** **Færre klasser** (3-5): Skaber tydelige zoner, forenklet klassificering, lettere at skelne mellem kategorier
-* **Mellemklasse** (6-10): Afbalanceret tilgang, velegnet til de fleste anvendelser
-* **Flere klasser** (15-20): Glatte overgange, detaljeret variation, fotografisk udseende**Hvornår skal det bruges:*** **Få klasser (3-5)**: Præsentationsslides, klassifikationskort, enkle rapporter
-* **Mellemstore klasser (6-10)**: Generel analyse, afbalancerede detaljer, standardrapporter
-* **Mange klasser (15-20)**: Videnskabelig analyse, detaljeret inspektion, output i publikationskvalitet
+Under gradientbjælken er der en række farveprøver, én pr. stop:
 
-### Finjustering af værdiintervaller
+* **Skift en farve**: Klik på en farveprøve for at åbne farvevælgeren (farvehjul, RGB/HSV-skydere eller en hex-kode såsom `#FF0000`)
+* **Tilføj et stop**: Klik på**+**-knappen for enden af rækken — et hvidt stop tilføjes
+* **Fjern et stop**:**Dobbeltklik** på farveprøven
+* **Gem en redigeret farveovergang**: Klik på gem-ikonet ved siden af farveovergangsstangen for at tilføje din redigerede farveovergang til listen over forudindstillinger, så du kan vælge den igen
 
-**Værdiintervalkontrollerne**bestemmer, hvilke indeksværdier der skal knyttes til hvilke farver i din farveovergang:**Intervalkontroller i LUT-panelet:*** **Minimumsværdi**: Den nedre grænse for farveskalaen
-* **Maksimumsværdi**: Den øvre grænse for farveskalaen
-* **Mellemværdier**: Fordeles automatisk mellem min. og maks. (baseret på antallet af klasser)
+Den farveovergang, du har konfigureret på et indeks, gemmes sammen med det pågældende indeks i projektets indstillinger, så den bevares, selvom projektet lukkes og åbnes igen.
 
-#### Justering af min./maks. værdier
+**Færre stop**skaber tydelige zoner, der fremstår som en klassificering;**flere stop** skaber glidende, næsten fotografiske overgange. Tre til fem stop egner sig til præsentationsdias og klassifikationskort; seks til ti egner sig til generel analyse; femten eller flere egner sig til detaljeret inspektion og publikationsfigurer.
 
-**Sådan justeres værdiintervaller:**
+### Indstilling af værdiintervallet
 
-1. Find indtastningsfelterne**Min. værdi**og**Maks. værdi** i LUT-panelet
-2. Klik på feltet **Min. værdi**
+Tærskelregulatoren er en **skyder med to håndtag**, der går fra −1 til +1, med et redigerbart tekstfelt i hver ende til indtastning af nøjagtige værdier samt en**AUTO**-knap.
 
-3. Indtast den ønskede minimumsværdi (f.eks. `0.2`)
-4. Tryk på **Enter** eller klik uden for feltet
-5. Gentag for feltet **Maks. værdi** (f.eks. `0.9`)
-6. Visualiseringen **opdateres med det samme**{% hint style="info" %}**Automatisk skalering**: Når du først anvender en LUT, indstiller Chloros automatisk min/maks til det faktiske datainterval i billedet. Du kan derefter indsnævre dette interval for at fokusere på specifikke værdiintervaller af interesse.
-{% endhint %}
+* Træk i et af håndtagene, eller indtast et tal i feltet og tryk på Enter
+* **AUTO**indstiller området til**
 
-**Eksempel på justering af NDVI-interval:*** **Fuldt interval**: `-1.0` til `1.0` (vis alle mulige værdier)
-* **Fokuseret på vegetation**: `0.2` til `0.9` (ekskluderer bar jord og vand)
-* **Kun sund vegetation**: `0.5` til `0.9` (fremhæv kun livskraftige planter)
-* **Stressdetektering**: `0.2` til `0.5` (fremhæv problemområder)
-* **Brugerdefineret interval**: Juster baseret på dine observerede pixelværdier**Hvorfor justere intervaller?*** **Forøg kontrasten** i dit interesseområde
-* **Udeluk irrelevante værdier** (f.eks. vandområder, bar jord)
-* **Standardiser visualiseringen** på tværs af flere billeder eller datoer
-* **Fremhæv subtile forskelle** inden for et snævert værdiinterval
+2. og 98. percentil** af billedets gyldige indeksværdier — et godt udgangspunkt, der ignorerer afvigende værdier. Chloros afrunder resultatet adaptivt til 4 decimaler for et meget snævert interval, 3 for et snævert interval og 2 i alle andre tilfælde
+* Enhver manuel justering har forrang frem for AUTO, indtil du trykker på AUTO igen
 
-### Beskæring af værdier uden for området
+Eksempel på NDVI-vinduer:
 
-Når pixelværdier falder uden for dit definerede min./maks.-område, kan du styre, hvordan de vises, ved hjælp af **beskæringsmetoder**.
+| Mål                                    | Min  | Maks |
+| --------------------------------------- | ---- | --- |
+| Vis alt                                | −1,0 | 1,0 |
+| Kun vegetation, ekskluder jord og vand | 0,2  | 0,9 |
+| Kun sund vegetation                 | 0,5  | 0,9 |
+| Fremhæv stress                        | 0,2  | 0,5 |
 
-#### **Tilgængelige indstillinger for beskæringsmetoder:**
+Ved at indsnævre vinduet øges kontrasten inden for dit interesseområde, og alt andet skubbes uden for området — hvor **klippemodus** bestemmer, hvad der sker med det.***
 
-#### 1. Minimum og maksimum
+## Klippemodus
 
-* Pixels **under minimum**→ vises ved hjælp af den**første farve** i farveovergangen (f.eks. rød)
-* Pixels **over maksimum**→ vises ved hjælp af den**sidste farve** i farveovergangen (f.eks. grøn)
-* **Anvendelsestilfælde**: Fremhæv ekstremværdier, vis det fulde dataområde med mættede farver ved grænserne
-* **Eksempel**: NDVI-værdier under 0,2 vises alle røde, værdier over 0,9 vises alle grønne
+Når en pixels indeksværdi falder uden for min./maks.-vinduet, bestemmer klippemodus, hvordan den tegnes.
 
-#### 2. Gennemsigtig baggrund
+| Dropdown-etiket                  | Lagret værdi      | Pixler uden for området tegnes som                                                                                                |
+| ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Minimum &amp; maksimum** (standard) | `clip`            | Den nærmeste endefarve i gradienten — værdier under minimumet får den første farve, værdier over maksimumet får den sidste |
+| **Gennemsigtig baggrund**      | `transparent`     | Fuldt gennemsigtig (ægte alfa)                                                                                                  |
+| **Indeksbaggrund**| `indexColor`      | Gråtoner, strækket over billedets**fulde** indeksområde, så strukturer uden for området stadig er synlige i gråt                |
+| **Originalbaggrund**         | `backgroundColor` | Selve det underliggende billede, så farveoverlejringen ligger oven på den virkelige scene                                                |
 
-* Pixels **uden for området**bliver**fuldstændigt gennemsigtige*** Kun pixels **inden for området** viser farvegradient
-* **Anvendelsestilfælde**: GIS-overlay, isolering af specifikke værdiområder, fremhævning af kun områder af interesse
-* **Eksempel**: Vis kun NDVI 0,4-0,7 i farve, alt andet gennemsigtigt
-
-{% hint style="warning" %}
-**Begrænsning af gennemsigtighed**: Gennemsigtige pixels vises som baggrundsfarven i visningsprogrammet. Når der eksporteres under behandlingen, bevares gennemsigtigheden i PNG-format, men ikke i JPG.
-{% endhint %}
-
-#### 3. Indeksbaggrund
-
-* Pixels **uden for området**vises i**gråtoner** (viser rå indeksværdier)
-* Pixels **inden for området**viser**farvegradient*** **Anvendelsestilfælde**: Diskret fremhævning, bevarer konteksten, mens områder af interesse fremhæves
-* **Eksempel**: Farvefremhæv stresset vegetation (NDVI 0,3-0,5), mens sunde områder vises i gråt
-
-#### 4. Originalbaggrund
-
-* Pixels **uden for området**viser det**originale multispektrale billede*** Pixels **inden for området**viser**farvegradient*** **Anvendelsestilfælde**: Mest intuitivt – kombinerer naturlig billedkontekst med analytisk farveoverlay
-* **Eksempel**: Se det faktiske udseende af marken/afgrøden med farvekodede stressområder overlejret
-
-### Valg af den rigtige klippemodus
-
-| Klippemodus              | Bedst egnet til                                   | Visualiseringsstil          |
-| -------------------------- | ------------------------------------------ | ---------------------------- |
-| **Minimum og maksimum**    | Fuld datavisning, videnskabelig analyse     | Alle pixels farvelagte           |
-| **Gennemsigtig baggrund** | GIS-overlejringer, isolering af specifikke intervaller    | Farve inden for intervallet, tomt udenfor |
-| **Indeksbaggrund**       | Diskret fremhævning, bevarer datakonteksten  | Farve på området, gråt udenfor  |
-| **Originalbaggrund**    | Rapporter, præsentationer, intuitiv analyse | Farve på området, foto udenfor |
-
-### Oprettelse af brugerdefinerede LUT-farver
-
-For fuld kontrol over din visualisering kan du oprette **brugerdefinerede farveovergange** ved at redigere individuelle farvestop.**Sådan opretter du en brugerdefineret gradient:**
-
-1. Find**gradientforhåndsvisningsbjælken** i LUT-panelet
-2. Se efter **farveprøvefelterne** under gradienten
-3. **Klik på et farvestop** for at vælge det
-4. En **farvevælger** åbnes
-5. Vælg en ny farve ved hjælp af:
-   * **Farvehjul**: Visuel farvevalg
-   * **RGB/HSV-skydeknapper**: Præcis farvekontrol
-   * **Indtastning af hex-kode**: Præcis farvespecifikation (f.eks. `#FF0000` for rød)
-6. Klik uden for farvevælgeren **for at anvende den nye farve**
-
-7. Gradienten**opdateres straks** på billedet**Tilføjelse eller fjernelse af farvestop:*** **Tilføj et stop**: Klik på +-ikonet for at tilføje en ny farveprøve i slutningen
-* **Fjern et stop**: Dobbeltklik på farvefeltet for at fjerne farveprøven**Tilpasningsstrategier:*** **Inverter gradient**: Vend farverækkefølgen for at vende betydningen (f.eks. grøn=lav, rød=høj)
-* **Brandfarver**: Tilpas til din organisations farvepalet til rapporter
-* **Farveblind-venlig**: Brug orange-blå eller lilla-gule kombinationer
-* **Udskriftsoptimering**: Vælg farver, der fungerer både ved farve- og gråtoneudskrivning
-* **Multi-tærskel**: Brug forskellige farver ved specifikke værditærskler til klassificering
+| Tilstand                       | Bedst egnet til                               | Udseende                                      |
+| -------------------------- | -------------------------------------- | ----------------------------------------- |
+| **Minimum &amp; maksimum**      | Fuld datavisning, videnskabelig analyse | Hver pixel er farvet                      |
+| **Gennemsigtig baggrund** | GIS-overlejringer, isolering af et værdiinterval   | Farve inden for vinduet, intet udenfor |
+| **Indeksbaggrund**       | Fremhævning med bevarelse af datakonteksten    | Farve indeni, gråt udenfor               |
+| **Originalbaggrund**    | Rapporter og præsentationer              | Farve indeni, fotografi udenfor         |
 
 {% hint style="info" %}
-**Gemning af brugerdefinerede gradienter**: Brugerdefinerede gradienter kan gemmes og genbruges. Klik på gem-ikonet i LUT-panelet for at gemme dine brugerdefinerede farveskemaer til fremtidig brug.
+**Pixler uden data er altid gennemsigtige, uanset tilstand.** En pixel, hvis indeks ikke er endeligt (en division med 0/0) eller er nøjagtigt −1,0 eller +1,0 (mætningsmarkører, hvor det ene bånd viser nul, mens det andet ikke gør), behandles som ingen data i stedet for som en ekstremværdi. Dette holder udbrændte højlys og mørke skygger ude af din farveskala i stedet for at gengive dem som den mest ekstreme måleværdi i billedet. Den samme regel definerer, hvilke pixels der indgår i AUTO-tærsklerne og indeks-histogrammet, så alle tre stemmer overens.
+{% endhint %}
+
+Gennemsigtighed bevares, når eksporten skrives som PNG. Den kan ikke gengives i JPG.
+
+***
+
+## Aflæsning af værdier, mens du finjusterer
+
+Panelet **Cursorværdier** under konfigurationspanelet fungerer som måleinstrument for Sandbox:
+
+* Flyt markøren over billedet, og aflæs kildeværdierne pr. kanal samt indeksværdien i sin egen række
+* Aktiver **INDEX**-knappen over histogrammet for at se fordelingen af indeksværdier i billedet, hvor dine to klip-tærskler er markeret med orange stiplede linjer og markørens værdi med en hvid linje — dette er den hurtigste måde at vælge et vindue, der rent faktisk indeholder dine data
+* Aktiver **CURSOR** for at se markørlinjer ved værdierne under markøren
+* Zoom ind over 60× (mindre, hvis der er indstillet en GSD-blokstørrelse) for at fremhæve de enkelte viste pixels med en flydende værdi
+
+En praktisk fremgangsmåde:
+
+1. Notér værdierne over sund vegetation, stresset vegetation, bar jord og vand
+2. Se, hvor disse klynger befinder sig på indekshistogrammet
+3. Indstil min./maks., så den klynge, du er interesseret i, rammes ind
+4. Vælg en beskæringsindstilling — _Original Background_ holder scenen synlig omkring den
+
+***
+
+## Eksport fra Sandbox
+
+Alt ovenstående er en live-forhåndsvisning, indtil du gemmer det. Knappen **Eksporter/Gem billede(r)** øverst i sidepanelet åbner et vindue, der glider ind over sidepanelet (i stedet for at dække billedet, så du stadig kan se, hvad du træffer beslutning om).
+
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>### Indstillinger
+
+| Indstilling                          | Effekt                                                                                                                                            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Anvend på det aktuelle billede**      | Gemmer præcis det viste billede med disse indstillinger                                                                                                |
+| **Anvend på alle projektbilleder** | Kører den samme konfiguration igen på hvert billede i projektet. Billeder uden de bånd, som dette indeks kræver, springes over og behandles ikke som fejl |
+| **Indeks/LUT-gradientbjælke**      | Skriver også et separat billed med forklaring pr. eksport, hvor værdiområdet er mærket                                                                     |
+| **Indeks-histogram**             | Skriver også et separat histogrambillede pr. eksport, der viser dataenes min./maks. værdier og klip-tærsklerne                                               |
+
+Hvis **GSD-blokstørrelsen** på billedfanen er over 1, angiver ruden dette, før du bekræfter: eksporten gemmer det, du ser, inklusive blokgennemsnit. Indstil GSD-kontrollen tilbage til 1 først, hvis du ønsker fuld opløsning.
+
+### Hvor filerne gemmes
+
+Hvert klik på **Eksporter**opretter en**ny mappe, der aldrig genbruges**:
+
+```
+<project folder>/Sandbox_Exports/<IndexName>_<Index|LUT>_<NNN>/
+```
+
+Eksempler: `Sandbox_Exports/NDVI_LUT_001/`, derefter `Sandbox_Exports/NDVI_LUT_002/` ved næste kørsel. Nummereringen genereres ved at scanne, hvad der allerede findes på disken, så den overlever genstarter og mapper, du sletter manuelt. Intet overskrives nogensinde — hele pointen med Sandbox er at sammenligne et forsøg med det forrige.
+
+Indholdet af mappen for hvert billede:
+
+| Fil                                                   | Indhold                                                   |
+| ------------------------------------------------------ | ---------------------------------------------------------- |
+| `<source name>_<IndexName>_<Index\|LUT>.png`           | Det renderede billede, pixel for pixel, som det blev vist i visningsprogrammet |
+| `<source name>_<IndexName>_<Index\|LUT>_legend.png`    | Sidecar-filen med farveovergangsstangen, hvis anmodet                     |
+| `<source name>_<IndexName>_<Index\|LUT>_histogram.png` | Sidecar-filen med indekshistogrammet, hvis anmodet                  |
+
+De to sidecars skrives altid i **fuld opløsning**, selv når hovedbilledet er blokgennemsnitligt: en blokstørrelse svarer til skærmopløsningen, og begge sidecars læser de reelle indeksværdier pr. pixel. De udskriver også mere end versionerne på skærmen — begge angiver strækningsvinduet _og_ de faktiske minimums- og maksimumsværdier for dataene, så en gemt legende stadig kan læses måneder senere, selvom projektet ikke er åbent.
+
+### Forløb og resultater
+
+En eksport af hele projektet tager få minutter, så processen rapporterer tilbage via en live statuskanal i stedet for at blokere:
+
+* En statusbjælke viser `current / total` og den fil, der skrives
+* Når den er færdig, viser vinduet, hvor mange billeder der blev eksporteret, hvor mange der blev sprunget over, samt stien til outputmappen
+* Oversprungne billeder vises med årsagen (op til fem vises, derefter en linje med &quot;+N flere&quot;). Den sædvanlige årsag er et lag, der ikke har de kanaler, som dette indeks kræver
+* Hvis **ingen** billeder i projektet kan bruge indekset, rapporterer kørslen en fejl i stedet for at efterlade en tom mappe
+
+Der kan kun køre én sandkasseeksport ad gangen. Hvis man forsøger at starte en anden, mens en allerede er i gang, afvises dette med en tydelig besked i stedet for at lade to kørsler kæmpe om den samme projektfil.
+
+### Gitteret viser kørslen
+
+Hver afsluttet kørsel vises som sin egen knap i værktøjslinjen [billedgitter](image-grid.md) med betegnelsen `<IndexName> <Index|LUT> <NNN>`. Sådan sammenligner du kørsler: eksporter to gange med forskellige gradienter eller tærskler, og skift derefter mellem de to knapper i gitteret.
+
+***
+
+## Brugerdefinerede indeksformler (Chloros+)
+
+{% hint style="info" %}
+**Hvor skal de oprettes**: i sidepanelet i Sandbox eller i**Projektindstillinger** inden behandlingen. Begge skriver til den samme liste på projektniveau.
+{% endhint %}
+
+1. Åbn regnemaskinen til brugerdefinerede formler fra rullemenuen med indeksformler (kræver, at du er logget ind med et gyldigt Chloros+-abonnement)
+2. Indtast formlen ved hjælp af **bånd-slot-symbolerne** `x`, `y`, `z`, `a`, `b`, `c` — ikke båndnavne
+3. Tilgængelige operatorer: `+`, `-`, `*`, `/`, `^` og `()` til gruppering
+4. Tilgængelige funktioner: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
+5. Navngiv og gem den — den vises nederst i formel-rullemenuen, og du tildeler dens slots ved at trække kanalkredse, præcis som med en indbygget forudindstilling
+
+```
+
+Modified NDVI with an offset:   (y-x)/(y+x+0.5)
+Simple ratio:                   y/x
+Three-band difference:          (y-x)/(y+x-z)
+Squared ratio:                  (y/x)^2
+```
+
+{% hint style="warning" %}
+**Brugerdefinerede formler findes kun i GUI&#x27;en.** Indstillingen CLI/SDK `--indices` udvider de 22 indbyggede forudindstillingsnavne og springer automatisk alt andet over, herunder dine brugerdefinerede formler. For at behandle en brugerdefineret formel i batch skal du konfigurere den i Projektindstillinger og køre behandlingen, eller bruge Sandboxens eksportfunktion »Anvend på alle projektbilleder«.
 {% endhint %}
 
 ***
 
-## Interaktivt workflow
+## Fejlfinding
 
-### Opdateringer i realtid
+### &quot;Dette lag har ikke de kanaler, som dette indeks kræver&quot;
 
-Alle LUT-justeringer i sandkassen opdaterer billedet **øjeblikkeligt og interaktivt**:
+Formlen læser en kanalposition, som det aktuelle lag ikke har — for eksempel et indeks med tre slots på en fil med én eller to kanaler. Skift til et multibåndslag (reflektans eller debayered), eller vælg et indeks, der passer til dit kameras filter.
 
-* **Skift lag** → Billedet ændres med det samme
-* **Vælg gradient** → Farverne opdateres øjeblikkeligt
-* **Juster værdiinterval** → Kontrasten ændres i realtid
-* **Skift klasser** → Gradientens glathed opdateres med det samme
-* **Rediger klipning** → Baggrundsvisningen ændres øjeblikkeligt
-* **Rediger farver** → Brugerdefineret gradient anvendes straks**Ingen &quot;Anvend&quot;-knap nødvendig** – alle ændringer er live og interaktive!
+### »Kunne ikke oprette forbindelse til billedbehandlings-backend&#x27;en«
 
-{% hint style="success" %}
-**Live-feedback**: Den øjeblikkelige visuelle feedback giver dig mulighed for hurtigt at eksperimentere med forskellige indstillinger, indtil du finder den optimale visualisering til dine analysebehov.
-{% endhint %}
+Backend&#x27;en svarer ikke. Tjek fanen Log; hvis backend&#x27;en genstarter, genopretter Sandbox sig selv, så snart den er tilbage.
 
-### Iterativ forfiningsworkflow
+### Billedet ændrede sig ikke, da jeg trak en cirkel
 
-**Typisk LUT-optimeringsworkflow:**
+Formlen er endnu ikke færdig. En ufuldstændig formel behandles som en normal tilstand midt i et træk — der renderes intet, og der rapporteres ikke om nogen fejl. Udfyld alle felter, som formlen bruger.
 
-1.**Vælg indekslag** (f.eks. RAW (Reflektans))
-2. **Anvend indeks** – Vælg kamerafilter og indeksformel, træk de farvede cirkler til den rette placering i indeksformlen
-3. **Anvend LUT-gradient** – Start med forudindstillingen Red-Yellow-Green
-4. **Undersøg pixelværdier** – Flyt markøren rundt, bemærk værdiintervaller
-5. **Juster min/maks** – Indsnæv for at fokusere på vegetation (f.eks. 0,2 til 0,9)
-6. **Vælg klipning** – Prøv &quot;Original baggrund&quot; for at få kontekst
-7. **Finjuster farver** – Tilpas gradienten, hvis det er nødvendigt for specifik fremhævning
-8. **Færdiggør indstillinger**– Dokumenter indstillingerne og kopier dem til projektindstillingerne til eksportbehandling
+### Hele billedet har én farve
 
-### Inspektion af pixelværdier
+Dit klipvindue ligger sandsynligvis langt uden for dataene. Tryk på **AUTO**for at justere det til 2.- eller 98.-percentilen, eller aktiver**INDEX**-histogrammet for at se, hvor dataene rent faktisk ligger.
 
-Det er afgørende at forstå de faktiske pixelværdier for at kunne indstille effektive LUT-intervaller:**Sådan inspiceres værdier:**
+### De eksporterede farver stemmer ikke overens med det, jeg så
 
-1. Pixelværdier vises, når billedet har enten**Indeks**eller både**Indeks**og**LUT** **markeret**.
-2. **Flyt markøren** over forskellige områder af billedet
-3. **Observer pixelværdier**, der vises i legenden, når du holder markøren over dem
-4. Zoom ind for at se individuelle pixels fremhævet med en flydende værdi
-5. **Noter** værdier for forskellige elementer:
-   * **Sund vegetation**: f.eks. NDVI 0,55-0,85
-   * **Stresset vegetation**: f.eks. NDVI 0,30-0,50
-   * **Bare jord**: f.eks. NDVI 0,05-0,25
-   * **Vand** (hvis til stede): f.eks. NDVI -0,05 til 0,10**Brug af pixelværdier til at indstille LUT-intervaller:**Efter at have undersøgt pixelværdierne skal du justere din LUT-min/max i overensstemmelse hermed:**Eksempelscenarie:*** **Observation**: Jordværdier = 0,05-0,25, Stresset = 0,25-0,50, Sund = 0,50-0,85
-* **Mål**: Visualiser kun plantens sundhed (ekskluder jord)
-* **LUT-indstillinger**: Min = `0.25`, Max = `0.85`
-* **Klipning**: &quot;Original baggrund&quot; for at se jorden i naturlige farver
-* **Resultat**: Farvegradienten gælder kun for vegetation, jorden vises som det originale billede
-
-{% hint style="info" %}
-**Dynamisk rækkevidde**: Forskellige afgrøder, årstider og vækststadier vil have forskellige værdiintervaller. Kontroller altid pixelværdierne i dit specifikke datasæt, før du indstiller LUT-intervaller.
-{% endhint %}
-
-***
-
-## Brugerdefinerede indekser (Chloros+)
-
-### Oprettelse af brugerdefinerede indeksformler
-
-{% hint style="info" %}
-**Hvor skal det oprettes**: Brugerdefinerede indekser kan konfigureres i**Projektindstillinger** før behandling samt i sidepanelet i Image Viewer-sandkassen.
-{% endhint %}
-
-**Sådan oprettes et brugerdefineret indeks:**
-
-1.**Åbn Projektindstillinger** (inden behandling) eller sidepanelet i Image Viewer-sandkassen
-2. Gå til **dropdown-menuen Indeksformel**
-
-3. Find indstillingen**&quot;Brugerdefineret&quot;** (du skal være logget ind med en Chloros+-licens)
-4. **Definer din formel** ved hjælp af båndvariabler:
-   * Båndnavne: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` osv.
-   * Operatører: `+`, `-`, `*`, `/`, `^` (eksponent)
-   * Funktioner: `sqrt()`, `abs()` osv. (hvis understøttet)
-   * Parenteser: `()` for rækkefølgen af operationer
-5. **Navngiv dit indeks** (f.eks. &quot;MyIndex&quot; eller &quot;CustomNDVI&quot;)
-6. **Gem konfigurationen**
-
-**Eksempler på brugerdefinerede formler:**
-
-```
-
-Modified NDVI with offset:
-(NIR - Red) / (NIR + Red + 0.5)
-
-Simple ratio:
-NIR / Red
-
-Complex multi-band:
-(NIR - Red) / (NIR + Red - Blue)
-
-Exponential index:
-(NIR / Red) ^ 2
-```
-
-{% hint style="warning" %}
-**Formelvalidering**: Sørg for, at din formel bruger bånd, der er tilgængelige i dit kamera. For eksempel er RedEdge kun tilgængelig på kameraer med et RedEdge-filter.
-{% endhint %}
+Det burde de — eksportstien er en bevidst spejling af live-forhåndsvisningen, inklusive alfa i klip-tilstand, og blokgennemsnittet anvendes _efter_ farvelægningen, præcis som visningsprogrammet gør det. Hvis der er forskel, skal du kontrollere, at GSD-blokstørrelsen ikke er ændret mellem visning og eksport.
 
 ***
 
 ## Næste trin
 
-Nu hvor du forstår Index/LUT Sandbox:
-
-* **Anvend til behandling**: Brug de fundne indstillinger i [Projektindstillinger](../project-settings/project-settings.md)
-* **Batch-behandling**: Anvend optimerede indekser på fulde datasæt
-* **Lær mere**: Læs [Multispektrale indeksformler](../project-settings/multispectral-index-formulas.md)
-
-Relateret dokumentation:
-
-* [**Billedlag**](image-layers.md) - Lagstyring og visualisering
-* [**Åbning af et billede i fuld skærm**](opening-an-image-full-screen.md) - Grundlæggende om billedviseren
-* [**Behandling af billeder (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Fuld behandlingsworkflow
+* [**Billedlag**](image-layers.md) — hvilket lag der skal køres et indeks på, og hvad værdierne betyder
+* [**Åbning af et billede i fuld skærm**](opening-an-image-full-screen.md) — detaljeret beskrivelse af markørvisning, histogram og GSD-kontrol
+* [**Formler til multispektrale indekser**](../project-settings/multispectral-index-formulas.md) — alle forudindstillinger, på alle overflader
+* [**Projektindstillinger**](../project-settings/project-settings.md) — fastlægning af de indstillinger, du har fundet, i et behandlingsforløb

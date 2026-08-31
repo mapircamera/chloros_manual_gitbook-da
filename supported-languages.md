@@ -1,6 +1,6 @@
 # Understøttede sprog
 
-Chloros tilbyder fuld understøttelse af brugergrænsefladen på **38 sprog verden over**, hvilket gør det tilgængeligt for brugere over hele kloden. Du kan skifte sprog med det samme på alle grænseflader: Desktop, Browser, CLI og Python SDK.
+Chloros tilbyder fuld understøttelse af brugergrænsefladen på **38 sprog verden over**, hvilket gør det tilgængeligt for brugere over hele kloden. Du kan skifte sprog med det samme både i desktop-brugergrænsefladen og i CLI.
 
 Chloros understøtter følgende sprog:
 
@@ -24,8 +24,8 @@ Chloros understøtter følgende sprog:
 | 16 | 🇮🇳 Hindi | हिंदी | `hi` |
 | 17 | 🇮🇩 Indonesisk | Bahasa Indonesia | `id` |
 | 18 | 🇻🇳 Vietnamesisk | Tiếng Việt | `vi` |
-| 19 | 🇹🇭 Thai | ไทย | `th` |
-| 20 | 🇸🇪 Svensk | Svenska | `sv` |
+| 19 | 🇹🇭 Thailandske | ไทย | `th` |
+| 20 | 🇸🇪 Svenske | Svenska | `sv` |
 | 21 | 🇩🇰 Dansk | Dansk | `da` |
 | 22 | 🇳🇴 Norsk | Norsk | `no` |
 | 23 | 🇫🇮 Finsk | Suomi | `fi` |
@@ -36,7 +36,7 @@ Chloros understøtter følgende sprog:
 | 28 | 🇺🇦 Ukrainsk | Українська | `uk` |
 | 29 | 🇧🇷 Brasiliansk portugisisk | Português Brasileiro | `pt-BR` |
 | 30 | 🇭🇰 Kantonesisk | 粵語 | `zh-HK` |
-| 31 | 🇲🇾 Malay | Bahasa Melayu | `ms` |
+| 31 | 🇲🇾 Malaysisk | Bahasa Melayu | `ms` |
 | 32 | 🇸🇰 Slovakisk | Slovenčina | `sk` |
 | 33 | 🇧🇬 Bulgarsk | Български | `bg` |
 | 34 | 🇭🇷 Kroatisk | Hrvatski | `hr` |
@@ -45,18 +45,18 @@ Chloros understøtter følgende sprog:
 | 37 | 🇪🇪 Estisk | Eesti | `et` |
 | 38 | 🇸🇮 Slovensk | Slovenščina | `sl` |
 
-## Sådan ændrer du sprog
+## Sådan skifter du sprog
 
-### I Chloros Desktop/Browser
+### I Chloros Desktop
 
 1. Åbn programindstillingerne
-2. Gå til sprogvalgmenuen
+2. Gå til menuen for sprogvalg
 3. Vælg dit foretrukne sprog fra listen
-4. Brugergrænsefladen opdateres øjeblikkeligt
+4. Brugergrænsefladen opdateres med det samme
 
 ### I Chloros CLI
 
-Brug kommandoen `language` til at se eller ændre sproget i CLI-grænsefladen:
+Brug kommandoen `language` til at se det eller ændre sproget i brugergrænsefladen:
 
 ```bash
 # View current language
@@ -77,17 +77,13 @@ chloros-cli language --list
 
 Se [CLI-dokumentationen](CLI.md) for flere detaljer.
 
-### I Chloros Python SDK
-
-Indstil sprogparameteren, når du initialiserer SDK, for at få meddelelser og output på dit foretrukne sprog.
-
 ## Dækning
 
-Alle 38 sprog understøttes fuldt ud på:
+Alle 38 sprog understøttes fuldt ud i:
 
-* **Chloros Desktop** - Komplet oversættelse af GUI
-* **Chloros Browser** - Webgrænseflade på alle sprog
-* **Chloros CLI** - Kommandolinjegrænseflade og outputmeddelelser
-* **Chloros Python SDK** - API-meddelelser og dokumentation
+* **Chloros Desktop** – Komplet oversættelse af brugergrænsefladen
+* **Chloros CLI** – Kommandolinjegrænseflade og outputmeddelelser
 
-Sprogunderstøttelse sikrer, at brugere over hele verden kan arbejde effektivt på deres modersmål uden barrierer.
+Python SDK API og dens [referencedokumentation](reference/sdk-reference.md) leveres på engelsk.
+
+Sprogunderstøttelsen sikrer, at brugere over hele verden kan arbejde effektivt på deres modersmål uden hindringer.
