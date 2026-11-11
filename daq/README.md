@@ -1,11 +1,11 @@
 # DAQ-lyssensorer
 
-> **Leder du efter hardware?**Selve sensorerne — modeller, montering, dæksler, porte, strømforsyning og SCANNER-appen — er beskrevet i**[DAQ-brugervejledningen](https://mapir.gitbook.io/daq)**. Dette kapitel beskriver brugen af dem fra Chloros.
+> **Leder du efter hardware?**Selve sensorerne — modeller, montering, dæksler, porte, strømforsyning og SCANNER-appen — er beskrevet i**[DAQ-brugervejledningen](https://mapir.gitbook.io/daq)**. Dette kapitel beskriver, hvordan man bruger dem fra Chloros.
 
-MAPIR’s **DAQ**-lyssensorer måler omgivende lys som radiometrisk kalibrerede spektre. I Chloros har de to funktioner:
+MAPIRs **DAQ**-lyssensorer måler det omgivende lys som radiometrisk kalibrerede spektre. I Chloros har de to funktioner:
 
-* **Et selvstændigt spektralinstrument** — live-spektrumdiagrammer, kolorimetriske data og `.daq`-optagelser, alt sammen fra [fanen Lyssensorer](gui.md), [CLI](cli-quick-start.md) eller Python SDK.
-* **En nedadrettet strålingskilde til reflektans** — under behandlingen interpolerer Chloros dine `.daq`-målinger til hver optagelseseksponeringstidsstempel og bruger det målte nedadgående lys til at konvertere kameraets radiance til reflektans (`--reflectance-source daq`); der kræves ingen panel i motivet for kalibrerede bånd.
+* **Et selvstændigt spektralinstrument** — live spektrumdiagrammer, kolorimetriske data og `.daq`-optagelser, alt sammen fra [fanen Lyssensorer](gui.md), [CLI](cli-quick-start.md) eller Python-SDK&#x27;et.
+* **En nedadrettet strålingskilde til reflektans** — under behandlingen interpolerer Chloros dine `.daq`-målinger til hvert billedes eksponeringstidspunkt og bruger det målte nedadgående lys til at konvertere kameraets radiance til reflektans (`--reflectance-source daq`); der kræves ikke noget panel i scenen for kalibrerede bånd.
 
 <!-- SCREENSHOT-NEEDED: product photo of the DAQ-U, DAQ-M, and DAQ-E units side by side, each with its Sunshine cosine-corrector cap fitted (request from hardware team — no repo asset exists) -->
 
@@ -17,7 +17,7 @@ MAPIR’s **DAQ**-lyssensorer måler omgivende lys som radiometrisk kalibrerede 
 | --- | --- | --- |
 | **DAQ-U** | USB (seriel) | scanning af seriel port |
 | **DAQ-M** | Bluetooth Low Energy | BLE-scanning efter navn |
-| **DAQ-E** | Ethernet (IPv4, PoE-strømforsynet) | mDNS `_daq-e._tcp` (værtsnavn `daq-e-<id>.local`) |
+| **DAQ-E** | Ethernet (IPv4, PoE-strømforsyning) | mDNS `_daq-e._tcp` (værtsnavn `daq-e-<id>.local`) |**DAQ-E-S (nyt i 1.3.0).** En DAQ-E med en fast diffusor og en hældningssensor. Chloros opfører den som `DAQ-E-S` og kører den nøjagtigt som en DAQ-E, bortset fra at den ikke foretager nogen cap-korrektion, og at hver aflæsning indeholder enhedens hældning, rullning og stigning. Se [DAQ-E-S: fast diffusor og hældning](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Alle tre bruger den samme kommunikationsprotokol og leverer identiske data:
 
@@ -25,19 +25,19 @@ Alle tre bruger den samme kommunikationsprotokol og leverer identiske data:
 * **Radiometrisk kalibreret spektral irradians i W/m²/nm** — hver enheds fabrikskalibreringspakke (samt dens aktive cap-korrektionsprofil) anvendes, inden dataene når frem til dig.
 * Det samme **`.daq`-optagelsesformat** (en SQLite-fil). Den efterfølgende databehandling er identisk, uanset hvilken transportmetode der har genereret filen.
 
-Transportstakkerne (USB-seriel, BLE, mDNS/zeroconf) er samlet i Chloros-backend&#x27;et — der skal ikke installeres noget for at kommunikere med nogen af de tre modeller fra GUI&#x27;en eller via CLI&#x27;s `pool-*`-kommandoer.
+Transportstakkerne (USB-seriel, BLE, mDNS/zeroconf) er integreret i Chloros-backendet — der skal ikke installeres noget for at kommunikere med nogen af de tre modeller via GUI’en eller CLI’s `pool-*`-kommandoer.
 
 ***
 
 ## Kalibreret område: 340–1010 nm rapporteret, ~374–974 nm kalibreret
 
-Sensoren rapporterer det fulde 340–1010 nm-gitter, men den NIST-sporbare radiometriske forstærkning dækker ca. **374–974 nm**. Chloros afviser den absolutte reflektansdeling for ethvert kamerabånd, hvor mindre end halvdelen af dets spektrale vægt ligger inden for det kalibrerede interval; det oversprungne bånd rapporteres med overspringelsesårsagen `dls-uncalibrated-band-<nm>`.
+Sensoren rapporterer det fulde 340–1010 nm-gitter, men den NIST-sporbare radiometriske forstærkning dækker ca. **374–974 nm**. Chloros-systemet afviser opdelingen efter absolut reflektans for ethvert kameraband, hvor mindre end halvdelen af dets spektrale vægt ligger inden for det kalibrerede område; det oversprungne bånd rapporteres med overspringningsårsagen `dls-uncalibrated-band-<nm>`.
 
 Blandt de leverede LATTICE-filter-SKU&#x27;er er kun **F988** berørt:
 
-F988-reflektansen kalibreres ved hjælp af et reflektanspanel i scenen: Båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros anvender din seneste paneloptagelse og opbevarer den mellem panelobservationerne.
+F988-reflektansen kalibreres ved hjælp af et reflektanspanel i selve scenen: båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros anvender din seneste paneloptagelse og opbevarer den mellem panelmålingerne.
 
-Hvis en F988-registrering behandles, hvor der kun er DAQ-data tilgængelige, afviser Chloros DAQ-baseret reflektans for det pågældende bånd med springårsagen `dls-uncalibrated-band-988` — [reflektanspanel-arbejdsgangen](../calibration-targets.md) er den understøttede fremgangsmåde for F988.
+Hvis en F988-optagelse behandles, hvor der kun er DAQ-data tilgængelige, afviser Chloros DAQ-baseret reflektans for det pågældende bånd med springårsagen `dls-uncalibrated-band-988` — [reflektanspanel-arbejdsgangen](../calibration-targets.md) er den understøttede fremgangsmåde for F988.
 
 ***
 
@@ -48,14 +48,14 @@ Hver DAQ rapporterer et stabilt sensor-ID. Dets format varierer alt efter model:
 | Model | ID-format | Eksempel |
 | --- | --- | --- |
 | DAQ-U | 5-oktett med bindestreger | `CB-7C-A8-2E-5F` |
-| DAQ-M | 5-oktett med bindestreger | `CB-74-02-30-6B` |
+| DAQ-M | 5-oktet med bindestreger | `CB-74-02-30-6B` |
 | DAQ-E | `daq-e-<6 hex digits>` | `daq-e-def330` |
 
 Sensor-ID&#x27;et er:
 
 * indstemplet i hver `.daq`-fil, den registrerer,
-* den nøgle, Chloros bruger til at hente enhedens fabrikskalibreringspakke,
-* den værdi, du sender til `--sensor-id` i CLI- og `pool-*`-kommandoerne, og
+* den nøgle, som Chloros bruger til at hente enhedens fabrikskalibreringspakke,
+* den værdi, du overfører til `--sensor-id` i CLI-kommandoerne `pool-*`, og
 * for DAQ-E også dens mDNS-værtsnavn (`daq-e-def330.local`) — den værdi, som `--eth-host` accepterer.
 
 ***
@@ -65,18 +65,18 @@ Sensor-ID&#x27;et er:
 Hver DAQ-enhed er individuelt fabrikskalibreret med en NIST-sporbart radiometrisk kæde, og Chloros indlæser hver enheds kalibreringspakke, der er knyttet til dens sensor-ID. Kalibreringsrapporten for den enkelte enhed (PDF) kan downloades fra sensorens indstillinger under [fanen Lyssensorer](gui.md).
 
 {% hint style="warning" %}
-**DAQ-U og DAQ-M kræver adgang til skyen for at kunne kalibreres.**Ingen af modellerne gemmer noget lokalt: deres fabrikskalibreringspakker findes i MAPIR&#x27;s sky og hentes via sensor-ID (hvorefter de gemmes i den lokale cache). Chloros kræver en internetforbindelse for at kunne levere kalibrerede W/m²/nm-data fra en DAQ-U eller DAQ-M.**DAQ-E er undtagelsen** — den har sin kalibrering gemt på selve enheden.
-
+**DAQ-U og DAQ-M kræver adgang til skyen for at kunne kalibreres.**Ingen af modellerne gemmer noget lokalt: deres fabrikskalibreringspakker findes i MAPIRs sky og hentes via sensor-ID (hvorefter de gemmes i den lokale cache). Chloros har brug for en internetforbindelse for at kunne levere kalibrerede W/m²/nm-data fra en DAQ-U eller DAQ-M.**DAQ-E er undtagelsen** — den har sin kalibrering gemt på selve enheden.
+{% endhint %}
 <!-- PRE-PUBLISH-CHECK: LAUNCH item 3 (DAQ-M end-to-end connect smoke) was still unverified as of 2026-08-16 — re-confirm the DAQ-M cloud-calibration flow on the release build before publishing this page. -->
 
-{% endhint %}***
+***
 
 ## Hvor optagelserne gemmes
 
-| Overflade | Standarddestination for `.daq` |
+| Overflade | Standard `.daq`-destination |
 | --- | --- |
 | GUI — fanen Lyssensorer | `<project folder>/light_sensor/` (færdige optagelser føjes automatisk til projektet) |
-| CLI — `daq pool-record` | `~/Documents/DAQ Live View/` på den maskine, der kører backend |
+| CLI — `daq pool-record` | `~/Documents/DAQ Live View/` på den maskine, der kører backend&#x27;en (en relativ `-o`-sti henviser til den mappe, hvor kommandoen blev kørt, når backend-systemet kører på samme computer) |
 
 Hvert `.daq`-filnavn indeholder sensor-ID&#x27;et og et tidsstempel.
 
@@ -85,7 +85,7 @@ Hvert `.daq`-filnavn indeholder sensor-ID&#x27;et og et tidsstempel.
 ## I dette kapitel
 
 * [**Fanen DAQ i Chloros**](gui.md) — den fulde gennemgang af brugergrænsefladen: tilslutning af hver model, indstillinger pr. sensor, spektrumdiagrammer, live kolorimetriske data, reflektans fra to sensorer og optagelse.
-* [**CLI Hurtigstart (pool-\*)**](cli-quick-start.md) — styring af DAQ-sensorer fra `chloros-cli daq pool-*`, den understøttede kommandolinjevej.
+* [**Hurtigstart til CLI (pool-\*)**](cli-quick-start.md) — styring af DAQ-sensorer fra `chloros-cli daq pool-*`, den understøttede kommandolinjestien.
 * [**Cap-profiler og kalibreret spektralområde**](caps-and-range.md) — hvilke cap-profiler der findes pr. model, hvordan man definerer dem, samt det kalibrerede spektralområde i detaljer.
 * [**Optagelse og .daq-formatet**](recording.md) — `.daq` SQLite-formatet og arbejdsgange for optagelse.
 * [**DAQ-E-netværk og tidssynkronisering**](ethernet-ptp.md) — DAQ-E-transporttilstande og PTP-tidssynkronisering.

@@ -8,7 +8,7 @@ Før du klikker på Start-knappen, skal du kontrollere, at alt er klar:
 
 * [ ] **Filer importeret** – Alle billeder vises i filbrowseren
 * [ ] **Målbilleder markeret** – Kolonnen „Mål“ er markeret for kalibreringsbilleder (eller en `.daq`-optagelse importeret til LATTICE)
-* [ ] **Kameramodeller registreret** – Kolonnen „Kameramodel“ viser de korrekte kameraer
+* [ ] **Kameramodeller registreret** – Kolonnen »Kameramodel« viser de korrekte kameraer
 * [ ] **Indstillinger konfigureret** – Projektindstillingerne er gennemgået og justeret
 * [ ] **Indekser valgt** – De ønskede multispektrale indekser er tilføjet (hvis nødvendigt)
 * [ ] **Eksportformat valgt** – Outputformat, der passer til din arbejdsgang
@@ -23,7 +23,7 @@ Før du klikker på Start-knappen, skal du kontrollere, at alt er klar:
 
 ### Find Start-knappen
 
-Start/Afspil-knappen er placeret i den øverste statuslinje i Chloros:
+Start/Afspil-knappen er placeret i den øverste hovedlinje i Chloros:
 
 * Placering: Øverst i midten af vinduet
 * Ikon: **Afspil/Start-knap** <img src="../.gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -32,19 +32,19 @@ Start/Afspil-knappen er placeret i den øverste statuslinje i Chloros:
 ### Klik for at starte
 
 1. Klik på **Afspil/Start-knappen** i den øverste overskriftslinje
-2. Behandlingen starter med det samme
+2. Behandlingen starter straks
 3. Knappen bliver til en **Stop**-knap under behandlingen
 4. Statusbjælken opdateres og viser behandlingsstatus
 
 {% hint style="success" %}
-**Behandlingen er startet**: Når du har klikket, håndterer Chloros automatisk alle trin i behandlingen – måldetektion, debayering, kalibrering, indeksberegning og eksport. Det registrerer automatisk, om dit projekt er Survey3, LATTICE eller en blanding, og anvender den rigtige pipeline til hvert kamera.
+**Behandlingen er startet**: Når du har klikket, håndterer Chloros automatisk alle trin i behandlingen – måldetektion, debayering, kalibrering, indeksberegning og eksport. Programmet registrerer automatisk, om dit projekt er Survey3, LATTICE eller en blanding, og anvender den rigtige pipeline til hvert kamera.
 {% endhint %}
 
 ***
 
-## Forståelse af behandlingsmodi
+## Forståelse af behandlingsmetoder
 
-Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
+Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 
 ### Gratis tilstand (sekventiel behandling)
 
@@ -61,37 +61,37 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 1.**Målregistrering** – Scanner efter kalibreringsmål
 2. **Behandling** – Anvender kalibrering og eksporterer billeder**Behandlingstid:**
 
-* Meget langsommere end Chloros+ parallel-tilstand
-* Velegnet til små til mellemstore datasæt (&lt; 200 billeder)
+* Meget langsommere end Chloros+ parallel tilstand
+* Egnet til små til mellemstore datasæt (&lt; 200 billeder)
 
-### Chloros+-tilstand (Parallel behandling)
+### Chloros+ tilstand (parallel behandling)
 
-**Kræver Chloros+-licens**
+**Kræver Chloros+ licens**
 
 **Sådan fungerer det:**
 
 * Behandler flere billeder samtidigt ved hjælp af en [4-trådet behandlingspipeline](../processing-architecture/processing-pipeline.md)
 * [Dynamisk beregnings tilpasning](../processing-architecture/dynamic-compute-adaptation.md) vælger automatisk den optimale strategi for din hardware ved kørselens start
-* GPU (CUDA)-acceleration med NVIDIA-grafikkort (desktop og Jetson)
-* **Antallet af arbejdsprocesser tilpasses hardwaren**: GPU-strategier kører**1–4 samtidige arbejdsprocesser** (skaleret efter VRAM — en Jetson med lav hukommelse kører 1, en desktop-GPU med 12 GB+ kører op til 4); systemer, der udelukkende bruger CPU, kører én arbejdsproces pr. fysisk kerne, minus én**Statusbjælken viser 4 faser** (svarende til de 4 pipeline-tråde):
+* GPU (CUDA)-acceleration med NVIDIA-grafikkort
+* **Antallet af arbejdsprocesser tilpasses hardwaren**: GPU-strategier kører**2–4 samtidige arbejdsprocesser** (skaleret efter VRAM — 3 på en GPU med 2–12 GB, 2 til 4 på en GPU med 12 GB eller mere); Systemer, der udelukkende bruger CPU, kører én worker pr. fysisk kerne minus én**Statusbjælken viser 4 faser** (svarende til de 4 pipeline-tråde):
 
-1. **Detektering** (tråd 1) – Find kalibreringsmål
+1. **Detektering** (Tråd 1) – Find kalibreringsmål
 2. **Analyse** (tråd 2) – Undersøgelse af billedmetadata og beregning af kalibrering
 3. **Kalibrering** (tråd 3) – Debayering, vignetteringskorrektion, kalibrering, indeksberegning
-4. **Eksport** (Tråd 4) – Gemmer behandlede billeder og indekser**Interaktion med fremskridtsbjælken:*** **Hold musen** over bjælken for at se et detaljeret dropdown-panel med 4 faser
-* **Klik** på fremskridtsbjælken for at fastfryse dropdown-panelet på plads
-* **Klik igen** for at frigøre og skjule panelet**Behandlingstid:**
+4. **Eksport** (tråd 4) – Gemning af behandlede billeder og indekser**Interaktion med statusbjælken:*** **Hold musen** over bjælken for at se et detaljeret dropdown-panel med de 4 trin
+* **Klik** på statusbjælken for at fastfryse dropdown-panelet på plads
+* **Klik igen** for at ophæve fastfrysningen og skjule panelet**Behandlingstid:**
 
 * Betydeligt hurtigere end gratis-tilstand
 * GPU-acceleration forbedrer hastigheden yderligere
 
 {% hint style="info" %}
-**Chloros+ Hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
+**Chloros+ hastighed**: Parallel behandling kan være 5-10 gange hurtigere end sekventiel tilstand for store datasæt. Et projekt med 500 billeder, der tager 2 timer i gratis tilstand, kan afsluttes på 15-20 minutter med Chloros+.
 {% endhint %}
 
 ***
 
-## Hvad sker der under behandlingen
+## Hvad sker der under behandlingen?
 
 ### Trin 1: Målregistrering
 
@@ -100,7 +100,7 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 * Gennemser de billeder, du har markeret i kolonnen »Mål« (alle billeder, hvis ingen er markeret)
 * Identificerer kalibreringspanelerne i hvert mål
 * Udtrækker reflektansværdier fra målpanelerne
-* Registrerer målets tidsstempler til planlægning af kalibrering
+* Registrerer måltidspunkter til planlægning af kalibrering
 
 **Varighed:** 1–30 sekunder (med markerede mål), 5–30+ minutter (umarkerede)
 
@@ -108,7 +108,7 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 
 **Hvad Chloros gør:**
 
-* Konverterer RAW-data i Bayer-mønster til fulde 3-kanals billeder (LATTICE-mono-moduler forbliver enkeltbånds — debayering springes over for dem med en bemærkning i loggen)
+* Konverterer RAW-data i Bayer-mønster til fulde 3-kanals billeder (LATTICE mono-moduler forbliver enkeltbånds — debayering springes over for dem med en bemærkning i loggen)
 * Anvender den valgte demosaicing-algoritme
 * Bevarer maksimal billedkvalitet og detaljer
 
@@ -117,9 +117,9 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 ### Trin 3: Kalibrering
 
 **Hvad Chloros gør:*** **Vignetteringskorrektion**: Fjerner mørkningen ved kanterne
-* **Reflektanskalibrering**: Normaliserer ved hjælp af målreflektansværdier og/eller DAQ-downwelling-data
+* **Reflektanskalibrering**: Normaliserer ved hjælp af målreflektansværdier og/eller DAQ-data for nedadgående stråling
 * Anvender korrektioner på tværs af alle bånd/kanaler
-* Bruger den passende kalibreringsreference for hvert billede baseret på tidsstemplet
+* Anvender passende kalibreringsreference for hvert billede baseret på tidsstempel
 
 **Varighed:** Størstedelen af behandlingstiden
 
@@ -128,7 +128,7 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 **Hvad Chloros gør:**
 
 * Beregner konfigurerede multispektrale indekser (NDVI, NDRE osv.)
-* Anvender båndmatematik på kalibrerede billeder
+* Anvender båndmatematik på de kalibrerede billeder
 * Genererer indeksbilleder for hvert valgt indeks
 
 **Varighed:** Et par sekunder pr. billede
@@ -138,22 +138,22 @@ Chloros fungerer i to forskellige behandlingsmodi afhængigt af din licens:
 **Hvad Chloros gør:**
 
 * Gemmer de behandlede billeder i det valgte format
-* **LATTICE fan-out**: Hvert rå LATTICE-billede eksporteres som alle aktiverede produkter i én omgang — debayered, preview, radiance (altid float32), reflectance
+* **LATTICE fan-out**: Hvert rå LATTICE-billede eksporteres som alle aktiverede produkter i én arbejdsgang — debayered, preview, radiance (altid float32), reflectance
 * Skriver filer til projektets output-struktur: `<project>/<camera>/<format>/<Product>_Images/`
-* **Beholder kildefilnavnet** — mappen identificerer produktet, der tilføjes intet suffiks**Varighed:** Varierer afhængigt af eksportformat og filstørrelse***
+* **Bevarer kildefilnavnet** — mappen identificerer produktet, der tilføjes intet suffiks**Varighed:** Varierer afhængigt af eksportformat og filstørrelse***
 
 ## Behandlingsadfærd
 
 ### Automatisk behandlingspipeline
 
-Når den er startet, kører hele processen automatisk:
+Når den er startet, kører hele pipelinen automatisk:
 
-* Ingen brugerindgriben nødvendig
+* Ingen brugerinteraktion nødvendig
 * Alle konfigurerede trin udføres i rækkefølge
 * Statusopdateringer vises i realtid
-* Eksporterede filer gemmes på disken, efterhånden som de bliver færdige — du kan åbne færdige resultater, mens processen fortsætter
+* Eksporterede filer skrives til disken, efterhånden som de færdiggøres — du kan åbne færdige resultater, mens kørslen fortsætter
 
-### Computerforbrug under behandlingen
+### Computerbrug under behandlingen
 
 **Fri tilstand:**
 
@@ -161,7 +161,7 @@ Når den er startet, kører hele processen automatisk:
 * Computeren forbliver responsiv over for andre opgaver
 * Det er sikkert at minimere Chloros og arbejde i andre programmer
 
-**Chloros+ Parallel tilstand:**
+**Chloros+ parallel tilstand:**
 
 * Højt CPU-forbrug på tværs af strategiens arbejdspool
 * Med GPU-acceleration: Højt GPU-forbrug
@@ -169,16 +169,16 @@ Når den er startet, kører hele processen automatisk:
 * Undgå at starte andre CPU-krævende opgaver
 
 {% hint style="warning" %}
-**Ydelsestip**: For at opnå den bedste Chloros+-ydelse skal du lukke andre programmer og lade Chloros bruge alle systemressourcerne.
+**Tip til ydeevne**: For at opnå den bedste ydeevne med Chloros+ skal du lukke andre programmer og lade Chloros bruge alle systemressourcerne.
 {% endhint %}
 
-### Behandlingen kan ikke sættes på pause (men kan afbrydes fuldstændigt)
+### Behandlingen kan ikke sættes på pause (men afbrydelse foregår problemfrit)
 
 * Når behandlingen er startet, kan den ikke sættes på pause og genoptages senere
-* Ved at klikke på **Stop** afbrydes kørslen fuldstændigt ved første klik
+* Ved at klikke på **Stop** afsluttes kørslen korrekt ved det første klik
 * Produkter, der allerede er eksporteret før afbrydelsen, forbliver på disken
-* En afbrudt kørsel rapporterer præcist, hvad der er gennemført (se linjerne `[RUN-SUMMARY]` i loggen)
-* Et nyt kørsel starter rørledningen fra begyndelsen
+* En afbrudt kørsel rapporterer præcist, hvad den har gennemført (se linjerne `[RUN-SUMMARY]` i loggen)
+* En ny kørsel starter pipelinen fra begyndelsen
 
 **Planlægningstip:** Ved meget store projekter bør du overveje at behandle i batches eller bruge CLI for bedre kontrol.***
 
@@ -188,10 +188,10 @@ Mens behandlingen kører, kan du:
 
 * **Se statusbjælken** – Se den samlede færdiggørelsesprocent
 * **Se den aktuelle fase** – Registrering, analyse, kalibrering eller eksport
-* **Tjek fanen &quot;Log&quot;** – Se detaljerede behandlingsmeddelelser og advarsler
+* **Tjek fanen »Log«** – Se detaljerede behandlingsmeddelelser og advarsler
 * **Få et eksempel på færdige billeder** – Eksportfiler vises på disken under behandlingen
 
-Se [Overvågning af behandlingen](monitoring-the-processing.md) for detaljerede oplysninger om overvågning.
+For detaljerede oplysninger om overvågning, se [Overvågning af behandlingen](monitoring-the-processing.md).
 
 ***
 
@@ -202,36 +202,36 @@ Hvis du har brug for at stoppe behandlingen:
 ### Sådan stopper du
 
 1. Find **Stop-knappen** (erstatter Start-knappen under behandlingen)
-2. Klik på den én gang — statusbjælken viser **&quot;Stopper...&quot;**, mens det igangværende billede færdigbehandles
-3. Kørslen afsluttes i en endelig stoppet tilstand, og loggen udskriver en præcis oversigt over, hvad der blev gennemført
+2. Klik på den én gang — bjælken viser **&quot;Stopper...&quot;**, mens det igangværende billede færdigbehandles
+3. Kørslen afsluttes i en endelig stoppet tilstand, og loggen udskriver en præcis oversigt over, hvad der er blevet gennemført
 
 ### Hvornår skal man stoppe
 
 **Gyldige grunde til at stoppe:**
 
-* Man har opdaget, at der blev brugt forkerte indstillinger
+* Man har opdaget, at der er blevet brugt forkerte indstillinger
 * Man har glemt at markere målbilleder
 * Der er importeret forkerte billeder
 * Systemet kører for langsomt eller reagerer ikke
 
 **Efter stop:**
 
-* Produkter, der blev eksporteret før stop, forbliver på disken
-* Gennemgå og afhjælp eventuelle problemer, juster indstillingerne efter behov
+* Produkter, der er eksporteret før stop, forbliver på disken
+* Gennemgå og ret eventuelle problemer, juster indstillingerne efter behov
 * Genstart behandlingen — kørslen starter forfra
 
 ***
 
-## Anslået behandlingstid
+## Estimater for behandlingstid
 
 Den faktiske behandlingstid varierer meget afhængigt af:
 
 * Antal billeder
 * Billedopløsning
-* Indgangsformat (RAW eller JPG)
-* Behandlingsmodus (Free eller Chloros+)
+* Indgangsformat (RAW vs. JPG)
+* Behandlingsmodus (Free vs. Chloros+)
 * CPU-hastighed og antal kerner
-* GPU-tilgængelighed (kun Chloros+)
+* Tilgængelighed af GPU (kun Chloros+)
 * Antal indekser, der skal beregnes
 * Antal aktiverede eksportprodukter (LATTICE)
 
@@ -239,14 +239,14 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 | Antal billeder | Gratis tilstand | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 billeder   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 billeder  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 billeder  | 1-1,5 timer | 20-30 min      | 10-15 min      |
+| 50 billeder   | 15–20 min | 5–8 min        | 3–5 min        |
+| 100 billeder  | 30–40 min | 10–15 min      | 5–8 min        |
+| 200 billeder  | 1–1,5 timer | 20–30 min      | 10–15 min      |
 | 500 billeder  | 2–3 timer   | 45–60 min      | 20–30 min      |
 | 1000 billeder | 4–6 timer   | 1,5–2 timer      | 40–60 min      |
 
 {% hint style="info" %}
-**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger caches og profiler. Efterfølgende behandling af lignende datasæt vil foregå hurtigere.
+**Første kørsel**: Den indledende behandling kan tage længere tid, da Chloros opbygger cacher og profiler. Efterfølgende behandling af lignende datasæt vil foregå hurtigere.
 {% endhint %}
 
 ***
@@ -266,7 +266,7 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 1. Vent, indtil backend er fuldt initialiseret (tjek ikonet i hovedmenuen)
 2. Kontroller, at billederne er importeret i filbrowseren
-3. Genstart Chloros, hvis knappen fortsat er deaktiveret
+3. Genstart Chloros, hvis knappen stadig er deaktiveret
 4. Tjek fejlloggen for fejlmeddelelser
 
 ### Behandlingen starter, men mislykkes straks
@@ -280,26 +280,38 @@ Den faktiske behandlingstid varierer meget afhængigt af:
 
 **Løsninger:**
 
-1. Kontroller fejlloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for fejlmeddelelser
+1. Tjek fejlloggen <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for fejlmeddelelser
 2. Kontroller, om der er ledig diskplads
-3. Prøv at behandle en mindre delmængde af billederne
+3. Prøv at behandle en mindre delmængde af billeder
 4. Kontroller, at billederne ikke er beskadigede
 
 ### Kørslen afsluttes, men der skrives ingen billeder
 
 En kørsel, der anmodede om billedprodukter, men ikke skrev nogen, behandles som en **fejl, ikke en succes** — Chloros rapporterer det tydeligt:
 
-* GUI-loggen viser `[RUN-SUMMARY]`-henvisninger, der angiver den sandsynlige årsag — ingen billeder importeret, intet mål fundet, eller at alle anmodede produkter er blevet sprunget over som uanvendelige (f.eks. anmodning om radiance/reflektans fra kameraer, der kun understøtter RGB)
-* CLI-ækvivalenten (`chloros-cli process`) udskriver `Processing finished but wrote no image products.` og **afsluttes med en værdi forskellig fra nul**, så scripts kan registrere det
+* GUI-loggen viser `[RUN-SUMMARY]`-fejlmeddelelser, der angiver den sandsynlige årsag — ingen billeder importeret, intet mål fundet, eller alle anmodede produkter er sprunget over som uanvendelige (f.eks. anmodning om radiance/reflektans fra kameraer, der kun tager RGB-billeder)
+* Den tilsvarende CLI-fejl (`chloros-cli process`) viser `Processing finished but wrote no image products.` og **afsluttes med en værdi forskellig fra nul**, så scripts kan registrere det
 * En bevidst kørsel, der kun omfatter metadata (alle eksportprodukter deaktiveret, ingen indekser), tæller stadig som en succes
 
 Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fails) for den fulde semantik.
+
+### Projektmappen er for dyb til denne computer
+
+**Kun Windows, nyt i 1.3.0.** Windows leveres med lange stier deaktiveret, og ingen filsti må derfor være længere end 260 tegn. Chloros-produkter ligger op til ca. 130 tegn under projektmappen, så en projektmappe, der ligger dybere end det, kan ikke modtage sine produkter. I stedet for at køre og ikke skrive noget, tjekker Chloros nu, før behandlingen starter:
+
+* Et klik på Start starter ikke en kørsel: statusbjælken viser årsagen, og fejlloggen viser `[PROCESS] refused: The project folder is too deep for this computer…`. Meddelelsen angiver projektmappens længde og den længste projektmappe, der passer.
+* Oprettelse eller åbning af et projekt i en mappe, der er for dyb selv for projektets egne filer, afvises også. En meddelelsesboks angiver årsagen, den længste projektmappe, der kan rummes, og hvordan man aktiverer lange stier, og der oprettes eller åbnes intet; fejlloggen registrerer det som `[PROJECT] refused: …`. At duplikere et projekt under et længere navn kan også overskride grænsen: kopien oprettes, men åbnes ikke, og den samme meddelelse angiver årsagen.
+
+**Løsninger:**
+
+1. Opbevar projekter i en kortere mappe — ændr**Arbejdsmappen** under [Projektindstillinger](../project-settings/project-settings.md) og opret projektet igen, eller
+2. Aktivér lange stier i Windows og genstart Chloros: Kør Chloros-installationsprogrammet igen med **Aktiver lange stier i Windows** markeret (det er markeret som standard), eller brug gruppepolitik: *Computerkonfiguration &gt; Administrative skabeloner &gt; System &gt; Filsystem &gt; Aktivér lange Win32-stier*.
 
 ### Advarsel om »Ingen mål fundet«
 
 **Mulige årsager:**
 
-* Glemt at markere målbilleder
+* Du har glemt at markere målbilleder
 * Målbillederne indeholder ikke synlige mål
 * Indstillingerne for måldetektering er for strenge
 
@@ -308,7 +320,7 @@ Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 1. Gennemgå [Valg af målbilleder](choosing-target-images.md)
 2. Marker de relevante billeder i kolonnen &quot;Mål&quot;
 3. Kontroller, at målene er synlige i de markerede billeder
-4. Juster indstillingerne for måldetektering, hvis det er nødvendigt
+4. Juster indstillingerne for måldetektion, hvis det er nødvendigt
 
 ***
 
@@ -316,25 +328,25 @@ Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 
 ### Før du starter
 
-1. **Test først med et lille udsnit** – Behandl 10–20 billeder for at kontrollere indstillingerne
-2. **Kontroller ledig diskplads** – Sørg for, at der er 2–3 gange datasættets størrelse ledig (mere, hvis alle LATTICE-produkter er aktiveret)
+1. **Test først med en lille delmængde** – Behandl 10-20 billeder for at kontrollere indstillingerne
+2. **Kontroller ledig diskplads** – Sørg for, at der er 2-3 gange datasættets størrelse ledig (mere, hvis alle LATTICE-produkter er aktiveret)
 3. **Luk unødvendige programmer** – Frigør systemressourcer
-4. **Kontroller målbillederne** – Se en forhåndsvisning af de markerede mål for at sikre kvaliteten
+4. **Kontroller målbillederne** – Se et eksempel på de markerede mål for at sikre kvaliteten
 5. **Gem projektet** – Projektet gemmes automatisk, men det er god praksis at gemme manuelt
 
 ### Under behandlingen
 
 1. **Undgå, at systemet går i dvaletilstand** – Deaktiver strømbesparende tilstande
-2. **Hold Chloros i forgrunden** – Eller i det mindste synlig i proceslinjen
+2. **Hold Chloros i forgrunden** – Eller i det mindste synligt i proceslinjen
 3. **Overvåg fremskridtet lejlighedsvis** – Tjek for advarsler eller fejl
-4. **Undlad at køre andre ressourcekrævende programmer** – Især i Chloros+ parallel-tilstand
+4. **Undgå at køre andre ressourcekrævende programmer** – Især i Chloros+ parallel-tilstand
 
 ### Chloros+ GPU-acceleration
 
 Hvis du bruger NVIDIA GPU-acceleration:
 
 1. Opdater NVIDIA-driverne til den nyeste version
-2. Sørg for, at GPU’en har mindst 4 GB VRAM (mindst 7 GB til samtidig Texture Aware-debayering)
+2. Sørg for, at GPU&#x27;en har 4 GB+ VRAM (7 GB+ til samtidig Texture Aware-debayering)
 3. Luk GPU-krævende programmer (spil, videoredigering)
 4. Overvåg GPU-temperaturen (sørg for tilstrækkelig køling)
 
