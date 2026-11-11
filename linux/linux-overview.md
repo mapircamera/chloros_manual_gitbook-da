@@ -3,7 +3,7 @@
 Chloros 1.3.0 tilbyder indbygget Linux-understøttelse af **CLI**og**Python SDK** — multispektral billedbehandling uden skærm samt styring af LATTICE-kameraer og DAQ-lyssensorer i realtid — på Linux-arbejdsstationer, servere og NVIDIA Jetson-edge-enheder.
 
 {% hint style="info" %}
-**Ingen desktop-GUI på Linux.**Chloros Desktop-GUI&#x27;en findes kun til Windows. Linux-brugere interagerer med Chloros via [CLI](../CLI.md) og [Python SDK](../api-python-sdk.md). `.deb` tilføjer en**Chloros CLI**-post til din programmenu — den åbner blot en terminalemulator, der kører `chloros-cli`.
+**Ingen desktop-GUI på Linux.**Chloros Desktop-GUI'en findes kun til Windows. Linux-brugere interagerer med Chloros via [CLI](../CLI.md) og [Python SDK](../api-python-sdk.md). `.deb` tilføjer en**Chloros CLI**-post til din programmenu — den åbner blot en terminalemulator, der kører `chloros-cli`.
 {% endhint %}
 
 ***
@@ -41,11 +41,11 @@ Chloros 1.3.0 tilbyder indbygget Linux-understøttelse af **CLI**og**Python SDK*
 
 * **Chloros CLI** — den fulde kommandolinjegrænseflade til batchbehandling, automatisering og scripting
 * **Chloros Python SDK** — programmatisk Python-grænseflade til forskningspipelines og brugerdefinerede værktøjer, installeret af `.deb` til systemet `python3` (et versionsmatchet wheel til virtualenvs findes i `/usr/lib/chloros/sdk/`; PyPI er til maskiner uden et Chloros-pakke)
-* **LATTICE-kamerastyring** — find, tilslut, konfigurer og optag fra LATTICE-kameraer og synkroniserede multikamera-arrays via `chloros-cli lattice` og SDK&#x27;et; `.deb` indeholder Arena SDK-runtime, som kameraerne kræver
-* **DAQ-lyssensorstyring** — tilslut DAQ-U/M/E-sensorer, stream kalibrerede spektre og optag `.daq`-filer via `chloros-cli daq pool-*` og SDK&#x27;en
+* **LATTICE-kamerastyring** — find, tilslut, konfigurer og optag fra LATTICE-kameraer og synkroniserede multikamera-arrays via `chloros-cli lattice` og SDK'et; `.deb` indeholder Arena SDK-runtime, som kameraerne kræver
+* **DAQ-lyssensorstyring** — tilslut DAQ-U/M/E-sensorer, stream kalibrerede spektre og optag `.daq`-filer via `chloros-cli daq pool-*` og SDK'en
 * **PTP-tidssynkronisering** — Chloros-backendet kører den PTP-grandmaster, som LATTICE-kameraer og DAQ-E-sensorer er slaver til; kontroller den med `chloros-cli time-sync`, og hold den kørende i headless-tilstand med systemd-enheden `chloros-backend@<user>.service` (se [Linux-installation](linux-installation.md#always-on-ptp-for-headless-hosts))
-* **Projektautomatisering** — kør gemte projekter headless med `chloros-cli project` og SDK&#x27;ets `open_project`
-* **GPU-acceleration** — CUDA-accelereret behandling på NVIDIA-GPU&#x27;er (desktop-GPU&#x27;er på amd64 og Jetsons GPU med JetPack 6)
+* **Projektautomatisering** — kør gemte projekter headless med `chloros-cli project` og SDK'ets `open_project`
+* **GPU-acceleration** — CUDA-accelereret behandling på NVIDIA-GPU'er (desktop-GPU'er på amd64 og Jetsons GPU med JetPack 6)
 * **Dynamisk beregnings tilpasning** — automatisk hardwaredetektering og valg af behandlingsstrategi, med `CHLOROS_STRATEGY`-overstyring som en ekspertudvej
 * **Alle behandlingsfunktioner** — den samme pipeline som i Windows: kalibrering, vignetteringskorrektion, vegetationsindekser og alle eksportformater
 * **Chloros+-funktioner** — multitrådet (pipeline-baseret) behandling, Texture Aware-debayer (på en CUDA-GPU) og brugerdefinerede indekser med et betalt Chloros+-abonnement
@@ -87,7 +87,7 @@ For NVIDIA Jetson henvises til den dedikerede [NVIDIA Jetson-vejledning](nvidia-
 * [NVIDIA Jetson-vejledning](nvidia-jetson-guide.md) — Jetson-specifik opsætning, hukommelse og termisk adfærd samt implementering i praksis
 * [CLI: Kommandolinje](../CLI.md) — vejledningen til CLI
 * [API: Python SDK](../api-python-sdk.md) — vejledningen til SDK
-* [CLI-reference](../reference/cli-reference.md) og [SDK-reference](../reference/sdk-reference.md) — udtømmende oversigter over kommandoer og API&#x27;er til version 1.3.0
+* [CLI-reference](../reference/cli-reference.md) og [SDK-reference](../reference/sdk-reference.md) — udtømmende oversigter over kommandoer og API'er til version 1.3.0
 * [Dynamisk beregnings tilpasning](../processing-architecture/dynamic-compute-adaptation.md) — hvordan Chloros tilpasser sig din hardware
 
 {% hint style="info" %}

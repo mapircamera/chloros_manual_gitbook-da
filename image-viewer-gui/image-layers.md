@@ -4,11 +4,7 @@
 
 ## Hvad er billedlag?
 
-Et »lag« i Chloros
-
-er en **produktfil**, der er knyttet til et kildebillede. Importen giver dig kildefilerne; behandlingen tilføjer et lag for hvert produkt, som kørslen har genereret. Eksporterede filer beholder kildefilnavnet — det er**mappen**, der identificerer produktet, og lagets navn er Chloros
-
-’ betegnelse for den pågældende mappe.
+Et »lag« i Chloros er en **produktfil**, der er knyttet til et kildebillede. Importen giver dig kildefilerne; behandlingen tilføjer et lag for hvert produkt, som kørslen har genereret. Eksporterede filer beholder kildefilnavnet — det er**mappen**, der identificerer produktet, og lagets navn er Chloros’ betegnelse for den pågældende mappe.
 
 <!-- SCREENSHOT-NEEDED: Image Viewer full screen with the layer dropdown open on a processed LATTICE multispectral image, showing the full list: TIFF base, RAW (Original), RAW (Debayered), RAW (Preview), RAW (Radiance), RAW (Reflectance), and one RAW (NDVI Index) entry. -->
 
@@ -20,24 +16,12 @@ er en **produktfil**, der er knyttet til et kildebillede. Importen giver dig kil
 
 | Lag | Hvad er det? |
 | --- | --- |
-| **JPG**(eller**PNG
-
-**/**TIFF
-
-**) | Den grundlæggende fil, der fulgte med optagelsen. Survey3
-
--import medfører en `.JPG` ved siden af hver `.RAW`; LATTICE-optagelser medfører en PNG
-
-- eller TIFF
-
--visningsforhåndsvisning. Mærket efter, hvad der faktisk blev importeret |
+| **JPG**(eller**PNG**/**TIFF**) | Den grundlæggende fil, der fulgte med optagelsen. Survey3-import medfører en `.JPG` ved siden af hver `.RAW`; LATTICE-optagelser medfører en PNG- eller TIFF-visningsforhåndsvisning. Mærket efter, hvad der faktisk blev importeret |
 | **RAW (Original)** | Den rå kildebillede, der er debayered til visning uden anvendte korrektioner. Tilgængelig fra importøjeblikket — den kræver ingen behandling |
 
 En LATTICE-optagelse, hvis basisfil **er** dens råramme, har ingen separat basispost: `RAW (Original)` dækker den allerede.
 
-### Survey3
-
--behandlingsprodukter
+### Survey3-behandlingsprodukter
 
 | Lag | Skrevet til | Findes når |
 | --- | --- | --- |
@@ -57,31 +41,19 @@ LATTICE inddeler fan-out i disse niveauer i et enkelt behandlingsforløb. Hvilke
 
 | Lag | Skrives til | Gælder for |
 | --- | --- | --- |
-| **RAW (Debayered)** | `Debayered_Images/` | RGB
-
-- og multispektrale |
+| **RAW (Debayered)** | `Debayered_Images/` | RGB- og multispektrale |
 | **RAW (Preview)** | `Preview_Images/` | Multispektralt (falskfarveudstrækning) |
-| **Hvidbalanceret** | `Preview_Images/` | RGB
-
--masterkameraer — RGB
-
--forhåndsvisningen er registreret under dette navn, så den stemmer overens med Survey3
-
--laget med samme navn |
+| **Hvidbalanceret** | `Preview_Images/` | RGB-masterkameraer — RGB-forhåndsvisningen er registreret under dette navn, så den stemmer overens med Survey3-laget med samme navn |
 | **RAW (radiance)** | `Radiance_Images/` | Kun multispektral |
 | **RAW (reflektans)** | `Reflectance_Calibrated_Images/` | Kun multispektral, og kun når en matchende `.daq`-nedstrålingsregistrering eller et QA-godkendt mål inden for billedrammen dækker billedrammen |
 
-RGB
-
--masterkameraer har ingen radiometri pr. bånd, så strålingsintensitet og reflektans springes over for dem som **ikke relevant** — loggen angiver dette i stedet for at fejle uden besked.
+RGB-masterkameraer har ingen radiometri pr. bånd, så strålingsintensitet og reflektans springes over for dem som **ikke relevant** — loggen angiver dette i stedet for at fejle uden besked.
 
 {% hint style="info" %}
 **Rå- og debayered-lag stemmer overens med produkterne (nyt i 1.3.0).**LATTICE-råfiler og debayered-filer gemmes i sensorens oprindelige orientering og registrerer i XMP den orientering, der hører til dem; de øvrige produkter gemmes med denne orientering allerede anvendt. Visningsprogrammet og billedgitteret skifter mellem**RAW (Original)**og**RAW (Debayered)** i henhold til denne oplysning ved visning, så billedet ikke længere vendes, når du skifter mellem et produktlag og et rålag. Dette gælder kun visningen — filerne overskrives aldrig. Filer uden en orienteringsregistrering (optaget før version 1.3.0 eller skrevet af anden software) vises som de er gemt. Se [Output Image Formats](../output-image-formats.md#orientation).
 {% endhint %}
 
-Clamp-masker (`*_clampmask.tif` i en `clamp_masks/`-mappe) er ikke lag: Chloros
-
-springer dem over ved import. Se [Output Image Formats](../output-image-formats.md#clamp-masks).
+Clamp-masker (`*_clampmask.tif` i en `clamp_masks/`-mappe) er ikke lag: Chloros springer dem over ved import. Se [Output Image Formats](../output-image-formats.md#clamp-masks).
 
 ### Indeks-, LUT- og sandkasse-lag
 
@@ -124,87 +96,41 @@ Panelet [Cursor Values](opening-an-image-full-screen.md#cursor-values) viser den
 
 | Lag | Angivet enhed | Bemærkninger |
 | --- | --- | --- |
-| Basis (JPG / PNG
-
-/ TIFF
-
--forhåndsvisning) | DN, 0–255 | Visningsværdier, gammakorrigeret på RGB
-
-. Kun til visuel inspektion |
+| Basis (JPG / PNG / TIFF-forhåndsvisning) | DN, 0–255 | Visningsværdier, gammakorrigeret på RGB. Kun til visuel inspektion |
 | RAW (Original) | DN | Rå digitale sensortal. Histogramaksen angiver dybden: 255 (8-bit), 4095 (12-bit) eller 65535 (16-bit) |
 | RAW (Debayered) | DN | Lineært, ingen billedstrækning |
 | RAW (Forhåndsvisning) / Hvidbalance | DN | Visningsprodukt — strækket eller gammakorrigeret. Ikke til måling |
 | RAW (Stråling) | **W/m²/sr/nm** | Float32 fysisk stråling. Ingen DN-kolonne |
 | RAW (Refleksion) | DN **og %** | Procent beregnet ud fra filens egen skala — se nedenfor |
-| Indeks / LUT / sandkasseeksport | Indeksværdi eller RGB
-
--komponenter | En enkeltkanals indeksfil angiver indeksværdien; en farvekortlagt LUT-fil angiver Red
-
-/Green
-
-/Blue
-
--komponenter |
+| Indeks / LUT / sandkasseeksport | Indeksværdi eller RGB-komponenter | En enkeltkanals indeksfil angiver indeksværdien; en farvekortlagt LUT-fil angiver Red /Green /Blue-komponenter |
 
 ### Reflektans: skalaen er pr. fil
 
 {% hint style="warning" %}
-**&quot;Divider med 65.535&quot; er kun korrekt for Survey3
-
-.** LATTICE-reflektans gemmes i en anden skala, og at blande de to divider er den mest almindelige måde at få reflektansværdier, der er nøjagtigt halvdelen af, hvad de burde være.
+**"Divider med 65.535" er kun korrekt for Survey3.** LATTICE-reflektans gemmes i en anden skala, og at blande de to divider er den mest almindelige måde at få reflektansværdier, der er nøjagtigt halvdelen af, hvad de burde være.
 {% endhint %}
 
 | Kilde | DN, der svarer til reflektans 1,0 | Identificeret ved |
 | --- | --- | --- |
 | **LATTICE**(M3C / M3M) |**32768** | XMP-tagget `Chloros:PixelScale=32768`, der er indstemplet i hver eneste eksport af LATTICE-reflektans. Den dobbelte headroom betyder, at ρ over 1,0 kan repræsenteres i stedet for at blive beskåret |
-| **Survey3**| **65535** | Intet Chloros
+| **Survey3**| **65535** | Intet Chloros XMP-skalamærke — Survey3-kalibrering skriver ρ × dtype-max og beskærer ved 1,0 |
 
-XMP-skalamærke — Survey3
-
--kalibrering skriver ρ × dtype-max og beskærer ved 1,0 |
-
-Til GIS og scripting: læs `Chloros:PixelScale` fra filen og divider med det. Hvis tagget mangler, er filen i Survey3
-
--skala (65535). Visningsprogrammet, indeks-/LUT-sandkassen og indekseksporten beregner alle skalaen på samme måde, så det tal, du ser ved markøren, er det tal, som indeksberegningen har brugt.
+Til GIS og scripting: læs `Chloros:PixelScale` fra filen og divider med det. Hvis tagget mangler, er filen i Survey3-skala (65535). Visningsprogrammet, indeks-/LUT-sandkassen og indekseksporten beregner alle skalaen på samme måde, så det tal, du ser ved markøren, er det tal, som indeksberegningen har brugt.
 
 Formatspecifik lagring oven på denne skala:
 
-* **TIFF
-
-(32-bit, procent)** gemmer DN / 65535 som et float-tal
-* **PNG
-
-(8-bit)**og**JPG (8-bit)** gemmer DN × 255 / 65535
+* **TIFF (32-bit, procent)** gemmer DN / 65535 som et float-tal
+* **PNG (8-bit)**og**JPG (8-bit)** gemmer DN × 255 / 65535
 * Et **8-bit DN-produkt fra en 8-bit optagelse** eller en reflektansfil, der er skrevet før version 1.3.0, beskæres til 0–255 og har ingen skalamærkning. Panelet viser kun DN for disse filer, uden en procentkolonne
 
 ### Indeksværdiernes intervaller
 
 | Indeksfamilie | Typisk interval | Værdi |
 | --- | --- | --- |
-| Normaliseret forskel (NDVI
-
-, GNDVI
-
-, NDRE
-
-, ENDVI…) | −1 til +1 | Sund vegetation typisk 0,4–0,9; bar jord tæt på 0; vand negativt |
-| Jordjusteret (SAVI
-
-, OSAVI
-
-, MSAVI2…) | ca. −1 til +1,5 | Værdier svarende til NDVI
-
-, hvor jordbaggrunden er undertrykt |
-| Forhold (GRVI
-
-, GCI
-
-, MSR, CIRE…) | ubegrænset over | Forholdene stiger ubegrænset, når nævnerbåndet går mod nul |
-| EVI
-
-/ LAI
-
-| 0 til ~1, 0 til ~3,5 | Skyer og andre mættede pixels skubber begge værdier ud af måleområdet — masker dem først |
+| Normaliseret forskel (NDVI, GNDVI, NDRE, ENDVI…) | −1 til +1 | Sund vegetation typisk 0,4–0,9; bar jord tæt på 0; vand negativt |
+| Jordjusteret (SAVI, OSAVI, MSAVI2…) | ca. −1 til +1,5 | Værdier svarende til NDVI, hvor jordbaggrunden er undertrykt |
+| Forhold (GRVI, GCI, MSR, CIRE…) | ubegrænset over | Forholdene stiger ubegrænset, når nævnerbåndet går mod nul |
+| EVI / LAI | 0 til ~1, 0 til ~3,5 | Skyer og andre mættede pixels skubber begge værdier ud af måleområdet — masker dem først |
 
 Se [Formler for multispektrale indekser](../project-settings/multispectral-index-formulas.md) for den nøjagtige formel bag hver forudindstilling.
 
@@ -236,9 +162,7 @@ Se [Formler for multispektrale indekser](../project-settings/multispectral-index
 1. Vælg **RAW (Reflektans)**
 
 2. Læs kolonnen**%** i panelet Cursor Values — den er allerede skaleret korrekt for den pågældende fil
-3. Kontroller mod kendte materialer i billedet: sund vegetation har høje NIR
-
--værdier og lave røde værdier; et kalibreringsmål bør vise værdier tæt på de offentliggjorte reflektansværdier
+3. Kontroller mod kendte materialer i billedet: sund vegetation har høje NIR-værdier og lave røde værdier; et kalibreringsmål bør vise værdier tæt på de offentliggjorte reflektansværdier
 
 ***
 
@@ -250,25 +174,19 @@ Se [Formler for multispektrale indekser](../project-settings/multispectral-index
 
 * Billedet er aldrig blevet behandlet — kun basislaget og `RAW (Original)` findes
 * Produktets eksportknap er ikke markeret i projektindstillingerne
-* Produktet gælder ikke for det pågældende kamera (radiance og reflektans på en RGB
-
--master; ethvert indeks på et enkeltbånds M3M-monokamera)
+* Produktet gælder ikke for det pågældende kamera (radiance og reflektans på en RGB-master; ethvert indeks på et enkeltbånds M3M-monokamera)
 * Reflektanskalibreringen havde intet at arbejde med — ingen `.daq`-dækning i nedadgående retning og intet QA-godkendt mål inden for billedrammen — så billedrammen faldt tilbage til Vignette Corrected eller Sensor Response
 
 **Hvad skal man gøre**
 
-1. Tjek kørselsloggen: Chloros
-
-angiver, hvornår et anmodet eksportprodukt var umuligt, og hvorfor
+1. Tjek kørselsloggen: Chloros angiver, hvornår et anmodet eksportprodukt var umuligt, og hvorfor
 2. Tjek eksportknapperne for de enkelte produkter i [Projektindstillinger](../project-settings/project-settings.md)
 3. Bekræft, at produktmappen findes i projektets output-struktur
 4. Kør processen igen med produktet aktiveret
 
 ### Laglisten ser forældet ud
 
-Chloros
-
-genindlæser projektets produktmapper, mens en kørsel er i gang, og retter manglende lagregistreringer ud fra det, der faktisk findes på disken. Derfor vises et lag, der er færdigexporteret, normalt af sig selv i en afstemning. Hvis du skifter væk fra billedet og tilbage igen, tvinges der en ny opløsning frem.
+Chloros genindlæser projektets produktmapper, mens en kørsel er i gang, og retter manglende lagregistreringer ud fra det, der faktisk findes på disken. Derfor vises et lag, der er færdigexporteret, normalt af sig selv i en afstemning. Hvis du skifter væk fra billedet og tilbage igen, tvinges der en ny opløsning frem.
 
 ### Reflektansværdierne ser ud til at være halvt så store, som de burde være
 

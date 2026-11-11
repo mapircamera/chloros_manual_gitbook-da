@@ -43,7 +43,7 @@ Modelstrengen styrer alt det efterfølgende: Chloros udleder sensorprofilen, bå
 
 ## Filtre og bånd
 
-Båndcentre, FWHM-kanter og det fulde M3M-katalog med 23 SKU&#x27;er er produktspecifikationer, så de findes i hardwaremanualen: [**Filtre og spektralbånd**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
+Båndcentre, FWHM-kanter og det fulde M3M-katalog med 23 SKU'er er produktspecifikationer, så de findes i hardwaremanualen: [**Filtre og spektralbånd**](https://mapir.gitbook.io/lattice-camera/hardware/filters-and-bands).
 
 Hvad der er vigtigt på softwaresiden: filterkoden i modelstrengen bestemmer, hvilke produkter Chloros kan generere. RGB-filterkameraer (`FRGB`) leverer udelukkende debayered- og preview-produkter — strålingsintensitet og reflektans pr. bånd er ikke meningsfulde for en bredbåndssensor, så Chloros springer dem over og angiver dette. Alle andre filtre leverer den fulde kæde af strålingsintensitet → reflektans → indeks.
 
@@ -56,7 +56,7 @@ På softwaresiden er det afgørende, at Chloros finder den korrekte kalibrering,
 ## I dette kapitel
 
 * [Tilslutning af kameraer](connecting.md) — automatisk genkendelse, GUI-dialogboksen til tilslutning, CLI-/SDK-ækvivalenter og hvordan fabrikskalibreringen fastlægges (pakke på kameraet vs. cloud), når et kamera tilsluttes.
-* [Kameraindstillinger](camera-settings.md) — alle kontrolelementer under fanen &quot;Kameraer&quot;: kameralisten, indstillingspanelet for hvert enkelt kamera og panelet med array-indstillinger (herunder ROI-editoren og justering).
+* [Kameraindstillinger](camera-settings.md) — alle kontrolelementer under fanen "Kameraer": kameralisten, indstillingspanelet for hvert enkelt kamera og panelet med array-indstillinger (herunder ROI-editoren og justering).
 * [Optagelsesindstillinger og -tilstande](capture.md) — Optag alt, enkelt-/kontinuerlig-/intervaloptagelse, eksporttyper og mappenes struktur for optagelser.
 * [Multikamera-arrayer](arrays.md) — guiden til tilslutning af arrayer, synkroniseringskabel-sonde, båndbredde, PTP og live-visning af arrayet.
 * [Monokameraer og vegetationsindekser](mono-indices.md) — M3M-kameraer og arbejdsgangen justering → stabling → indeksering.

@@ -58,7 +58,7 @@ Radiance- og reflektansprodukterne fra et multispektralt M3C-kamera gennemgår e
 * **Hvad:** en enkeltbånds `uint8`-TIFF-fil på produktets eget pixelgitter (inklusive orientering, ROI, binning og array-justering). Bit 0 (`mask & 1`) er sat, hvor båndet i produktets R-kanal blev beskåret, bit 1 (`& 2`) G-kanalen, bit 2 (`& 4`) B-kanalen. Andelen af klippede pixels pr. bånd er også angivet på produktet som `Chloros:BandRUnmixClampFraction`, `Chloros:BandGUnmixClampFraction` og `Chloros:BandBUnmixClampFraction`.
 * **Sådan angives det i produktet:** XMP-tagget `Chloros:UnmixClampMask` indeholder maskenes sti i forhold til produktets mappe (`../clamp_masks/<product folder>/<name>_clampmask.tif`, altid adskilt med `/`), `none`, når ingen pixel blev beskåret (der skrives ingen maske), eller `unavailable`, når en maske ikke kunne skrives. Et produkt uden tag har aldrig gennemgået unmix-processen (kameraer i RGB- og monokrom-format samt rå- og debayered-niveauer).
 
-Da ingen produktmappe indeholder en maske, kan du overføre en produktmappe som f.eks. `Reflectance_Calibrated_Images/` til Pix4D, Metashape eller anden fotogrammetri-software, som den er, inklusive undermapper — overfør produktmappen, ikke formatmappen ovenover den. Chloros&#x27; egen import springer clamp-masker over. CLI-kommandoen tæller dem separat: `Image products written: N (plus M clamp masks)`.
+Da ingen produktmappe indeholder en maske, kan du overføre en produktmappe som f.eks. `Reflectance_Calibrated_Images/` til Pix4D, Metashape eller anden fotogrammetri-software, som den er, inklusive undermapper — overfør produktmappen, ikke formatmappen ovenover den. Chloros' egen import springer clamp-masker over. CLI-kommandoen tæller dem separat: `Image products written: N (plus M clamp masks)`.
 
 ## Indeksprodukter
 
@@ -77,7 +77,7 @@ Nyt i 1.3.0: Et indeksprodukt beskriver **sig selv** i stedet for at gentage kil
 | `Chloros:IlluminationInvariant` | `True` for et indeks beregnet ud fra reflektans, `False` ud fra strålingsintensitet eller sensorværdier |
 | `Chloros:ChlorosPipelineVersion` | den Chloros-version, der skrev indekset |
 
-`Chloros:PixelScale` er fjernet fra indeksprodukter — brug `IndexMin` / `IndexMax` ovenfor. Den fulde vejledning til genindlæsning findes under &quot;Et heltal-indeksraster er en kontrastudvidelse pr. billede&quot; i [CLI-referencen](reference/cli-reference.md).
+`Chloros:PixelScale` er fjernet fra indeksprodukter — brug `IndexMin` / `IndexMax` ovenfor. Den fulde vejledning til genindlæsning findes under "Et heltal-indeksraster er en kontrastudvidelse pr. billede" i [CLI-referencen](reference/cli-reference.md).
 
 ## Aflæsning af reflektans-pixelværdier
 
@@ -94,4 +94,4 @@ Reflektansen gemmes som et heltal, og **det DN, der svarer til ρ = 1,0 (100 % r
 **8-bit-optagelser.** Eksportdata fra en 8-bit-optagelse er 8-bit. Dens reflektans skaleres om og mærkes `Chloros:PixelScale=32768`, så skalaen bevares; 8-bit DN-produkter og reflektansfiler, der er skrevet før version 1.3.0, beskæres til 0–255 og har ingen skalamærkning. Hvis mærkningen mangler på en LATTICE-reflektansfil, skal du ikke antage, at der er en skala; eksporter i stedet igen i 16-bit eller 32-bit.
 {% endhint %}
 
-Se **&quot;Læsning af reflektanspixels&quot;** i [CLI-referencen](reference/cli-reference.md) for de fuldstændige regler (herunder de MicaSense-kompatible mærker).
+Se **"Læsning af reflektanspixels"** i [CLI-referencen](reference/cli-reference.md) for de fuldstændige regler (herunder de MicaSense-kompatible mærker).

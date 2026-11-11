@@ -14,7 +14,7 @@ Fra venstre mod højre indeholder den øverste overskrift:
 
 * **Nyt projekt**— oprette et nyt projekt. Hvis du har gemte projektskabeloner, vises en rullemenu med**Vælg skabelon**, så det nye projekt starter med indstillingerne fra en skabelon.
 * **Åbn projekt**— åbne et eksisterende projekt. Listen indeholder en**Åbn projektmappe**-knap, der åbner projektmappen i din filudforsker.
-* **Dupliker projekt** — kopier det aktuelt åbne projekt under et nyt navn (et ledigt navn som f.eks. &quot;MitProjekt (2)&quot; foreslås) og åbn kopien. _(synlig, når et projekt er åbnet)_
+* **Dupliker projekt** — kopier det aktuelt åbne projekt under et nyt navn (et ledigt navn som f.eks. "MitProjekt (2)" foreslås) og åbn kopien. _(synlig, når et projekt er åbnet)_
 * **Tilføj filer** — tilføj enkelte billedfiler til det aktuelle projekt _(synlig, når et projekt er åbnet)_
 * **Tilføj mappe** — tilføj en eller flere mapper med billeder til det aktuelle projekt _(synlig, når et projekt er åbnet)_
 * **Start behandling / Stop behandling** — start eller stop billedbehandlingsprocessen _(aktiveres, når filer er tilføjet)_
@@ -22,19 +22,7 @@ Fra venstre mod højre indeholder den øverste overskrift:
 * **Tilslut til lyssensor** — gå til [fanen Lyssensorer](daq/) for at tilslutte en DAQ-lyssensor. Fungerer uden et åbent projekt.
 
 {% hint style="info" %}
-**Kun Windows**: Chloros
-
-Desktop GUI er tilgængelig på Windows
-
-. Linux
-
--brugere bør se dokumentationen til [CLI
-
-](CLI.md) og [Python
-
-SDK
-
-](api-python-sdk.md) for headless-behandling.
+**Kun Windows**: Chloros Desktop GUI er tilgængelig på Windows. Linux-brugere bør se dokumentationen til [CLI](CLI.md) og [Python SDK](api-python-sdk.md) for headless-behandling.
 {% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +37,9 @@ Statusbjælke <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
 
 
-I den gratis Chloros
+I den gratis Chloros-tilstand, hvor alle filer behandles sekventielt, viser statusbjælken to faser: Målregistrering og Behandling.
 
--tilstand, hvor alle filer behandles sekventielt, viser statusbjælken to faser: Målregistrering og Behandling.
-
-I den betalte Chloros
-
-+-licenstilstand, hvor alle filer behandles samtidigt, viser statusbjælken fire faser: Registrering, Analyse, Kalibrering, Eksport. Hvis du holder musemarkøren over Chloros
-
-+-statusbjælken, åbnes et udvidet panel med de 4 fremskridtstrin, så du kan følge med. Hvis du klikker på den øverste statusbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigives det.
+I den betalte Chloros+-licenstilstand, hvor alle filer behandles samtidigt, viser statusbjælken fire faser: Registrering, Analyse, Kalibrering, Eksport. Hvis du holder musemarkøren over Chloros+-statusbjælken, åbnes et udvidet panel med de 4 fremskridtstrin, så du kan følge med. Hvis du klikker på den øverste statusbjælke, fryses dropdown-panelet, og hvis du klikker igen, frigives det.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -75,7 +57,7 @@ Tilføj filer/mapper og fjern filer fra projektet. Duplikater ignoreres. Markér
 
 #### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Billedfremviser](image-viewer-gui/opening-an-image-full-screen.md)
 
-Når der klikkes på et billede i hovedbilledviseren, åbnes det i fuld skærm på fanen &quot;Billedviser&quot;.
+Når der klikkes på et billede i hovedbilledviseren, åbnes det i fuld skærm på fanen "Billedviser".
 
 #### <img src=".gitbook/assets/image (3) (1).png" alt="" data-size="line"> [Kortviser](image-viewer-gui/map-markers.md)
 
@@ -83,7 +65,7 @@ Se dine billeder på et interaktivt 2D-kort baseret på deres GPS-koordinater. U
 
 #### <img src=".gitbook/assets/image (17).png" alt="" data-size="line"> [Kameraer](lattice/)
 
-Tilslut og styr LATTICE-kameraer live — ét ad gangen eller som synkroniserede multikamera-opstillinger. Fanen viser live-forhåndsvisningsfliser med overlejringer og histogrammer, indstillinger pr. kamera og pr. opstilling samt optagelsesindstillinger, der bestemmer, hvilke kameraer og eksporttyper &quot;Capture All&quot; genererer. Tilgængeligt, når backend-systemet er klar; se [LATTICE-afsnittet](lattice/) for den fulde vejledning.
+Tilslut og styr LATTICE-kameraer live — ét ad gangen eller som synkroniserede multikamera-opstillinger. Fanen viser live-forhåndsvisningsfliser med overlejringer og histogrammer, indstillinger pr. kamera og pr. opstilling samt optagelsesindstillinger, der bestemmer, hvilke kameraer og eksporttyper "Capture All" genererer. Tilgængeligt, når backend-systemet er klar; se [LATTICE-afsnittet](lattice/) for den fulde vejledning.
 
 #### <img src=".gitbook/assets/image (23).png" alt="" data-size="line"> [Lyssensorer](daq/)
 

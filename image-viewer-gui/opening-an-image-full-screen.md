@@ -178,7 +178,7 @@ Stråling og reflektans findes kun i multispektralformat: Et RGB-masterkamera ha
 
 ## Anvendelse af indeks og LUT
 
-Anvend multispektrale indekser og farve-LUT&#x27;er fra sidepanelet:
+Anvend multispektrale indekser og farve-LUT'er fra sidepanelet:
 
 1. Åbn **Image Viewer**<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">-sidepanelet
 2. Marker **Index**

@@ -1,6 +1,6 @@
 # Hurtigstart til CLI (pool-*)
 
-De medfølgende `chloros-cli`-drev styrer DAQ-sensorerne via **`daq pool-*`**-kommandofamilien — enkle HTTP-klienter, der styrer sensoren via Chloros-backendets permanente sensorpool. Backend&#x27;en styrer transporten, så GUI&#x27;en, CLI&#x27;en og SDK-scripts deler alle ét aktivt håndtag i stedet for at kæmpe om porten. Alt, hvad en kunde har brug for, er tilgængeligt via `pool-*`: oprette forbindelse, streame, optage kalibrerede `.daq`-filer og skifte cap-profiler.
+De medfølgende `chloros-cli`-drev styrer DAQ-sensorerne via **`daq pool-*`**-kommandofamilien — enkle HTTP-klienter, der styrer sensoren via Chloros-backendets permanente sensorpool. Backend'en styrer transporten, så GUI'en, CLI'en og SDK-scripts deler alle ét aktivt håndtag i stedet for at kæmpe om porten. Alt, hvad en kunde har brug for, er tilgængeligt via `pool-*`: oprette forbindelse, streame, optage kalibrerede `.daq`-filer og skifte cap-profiler.
 
 `pool-*` er den understøttede DAQ-grænseflade i udgivne builds. `chloros-cli daq --help` viser listen over `pool-*`-underkommandoer, og `daq discover` / `daq list` udfører den samme scanning som `pool-discover`. Hvor en DAQ-underkommando til direkte hardware ikke er tilgængelig, afsluttes programmet med en eksplicit fejlmeddelelse, der angiver det manglende pakke og henviser dig tilbage til `pool-*` — intet mislykkes i stilhed. (`pip install chloros-sdk` indeholder heller ikke kommandoer til direkte hardware.)
 
@@ -8,7 +8,7 @@ De medfølgende `chloros-cli`-drev styrer DAQ-sensorerne via **`daq pool-*`**-ko
 
 ## Forudsætninger
 
-* **Chloros-backend&#x27;et skal køre** — `pool-*`-kommandoerne er HTTP-klienter, ikke hardwaredrivere. På Windows skal du starte Chloros-desktopappen (den starter backend&#x27;et). På headless Linux/Jetson skal du aktivere tjenesten som din bruger: `sudo systemctl enable --now chloros-backend@$USER.service` (se [Linux-installation](../linux/linux-installation.md#always-on-ptp-for-headless-hosts)).
+* **Chloros-backend'et skal køre** — `pool-*`-kommandoerne er HTTP-klienter, ikke hardwaredrivere. På Windows skal du starte Chloros-desktopappen (den starter backend'et). På headless Linux/Jetson skal du aktivere tjenesten som din bruger: `sudo systemctl enable --now chloros-backend@$USER.service` (se [Linux-installation](../linux/linux-installation.md#always-on-ptp-for-headless-hosts)).
 * **Chloros+ (betalt abonnement) login**: Kør først `chloros-cli login`. Håndhævelsen sker på serversiden — uden login mislykkes kommandoer med `401 AUTH_REQUIRED`; på det gratis (Iron) niveau mislykkes de med `403 PLAN_UPGRADE_REQUIRED`.
 * Kommandoerne er som standard rettet mod `http://127.0.0.1:5000`; `daq pool-*`-familien respekterer miljøvariablen `CHLOROS_BACKEND_URL`, hvis din backend kører et andet sted.
 
@@ -121,7 +121,7 @@ chloros-cli daq pool-record --sensor-id daq-e-def330 --stop
 | `--heartbeat SEC` | `30` | Med `--duration` udskrives antallet af rækker hvert SEC. sekund, og der gives en advarsel, hvis det holder op med at stige. `0` deaktiverer den. |
 
 {% hint style="info" %}
-Optagelsen foregår i backend, så filen `.daq` havner på **backend-maskinens** filsystem — som standard i `~/Documents/DAQ Live View/` der, ikke nødvendigvis der, hvor du kørte CLI&#x27;en. Filnavnene indeholder sensor-ID&#x27;et og et tidsstempel.
+Optagelsen foregår i backend, så filen `.daq` havner på **backend-maskinens** filsystem — som standard i `~/Documents/DAQ Live View/` der, ikke nødvendigvis der, hvor du kørte CLI'en. Filnavnene indeholder sensor-ID'et og et tidsstempel.
 {% endhint %}
 
 ## `pool-set-cap` — angiv den monterede hætte
@@ -130,7 +130,7 @@ Optagelsen foregår i backend, så filen `.daq` havner på **backend-maskinens**
 chloros-cli daq pool-set-cap --sensor-id daq-e-def330 --cap-id sunshine_cosine
 ```
 
-Hætten-ID&#x27;et vælger den fabriksmålte korrektionsprofil, der anvendes på hvert spektrum, og den **skal matche den hætten, der fysisk er monteret på sensoren** — hverken sensoren eller softwaren kan selv registrere hætten, og valget er indstemplet i hver `.daq`-fil. Standardindstillingen overalt er `sunshine_cosine` (alle DAQ-enheder leveres med Sunshine-kosinuskorrektionshætten monteret, ~12× dæmpning ifølge designet — et udeklareret skift af hætten medfører en forkert korrektion af spektrene med omtrent denne faktor).
+Hætten-ID'et vælger den fabriksmålte korrektionsprofil, der anvendes på hvert spektrum, og den **skal matche den hætten, der fysisk er monteret på sensoren** — hverken sensoren eller softwaren kan selv registrere hætten, og valget er indstemplet i hver `.daq`-fil. Standardindstillingen overalt er `sunshine_cosine` (alle DAQ-enheder leveres med Sunshine-kosinuskorrektionshætten monteret, ~12× dæmpning ifølge designet — et udeklareret skift af hætten medfører en forkert korrektion af spektrene med omtrent denne faktor).
 
 | `--cap-id` | Tilgængelig på |
 | --- | --- |
@@ -139,7 +139,7 @@ Hætten-ID&#x27;et vælger den fabriksmålte korrektionsprofil, der anvendes på
 | `fov_30`, `fov_60` | Kun DAQ-U |
 | `none` | Kun DAQ-E — se bemærkning |
 
-Et dæksel-ID, der ligger uden for sensorens indstillingsområde, afvises ved tilslutning med en tydelig fejlmeddelelse. `none` (DAQ-E) betyder, at hætten er fysisk fjernet — den anvender stadig en fabriksgeometriprofil til DAQ-E&#x27;s forsænkede glasdiffusor, så det er ikke en no-op, og en bar DAQ-E er en bordkonfiguration, ikke en understøttet feltkonfiguration. (En DAQ-U uden kappe er helt uden kappe og behøver slet ingen korrektionsprofil; DAQ-M bruges sammen med sin Sunshine-kappe.)
+Et dæksel-ID, der ligger uden for sensorens indstillingsområde, afvises ved tilslutning med en tydelig fejlmeddelelse. `none` (DAQ-E) betyder, at hætten er fysisk fjernet — den anvender stadig en fabriksgeometriprofil til DAQ-E's forsænkede glasdiffusor, så det er ikke en no-op, og en bar DAQ-E er en bordkonfiguration, ikke en understøttet feltkonfiguration. (En DAQ-U uden kappe er helt uden kappe og behøver slet ingen korrektionsprofil; DAQ-M bruges sammen med sin Sunshine-kappe.)
 
 ## `pool-disconnect` — frigivelse af sensorer
 
@@ -148,9 +148,9 @@ chloros-cli daq pool-disconnect --sensor-id daq-e-def330   # one sensor
 chloros-cli daq pool-disconnect --all                      # everything in the pool
 ```
 
-`pool-disconnect` frigiver en sensor, uanset hvem der har åbnet den, så den frigiver også en sensor, som et nedbrudt script har efterladt i puljen (en optagelse på den skal først være afsluttet). En sensor, der ikke er i puljen, har intet at frigive: kommandoen udskriver `<sensor-id>: already released (not in the pool)` og afsluttes med `0`. En frigivelse, som backend&#x27;et afviste eller ikke bekræftede, afsluttes med `1`.
+`pool-disconnect` frigiver en sensor, uanset hvem der har åbnet den, så den frigiver også en sensor, som et nedbrudt script har efterladt i puljen (en optagelse på den skal først være afsluttet). En sensor, der ikke er i puljen, har intet at frigive: kommandoen udskriver `<sensor-id>: already released (not in the pool)` og afsluttes med `0`. En frigivelse, som backend'et afviste eller ikke bekræftede, afsluttes med `1`.
 
-## `pool-enable-ptp` — slå en DAQ-E&#x27;s PTP til igen
+## `pool-enable-ptp` — slå en DAQ-E's PTP til igen
 
 ```bash
 chloros-cli daq pool-enable-ptp --sensor-id daq-e-def330
@@ -170,14 +170,14 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` viser sensorens firmware (og om denne Chloros-udgave indeholder en nyere version), dens adresse og hvordan den fik den, den gemte netværksindstilling, hvis den adskiller sig fra den aktuelle, streaming ved opstart og PTP. `pool-set-network` genstarter sensoren for at anvende ændringen og genopretter forbindelsen med de indstillinger, den havde; `--no-reboot` gemmer den blot. Der skal være en statisk adresse på denne computers netværk, ellers afviser Chloros den; `--force` tilsidesætter dette, men kun for en computer, der vil blive omadresseret eller dirigeret til den. Genstart afvises, mens sensoren registrerer data. `pool-update-firmware` svarer til GUI&#x27;ens **Update to \<version\>** for kommandolinjen og er metoden til at opdatere en DAQ-E på Linux, som ikke har en GUI. Nyt i 1.3.0.***
+`pool-info` viser sensorens firmware (og om denne Chloros-udgave indeholder en nyere version), dens adresse og hvordan den fik den, den gemte netværksindstilling, hvis den adskiller sig fra den aktuelle, streaming ved opstart og PTP. `pool-set-network` genstarter sensoren for at anvende ændringen og genopretter forbindelsen med de indstillinger, den havde; `--no-reboot` gemmer den blot. Der skal være en statisk adresse på denne computers netværk, ellers afviser Chloros den; `--force` tilsidesætter dette, men kun for en computer, der vil blive omadresseret eller dirigeret til den. Genstart afvises, mens sensoren registrerer data. `pool-update-firmware` svarer til GUI'ens **Update to \<version\>** for kommandolinjen og er metoden til at opdatere en DAQ-E på Linux, som ikke har en GUI. Nyt i 1.3.0.***
 
 ## Kommandooversigt
 
 | Kommando | Formål |
 | --- | --- |
 | `daq pool-connect [--port P \| --ble \| --mac M \| --eth \| --eth-host H] [-t MS] [-f N] [--no-ae] [--no-stream] [--cap-id CAP]` | Åbn en sensor i backend-puljen. |
-| `daq pool-discover [--only usb,ble,eth] [--timeout SEC] [--json]` | Scanner efter sensorer uden at oprette forbindelse (finder en DAQ-M&#x27;s BLE MAC). |
+| `daq pool-discover [--only usb,ble,eth] [--timeout SEC] [--json]` | Scanner efter sensorer uden at oprette forbindelse (finder en DAQ-M's BLE MAC). |
 | `daq pool-list` | Vis alle sensorer i puljen med deres `sensor_id`. |
 | `daq pool-latest --sensor-id ID [--recent N] [--json]` | De seneste N kalibrerede spektrumrammer. |
 | `daq pool-stream --sensor-id ID [--start \| --stop]` | Genoptag/sæt streaming på pause. |
@@ -185,7 +185,7 @@ chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 | `daq pool-set-cap --sensor-id ID --cap-id CAP` | Skift cap-korrektionsprofilen under kørsel. |
 | `daq pool-disconnect --sensor-id ID [--all]` | Frigiv én sensor eller dem alle. |
 | `daq pool-enable-ptp --sensor-id ID` | Slå PTP til igen for en DAQ-E, hvis PTP er slået fra. |
-| `daq pool-info --sensor-id ID [--json]` | En DAQ-E&#x27;s firmware, adresse, gemte netværksindstillinger, streaming ved opstart og PTP. |
+| `daq pool-info --sensor-id ID [--json]` | En DAQ-E's firmware, adresse, gemte netværksindstillinger, streaming ved opstart og PTP. |
 | `daq pool-set-network --sensor-id ID (--auto \| --static IP [--mask M] [--gateway G]) [--no-reboot] [--force]` | DHCP eller en statisk adresse; genstarter og genopretter forbindelsen til sensoren. |
 | `daq pool-set-auto-stream --sensor-id ID (--on \| --off)` | Streaming ved opstart. |
 | `daq pool-reboot --sensor-id ID` | Genstarter en DAQ-E og opretter forbindelse igen. |

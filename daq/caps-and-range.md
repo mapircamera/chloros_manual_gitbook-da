@@ -1,10 +1,8 @@
 # Kappe-profiler og kalibreret rækkevidde
 
-> Selve hætterne — hvilke hætter der følger med hvilke sensorer, hvordan de monteres og deres optiske egenskaber — er beskrevet i **[DAQ-brugervejledningen](https://mapir.gitbook.io/daq)**. Denne side handler om at *angive* den monterede hætte til Chloros
-, hvilket er det, der sikrer, at korrektionen bliver korrekt.
+> Selve hætterne — hvilke hætter der følger med hvilke sensorer, hvordan de monteres og deres optiske egenskaber — er beskrevet i **[DAQ-brugervejledningen](https://mapir.gitbook.io/daq)**. Denne side handler om at *angive* den monterede hætte til Chloros, hvilket er det, der sikrer, at korrektionen bliver korrekt.
 
-Hver DAQ-lyssensors radiometriske fabrikskalibrering beskriver den *rene* sensor. Den fysiske kappe, der er monteret over diffusoren, ændrer det lys, sensoren opfanger, så Chloros
-anvender en fabriksmålt **kappe-korrektionsprofil** oven på kalibreringspakken. At angive den korrekte hætte er en del af at opnå kalibrerede data — denne side beskriver, hvilke hætter der findes pr. model, hvordan man angiver dem, og hvad sensorens kalibrerede spektralområde faktisk er.
+Hver DAQ-lyssensors radiometriske fabrikskalibrering beskriver den *rene* sensor. Den fysiske kappe, der er monteret over diffusoren, ændrer det lys, sensoren opfanger, så Chloros anvender en fabriksmålt **kappe-korrektionsprofil** oven på kalibreringspakken. At angive den korrekte hætte er en del af at opnå kalibrerede data — denne side beskriver, hvilke hætter der findes pr. model, hvordan man angiver dem, og hvad sensorens kalibrerede spektralområde faktisk er.
 
 ## Hætternes tilgængelighed efter model
 
@@ -50,30 +48,22 @@ chloros-cli daq pool-connect --eth-host daq-e-def330.local --cap-id sunshine_cos
 chloros-cli daq pool-set-cap --sensor-id daq-e-def330 --cap-id fov_45
 ```
 
-CLI
-accepterer syntaktisk den fulde `cap_id`-liste (`{none, fov_15, fov_30, fov_45, fov_60, fov_90, sunshine_cosine}`); hver profil valideres i forhold til sensorens model ved opkobling, så et utilgængeligt cap-id (f.eks. et E-only-id på en DAQ-U) giver en tydelig fejlmeddelelse i stedet for at korrigere forkert. Backend-standardværdien, når der ikke angives noget, er `sunshine_cosine`.
+CLI accepterer syntaktisk den fulde `cap_id`-liste (`{none, fov_15, fov_30, fov_45, fov_60, fov_90, sunshine_cosine}`); hver profil valideres i forhold til sensorens model ved opkobling, så et utilgængeligt cap-id (f.eks. et E-only-id på en DAQ-U) giver en tydelig fejlmeddelelse i stedet for at korrigere forkert. Backend-standardværdien, når der ikke angives noget, er `sunshine_cosine`.
 
-Python
-SDK
-: Navngiv cap&#x27;en ved opkobling med `connect_daq_sensor(cap_id="sunshine_cosine")`, eller skift den under kørsel med `DAQSensorSession.set_cap("fov_45")`; se [SDK
--referencen](../reference/sdk-reference.md#daq-sensor-sessions).
+Python SDK: Navngiv cap'en ved opkobling med `connect_daq_sensor(cap_id="sunshine_cosine")`, eller skift den under kørsel med `DAQSensorSession.set_cap("fov_45")`; se [SDK-referencen](../reference/sdk-reference.md#daq-sensor-sessions).
 
-Avanceret: Profiler leveres som en del af Chloros
--installationen under `daq/cap_profiles/<u|m|e>/<cap_id>.json` og kan tilsidesættes for den enkelte bruger under `~/.chloros/daq_cap_profiles/<u|m|e>/<cap_id>.json`.
+Avanceret: Profiler leveres som en del af Chloros-installationen under `daq/cap_profiles/<u|m|e>/<cap_id>.json` og kan tilsidesættes for den enkelte bruger under `~/.chloros/daq_cap_profiles/<u|m|e>/<cap_id>.json`.
 
 Uafhængigt af begrænsningerne modtager sensorer, der aldrig er blevet rekalibreret, automatisk en lille finjustering af mørkeforskydningen baseret på flåden — uden brugerindgriben.
 
 ## DAQ-E-S: fast diffusor og hældning
 
-**DAQ-E-S** er en DAQ-E med to forskelle, der har betydning for Chloros
-. Alt andet (opdagelse, tilslutning, PTP, optagelse, enhedsindstillinger) fungerer nøjagtigt som for en DAQ-E.
+**DAQ-E-S** er en DAQ-E med to forskelle, der har betydning for Chloros. Alt andet (opdagelse, tilslutning, PTP, optagelse, enhedsindstillinger) fungerer nøjagtigt som for en DAQ-E.
 
-* **Dens diffusor er fastmonteret, så den kræver ingen cap-korrektion.** Diffusoren sad på enheden, da dens fabrikskalibrering blev målt, så kalibreringen allerede angiver den reelle nedadgående strålingsintensitet. Chloros
-anvender ingen cap-profil på den, uanset hvad der anmodes om: en cap opkaldt efter den ignoreres med en meddelelse, dens optagelser angiver, at cap&#x27;en stammer fra modellen, og advarslen om antaget cap udløses aldrig for den. I Projektindstillinger → DAQ-lyssensor viser dens række ingen cap, og den projektdækkende cap-tilsidesættelse gælder ikke for den. Anvend ikke en cap på dens data manuelt: Sunshine-korrektionen ovenpå ville vise en værdi, der er ca. 11 gange for høj.
+* **Dens diffusor er fastmonteret, så den kræver ingen cap-korrektion.** Diffusoren sad på enheden, da dens fabrikskalibrering blev målt, så kalibreringen allerede angiver den reelle nedadgående strålingsintensitet. Chloros anvender ingen cap-profil på den, uanset hvad der anmodes om: en cap opkaldt efter den ignoreres med en meddelelse, dens optagelser angiver, at cap'en stammer fra modellen, og advarslen om antaget cap udløses aldrig for den. I Projektindstillinger → DAQ-lyssensor viser dens række ingen cap, og den projektdækkende cap-tilsidesættelse gælder ikke for den. Anvend ikke en cap på dens data manuelt: Sunshine-korrektionen ovenpå ville vise en værdi, der er ca. 11 gange for høj.
 * **Den er udstyret med et 3-akset accelerometer.** Diffusorens cosinusrespons er kun gyldig, mens den står vandret, så en skråstillet sensor rapporterer en forkert strålingsintensitet uden andre symptomer. Hver DAQ-E-S-måling indeholder derfor dens hældning, rullning og stigning, og en `.daq`, der er registreret fra en sådan, gemmer disse oplysninger ved siden af hvert spektrum (`imu_tilt_deg`, `imu_roll_deg`, `imu_pitch_deg`, …), så man kan skelne mellem en sky og et skævt monteret stativ.
 
-For hvert holdningsfelt og hvordan en fejl i holdningsstrømmen rapporteres, se [DAQ-E-S i CLI
--referencen](../reference/cli-reference.md#daq-e-s--fixed-diffuser-and-tilt-sensor).
+For hvert holdningsfelt og hvordan en fejl i holdningsstrømmen rapporteres, se [DAQ-E-S i CLI-referencen](../reference/cli-reference.md#daq-e-s--fixed-diffuser-and-tilt-sensor).
 
 ## Sunshine Cap-ydeevne (udendørskonfigurationen)
 
@@ -97,7 +87,6 @@ For ethvert tal for kvantitativ irradians — herunder reflektansreferencer — 
 | Spektral sampling | 340–1010 nm i trin på 5 nm (135 punkter) |
 | Radiometrisk kalibreret område | **~374–974 nm** (håndhæves i softwaren) |
 
-Sensoren rapporterer det fulde 340–1010 nm-gitter, men den NIST-sporbare radiometriske forstærkning dækker ~374–974 nm. Chloros
-**afviser opdelingen efter absolut reflektans** for ethvert kamerabånd, hvor mindre end halvdelen af dets spektrale vægt ligger inden for dette interval, og rapporterer springårsagen `dls-uncalibrated-band-<nm>` i stedet for at levere et ukalibreret produkt. Blandt de kamera-SKU’er, der er på markedet, falder kun F988-filteret uden for dette interval; det bruger i stedet arbejdsgangen med reflektanspaneler — se [Arbejdsgange med reflektans](reflectance.md).
+Sensoren rapporterer det fulde 340–1010 nm-gitter, men den NIST-sporbare radiometriske forstærkning dækker ~374–974 nm. Chloros **afviser opdelingen efter absolut reflektans** for ethvert kamerabånd, hvor mindre end halvdelen af dets spektrale vægt ligger inden for dette interval, og rapporterer springårsagen `dls-uncalibrated-band-<nm>` i stedet for at levere et ukalibreret produkt. Blandt de kamera-SKU’er, der er på markedet, falder kun F988-filteret uden for dette interval; det bruger i stedet arbejdsgangen med reflektanspaneler — se [Arbejdsgange med reflektans](reflectance.md).
 
 For sensormodeller, transportformer og sensor-ID’er, se [DAQ-oversigten](README.md). For information om, hvordan cap-stemplet forbruges under behandlingen, se [Optagelse og .daq-formatet](recording.md).

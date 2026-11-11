@@ -6,7 +6,7 @@ Når du har oprettet eller åbnet et projekt i Chloros, er det næste trin at ti
 
 1. Åbn eller opret et projekt i Chloros
 2. Klik på ikonet **Filbrowser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> i venstre sidepanel
-3. Panelet &quot;Filbrowser&quot; viser dit projekts filliste
+3. Panelet "Filbrowser" viser dit projekts filliste
 
 {% hint style="info" %}
 **Understøttede filtyper**:
@@ -26,18 +26,18 @@ Der er to primære måder at tilføje billeder til dit projekt på:
 
 Brug denne indstilling til at importere enkelte billedfiler eller et lille udvalg af filer.
 
-1. Klik på knappen **&quot;Tilføj filer&quot;** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> øverst i panelet Filbrowser
+1. Klik på knappen **"Tilføj filer"** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> øverst i panelet Filbrowser
 2. Naviger til den mappe, der indeholder dine billeder
 3. Vælg en eller flere billedfiler (hold **Ctrl** nede for at vælge flere filer)
-4. Klik på **&quot;Åbn&quot;** for at importere de valgte filer
+4. Klik på **"Åbn"** for at importere de valgte filer
 
 ### Metode 2: Tilføj mappe
 
 Brug denne indstilling til at importere alle billeder fra en mappe på én gang. Du kan vælge **flere mapper** i én dialogboks.
 
-1. Klik på knappen **&quot;Tilføj mappe&quot;** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> øverst i panelet &quot;Filbrowser&quot;
+1. Klik på knappen **"Tilføj mappe"** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> øverst i panelet "Filbrowser"
 2. Naviger til og vælg den eller de mapper, der indeholder billederne fra din optagelsessession
-3. Klik på **&quot;Vælg mappe&quot;** for at importere alle understøttede billeder
+3. Klik på **"Vælg mappe"** for at importere alle understøttede billeder
 
 {% hint style="info" %}
 **Filer, der ikke kan indlæses, rapporteres.** Hvis en mappe indeholder filer, som Chloros genkender, men ikke kan indlæse, får du en advarsel — billederne forsvinder ikke ubemærket fra gitteret.
@@ -57,12 +57,12 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Vælg &quot;Tilføj mappe&quot; i rodmappen for optagelserne** (`output/` ovenfor). Når den valgte mappe ikke selv indeholder billeder, men har undermapper, går Chloros automatisk ned i dem — undermapperne på det pågældende niveau og rodmappen `.daq` hentes alle på én gang.**Sådan importeres optagelser:*** Hver optagelse importeres som et **enkelt billede**, grupperet efter optagelse (ikke én post pr. niveau). De øvrige niveauer i den samme optagelse vises som visningstilstande for det pågældende billede.
+**Vælg "Tilføj mappe" i rodmappen for optagelserne** (`output/` ovenfor). Når den valgte mappe ikke selv indeholder billeder, men har undermapper, går Chloros automatisk ned i dem — undermapperne på det pågældende niveau og rodmappen `.daq` hentes alle på én gang.**Sådan importeres optagelser:*** Hver optagelse importeres som et **enkelt billede**, grupperet efter optagelse (ikke én post pr. niveau). De øvrige niveauer i den samme optagelse vises som visningstilstande for det pågældende billede.
 * **Behandlingen starter altid fra det rå billede.** De andre niveauer kan ses, men kun `raw` sendes nogensinde gennem behandlingskæden — at genbehandle et allerede behandlet produkt ville medføre dobbelt anvendelse af korrektioner, så Chloros afviser dette. En genimporteret eksport kan aldrig indtage en optagelses rå-plads.
 * En optagelsesmappe, der er gemt **uden** rå-filer, importeres og vises normalt, men behandlingen springer den over og angiver dette i loggen. (CLI-flagget `--input-level` kan tvinge et indgangspunkt i dette tilfælde — se [CLI-referencen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Fra og med version 1.3.0 kan en optagelsesmappe også indeholde en `clamp_masks/`-mappe (masker pr. pixel for strålings- og reflektansniveauer — se [Output-billedformater](../output-image-formats.md#clamp-masks)). Masker er ikke billeder af scenen, og Chloros springer dem over ved import, uanset hvor de befinder sig.
 
-**LATTICE-hub-sessioner** importeres på samme måde: Vælg »Add Folder« (Tilføj mappe) til den sessionsmappe, der er kopieret fra hubben (den indeholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logfiler for nedadgående stråling. Hvis kameraets eller DAQ&#x27;ens kalibrering endnu ikke er gemt i cachen på din computer, henter Chloros den automatisk via serienummeret ved import (kræver internetforbindelse én gang).***
+**LATTICE-hub-sessioner** importeres på samme måde: Vælg »Add Folder« (Tilføj mappe) til den sessionsmappe, der er kopieret fra hubben (den indeholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logfiler for nedadgående stråling. Hvis kameraets eller DAQ'ens kalibrering endnu ikke er gemt i cachen på din computer, henter Chloros den automatisk via serienummeret ved import (kræver internetforbindelse én gang).***
 
 ## Sådan forstår du filbrowsertabellen
 
@@ -113,7 +113,7 @@ Ved at klikke på skifteknappen i øverste højre hjørne over tabellen vises de
 Sådan fjerner du uønskede billeder fra dit projekt:
 
 1. Vælg et eller flere billeder i tabellen Filbrowser
-2. Klik på knappen **&quot;Fjern valgte&quot;** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+2. Klik på knappen **"Fjern valgte"** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 3. Bekræft fjernelsen (filerne slettes ikke fra disken, men fjernes kun fra projektet)
 
 ### Sortering og filtrering

@@ -2,9 +2,7 @@
 
 Sidepanelet »Projektindstillinger« <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line">
 
-i Chloros
-
-giver dig mulighed for at konfigurere alle aspekter af billedbehandling, detektering af kalibreringsmål, beregning af multispektrale indekser samt eksportindstillinger for dit projekt. Disse indstillinger gemmes sammen med dit projekt og kan gemmes som skabeloner til genbrug på tværs af flere projekter.
+i Chloros giver dig mulighed for at konfigurere alle aspekter af billedbehandling, detektering af kalibreringsmål, beregning af multispektrale indekser samt eksportindstillinger for dit projekt. Disse indstillinger gemmes sammen med dit projekt og kan gemmes som skabeloner til genbrug på tværs af flere projekter.
 
 ## Sådan åbner du projektindstillingerne
 
@@ -40,9 +38,7 @@ i venstre sidepanel
 
 ## Målregistrering
 
-Disse indstillinger styrer, hvordan Chloros
-
-registrerer og behandler kalibreringsmål i dine billeder. Begge er kun aktive, mens **Refleksionskalibrering / hvidbalance** er aktiveret (ellers er de nedtonede, da målregistrering i så fald springes helt over).
+Disse indstillinger styrer, hvordan Chloros registrerer og behandler kalibreringsmål i dine billeder. Begge er kun aktive, mens **Refleksionskalibrering / hvidbalance** er aktiveret (ellers er de nedtonede, da målregistrering i så fald springes helt over).
 
 ### Mindste kalibreringsprøveområde (px)
 
@@ -68,9 +64,7 @@ registrerer og behandler kalibreringsmål i dine billeder. Begge er kun aktive, 
 
 ## Behandling
 
-Disse indstillinger styrer, hvordan Chloros
-
-behandler og kalibrerer dine billeder.
+Disse indstillinger styrer, hvordan Chloros behandler og kalibrerer dine billeder.
 
 ### Vignetteringskorrektion
 
@@ -84,9 +78,7 @@ behandler og kalibrerer dine billeder.
 * **Type**: Afkrydsningsfelt
 * **Standard**: Aktiveret (markeret)
 * **Beskrivelse**: Aktiverer reflektanskalibrering — baseret på detekterede kalibreringsmål inden for billedrammen og/eller nedadgående lysdata fra DAQ-lyssensoren, afhængigt af kameraet og de tilgængelige data. Dette normaliserer reflektansværdierne på tværs af dit datasæt og sikrer ensartede målinger uanset lysforholdene.
-* **Når deaktiveret**: Målregistrering springes helt over, og**der kan ikke genereres noget reflektansprodukt af noget kamera** — hverken Survey3
-
--måldrevet eller LATTICE DAQ-drevet. De afhængige indstillinger (*Eksporter reflektans*, *Minimalt rekalibreringsinterval* og tærskelværdierne for målregistrering) er nedtonede.
+* **Når deaktiveret**: Målregistrering springes helt over, og**der kan ikke genereres noget reflektansprodukt af noget kamera** — hverken Survey3-måldrevet eller LATTICE DAQ-drevet. De afhængige indstillinger (*Eksporter reflektans*, *Minimalt rekalibreringsinterval* og tærskelværdierne for målregistrering) er nedtonede.
 
 ### Ikke-kalibrerede reserveprodukter: Eksporter sensorrespons / Eksporter vignettekorrigeret
 
@@ -103,45 +95,25 @@ For projekter, der indeholder LATTICE-optagelser, fordeles hvert importeret LATT
 
 | Indstilling | Output-mappe | Hvad der eksporteres |
 | --- | --- | --- |
-| **Eksporter debayered** | `Debayered_Images/` | Det lineært debayered billede: kalibreringspakkens mørkeforskydning fjernet, derefter en kantbevidst demosaikering uden linearitetskorrektion, flat field eller unmix — den samme fil, som en optagelse gemmer på sit debayered-niveau. Bevares i sensorens oprindelige orientering (registreret i XMP). Gælder for RGB
-
-- og multispektrale kameraer. |
-| **Eksporter forhåndsvisning** | `Preview_Images/` | Forhåndsvisningen på skærmen. RGB
-
-= hvidbalance (DAQ-lysart, hvis tilgængelig, ellers gråskala) + gamma; multispektral = falskfarveudstrækning. |
-| **Eksport af strålingsintensitet** | `Radiance_Images/` | Float32 spektral strålingsintensitet i W/m²/sr/nm. Kun multispektral (M3C/M3M) — gælder ikke for RGB
-
--masterfiler. Skrives altid som 32-bit TIFF
-
-uanset indstillingen for *Kalibreret billedformat*. |
+| **Eksporter debayered** | `Debayered_Images/` | Det lineært debayered billede: kalibreringspakkens mørkeforskydning fjernet, derefter en kantbevidst demosaikering uden linearitetskorrektion, flat field eller unmix — den samme fil, som en optagelse gemmer på sit debayered-niveau. Bevares i sensorens oprindelige orientering (registreret i XMP). Gælder for RGB- og multispektrale kameraer. |
+| **Eksporter forhåndsvisning** | `Preview_Images/` | Forhåndsvisningen på skærmen. RGB = hvidbalance (DAQ-lysart, hvis tilgængelig, ellers gråskala) + gamma; multispektral = falskfarveudstrækning. |
+| **Eksport af strålingsintensitet** | `Radiance_Images/` | Float32 spektral strålingsintensitet i W/m²/sr/nm. Kun multispektral (M3C/M3M) — gælder ikke for RGB-masterfiler. Skrives altid som 32-bit TIFF uanset indstillingen for *Kalibreret billedformat*. |
 | **Eksport af reflektans**| `Reflectance_Calibrated_Images/` | Uint16-reflektans, skaleret således at**32768 = reflektans 1,0** (stemplet som XMP `Chloros:PixelScale`). Gælder kun multispektrale billeder og skrives, når en matchende `.daq`-nedstrålingsregistrering (eller et QA-godkendt mål inden for billedrammen) dækker billedrammen. |
 
-* RGB
-
--masterkameraer udsender debayered + preview; radiance/reflektans springes over for disse, da de ikke er relevante.
+* RGB-masterkameraer udsender debayered + preview; radiance/reflektans springes over for disse, da de ikke er relevante.
 * Bitdybden for debayered/preview følger indstillingen *Kalibreret billedformat*; radiance er altid float32.
-* Survey3
-
--behandlingen påvirkes ikke af disse fire indstillinger.
+* Survey3-behandlingen påvirkes ikke af disse fire indstillinger.
 * Radiance- og reflektansprodukter fra multispektrale M3C-kameraer kan også skrive en **clamp-maske** pr. pixel i en `clamp_masks/`-mappe ved siden af produktmapperne, hvorved det registreres, hvor båndsepareringen har klippet en negativ værdi ned til nul. Se [Output Image Formats](../output-image-formats.md#clamp-masks).
 
-De samme fire indstillinger findes i headless-versionen som `chloros-cli process --debayered / --preview / --radiance / --reflectance`. De erstattede det gamle CLI
-
--flag `--radiometric-output`, som ikke længere findes.
+De samme fire indstillinger findes i headless-versionen som `chloros-cli process --debayered / --preview / --radiance / --reflectance`. De erstattede det gamle CLI-flag `--radiometric-output`, som ikke længere findes.
 
 {% hint style="warning" %}
-**Hvis alle relevante produkter slås fra, mislykkes kørslen.** Fra og med version 1.2.0 rapporterer en behandlingskørsel, der blev anmodet om produkter, men som ikke skrev noget billedprodukt, en fejl, og CLI
-
-&#x27;en afsluttes med en værdi forskellig fra nul i stedet for at rapportere en lydløs succes. Loggen angiver det produkt, der ikke kunne skrives, samt årsagen hertil. En bevidst kørsel, der kun omfatter metadata (intet anmodet om) betragtes stadig som en succes.
+**Hvis alle relevante produkter slås fra, mislykkes kørslen.** Fra og med version 1.2.0 rapporterer en behandlingskørsel, der blev anmodet om produkter, men som ikke skrev noget billedprodukt, en fejl, og CLI'en afsluttes med en værdi forskellig fra nul i stedet for at rapportere en lydløs succes. Loggen angiver det produkt, der ikke kunne skrives, samt årsagen hertil. En bevidst kørsel, der kun omfatter metadata (intet anmodet om) betragtes stadig som en succes.
 {% endhint %}
 
-### Reflektanskilde (projektindstilling, indstilles via CLI
+### Reflektanskilde (projektindstilling, indstilles via CLI'en)
 
-&#x27;en)
-
-Projektet gemmer også, hvilken **reflektansreference** LATTICE-reflektansproduktet bruger. Der er ingen dedikeret kontrol i indstillingspanelet; værdien gemmes i projektkonfigurationen som `Processing → "Target reflectance source"` og indstilles med `chloros-cli process --reflectance-source {auto,target,daq}` (SDK
-
-&#x27;s `configure()` har ikke noget nøgleord for dette):
+Projektet gemmer også, hvilken **reflektansreference** LATTICE-reflektansproduktet bruger. Der er ingen dedikeret kontrol i indstillingspanelet; værdien gemmes i projektkonfigurationen som `Processing → "Target reflectance source"` og indstilles med `chloros-cli process --reflectance-source {auto,target,daq}` (SDK's `configure()` har ikke noget nøgleord for dette):
 
 * **`auto`** (standard): et QA-godkendt kalibreringsmål inden for billedrammen bliver den absolutte reference, mens der falder tilbage til DAQ-nedstrålingsdelingen (ρ = πL/E), når der ikke er noget mål til stede, eller QA mislykkes. Et mål, der består QA med en fejlmarkering (et panel, der er faldet ud, eller et bånd, der er ude af drift), foretrækkes ikke automatisk: kæderne mål, mål+DAQ og kun DAQ afprøves i rækkefølge efter deres målte score på de udeladte paneler.
 * **`target`**: streng måldrevet reflektans — ingen DAQ-erstatning.
@@ -154,30 +126,18 @@ Den gemte værdi matches uden skelnen mellem store og små bogstaver, og nogle f
 * **Type**: Valg fra rullemenu
 * **Indstillinger**:
   * Standard (hurtig, middel kvalitet)
-  * Teksturbevidst (langsom, højeste kvalitet) \[Chloros
-
-+]
+  * Teksturbevidst (langsom, højeste kvalitet) \[Chloros+]
 * **Standard**: Standard (hurtig, middel kvalitet)
-* **Beskrivelse**: Vælger den demosaicing-algoritme, der bruges til at konvertere rå sensordata fra Bayer-mønsteret til fuldfarvebilleder. Metoden »Standard (hurtig, middel kvalitet)« giver en optimal balance mellem behandlingshastighed og billedkvalitet. Metoden »Teksturbevidst (langsom, højeste kvalitet)« \[Chloros
-
-+] anvender en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayering-støj. Texture Aware-modellen kræver GPU-hukommelse (VRAM) for at køre. Vi anbefaler at bruge den, når du har &gt;4 GB VRAM til rådighed for hurtigere behandling.
-* **Når rækken overhovedet er en rullemenu**: rullemenuen med to valgmuligheder vises kun, når**begge** betingelser er opfyldt — du er logget ind med et gyldigt Chloros
-
-+-abonnement, **og** projektet indeholder ingen LATTICE-optagelser. Ellers vises rækken som almindelig tekst med teksten `Standard (Fast, Medium Quality)` uden valgmuligheder.
-* **LATTICE-bemærkning**: Der findes ingen LATTICE-trænet Texture Aware-model, og pipelinen tvinger standard-demosaic for LATTICE-rammer uanset den gemte værdi. Hvis du tilføjer en LATTICE-mappe til et projekt, hvor Texture Aware allerede var valgt, omskriver Chloros
-
-indstillingen tilbage til Standard i stedet for at efterlade en forældet værdi i `project.json`.
+* **Beskrivelse**: Vælger den demosaicing-algoritme, der bruges til at konvertere rå sensordata fra Bayer-mønsteret til fuldfarvebilleder. Metoden »Standard (hurtig, middel kvalitet)« giver en optimal balance mellem behandlingshastighed og billedkvalitet. Metoden »Teksturbevidst (langsom, højeste kvalitet)« \[Chloros+] anvender en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayering-støj. Texture Aware-modellen kræver GPU-hukommelse (VRAM) for at køre. Vi anbefaler at bruge den, når du har >4 GB VRAM til rådighed for hurtigere behandling.
+* **Når rækken overhovedet er en rullemenu**: rullemenuen med to valgmuligheder vises kun, når**begge** betingelser er opfyldt — du er logget ind med et gyldigt Chloros+-abonnement, **og** projektet indeholder ingen LATTICE-optagelser. Ellers vises rækken som almindelig tekst med teksten `Standard (Fast, Medium Quality)` uden valgmuligheder.
+* **LATTICE-bemærkning**: Der findes ingen LATTICE-trænet Texture Aware-model, og pipelinen tvinger standard-demosaic for LATTICE-rammer uanset den gemte værdi. Hvis du tilføjer en LATTICE-mappe til et projekt, hvor Texture Aware allerede var valgt, omskriver Chloros indstillingen tilbage til Standard i stedet for at efterlade en forældet værdi i `project.json`.
 
 ### Mindste interval for rekalibrering
 
 * **Type**: Tal
 * **Interval**: 0 til 3.600 sekunder
 * **Standard**: 0 sekunder
-* **Beskrivelse**: Indstiller det mindste tidsinterval (i sekunder) mellem brug af kalibreringsmål. Når værdien er indstillet til 0, vil Chloros
-
-bruge alle dekalibreringsmål, der registreres. Når værdien er indstillet til et højere tal, vil Chloros
-
-kun bruge kalibreringsmål, der er adskilt af mindst dette antal sekunder, hvilket reducerer behandlingstiden for datasæt med hyppige registreringer af kalibreringsmål.
+* **Beskrivelse**: Indstiller det mindste tidsinterval (i sekunder) mellem brug af kalibreringsmål. Når værdien er indstillet til 0, vil Chloros bruge alle dekalibreringsmål, der registreres. Når værdien er indstillet til et højere tal, vil Chloros kun bruge kalibreringsmål, der er adskilt af mindst dette antal sekunder, hvilket reducerer behandlingstiden for datasæt med hyppige registreringer af kalibreringsmål.
 * **Hvornår skal indstillingen justeres**:
   * Indstil til 0 for maksimal kalibreringsnøjagtighed, når lysforholdene varierer
   * Forøg værdien (f.eks. til 60–300 sekunder) for hurtigere behandling, når lysforholdene er konstante, og der er hyppige billeder af kalibreringsmål
@@ -193,21 +153,17 @@ kun bruge kalibreringsmål, der er adskilt af mindst dette antal sekunder, hvilk
 
 * **Type**: Afkrydsningsfelt
 * **Standard**: Deaktiveret (afkrydset)
-* **Beskrivelse**: Aktiverer brugen af PPK-korrektioner (Post-Processed Kinematic) fra MAPIR
-
-DAQ-optagere, der indeholder en GPS (GNSS). Når denne funktion er aktiveret, vil Chloros
-
-anvende alle .daq-logfiler, der indeholder eksponeringspin-data i dit projektkatalog, og anvende præcise geolokaliseringkorrektioner på dine billeder.
+* **Beskrivelse**: Aktiverer brugen af PPK-korrektioner (Post-Processed Kinematic) fra MAPIR DAQ-optagere, der indeholder en GPS (GNSS). Når denne funktion er aktiveret, vil Chloros anvende alle .daq-logfiler, der indeholder eksponeringspin-data i dit projektkatalog, og anvende præcise geolokaliseringkorrektioner på dine billeder.
 * **Krav**: Der skal findes en .daq-logfil med eksponeringspin-poster i dit projektmappe
 * **Hvornår skal det aktiveres**: Det anbefales altid at aktivere PPK-korrektion, hvis du har eksponeringsfeedback-poster i din .daq-logfil.
 
 ### Eksponeringspin 1
 
 * **Type**: Valg fra rullemenu
-* **Synlighed**: Kun synlig, når &quot;Anvend PPK-korrektioner&quot; er aktiveret OG der er eksponeringsdata tilgængelige for Pin 1
+* **Synlighed**: Kun synlig, når "Anvend PPK-korrektioner" er aktiveret OG der er eksponeringsdata tilgængelige for Pin 1
 * **Indstillinger**:
   * Kameramodelnavne, der er registreret i projektet
-  * &quot;Brug ikke&quot; – Ignorer denne eksponeringspin
+  * "Brug ikke" – Ignorer denne eksponeringspin
 * **Standard**: Vælges automatisk baseret på projektkonfigurationen
 * **Beskrivelse**: Tildeler et specifikt kamera til eksponeringspin 1 til PPK-tidssynkronisering. Eksponeringspinnen registrerer det nøjagtige tidspunkt, hvor kameraets lukker udløses, hvilket er afgørende for nøjagtig PPK-geolokalisering.
 * **Adfærd ved automatisk valg**:
@@ -218,15 +174,15 @@ anvende alle .daq-logfiler, der indeholder eksponeringspin-data i dit projektkat
 ### Eksponeringspin 2
 
 * **Type**: Valg fra rullemenu
-* **Synlighed**: Kun synlig, når &quot;Anvend PPK-korrektioner&quot; er aktiveret OG der foreligger eksponeringsdata for pin 2
+* **Synlighed**: Kun synlig, når "Anvend PPK-korrektioner" er aktiveret OG der foreligger eksponeringsdata for pin 2
 * **Indstillinger**:
   * Kameramodelnavne, der er registreret i projektet
-  * &quot;Brug ikke&quot; – Ignorer denne eksponeringspin
+  * "Brug ikke" – Ignorer denne eksponeringspin
 * **Standard**: Vælges automatisk baseret på projektkonfigurationen
 * **Beskrivelse**: Tildeler en bestemt kamera til eksponeringspin 2 til PPK-tidssynkronisering, når der anvendes en opsætning med to kameraer.
 * **Adfærd ved automatisk valg**:
-  * Ét kamera + én pin: Pin 2 indstilles automatisk til &quot;Brug ikke&quot;
-  * Ét kamera + to pins: Pin 2 indstilles automatisk til &quot;Brug ikke&quot;
+  * Ét kamera + én pin: Pin 2 indstilles automatisk til "Brug ikke"
+  * Ét kamera + to pins: Pin 2 indstilles automatisk til "Brug ikke"
   * Flere kameraer: Manuel valg kræves
 * **Bemærk**: Det samme kamera kan ikke tildeles både pin 1 og pin 2 samtidigt.***
 
@@ -246,9 +202,7 @@ Hver række viser filen, sensormodellen og den diffusorhætte-korrektion, der fa
 * **Indstillinger**: `Auto` samt de kappe-korrektionsprofiler, der gælder for de sensortyper, der findes i projektet
 * **Standard**: Auto
 * **Gemmes som**: `Processing → "DAQ cap id"` (standard `auto`)
-* **Beskrivelse**: `Auto` bruger den registrerede kappe for hver fil (Sunshine-kappen antages, hvis der ikke er registreret noget, men DAQ-U, DAQ-M og DAQ-E leveres uden kappe, og Chloros
-
-kan ikke se, hvad der er monteret, så behandlingen viser en advarsel om en antaget kappe: vælg den kappe, der var monteret). Valg af en specifik kappe tilsidesætter **alle** nedadgående filer i projektet undtagen en DAQ-E-S&#x27;s, hvis diffusor er en del af dens kalibrering; et projekt bestående udelukkende af DAQ-E-S viser ingen rullemenu: råoptagelser korrigeres med den, og optagelser, der allerede har en kappe, omrefereres (den indspillede korrektion fortrydes, og den valgte anvendes).
+* **Beskrivelse**: `Auto` bruger den registrerede kappe for hver fil (Sunshine-kappen antages, hvis der ikke er registreret noget, men DAQ-U, DAQ-M og DAQ-E leveres uden kappe, og Chloros kan ikke se, hvad der er monteret, så behandlingen viser en advarsel om en antaget kappe: vælg den kappe, der var monteret). Valg af en specifik kappe tilsidesætter **alle** nedadgående filer i projektet undtagen en DAQ-E-S's, hvis diffusor er en del af dens kalibrering; et projekt bestående udelukkende af DAQ-E-S viser ingen rullemenu: råoptagelser korrigeres med den, og optagelser, der allerede har en kappe, omrefereres (den indspillede korrektion fortrydes, og den valgte anvendes).
 * **Vigtigt**: Den valgte kappe skal matche den kappe, der fysisk var monteret under optagelsen. Hverken sensoren eller softwaren kan registrere den fysiske kappe — et uoverensstemmende kappe-ID korrigerer spektrene forkert.
 
 Der er bevidst **én** projektdækkende indstilling i stedet for rullemenuer pr. fil: indstillingen gælder for alle nedadrettede kilder i projektet.***
@@ -292,54 +246,26 @@ Disse indstillinger giver dig mulighed for at konfigurere multispektrale indekse
 ### Tilføj indeks
 
 * **Type**: Specielt konfigurationspanel til indekser
-* **Beskrivelse**: Åbner et interaktivt panel, hvor du kan vælge og konfigurere multispektrale vegetationsindekser (NDVI
-
-, NDRE
-
-, EVI
-
-osv.), der skal beregnes under billedbehandlingen. Du kan tilføje flere indekser, hver med sine egne visualiseringsindstillinger.
-* **Tilgængelige indekser**: Rullemenuen i brugergrænsefladen indeholder**27** foruddefinerede multispektrale indeksformler (se [Multispektrale indeksformler](multispectral-index-formulas.md) for den komplette liste, herunder hvilke navne der også accepteres af CLI
-
-/SDK
-
-`--indices`-indstillingen).
+* **Beskrivelse**: Åbner et interaktivt panel, hvor du kan vælge og konfigurere multispektrale vegetationsindekser (NDVI, NDRE, EVI osv.), der skal beregnes under billedbehandlingen. Du kan tilføje flere indekser, hver med sine egne visualiseringsindstillinger.
+* **Tilgængelige indekser**: Rullemenuen i brugergrænsefladen indeholder**27** foruddefinerede multispektrale indeksformler (se [Multispektrale indeksformler](multispectral-index-formulas.md) for den komplette liste, herunder hvilke navne der også accepteres af CLI/SDK `--indices`-indstillingen).
 * **Funktioner**:
   * Vælg blandt foruddefinerede indeksformler
   * Træk kameraets filterkanaler over i formelens båndpladser
   * Konfigurer farvegradienter til visualisering (LUT – Look-Up Tables)
   * Indstil tærskelværdier og beskæringsmetoder
   * Opret brugerdefinerede indeksformler
-* **Bemærk**: Indekser beregnes ikke for LATTICE M3M-monokameraer med et enkelt bånd — multibåndsindekser er udefinerede på et enkelt bånd. Dette påvirker ikke Survey3
-
-- og LATTICE M3C-kameraer.
+* **Bemærk**: Indekser beregnes ikke for LATTICE M3M-monokameraer med et enkelt bånd — multibåndsindekser er udefinerede på et enkelt bånd. Dette påvirker ikke Survey3- og LATTICE M3C-kameraer.
 
 <!-- SCREENSHOT-NEEDED: Project Settings > Index section with one index added and expanded: the filter dropdown, the formula dropdown open showing preset names, the coloured channel circles above the rendered formula, and the "+ Add LUT" button below it. -->
 
 
 
-Hvert indeks, du tilføjer, gengiver sin formel som matematik med en farvet cirkel pr. båndplads: rød = Red
+Hvert indeks, du tilføjer, gengiver sin formel som matematik med en farvet cirkel pr. båndplads: rød = Red, grøn = Green, blå = Blue, orange = Orange, cyan = Cyan, lilla = NIR, magenta = RE. Træk en cirkel fra rækken over formlen ned på en plads for at knytte den til den; dobbeltklik på en tilknyttet plads for at fjerne den. Indekset beregnes kun, når hver plads, som formlen bruger, har en kanal.
 
-, grøn = Green
-
-, blå = Blue
-
-, orange = Orange
-
-, cyan = Cyan
-
-, lilla = NIR
-
-, magenta = RE. Træk en cirkel fra rækken over formlen ned på en plads for at knytte den til den; dobbeltklik på en tilknyttet plads for at fjerne den. Indekset beregnes kun, når hver plads, som formlen bruger, har en kanal.
-
-### Brugerdefinerede formler (Chloros
-
-+-funktion)
+### Brugerdefinerede formler (Chloros+-funktion)
 
 * **Type**: Array af definitioner af brugerdefinerede formler
-* **Tilgængelighed**: Kræver login med et gyldigt Chloros
-
-+-abonnement.
+* **Tilgængelighed**: Kræver login med et gyldigt Chloros+-abonnement.
 * **Beskrivelse**: Giver dig mulighed for at oprette og gemme brugerdefinerede multispektrale indeksformler ved hjælp af båndmatematik. Brugerdefinerede formler gemmes sammen med dine projektindstillinger og kan bruges på samme måde som indbyggede indekser.
 * **Sådan oprettes**:
   1. Åbn regnemaskinen til brugerdefinerede formler i konfigurationspanelet for indeks
@@ -349,20 +275,8 @@ Hvert indeks, du tilføjer, gengiver sin formel som matematik med en farvet cirk
   * Båndslots: `x`, `y`, `z`, `a`, `b`, `c` — seks positioner, som du tildeler til reelle kanaler ved at trække
   * Operatører: `+`, `-`, `*`, `/`, `^` og `()` til gruppering
   * Funktioner: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
-* **Hvorfor symboler og ikke bandnavne**: En formel skrevet som `(y-x)/(y+x)` fungerer på ethvert kamera, fordi drag-and-drop-tilknytningen afgør, om `y` er 850 nm NIR
-
-for et RGN
-
--filter eller 808 nm NIR
-
-for et OCN
-
--filter. De indbyggede forudindstillinger gemmes på samme måde — se [Multispektrale indeksformler](multispectral-index-formulas.md) for den nøjagtige symbolform for alle 27.
-* **Hvor de fungerer**: brugerdefinerede formler gemmes sammen med projektindstillingerne og kan bruges i [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) samt i databehandlingen. De accepteres**ikke** af CLI
-
-/SDK
-
--navnelisten `--indices`, som kun udvider de 22 indbyggede forudindstillingsnavne.
+* **Hvorfor symboler og ikke bandnavne**: En formel skrevet som `(y-x)/(y+x)` fungerer på ethvert kamera, fordi drag-and-drop-tilknytningen afgør, om `y` er 850 nm NIR for et RGN-filter eller 808 nm NIR for et OCN-filter. De indbyggede forudindstillinger gemmes på samme måde — se [Multispektrale indeksformler](multispectral-index-formulas.md) for den nøjagtige symbolform for alle 27.
+* **Hvor de fungerer**: brugerdefinerede formler gemmes sammen med projektindstillingerne og kan bruges i [Index/LUT Sandbox](../image-viewer-gui/index-lut-sandbox.md) samt i databehandlingen. De accepteres**ikke** af CLI/SDK-navnelisten `--indices`, som kun udvider de 22 indbyggede forudindstillingsnavne.
 
 ***
 
@@ -374,49 +288,19 @@ Disse indstillinger styrer formatet og kvaliteten af eksporterede, behandlede bi
 
 * **Type**: Valg fra rullemenu
 * **Indstillinger**:
-  * **TIFF
-
-(16-bit)** – Ukomprimeret 16-bit TIFF
-
--format
-  * **TIFF
-
-(8-bit)** – Ukomprimeret 8-bit TIFF
-
--format
-  * **TIFF
-
-(32-bit, procent)** – 32-bit TIFF
-
-med flydende komma, hvor reflektansværdierne angives i procent
-  * **PNG
-
-(8-bit)** – Komprimeret 8-bit PNG
-
--format
-  * **JPG (8-bit)** – Komprimeret 8-bit JPEG
-
--format
-* **Standard**: TIFF
-
-(16-bit); et projekt, der udelukkende består af 8-bit-filer, viser TIFF
-
-(8-bit) og tilbyder kun 8-bit-formaterne
+  * **TIFF (16-bit)** – Ukomprimeret 16-bit TIFF-format
+  * **TIFF (8-bit)** – Ukomprimeret 8-bit TIFF-format
+  * **TIFF (32-bit, procent)** – 32-bit TIFF med flydende komma, hvor reflektansværdierne angives i procent
+  * **PNG (8-bit)** – Komprimeret 8-bit PNG-format
+  * **JPG (8-bit)** – Komprimeret 8-bit JPEG-format
+* **Standard**: TIFF (16-bit); et projekt, der udelukkende består af 8-bit-filer, viser TIFF (8-bit) og tilbyder kun 8-bit-formaterne
 * **Beskrivelse**: Vælger filformatet til gemning af behandlede og kalibrerede billeder. De eksporterede filer placeres i en undermappe for hvert format inde i hvert kameras mappe (`tiff16`, `tiff32`, `png8`, `jpg8`), med én `<Product>_Images/`-mappe pr. produkt. De eksporterede filer beholder kildens filnavn — det er mappen, ikke et filnavnsuffiks, der identificerer produktet.
 * **Anbefalinger til formater**:
-  * **TIFF
-
-(16-bit)**: Anbefales til videnskabelig analyse og professionelle arbejdsgange. Bevarer maksimal datakvalitet uden komprimeringsartefakter. Bedst egnet til multispektral analyse og viderebehandling i GIS-software.
-  * **TIFF
-
-(32-bit, procent)**: Bedst egnet til arbejdsgange, der kræver reflektansværdier angivet i procent (0–100 %). Tilbyder maksimal præcision til radiometriske målinger.
-  * **PNG
-
-(8-bit)**: Velegnet til visning på internettet og generel visualisering. Mindre filstørrelser med tabsfri komprimering, men reduceret dynamisk rækkevidde.
+  * **TIFF (16-bit)**: Anbefales til videnskabelig analyse og professionelle arbejdsgange. Bevarer maksimal datakvalitet uden komprimeringsartefakter. Bedst egnet til multispektral analyse og viderebehandling i GIS-software.
+  * **TIFF (32-bit, procent)**: Bedst egnet til arbejdsgange, der kræver reflektansværdier angivet i procent (0–100 %). Tilbyder maksimal præcision til radiometriske målinger.
+  * **PNG (8-bit)**: Velegnet til visning på internettet og generel visualisering. Mindre filstørrelser med tabsfri komprimering, men reduceret dynamisk rækkevidde.
   * **JPG (8-bit)**: Mindste filstørrelser, bedst til forhåndsvisning og udelukkende til visning på internettet. Anvender komprimering med tab, hvilket ikke er egnet til videnskabelig analyse.
-* **Bemærk**: LATTICE-radiance eksporteres altid som 32-bit float-TIFF
-
-, uanset denne indstilling.
+* **Bemærk**: LATTICE-radiance eksporteres altid som 32-bit float-TIFF, uanset denne indstilling.
 
 ***
 
@@ -427,22 +311,12 @@ Denne funktion giver dig mulighed for at gemme dine aktuelle projektindstillinge
 * **Type**: Tekstindtastning + Gem-knap
 * **Beskrivelse**: Indtast et beskrivende navn til din indstillingsmal, og klik på gem-ikonet. Malen gemmer alle dine aktuelle projektindstillinger (målregistrering, behandlingsindstillinger, indekser, og eksportformat) for nem genbrug i fremtidige projekter. Skabeloner gemmes i mappen `Project Templates/` i din projektgemmemappe og kan også vælges eller eksporteres fra hovedmenuen (*Vælg skabelon* / *Gem skabelon* / *Eksporter skabelon*).
 * **Anvendelsestilfælde**:
-  * Opret skabeloner til forskellige kamerasystemer (RGB
-
-, multispektral, NIR
-
-)
+  * Opret skabeloner til forskellige kamerasystemer (RGB, multispektral, NIR)
   * Gem standardkonfigurationer til bestemte afgrødetyper eller analysearbejdsgange
   * Del ensartede indstillinger på tværs af et team
 * **Sådan bruges det**:
   1. Konfigurer alle de ønskede projektindstillinger
-  2. Indtast et skabelonnavn (f.eks. »RedEdge
-
-Survey3
-
-NDVI
-
-Standard«)
+  2. Indtast et skabelonnavn (f.eks. »RedEdge Survey3 NDVI Standard«)
   3. Klik på gem-ikonet
   4. Skabelonen kan nu indlæses, når der oprettes nye projekter
 
@@ -453,46 +327,22 @@ Standard«)
 Denne indstilling angiver, hvor nye projekter gemmes som standard.
 
 * **Type**: Visning af mappesti + Rediger-knap
-* **Standard (Windows
-
-)**: `Documents\MAPIR\Chloros Projects` i din mappe Dokumenter — normalt `C:\Users\[Username]\Documents\MAPIR\Chloros Projects`, eller hvor OneDrive eller en roamingprofil har flyttet Dokumenter hen
-* **Standard (Linux
-
-)**: `~/Documents/MAPIR/Chloros Projects`
-* **Beskrivelse**: Viser den aktuelle standardmappe, hvor nye Chloros
-
--projekter oprettes. Klik på redigeringsikonet for at vælge en anden mappe. Den valgte indstilling gemmes som en enkelt tekstlinje i `~/.chloros/working_directory.txt` — på Windows
-
-er det `C:\Users\<Username>\.chloros\working_directory.txt`. Hvis den pågældende fil mangler eller angiver en sti, der ikke længere findes, falder Chloros
-
-tilbage til ovenstående standardindstilling. CLI
-
-&#x27;en læser og skriver til den samme fil, så `chloros-cli` og GUI&#x27;en er altid enige om, hvor projekterne skal ligge.
+* **Standard (Windows)**: `Documents\MAPIR\Chloros Projects` i din mappe Dokumenter — normalt `C:\Users\[Username]\Documents\MAPIR\Chloros Projects`, eller hvor OneDrive eller en roamingprofil har flyttet Dokumenter hen
+* **Standard (Linux)**: `~/Documents/MAPIR/Chloros Projects`
+* **Beskrivelse**: Viser den aktuelle standardmappe, hvor nye Chloros-projekter oprettes. Klik på redigeringsikonet for at vælge en anden mappe. Den valgte indstilling gemmes som en enkelt tekstlinje i `~/.chloros/working_directory.txt` — på Windows er det `C:\Users\<Username>\.chloros\working_directory.txt`. Hvis den pågældende fil mangler eller angiver en sti, der ikke længere findes, falder Chloros tilbage til ovenstående standardindstilling. CLI'en læser og skriver til den samme fil, så `chloros-cli` og GUI'en er altid enige om, hvor projekterne skal ligge.
 * **Projektskabeloner** findes i en `Project Templates/`-undermappe i dette bibliotek.
 * **Hvornår skal du ændre det**:
   * Indstil til et netværksdrev til teamsamarbejde
   * Skift til et drev med mere lagerplads til store datasæt
   * Organiser projekter efter år, kunde eller projekttype i forskellige mapper
 * **Bemærk**: Ændring af denne indstilling påvirker kun NYE projekter. Eksisterende projekter forbliver på deres oprindelige placeringer.
-* **Windows
-
--stilængde**: medmindre lange Windows
-
--stier er aktiveret (installationsprogrammets indstilling **Aktiver lange Windows
-
--stier**), afvises en projektmappe, der er længere end ca. 130 tegn, før behandlingen påbegyndes, da dens resultater ville overskride Windows
-
-&#x27; grænse på 260 tegn for stier. Se [Start af behandlingen](../processing-images-gui/starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer).
+* **Windows-stilængde**: medmindre lange Windows-stier er aktiveret (installationsprogrammets indstilling **Aktiver lange Windows-stier**), afvises en projektmappe, der er længere end ca. 130 tegn, før behandlingen påbegyndes, da dens resultater ville overskride Windows' grænse på 260 tegn for stier. Se [Start af behandlingen](../processing-images-gui/starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer).
 
 ***
 
 ## Bevarelse af indstillinger
 
-Et Chloros
-
--projekt er en **mappe**. Alle projektindstillinger gemmes i `project.json` inde i mappen; tilkoblet hardware huskes sammen med dem i `cameras.json` og `sensors.json`, så når du genåbner et projekt, genoprettes forbindelsen til dets kameraer og lyssensorer. Når du genåbner et projekt, gendannes alle indstillinger nøjagtigt, som du efterlod dem. Gemte projekter kan også styres uden brugergrænseflade med `chloros-cli project` eller SDK
-
-&#x27;ets `open_project`.
+Et Chloros-projekt er en **mappe**. Alle projektindstillinger gemmes i `project.json` inde i mappen; tilkoblet hardware huskes sammen med dem i `cameras.json` og `sensors.json`, så når du genåbner et projekt, genoprettes forbindelsen til dets kameraer og lyssensorer. Når du genåbner et projekt, gendannes alle indstillinger nøjagtigt, som du efterlod dem. Gemte projekter kan også styres uden brugergrænseflade med `chloros-cli project` eller SDK'ets `open_project`.
 
 ### Indstillingshierarki
 
@@ -516,11 +366,7 @@ Behandlingsindstillingerne læses, når en behandlingskørsel starter. Ændring 
 
 ## Reference til konfigurationsnøgler
 
-Til automatisering (CLI
-
-`--config`, SDK
-
-`configure` eller direkte læsning af `project.json`) er dette de nøjagtige nøgler under `Project Settings`:
+Til automatisering (CLI `--config`, SDK `configure` eller direkte læsning af `project.json`) er dette de nøjagtige nøgler under `Project Settings`:
 
 | Nøglevej | Type | Standard |
 | --- | --- | --- |
@@ -555,23 +401,11 @@ Disse findes under det samme `Project Settings`-træ og læses af behandlingen, 
 
 | Nøglevej | Type | Standard | Indstillet af |
 | --- | --- | --- | --- |
-| `Processing → LATTICE input level` | `"auto" \| "raw" \| "debayered" \| "processed"` | `"auto"` | `chloros-cli process --input-level`, SDK
-
-`input_level=`. Tilpasning af, hvordan LATTICE-indgangs-TIFF
-
--filer fortolkes; `auto` udleder fra hver fils `Chloros:ProcessingLevel` XMP-tag samt antallet af kanaler. Ignoreres for Survey3
-
--optagelser `.raw`. Bevidst ikke en GUI-indstilling — »auto« er korrekt i alle normale tilfælde. |
-| `Processing → Target reflectance dir` | stistreng | `""` | `chloros-cli process --target-reflectance-dir`, eller projektets mål-API
-
-|
+| `Processing → LATTICE input level` | `"auto" \| "raw" \| "debayered" \| "processed"` | `"auto"` | `chloros-cli process --input-level`, SDK `input_level=`. Tilpasning af, hvordan LATTICE-indgangs-TIFF-filer fortolkes; `auto` udleder fra hver fils `Chloros:ProcessingLevel` XMP-tag samt antallet af kanaler. Ignoreres for Survey3-optagelser `.raw`. Bevidst ikke en GUI-indstilling — »auto« er korrekt i alle normale tilfælde. |
+| `Processing → Target reflectance dir` | stistreng | `""` | `chloros-cli process --target-reflectance-dir`, eller projektets mål-API |
 | `Processing → Target reflectance config` | ordbog med kameraets serienummer som nøgle | `{}` | Registrering af et mål inden for billedrammen (tilstand `fixed_block` / `fixed_strip` / `aruco`) |
-| `Processing → DAQ-U log path` | stistreng | `""` | SDK
-
-`process_folder(daq_log_path=…)`. Peger på en `.daq`-optagelse eller en mappe med sådanne |
-| `Target Detection → Minimum calibration target squares` | tal | `4` | Gammel standard; ingen kontrol og intet CLI
-
--flag |
+| `Processing → DAQ-U log path` | stistreng | `""` | SDK `process_folder(daq_log_path=…)`. Peger på en `.daq`-optagelse eller en mappe med sådanne |
+| `Target Detection → Minimum calibration target squares` | tal | `4` | Gammel standard; ingen kontrol og intet CLI-flag |
 | `UI → Grid thumbnail size` | tal | `160` | Billedgitterets egen zoomskyder til miniaturer |
 
 To visningsindstillinger gemmes **på øverste niveau i `project.json`**, helt uden for `Project Settings`, da de vedrører visningstilstand snarere end behandlingsindstillinger:
@@ -584,26 +418,16 @@ To visningsindstillinger gemmes **på øverste niveau i `project.json`**, helt u
 
 ## Bedste praksis
 
-1. **Start med standardindstillingerne**: Standardindstillingerne fungerer godt for de fleste MAPIR
-
--kamerasystemer og typiske arbejdsgange.
+1. **Start med standardindstillingerne**: Standardindstillingerne fungerer godt for de fleste MAPIR-kamerasystemer og typiske arbejdsgange.
 2. **Opret skabeloner**: Når du har optimeret indstillingerne til en bestemt arbejdsgang eller et bestemt kamera, skal du gemme dem som en skabelon for at sikre ensartethed på tværs af projekter.
 3. **Test, før du behandler hele datasættet**: Når du eksperimenterer med nye indstillinger, skal du teste dem på en lille delmængde af billeder, før du behandler hele dit datasæt.
-4. **Dokumenter dine indstillinger**: Brug beskrivende skabelonnavne, der angiver kamerasystemet, behandlingstypen og den tilsigtede anvendelse (f.eks. &quot;Survey3
-
-\_RGB\_NDVI\_Agriculture&quot;).
+4. **Dokumenter dine indstillinger**: Brug beskrivende skabelonnavne, der angiver kamerasystemet, behandlingstypen og den tilsigtede anvendelse (f.eks. "Survey3\_RGB\_NDVI\_Agriculture").
 5. **Valg af eksportformat**: Vælg dit eksportformat ud fra den endelige anvendelse:
    * Videnskabelig analyse → TIFF (16-bit eller 32-bit)
-   * GIS-behandling → TIFF
-
-(16-bit)
-   * Hurtig visualisering → PNG
-
-(8-bit)
+   * GIS-behandling → TIFF (16-bit)
+   * Hurtig visualisering → PNG (8-bit)
    * Deling på nettet → JPG (8-bit)
 
 ***
 
-For yderligere oplysninger om multispektrale indekser i Chloros
-
-, se siden [Formler for multispektrale indekser](multispectral-index-formulas.md).
+For yderligere oplysninger om multispektrale indekser i Chloros, se siden [Formler for multispektrale indekser](multispectral-index-formulas.md).

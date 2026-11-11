@@ -32,7 +32,7 @@ Sidepanelet viser, fra top til bund:
 * panelet **Cursorværdier** med aflæsning, histogram og GSD-kontrol
 
 {% hint style="warning" %}
-**Ikke tilgængeligt for monokameraer.** På et LATTICE M3M-billede med et enkelt bånd er begge afkrydsningsfelter deaktiveret, med værktøjstipet _&quot;Ikke tilgængeligt for mono (M3M)-sensorer&quot;_ — et multibåndsindeks er udefineret på et enkelt bånd. For at beregne indekser fra M3M-kameraer skal du kombinere to eller flere til en justeret multibåndsstak og bruge LATTICE-indeksmotoren.
+**Ikke tilgængeligt for monokameraer.** På et LATTICE M3M-billede med et enkelt bånd er begge afkrydsningsfelter deaktiveret, med værktøjstipet _"Ikke tilgængeligt for mono (M3M)-sensorer"_ — et multibåndsindeks er udefineret på et enkelt bånd. For at beregne indekser fra M3M-kameraer skal du kombinere to eller flere til en justeret multibåndsstak og bruge LATTICE-indeksmotoren.
 {% endhint %}
 
 ***
@@ -73,13 +73,13 @@ For den komplette formeloversigt — alle tre forudindstillede lister og hvilke 
 
 Billedet tegnes i **gråtoner**, strakt mellem de to tærskelværdier. Dette er bevidst: indeksbilledet er skalardata, og gråtoner er den ægte gengivelse af det. Tilføj en LUT, når du ønsker farve.***
 
-## Arbejde med LUT&#x27;er (opslagstabeller)
+## Arbejde med LUT'er (opslagstabeller)
 
 En **opslagstabel** knytter indeksværdier til farver: indtast NDVI 0,65, og der vises en bestemt grøn farve. Det ændrer ikke dataene — det ændrer blot, hvordan du fortolker dem.
 
 ### Tilføjelse af en LUT
 
-1. Klik på knappen **&quot;+ Tilføj LUT&quot;** under formlen <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">
+1. Klik på knappen **"+ Tilføj LUT"** under formlen <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">
 2. Vælg en farvegradient
 3. Indstil minimums- og maksimumsværdier for beskæring
 4. Vælg en beskæringsmodus
@@ -101,7 +101,7 @@ Hold markøren over **gradientbjælken**for at åbne listen over forudindstillin
 | 6 | Lilla → Blue → Green → Gul      | Sekventielt, fra mørkt til lyst                                           |
 | 7 | Orange → Hvid → Lilla             | Divergerende omkring et lyst midtpunkt                                   |
 
-En **divergerende**farveovergang placerer en neutral farve i midten af dit vindue, hvilket fungerer godt, når midtpunktet har en betydning (en tærskel, en basisdato). En**sekventiel** farveovergang forløber monotont fra mørkt til lyst, hvilket fungerer godt for en mængde, der kun har &quot;mere&quot; og &quot;mindre&quot;.
+En **divergerende**farveovergang placerer en neutral farve i midten af dit vindue, hvilket fungerer godt, når midtpunktet har en betydning (en tærskel, en basisdato). En**sekventiel** farveovergang forløber monotont fra mørkt til lyst, hvilket fungerer godt for en mængde, der kun har "mere" og "mindre".
 
 Hver forudindstilling har syv farvestop. Klik på en forudindstilling, og billedet opdateres straks (når LUT-feltet er markeret).
 
@@ -145,14 +145,14 @@ Når en pixels indeksværdi falder uden for min./maks.-vinduet, bestemmer klippe
 
 | Dropdown-etiket                  | Lagret værdi      | Pixler uden for området tegnes som                                                                                                |
 | ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Minimum &amp; maksimum** (standard) | `clip`            | Den nærmeste endefarve i gradienten — værdier under minimumet får den første farve, værdier over maksimumet får den sidste |
+| **Minimum & maksimum** (standard) | `clip`            | Den nærmeste endefarve i gradienten — værdier under minimumet får den første farve, værdier over maksimumet får den sidste |
 | **Gennemsigtig baggrund**      | `transparent`     | Fuldt gennemsigtig (ægte alfa)                                                                                                  |
 | **Indeksbaggrund**| `indexColor`      | Gråtoner, strækket over billedets**fulde** indeksområde, så strukturer uden for området stadig er synlige i gråt                |
 | **Originalbaggrund**         | `backgroundColor` | Selve det underliggende billede, så farveoverlejringen ligger oven på den virkelige scene                                                |
 
 | Tilstand                       | Bedst egnet til                               | Udseende                                      |
 | -------------------------- | -------------------------------------- | ----------------------------------------- |
-| **Minimum &amp; maksimum**      | Fuld datavisning, videnskabelig analyse | Hver pixel er farvet                      |
+| **Minimum & maksimum**      | Fuld datavisning, videnskabelig analyse | Hver pixel er farvet                      |
 | **Gennemsigtig baggrund** | GIS-overlejringer, isolering af et værdiinterval   | Farve inden for vinduet, intet udenfor |
 | **Indeksbaggrund**       | Fremhævning med bevarelse af datakonteksten    | Farve indeni, gråt udenfor               |
 | **Originalbaggrund**    | Rapporter og præsentationer              | Farve indeni, fotografi udenfor         |
@@ -224,7 +224,7 @@ En eksport af hele projektet tager få minutter, så processen rapporterer tilba
 
 * En statusbjælke viser `current / total` og den fil, der skrives
 * Når den er færdig, viser vinduet, hvor mange billeder der blev eksporteret, hvor mange der blev sprunget over, samt stien til outputmappen
-* Oversprungne billeder vises med årsagen (op til fem vises, derefter en linje med &quot;+N flere&quot;). Den sædvanlige årsag er et lag, der ikke har de kanaler, som dette indeks kræver
+* Oversprungne billeder vises med årsagen (op til fem vises, derefter en linje med "+N flere"). Den sædvanlige årsag er et lag, der ikke har de kanaler, som dette indeks kræver
 * Hvis **ingen** billeder i projektet kan bruge indekset, rapporterer kørslen en fejl i stedet for at efterlade en tom mappe
 
 Der kan kun køre én sandkasseeksport ad gangen. Hvis man forsøger at starte en anden, mens en allerede er i gang, afvises dette med en tydelig besked i stedet for at lade to kørsler kæmpe om den samme projektfil.
@@ -256,20 +256,20 @@ Squared ratio:                  (y/x)^2
 ```
 
 {% hint style="warning" %}
-**Brugerdefinerede formler findes kun i GUI&#x27;en.** Indstillingen CLI/SDK `--indices` udvider de 22 indbyggede forudindstillingsnavne og springer automatisk alt andet over, herunder dine brugerdefinerede formler. For at behandle en brugerdefineret formel i batch skal du konfigurere den i Projektindstillinger og køre behandlingen, eller bruge Sandboxens eksportfunktion »Anvend på alle projektbilleder«.
+**Brugerdefinerede formler findes kun i GUI'en.** Indstillingen CLI/SDK `--indices` udvider de 22 indbyggede forudindstillingsnavne og springer automatisk alt andet over, herunder dine brugerdefinerede formler. For at behandle en brugerdefineret formel i batch skal du konfigurere den i Projektindstillinger og køre behandlingen, eller bruge Sandboxens eksportfunktion »Anvend på alle projektbilleder«.
 {% endhint %}
 
 ***
 
 ## Fejlfinding
 
-### &quot;Dette lag har ikke de kanaler, som dette indeks kræver&quot;
+### "Dette lag har ikke de kanaler, som dette indeks kræver"
 
 Formlen læser en kanalposition, som det aktuelle lag ikke har — for eksempel et indeks med tre slots på en fil med én eller to kanaler. Skift til et multibåndslag (reflektans eller debayered), eller vælg et indeks, der passer til dit kameras filter.
 
-### »Kunne ikke oprette forbindelse til billedbehandlings-backend&#x27;en«
+### »Kunne ikke oprette forbindelse til billedbehandlings-backend'en«
 
-Backend&#x27;en svarer ikke. Tjek fanen Log; hvis backend&#x27;en genstarter, genopretter Sandbox sig selv, så snart den er tilbage.
+Backend'en svarer ikke. Tjek fanen Log; hvis backend'en genstarter, genopretter Sandbox sig selv, så snart den er tilbage.
 
 ### Billedet ændrede sig ikke, da jeg trak en cirkel
 

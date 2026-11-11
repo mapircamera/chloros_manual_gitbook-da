@@ -19,7 +19,7 @@ Nej, Chloros understøtter kun behandling af billeder fra MAPIR-kameraer — Sur
 
 <summary>Understøtter Chloros LATTICE-kameraer?</summary>
 
-Ja. Chloros 1.3.0 understøtter LATTICE M3C- og M3M-kameramoduler fra start til slut: **live-styring**— find, tilslut, få et eksempel og optag via fanen »Kameraer« i brugergrænsefladen, `chloros-cli lattice`, eller Python-SDK&#x27;et, herunder synkroniserede multikamera-opstillinger med PTP-tidssynkronisering — samt**fuld radiometrisk behandling** af optagelser (rådata → debayering → strålingsintensitet → reflektans → indeks). Se [Understøttede kameraer](supported-cameras.md) og [LATTICE-vejledningen](lattice/README.md).
+Ja. Chloros 1.3.0 understøtter LATTICE M3C- og M3M-kameramoduler fra start til slut: **live-styring**— find, tilslut, få et eksempel og optag via fanen »Kameraer« i brugergrænsefladen, `chloros-cli lattice`, eller Python-SDK'et, herunder synkroniserede multikamera-opstillinger med PTP-tidssynkronisering — samt**fuld radiometrisk behandling** af optagelser (rådata → debayering → strålingsintensitet → reflektans → indeks). Se [Understøttede kameraer](supported-cameras.md) og [LATTICE-vejledningen](lattice/README.md).
 
 </details>
 
@@ -27,15 +27,9 @@ Ja. Chloros 1.3.0 understøtter LATTICE M3C- og M3M-kameramoduler fra start til 
 
 <summary>Kan jeg kalibrere mine billeder for reflektans uden et kalibreringsmål?</summary>
 
-**Survey3
+**Survey3:** Nej. Uden et billede af kalibreringsmålet, der er taget på samme tid som de øvrige billeder, vil du ikke kunne relatere billedets pixelværdier til en kendt reflektansprocent. Hvis du heller ikke medtager loggen fra en MAPIR-lyssensor, vil det omgivende lysspektrum ikke blive målt, og reflektansresultaterne vil ikke være nøjagtige.
 
-:** Nej. Uden et billede af kalibreringsmålet, der er taget på samme tid som de øvrige billeder, vil du ikke kunne relatere billedets pixelværdier til en kendt reflektansprocent. Hvis du heller ikke medtager loggen fra en MAPIR
-
--lyssensor, vil det omgivende lysspektrum ikke blive målt, og reflektansresultaterne vil ikke være nøjagtige.
-
-**LATTICE:** Ja. Reflektansen kan relateres til den nedadgående strålingsintensitet, der måles af en DAQ-lyssensor i stedet for et panel (ρ = π·L/E). Når der *er* et QA-godkendt mål inden for rammen til stede, bliver det som standard den absolutte reference (`--reflectance-source auto`), medmindre det godkendes med et flag, hvor målet og DAQ-kæderne konkurrerer om den målte score. En undtagelse: »F988-reflektansen kalibreres ved hjælp af et reflektanspanel i scenen: båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros
-
-anvender din seneste paneloptagelse og fastholder den mellem panelobservationerne.« Se [Kalibreringsmål](calibration-targets.md).
+**LATTICE:** Ja. Reflektansen kan relateres til den nedadgående strålingsintensitet, der måles af en DAQ-lyssensor i stedet for et panel (ρ = π·L/E). Når der *er* et QA-godkendt mål inden for rammen til stede, bliver det som standard den absolutte reference (`--reflectance-source auto`), medmindre det godkendes med et flag, hvor målet og DAQ-kæderne konkurrerer om den målte score. En undtagelse: »F988-reflektansen kalibreres ved hjælp af et reflektanspanel i scenen: båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros anvender din seneste paneloptagelse og fastholder den mellem panelobservationerne.« Se [Kalibreringsmål](calibration-targets.md).
 
 </details>
 
@@ -43,9 +37,7 @@ anvender din seneste paneloptagelse og fastholder den mellem panelobservationern
 
 <summary>Har jeg brug for en DAQ-lyssensor?</summary>
 
-Ikke til strålingsintensitet: LATTICE-strålingsintensitetseksport stammer fra hvert kameras fabriksradiometriske kalibrering og kræver hverken en DAQ-sensor eller et mål. Til **refleksion**har du brug for en reference for det omgivende lys — enten en nedadrettet måling fra en DAQ-lyssensor eller et kalibreringsmål i billedet. En DAQ-sensor giver dig mulighed for at generere kalibreret reflektans**uden at placere paneler i motivet**. Optagede `.daq`-filer matches automatisk med dine billeder via tidsstempel. Se [Kalibreringsmål](calibration-targets.md) og [CLI
-
--referencen](reference/cli-reference.md).
+Ikke til strålingsintensitet: LATTICE-strålingsintensitetseksport stammer fra hvert kameras fabriksradiometriske kalibrering og kræver hverken en DAQ-sensor eller et mål. Til **refleksion**har du brug for en reference for det omgivende lys — enten en nedadrettet måling fra en DAQ-lyssensor eller et kalibreringsmål i billedet. En DAQ-sensor giver dig mulighed for at generere kalibreret reflektans**uden at placere paneler i motivet**. Optagede `.daq`-filer matches automatisk med dine billeder via tidsstempel. Se [Kalibreringsmål](calibration-targets.md) og [CLI-referencen](reference/cli-reference.md).
 
 </details>
 
@@ -53,7 +45,7 @@ Ikke til strålingsintensitet: LATTICE-strålingsintensitetseksport stammer fra 
 
 <summary>Kan jeg bruge Chloros sammen med en AI-assistent (Claude, ChatGPT osv.)?</summary>
 
-Ja — denne manual og CLI&#x27;en/SDK&#x27;en er udviklet til netop det:
+Ja — denne manual og CLI'en/SDK'en er udviklet til netop det:
 
 * Det fulde indeks over manualen findes på `https://mapir.gitbook.io/chloros/llms.txt`, så AI-assistenter kan finde alle sider.
 * Hver sides rå Markdown-kode er tilgængelig på sidens URL i små bogstaver med `.md` tilføjet (for eksempel `https://mapir.gitbook.io/chloros/reference/cli-reference.md`).
@@ -143,9 +135,7 @@ I filbrowsertabellen kan du forhåndsvælge målbillederne i højre kolonne, hvi
 
 <summary>Hvis jeg vil uploade mine billeder til <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> skal jeg så behandle dem i Chloros, før jeg uploader dem?</summary>
 
-Hvis du planlægger at uploade til vores onlinebehandlingsplatform [MAPIR
-
-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører al den samme behandling og mere til.
+Hvis du planlægger at uploade til vores onlinebehandlingsplatform [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), skal du ikke redigere billederne før upload. Cloud udfører al den samme behandling og mere til.
 
 </details>
 
@@ -177,7 +167,7 @@ Ja! Chloros understøtter NVIDIA Jetson **Orin-familien** — Orin Nano, Orin NX
 
 <summary>Optimerer Chloros automatisk til min hardware?</summary>
 
-Ja! Chloros indeholder [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md), der automatisk registrerer din CPU, GPU, RAM og (på Jetson) temperatursensorer. Derefter vælger den den optimale behandlingsstrategi — fra `GPU_PARALLEL` på GPU&#x27;er med stor hukommelse til `GPU_SINGLE` på mindre GPU&#x27;er og til `CPU_PARALLEL` på systemer uden en CUDA-GPU, som PyTorch kan bruge. Der kræves ingen manuel konfiguration.
+Ja! Chloros indeholder [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md), der automatisk registrerer din CPU, GPU, RAM og (på Jetson) temperatursensorer. Derefter vælger den den optimale behandlingsstrategi — fra `GPU_PARALLEL` på GPU'er med stor hukommelse til `GPU_SINGLE` på mindre GPU'er og til `CPU_PARALLEL` på systemer uden en CUDA-GPU, som PyTorch kan bruge. Der kræves ingen manuel konfiguration.
 
 </details>
 
@@ -185,9 +175,7 @@ Ja! Chloros indeholder [Dynamic Compute Adaptation](processing-architecture/dyna
 
 <summary>Hvad er 4-tråds-behandlingspipeline?</summary>
 
-Chloros
-bruger en 4-trådet pipeline-arkitektur til Chloros
-+-brugere: Tråd 1 (detektion) indlæser billeder og detekterer kalibreringsmål, tråd 2 (kalibrering) beregner reflektanskalkulering, tråd 3 (behandling) udfører GPU-accelereret debayering og indeksberegning, og tråd 4 (eksport) skriver outputfiler. Flere billeder kan være i forskellige tråde samtidigt for at opnå maksimal gennemstrømning. Se [Behandlingspipeline](processing-architecture/processing-pipeline.md) for detaljer.
+Chloros bruger en 4-trådet pipeline-arkitektur til Chloros+-brugere: Tråd 1 (detektion) indlæser billeder og detekterer kalibreringsmål, tråd 2 (kalibrering) beregner reflektanskalkulering, tråd 3 (behandling) udfører GPU-accelereret debayering og indeksberegning, og tråd 4 (eksport) skriver outputfiler. Flere billeder kan være i forskellige tråde samtidigt for at opnå maksimal gennemstrømning. Se [Behandlingspipeline](processing-architecture/processing-pipeline.md) for detaljer.
 
 </details>
 

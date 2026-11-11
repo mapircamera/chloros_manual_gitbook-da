@@ -62,7 +62,7 @@ Chloros fungerer i to forskellige behandlingsmetoder afhængigt af din licens:
 2. **Behandling** – Anvender kalibrering og eksporterer billeder**Behandlingstid:**
 
 * Meget langsommere end Chloros+ parallel tilstand
-* Egnet til små til mellemstore datasæt (&lt; 200 billeder)
+* Egnet til små til mellemstore datasæt (< 200 billeder)
 
 ### Chloros+ tilstand (parallel behandling)
 
@@ -202,7 +202,7 @@ Hvis du har brug for at stoppe behandlingen:
 ### Sådan stopper du
 
 1. Find **Stop-knappen** (erstatter Start-knappen under behandlingen)
-2. Klik på den én gang — bjælken viser **&quot;Stopper...&quot;**, mens det igangværende billede færdigbehandles
+2. Klik på den én gang — bjælken viser **"Stopper..."**, mens det igangværende billede færdigbehandles
 3. Kørslen afsluttes i en endelig stoppet tilstand, og loggen udskriver en præcis oversigt over, hvad der er blevet gennemført
 
 ### Hvornår skal man stoppe
@@ -305,7 +305,7 @@ Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 **Løsninger:**
 
 1. Opbevar projekter i en kortere mappe — ændr**Arbejdsmappen** under [Projektindstillinger](../project-settings/project-settings.md) og opret projektet igen, eller
-2. Aktivér lange stier i Windows og genstart Chloros: Kør Chloros-installationsprogrammet igen med **Aktiver lange stier i Windows** markeret (det er markeret som standard), eller brug gruppepolitik: *Computerkonfiguration &gt; Administrative skabeloner &gt; System &gt; Filsystem &gt; Aktivér lange Win32-stier*.
+2. Aktivér lange stier i Windows og genstart Chloros: Kør Chloros-installationsprogrammet igen med **Aktiver lange stier i Windows** markeret (det er markeret som standard), eller brug gruppepolitik: *Computerkonfiguration > Administrative skabeloner > System > Filsystem > Aktivér lange Win32-stier*.
 
 ### Advarsel om »Ingen mål fundet«
 
@@ -318,7 +318,7 @@ Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 **Løsninger:**
 
 1. Gennemgå [Valg af målbilleder](choosing-target-images.md)
-2. Marker de relevante billeder i kolonnen &quot;Mål&quot;
+2. Marker de relevante billeder i kolonnen "Mål"
 3. Kontroller, at målene er synlige i de markerede billeder
 4. Juster indstillingerne for måldetektion, hvis det er nødvendigt
 
@@ -346,7 +346,7 @@ Se [CLI-referencen](../reference/cli-reference.md#a-run-that-writes-no-images-fa
 Hvis du bruger NVIDIA GPU-acceleration:
 
 1. Opdater NVIDIA-driverne til den nyeste version
-2. Sørg for, at GPU&#x27;en har 4 GB+ VRAM (7 GB+ til samtidig Texture Aware-debayering)
+2. Sørg for, at GPU'en har 4 GB+ VRAM (7 GB+ til samtidig Texture Aware-debayering)
 3. Luk GPU-krævende programmer (spil, videoredigering)
 4. Overvåg GPU-temperaturen (sørg for tilstrækkelig køling)
 

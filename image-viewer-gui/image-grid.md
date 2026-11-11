@@ -20,13 +20,11 @@ Rækken af knapper over gitteret har op til tre grupper, fra venstre mod højre:
 2. **Kamerafilterknapper** — én pr. LATTICE-kamera. Vises kun i Per Kamera-tilstand.
 3. **Knapper til eksport-/visningstilstand** — hvilket produkt hver miniature viser.
 
-Når vinduet er for smalt til at rumme dem alle, foldes grupperne sammen fra højre mod venstre til dropdown-menuer, der vises ved musepeger: eksport-/visningsknapperne foldes først sammen, derefter kameraknapperne. Den sammenklappede gruppe efterlader en enkelt knap mærket med det aktuelt aktive valg, og når man holder markøren over den, glider hele sætket ned. **&quot;Per Trigger / Per Camera&quot; klappes aldrig sammen.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+Når vinduet er for smalt til at rumme dem alle, foldes grupperne sammen fra højre mod venstre til dropdown-menuer, der vises ved musepeger: eksport-/visningsknapperne foldes først sammen, derefter kameraknapperne. Den sammenklappede gruppe efterlader en enkelt knap mærket med det aktuelt aktive valg, og når man holder markøren over den, glider hele sætket ned. **"Per Trigger / Per Camera" klappes aldrig sammen.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
 
 ## Knapper til eksportvisning
 
-Disse knapper skifter mellem billedtyperne i gitteret med miniaturer. **En knap vises, så snart det produkt, den navngiver, findes** — hvilket for kildefilerne betyder straks ved import, ikke efter behandling.Chloros
-
-genindlæser projektets produkter, mens en kørsel er i gang, så knapperne vises under behandlingen, efterhånden som hvert produkt begynder at blive gemt på disken.
+Disse knapper skifter mellem billedtyperne i gitteret med miniaturer. **En knap vises, så snart det produkt, den navngiver, findes** — hvilket for kildefilerne betyder straks ved import, ikke efter behandling.Chloros genindlæser projektets produkter, mens en kørsel er i gang, så knapperne vises under behandlingen, efterhånden som hvert produkt begynder at blive gemt på disken.
 
 ### Grundknappen
 
@@ -34,9 +32,7 @@ Den venstre eksportknap er mærket efter **det, du rent faktisk har importeret**
 
 | Hvad du har importeret | Knaptekst |
 | --- | --- |
-|Survey3
-
-RAW+JPG | `JPG` |
+|Survey3 RAW+JPG | `JPG` |
 | LATTICE-optagelser med en forhåndsvisning ved siden af RAW-billedet | `PNG` eller `TIFF`, afhængigt af hvilke forhåndsvisninger der er |
 | LATTICE-optagelser, hvor basisfilen **er** RAW-billedet | *ingen knap* — `RAW (Original)` viser allerede den pågældende fil |
 
@@ -50,9 +46,7 @@ I et blandet projekt følger etiketten den filtypenavn, som flest billeder bruge
 | **Reflektans** | Kalibrerede reflektansbilleder | Kun iSurvey3
 
 -projekter — LATTICE-projekter bruger i stedet `RAW (Reflectance)`, så gitteret viser aldrig to reflektansknapper |
-| **Hvidbalanceret** | Det hvidbalancerede produkt (kameraer fraRGB
-
-) | Efter behandling |
+| **Hvidbalanceret** | Det hvidbalancerede produkt (kameraer fraRGB) | Efter behandling |
 | **Vignettekorrigeret** | Den ukalibrerede vignettekorrigerede standardindstilling | Efter en kørsel, hvor reflektanskalibrering ikke kunne anvendes, og *Vignettekorrektion* var aktiveret |
 | **Sensorreaktion** | Den ukalibrerede fallback med sensorreaktion | Det samme, men med *Vignettekorrektion* slået fra |
 | **`RAW (<INDEX> Index)`** | Én knap pr. beregnet indeks | Efter en kørsel med konfigurerede indekser |
@@ -76,16 +70,10 @@ To niveauer afChloros
 -eksportfiler får **ingen egen gitterknap**:
 
 * **Debayered** — `RAW (Original)`-visningen gengives allerede debayered, så en ekstra knap på et visuelt identisk billede ville være overflødig. `RAW (Debayered)`-produktet skrives stadig til disken og kan stadig vælges fra dropdown-menuen for fuldskærmslag.
-* **Preview** — påRGB
-
--kameraer registreres previewet som `White Balanced`-laget, som har en knap. På multispektrale kameraer registreres det som `RAW (Preview)` og kan tilgås via rullemenuen for fuldskærmslag.
+* **Preview** — påRGB-kameraer registreres previewet som `White Balanced`-laget, som har en knap. På multispektrale kameraer registreres det som `RAW (Preview)` og kan tilgås via rullemenuen for fuldskærmslag.
 
 {% hint style="info" %}
-Disse niveauknapper vises kun for projekter, der rent faktisk indeholder LATTICE-rammer. »Survey3
-
-«-projekter registrerer nogle af de samme interne lag navne, og knapperne filtreres fra for disse, så et »Survey3
-
-«-gitter bevarer sit velkendte `JPG / Targets / Reflectance`-sæt.
+Disse niveauknapper vises kun for projekter, der rent faktisk indeholder LATTICE-rammer. »Survey3 «-projekter registrerer nogle af de samme interne lag navne, og knapperne filtreres fra for disse, så et »Survey3 «-gitter bevarer sit velkendte `JPG / Targets / Reflectance`-sæt.
 {% endhint %}
 
 Hvis du klikker på en gitterminiature, åbnes [Billedviseren](opening-an-image-full-screen.md) i fuld skærm på **det samme produkt, som gitteret viser** — hvis gitteret er indstillet til `Targets`, åbner miniaturen det eksporterede målbillede.

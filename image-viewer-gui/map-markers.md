@@ -4,7 +4,7 @@ Fanen »Kort« viser dine billeder på et interaktivt 2D-kort ud fra deres GPS-k
 
 <figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
-## Sådan åbner du fanen &quot;Kort&quot;
+## Sådan åbner du fanen "Kort"
 
 1. Åbn eller opret et projekt i Chloros
 2. Importer billeder, der indeholder GPS-metadata
@@ -84,7 +84,7 @@ Hvert billede med GPS-data får en markør ved dets koordinater.
 
 Vælg kortlagstypen med knapperne (fra venstre mod højre):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Type                 | Viser                                                                |
 | -------------------- | -------------------------------------------------------------------- |

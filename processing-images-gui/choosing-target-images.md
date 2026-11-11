@@ -122,9 +122,9 @@ Hvis du bruger to MAPIR-kameraer samtidigt (f.eks. Survey3W RGN + Survey3N OCN):
 3. Markér målbillederne for **begge kameratyper** i filbrowseren
 4. Chloros vil anvende de relevante mål til kalibrering af hvert kamera
 
-### Kolonnen &quot;Kameramodel&quot;
+### Kolonnen "Kameramodel"
 
-Kolonnen **&quot;Kameramodel&quot;** hjælper med at identificere, hvilke billeder der stammer fra hvilket kamera:
+Kolonnen **"Kameramodel"** hjælper med at identificere, hvilke billeder der stammer fra hvilket kamera:
 
 * Survey3W\_RGN
 * Survey3N\_OCN
@@ -159,7 +159,7 @@ Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillin
 **Mulige årsager:**
 
 * Målbillederne er ikke markeret i filbrowseren
-* Målet er for lille i billedet (&lt; 30 % af billedet)
+* Målet er for lille i billedet (< 30 % af billedet)
 * Dårlig belysning (skygger, genskin)
 * Indstillingerne for måldetektion er for strenge
 
@@ -209,7 +209,7 @@ Hvis en DAQ-lyssensor har registreret nedadgående strålingsintensitet under di
 
 1. Importer filen `.daq` (eller DAQ-M `.csv`) med billedmaterialet
 2. Lad kolonnen »Mål« være umarkeret
-3. Reflektansen beregnes automatisk ud fra DAQ&#x27;ens nedadgående reference
+3. Reflektansen beregnes automatisk ud fra DAQ'ens nedadgående reference
 4. Strålingsintensiteten kræver aldrig et mål eller en DAQ — den stammer udelukkende fra kameraets radiometriske fabrikskalibrering
 
 ### Behandling uden nogen reference

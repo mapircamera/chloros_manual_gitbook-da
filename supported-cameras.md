@@ -6,23 +6,10 @@ metaLinks:
 
 # Understøttede kameraer:
 
-Chloros
-behandler billeddata fra to MAPIR
--kameraserier på **alle platforme** (Windows
-, Linux
-amd64 og Linux
-arm64/Jetson):
+Chloros behandler billeddata fra to MAPIR-kameraserier på **alle platforme** (Windows, Linux amd64 og Linux arm64/Jetson):
 
-* **Survey3** — Survey3W
-- (bred) og Survey3N
-- (smal) kameraer. Indgang: `RAW+JPG`.
-* **LATTICE**— M3C- og M3M-multispektrale kameramoduler. Indgang: `.tif`/`.tiff`-optagelser. LATTICE-kameraer kan også**styres live** fra Chloros
-— via fanen »Kameraer« i brugergrænsefladen (Windows
-) eller `chloros-cli lattice` / Python
--SDK
-&#x27;en (Windows
-og Linux
-) — herunder synkroniserede multikamera-opstillinger. Se [LATTICE-vejledningen](lattice/).
+* **Survey3** — Survey3W- (bred) og Survey3N- (smal) kameraer. Indgang: `RAW+JPG`.
+* **LATTICE**— M3C- og M3M-multispektrale kameramoduler. Indgang: `.tif`/`.tiff`-optagelser. LATTICE-kameraer kan også**styres live** fra Chloros — via fanen »Kameraer« i brugergrænsefladen (Windows) eller `chloros-cli lattice` / Python-SDK'en (Windows og Linux) — herunder synkroniserede multikamera-opstillinger. Se [LATTICE-vejledningen](lattice/).
 
 Behandlingspipeline accepterer også `.dng`-indlæsningsfiler.
 
@@ -36,9 +23,7 @@ LATTICE-serien er et modulært multispektralt kamerasystem baseret på Sony IMX2
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
 ```.
 
-Chloros
-
-viser den med præfikset `LATT-` (for eksempel `LATT-M3M-L41-F550`), og modelstrengen styrer alt det efterfølgende — sensorprofil, båndlayout og kalibrering fastlægges automatisk; der er intet, der skal konfigureres for hvert enkelt kamera. Objektivnummeret angiver det **horisontale synsfelt i grader**: `L41` = smalt 41°, `L87` = bredt 87°.
+Chloros viser den med præfikset `LATT-` (for eksempel `LATT-M3M-L41-F550`), og modelstrengen styrer alt det efterfølgende — sensorprofil, båndlayout og kalibrering fastlægges automatisk; der er intet, der skal konfigureres for hvert enkelt kamera. Objektivnummeret angiver det **horisontale synsfelt i grader**: `L41` = smalt 41°, `L87` = bredt 87°.
 
 Der findes to sensorkonfigurationer:
 
@@ -49,52 +34,20 @@ Der findes to sensorkonfigurationer:
 
 ### M3C (Bayer)-filterindstillinger
 
-| Filter | Bånd (navn @ midtpunkt nm / FWHM
-
-nm)       |
+| Filter | Bånd (navn @ midtpunkt nm / FWHM nm)       |
 | ------ | ---------------------------------------- |
-| `FRGB` | Blue
+| `FRGB` | Blue 475/30 · Green 550/30 · Red 625/30  |
+| `FRGN` | Red 660/21 · Green 550/30 · NIR 850/30   |
+| `FOCN` | Orange 618,4/46 · Cyan 494,1/40 · NIR 821,6/54 (målt — se nedenfor) |
+| `FNGB` | Blue 475/30 · Green 550/30 · NIR 850/30  |
 
-475/30 · Green
-
-550/30 · Red
-
-625/30  |
-| `FRGN` | Red
-
-660/21 · Green
-
-550/30 · NIR
-
-850/30   |
-| `FOCN` | Orange
-
-618,4/46 · Cyan
-
-494,1/40 · NIR
-
-821,6/54 (målt — se nedenfor) |
-| `FNGB` | Blue
-
-475/30 · Green
-
-550/30 · NIR
-
-850/30  |
-
-For `FOCN` er værdierne filterets **målte** halvmaksimale bånd (Chloros
-
-1.3.0 og nyere; tidligere versioner anvendte specifikationsværdierne 615/21 · 490/38 · 808/14). Båndnavnene forbliver `Orange_615`, `Cyan_490` og `NIR_808`, og det målte centrum og den målte bredde er det, som Chloros
-
-indstempler i hver kalibreret eksport.
+For `FOCN` er værdierne filterets **målte** halvmaksimale bånd (Chloros 1.3.0 og nyere; tidligere versioner anvendte specifikationsværdierne 615/21 · 490/38 · 808/14). Båndnavnene forbliver `Orange_615`, `Cyan_490` og `NIR_808`, og det målte centrum og den målte bredde er det, som Chloros indstempler i hver kalibreret eksport.
 
 ### M3M (mono) filterkatalog — 23 varenumre
 
 F-tallet er varenummeret; det målte bånd (stemplet ind i hver kalibreret eksport) er filterscanningen pr. parti:
 
-| Varenummer    | Centrum (nm, målt) | FWHM
-
--kanter (nm) | Bredde (nm) |
+| Varenummer    | Centrum (nm, målt) | FWHM-kanter (nm) | Bredde (nm) |
 | ------ | --------------------- | --------------- | ---------- |
 | F385   | 379,4                 | 367–392         | 25         |
 | F405   | 403,9                 | 390–417         | 27         |
@@ -120,14 +73,8 @@ F-tallet er varenummeret; det målte bånd (stemplet ind i hver kalibreret ekspo
 | F950   | 945,1                 | 929–961         | 32         |
 | F988 † | 985,3                 | 968–1003        | 35         |
 
-_&quot;Båndkanterne er målt som værdier for fuld bredde ved halv maksimal intensitet fra MAPIR
+_"Båndkanterne er målt som værdier for fuld bredde ved halv maksimal intensitet fra MAPIRs filterscanninger pr. parti — de samme værdier, som Chloros indstempler i hver kalibreret eksport."_ "— (nominel)" = endnu ingen scanning af partiet; for disse SKU'er er det angivne centrum SKU-nummeret, og bredden er producentens tal.
 
-s filterscanninger pr. parti — de samme værdier, som Chloros
-
-indstempler i hver kalibreret eksport.&quot;_ &quot;— (nominel)&quot; = endnu ingen scanning af partiet; for disse SKU&#x27;er er det angivne centrum SKU-nummeret, og bredden er producentens tal.
-
-† »F988-reflektansen kalibreres ved hjælp af et reflektanspanel i scenen: båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros
-
-anvender din seneste paneloptagelse og fastholder den mellem panelobservationerne.« Se [Kalibreringsmål](calibration-targets.md).
+† »F988-reflektansen kalibreres ved hjælp af et reflektanspanel i scenen: båndet ligger uden for DAQ-lyssensorens kalibrerede område, så Chloros anvender din seneste paneloptagelse og fastholder den mellem panelobservationerne.« Se [Kalibreringsmål](calibration-targets.md).
 
 For live kamerastyring, arrays, netværksopsætning og den radiometriske behandlingskæde, se [LATTICE-vejledningen](lattice/).

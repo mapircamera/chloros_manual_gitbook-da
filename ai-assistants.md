@@ -35,7 +35,7 @@ You:  Show me what the array sees, then capture reflectance every 10 seconds
       for 5 minutes.
 ```
 
-Serverens værktøjer dækker det, som [Python SDK](api-python-sdk.md) gør. Det installeres sammen med SDK&#x27;et, så der er normalt ikke andet at installere: på Windows placerer Chloros-installationsprogrammet `chloros-mcp.exe` i din Pythons `Scripts`-mappe, og i Linux-versionen placerer `.deb` filen `chloros-mcp` i `/usr/bin`.
+Serverens værktøjer dækker det, som [Python SDK](api-python-sdk.md) gør. Det installeres sammen med SDK'et, så der er normalt ikke andet at installere: på Windows placerer Chloros-installationsprogrammet `chloros-mcp.exe` i din Pythons `Scripts`-mappe, og i Linux-versionen placerer `.deb` filen `chloros-mcp` i `/usr/bin`.
 
 **Claude-kode:**
 
@@ -43,7 +43,7 @@ Serverens værktøjer dækker det, som [Python SDK](api-python-sdk.md) gør. Det
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop:**tilføj dette til `claude_desktop_config.json` (**Indstillinger &gt; Udvikler &gt; Rediger konfiguration**åbner det), og genstart derefter Claude Desktop.**Cursor** bruger den samme indtastning i `~/.cursor/mcp.json`.
+**Claude Desktop:**tilføj dette til `claude_desktop_config.json` (**Indstillinger > Udvikler > Rediger konfiguration**åbner det), og genstart derefter Claude Desktop.**Cursor** bruger den samme indtastning i `~/.cursor/mcp.json`.
 
 ```json
 {
@@ -122,15 +122,15 @@ Hver af disse er en reel, verificeret adfærd i Chloros 1.3.0 — de fjerner de 
 
 * **Ingen besværlig opsætning.**SDK’s smart-connect-hjælpeprogrammer (`connect_camera`, `connect_array`, `connect_daq_sensor`) og behandlingsindgangspunkterne (`ChlorosLocal`, `process_folder`)**starter automatisk det lokale backend**. Et genereret script behøver hverken, at GUI’en er åben, eller at en server startes manuelt — det kræver blot, at desktop-/CLI-pakken er installeret.
 * **Hele pipelinen udføres med ét enkelt kald.** `chloros_sdk.process_folder("path", indices=["NDVI"])` kører import → kalibrering → reflektans → indekseksport fra start til slut. Mindre overfladeareal, færre steder, hvor et genereret script kan gå galt.
-* **Kørsler uden output foretager selvdiagnose.** Efter `process()` vedhæftes kørslens oversigt til resultatet, og hvert behandlingshenvisning (f.eks. *hvorfor* en kørsel ikke gav noget output) genudsendes også som en Python-`UserWarning` — så selv et script, der aldrig undersøger resultat-dict&#x27;en, viser diagnosen.
-* **CLI&#x27;en fejler tydeligt.**En `chloros-cli process`-kørsel, der anmodede om resultater, men ikke skrev nogen, udskriver `Processing finished but wrote no image products.` og**afsluttes med en værdi forskellig fra nul**, så shell-scripts og CI kan opdage det ved en simpel kontrol af afslutningskoden. Vellykkede kørsler rapporterer `Image products written: N` samt `(plus M clamp masks)`, når der blev skrevet masker. Capture-kommandoer angiver ligeledes navnet på alle filer, de ikke kunne skrive, og afslutter med `1`.
+* **Kørsler uden output foretager selvdiagnose.** Efter `process()` vedhæftes kørslens oversigt til resultatet, og hvert behandlingshenvisning (f.eks. *hvorfor* en kørsel ikke gav noget output) genudsendes også som en Python-`UserWarning` — så selv et script, der aldrig undersøger resultat-dict'en, viser diagnosen.
+* **CLI'en fejler tydeligt.**En `chloros-cli process`-kørsel, der anmodede om resultater, men ikke skrev nogen, udskriver `Processing finished but wrote no image products.` og**afsluttes med en værdi forskellig fra nul**, så shell-scripts og CI kan opdage det ved en simpel kontrol af afslutningskoden. Vellykkede kørsler rapporterer `Image products written: N` samt `(plus M clamp masks)`, når der blev skrevet masker. Capture-kommandoer angiver ligeledes navnet på alle filer, de ikke kunne skrive, og afslutter med `1`.
 * **Relative stier betyder det, som et script forventer.** Med et lokalt backend opløses en relativ outputsti (`-o out/` i CLI, `output_dir="out/"` i SDK) i forhold til den mappe, hvor kommandoen eller scriptet kører fra.
 
 En asymmetri, som en assistent bør kende: SDK’s `process()` udløser bevidst **ikke** en fejl ved en kørsel uden resultat — den rapporterer i stedet via oversigten/tipene. Hvis en Python-pipeline skal stoppe ved en tom kørsel, skal du tjekke oversigten (opskrift 2 gør det).
 
 ## Forbehold
 
-* **Chloros+-login kræves.**CLI&#x27;en og SDK&#x27;en kræver et**betalt** Chloros+-abonnement, hvilket håndhæves på serversiden: anmodninger mislykkes med fejlkoden `401 AUTH_REQUIRED`, hvis man ikke er logget ind, og med `403 PLAN_UPGRADE_REQUIRED` på det gratis abonnement. Kør `chloros-cli login` én gang pr. maskine, før du kører de genererede scripts. Se [Chloros+-login](chloros+-login.md).
-* **Capture-kommandoer styrer fysisk hardware.** `lattice` / `daq` / `project`-kommandoer, SDK-sessionobjekterne og `chloros-mcp`&#x27;s værktøjer opretter forbindelse til, streamer fra og udløser fysiske kameraer og sensorer. Gennemgå et genereret script, før det køres for første gang, og kør det, mens du overvåger hardwaren.
-* **Udfør stikprøvekontrol af output.** Kontroller produktmapperne og nogle få pixelværdier, inden resultaterne offentliggøres. Især skaleres reflektans-TIFF-filer pr. kilde — læs `Chloros:PixelScale` XMP-tagget (LATTICE-filer indeholder det: 32768 = 1,0 reflektans; Survey3-filer har det ikke og bruger 65535 = 1,0) i stedet for at antage en divider. Begge referencesider dokumenterer dette under &quot;Læsning af reflektanspixels&quot;.
+* **Chloros+-login kræves.**CLI'en og SDK'en kræver et**betalt** Chloros+-abonnement, hvilket håndhæves på serversiden: anmodninger mislykkes med fejlkoden `401 AUTH_REQUIRED`, hvis man ikke er logget ind, og med `403 PLAN_UPGRADE_REQUIRED` på det gratis abonnement. Kør `chloros-cli login` én gang pr. maskine, før du kører de genererede scripts. Se [Chloros+-login](chloros+-login.md).
+* **Capture-kommandoer styrer fysisk hardware.** `lattice` / `daq` / `project`-kommandoer, SDK-sessionobjekterne og `chloros-mcp`'s værktøjer opretter forbindelse til, streamer fra og udløser fysiske kameraer og sensorer. Gennemgå et genereret script, før det køres for første gang, og kør det, mens du overvåger hardwaren.
+* **Udfør stikprøvekontrol af output.** Kontroller produktmapperne og nogle få pixelværdier, inden resultaterne offentliggøres. Især skaleres reflektans-TIFF-filer pr. kilde — læs `Chloros:PixelScale` XMP-tagget (LATTICE-filer indeholder det: 32768 = 1,0 reflektans; Survey3-filer har det ikke og bruger 65535 = 1,0) i stedet for at antage en divider. Begge referencesider dokumenterer dette under "Læsning af reflektanspixels".
 * **Små faldgruber, der kan forstyrre den genererede kode:**`pool-record` skriver til**backend-værts** filsystem (standard `~/Documents/DAQ Live View/`); på maskiner med flere netværksgrænseflader bør man foretrække `daq pool-connect --eth-host <ip-or-hostname>` frem for automatisk opdagelse; brug `http://127.0.0.1:5000` (aldrig `localhost`) overalt, hvor en backend-URL forekommer; et script, der gennemløber et projekts output-træ, bør springe `clamp_masks/`-mapper over (deres `*_clampmask.tif`-filer er masker, ikke billeder — se [Output Image Formats](output-image-formats.md#clamp-masks)); og på Windows, hvor lange stier er deaktiveret, skal projektmapperne holdes korte — en projektmappe, der er dybere end ca. 130 tegn, afvises, før behandlingen starter.

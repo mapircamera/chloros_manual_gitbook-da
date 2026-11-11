@@ -1,10 +1,6 @@
 # Overvågning af behandlingen
 
-Når behandlingen er gået i gang, tilbyder Chloros
-
-flere måder at overvåge fremskridtet på, kontrollere for problemer og få indsigt i, hvad der sker med dit datasæt. Denne side forklarer, hvordan du kan følge med i din behandling og fortolke de oplysninger, Chloros
-
-leverer.
+Når behandlingen er gået i gang, tilbyder Chloros flere måder at overvåge fremskridtet på, kontrollere for problemer og få indsigt i, hvad der sker med dit datasæt. Denne side forklarer, hvordan du kan følge med i din behandling og fortolke de oplysninger, Chloros leverer.
 
 ## Oversigt over fremskridtsbjælken
 
@@ -12,9 +8,7 @@ Statusbjælken i den øverste header viser behandlingsstatus i realtid samt proc
 
 ### Statusbjælke i gratis tilstand
 
-For brugere uden Chloros
-
-+-licens:
+For brugere uden Chloros+-licens:
 
 **2-trins fremskridtsvisning:**
 
@@ -25,13 +19,9 @@ For brugere uden Chloros
 * Navnet på den aktuelle fase
 * Enkel vandret bjælkevisning
 
-### Chloros
+### Chloros+-statusbjælke
 
-+-statusbjælke
-
-For brugere med Chloros
-
-+-licens:
+For brugere med Chloros+-licens:
 
 **4-trins statusvisning:**
 
@@ -44,9 +34,7 @@ For brugere med Chloros
 * Hvert trin viser den individuelle fremdrift (0-100 %)
 
 {% hint style="info" %}
-**Paritet med CLI**: Under en `chloros-cli process`-kørsel rapporterer de samme fire tråde som »Detecting«, »Analyzing«, »Processing« og »Exporting«, og `chloros-cli export-status` viser live fremskridt for eksport af tråd 4 fra en anden terminal. Se [CLI
-
--referencen](../reference/cli-reference.md).
+**Paritet med CLI**: Under en `chloros-cli process`-kørsel rapporterer de samme fire tråde som »Detecting«, »Analyzing«, »Processing« og »Exporting«, og `chloros-cli export-status` viser live fremskridt for eksport af tråd 4 fra en anden terminal. Se [CLI-referencen](../reference/cli-reference.md).
 {% endhint %}
 
 ***
@@ -61,9 +49,7 @@ For brugere med Chloros
 
 **Hvad sker der:**
 
-* Chloros
-
-scanner de billeder, du har markeret med afkrydsningsfeltet »Mål« (alle billeder, hvis ingen er markeret)
+* Chloros scanner de billeder, du har markeret med afkrydsningsfeltet »Mål« (alle billeder, hvis ingen er markeret)
 * Computervisionsalgoritmer identificerer kalibreringspanelerne
 * Refleksionsværdier udtrækkes fra hvert panel
 * Målets tidsstempler registreres for korrekt planlægning af kalibreringen
@@ -92,9 +78,7 @@ scanner de billeder, du har markeret med afkrydsningsfeltet »Mål« (alle bille
 * Indlæsning af billedets EXIF-metadata (tidsstempler, eksponeringsindstillinger)
 * Fastlæggelse af kalibreringsstrategi baseret på målobjekternes tidsstempler og tilgængelige DAQ-downwelling-data
 * Organisering af billedbehandlingskøen
-* Forberedelse af parallelle behandlingsprocesser (kun Chloros
-
-+)
+* Forberedelse af parallelle behandlingsprocesser (kun Chloros+)
 
 **Varighed:** 5–30 sekunder**Statusindikator:**
 
@@ -121,9 +105,7 @@ scanner de billeder, du har markeret med afkrydsningsfeltet »Mål« (alle bille
 * Færdigbehandlede billeder / Samlet antal billeder
 
 **Behandlingsadfærd:*** **Fri tilstand**: Behandler ét billede ad gangen sekventielt
-* **Chloros
-
-+-tilstand**: Kører en hardware-adaptiv arbejdspool — 1–4 samtidige arbejdsprocesser på GPU-systemer (afhængigt af VRAM), én arbejdsproces pr. fysisk kerne (minus én) på rene CPU-systemer. Se [Dynamisk beregnings tilpasning](../processing-architecture/dynamic-compute-adaptation.md)
+* **Chloros+-tilstand**: Kører en hardware-adaptiv arbejdspool — 1–4 samtidige arbejdsprocesser på GPU-systemer (afhængigt af VRAM), én arbejdsproces pr. fysisk kerne (minus én) på rene CPU-systemer. Se [Dynamisk beregnings tilpasning](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-acceleration**: Fremskynder denne fase betydeligt**Hvad du skal holde øje med:**
 
 * Jævn fremgang i billedtællingen
@@ -169,17 +151,13 @@ i venstre sidepanel
 
 ### Forståelse af logmeddelelser
 
-Chloros
-
--loglinjer indledes med tags i parentes, der angiver navnet på undersystemet — for eksempel `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Det vigtigste at kende er **kørselsoversigten**, der vises i slutningen af hver kørsel (inklusive stoppede kørsler):
+Chloros-loglinjer indledes med tags i parentes, der angiver navnet på undersystemet — for eksempel `[PROCESSING]`, `[RUN-SUMMARY]`, `[LATTICE-EXPORT]`, `[EXPORT-CHECK]`, `[IMPORT-LEVEL]`. Det vigtigste at kende er **kørselsoversigten**, der vises i slutningen af hver kørsel (inklusive stoppede kørsler):
 
 ```
 [RUN-SUMMARY] 49 image(s) in 2 camera group(s); 4 target(s) detected; 45 image(s) calibrated; 180 file(s) written.
 ```
 
-Der følger ekstra `[RUN-SUMMARY]`-hintlinjer, når noget skal forklares — for eksempel et kørsel, der ikke producerede noget, eller et kamera, hvis ønskede produkt blev sprunget over, da det ikke var relevant. `[EXPORT-CHECK]`-linjer forklarer, hvilke kameraer der er sprunget over (f.eks. hvorfor et RGB
-
--kamera ikke fik noget strålingsprodukt).
+Der følger ekstra `[RUN-SUMMARY]`-hintlinjer, når noget skal forklares — for eksempel et kørsel, der ikke producerede noget, eller et kamera, hvis ønskede produkt blev sprunget over, da det ikke var relevant. `[EXPORT-CHECK]`-linjer forklarer, hvilke kameraer der er sprunget over (f.eks. hvorfor et RGB-kamera ikke fik noget strålingsprodukt).
 
 De generelle alvorlighedsniveauer for meddelelser (eksemplerne nedenfor er illustrative, ikke ordrette):
 
@@ -210,17 +188,9 @@ Kritiske problemer, der kan medføre, at behandlingen mislykkes — f.eks. fuld 
 | Ingen mål fundet                      | Ingen kalibreringsmål fundet               | Marker målbilleder eller deaktiver reflektanskalibrering |
 | Utilstrækkelig diskplads               | Ikke nok lagerplads til output                 | Frigør diskplads                                    |
 | Springes over på grund af beskadiget fil               | Billedfilen er beskadiget                         | Kopier filen igen fra SD-kortet                             |
-| `[IMPORT-LEVEL] Skipping ... no raw source` | En optagelse uden et råbillede kan ikke behandles | Optag igen med råbillede, eller brug CLI
-
-`--input-level`  |
+| `[IMPORT-LEVEL] Skipping ... no raw source` | En optagelse uden et råbillede kan ikke behandles | Optag igen med råbillede, eller brug CLI `--input-level`  |
 | `[RUN-SUMMARY] ... 0 file(s) written` | Kørslen producerede ingen billedprodukter — rapporteret som en fejl med tip | Læs tip-linjerne; kontroller, hvad der blev sprunget over, og hvorfor |
-| `[PROCESS] refused: The project folder is too deep for this computer…` | Windows
-
--lange stier er slået fra, og projektmappen er for dyb i forhold til stibegrænsningen på 260 tegn; intet blev behandlet | Brug en kortere projektmappe (meddelelsen angiver den længste, der passer), eller aktiver lange stier i Windows
-
-, og genstart Chloros
-
-— se [Start af behandlingen](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
+| `[PROCESS] refused: The project folder is too deep for this computer…` | Windows-lange stier er slået fra, og projektmappen er for dyb i forhold til stibegrænsningen på 260 tegn; intet blev behandlet | Brug en kortere projektmappe (meddelelsen angiver den længste, der passer), eller aktiver lange stier i Windows, og genstart Chloros — se [Start af behandlingen](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
 | `[unmix-clamp-mask] …` | Det var ikke muligt at skrive en LATTICE-produkts clamp-maske; selve produktet fungerer fint og viser `Chloros:UnmixClampMask=unavailable` | Kontroller diskplads og mappetilladelser, og gentag derefter behandlingen, hvis du har brug for masken |
 
 ### Kopiering af logdata
@@ -230,32 +200,18 @@ Sådan kopieres loggen til fejlfinding eller support:
 1. Åbn panelet *Debug Log*
 2. Klik på knappen **Kopier**(kopierer loggen til udklipsholderen) eller**Download** for at gemme den som en tekstfil
 3. Indsæt i en tekstfil eller en e-mail
-4. Send til MAPIR
-
--support, hvis nødvendigt
+4. Send til MAPIR-support, hvis nødvendigt
 
 ### Indberetning af en fejl fra fanen *Log*
 
-Nyt i 1.3.0: Fejlikonet (**Indberet en fejl**) øverst på fanen *Debug Log* sender en rapport direkte til MAPIR
-
-.
+Nyt i 1.3.0: Fejlikonet (**Indberet en fejl**) øverst på fanen *Debug Log* sender en rapport direkte til MAPIR.
 
 1. Klik på fejlikonet øverst på fanen *Debug Log*
 2. Beskriv problemet: hvad du lavede, hvad du forventede, og hvad der i stedet skete (påkrævet)
 3. Du kan eventuelt markere **Tilføj et par billeder (op til 10)**og vælge billeder fra det åbne projekt eller bruge**Gennemse...** til andre billedfiler
 4. Klik på **Send**
 
-Rapporten indeholder din beskrivelse, eventuelle vedhæftede billeder, Chloros
-
--logfilerne samt systemoplysninger (Chloros
-
--version, operativsystem, GPU og projektindstillinger). Du skal være logget ind på Chloros
-
-(fanen „Bruger“) for at kunne sende en rapport. Du kan lukke vinduet, mens rapporten sendes; når den er færdig, skrives en reference som f.eks. `Bug report sent. Reference: BR-…` ind i loggen — angiv den, når du kontakter MAPIR
-
-. Hvis rapporten ikke kan uploades (f.eks. på grund af manglende internetforbindelse), gemmer Chloros
-
-den på din computer og viser stien, så du kan sende den via e-mail til support@mapir.camera.
+Rapporten indeholder din beskrivelse, eventuelle vedhæftede billeder, Chloros-logfilerne samt systemoplysninger (Chloros-version, operativsystem, GPU og projektindstillinger). Du skal være logget ind på Chloros (fanen „Bruger“) for at kunne sende en rapport. Du kan lukke vinduet, mens rapporten sendes; når den er færdig, skrives en reference som f.eks. `Bug report sent. Reference: BR-…` ind i loggen — angiv den, når du kontakter MAPIR. Hvis rapporten ikke kan uploades (f.eks. på grund af manglende internetforbindelse), gemmer Chloros den på din computer og viser stien, så du kan sende den via e-mail til support@mapir.camera.
 
 ***
 
@@ -269,33 +225,25 @@ den på din computer og viser stien, så du kan sende den via e-mail til support
 * Andre kerner er inaktive eller tilgængelige
 * Systemet forbliver responsivt
 
-**Parallel tilstand i Chloros
-
-+:**
+**Parallel tilstand i Chloros+:**
 
 * Flere kerner med høj udnyttelse — hvor mange afhænger af den strategi, der er valgt af [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md)
 * Systemet kan føles mindre responsivt
 
 **Sådan overvåges det:**
 
-* Windows
-
-Opgavelister (Ctrl+Shift+Esc)
+* Windows Opgavelister (Ctrl+Shift+Esc)
 * Fanen Ydeevne → afsnittet CPU
-* Se efter processer med navnet &quot;Chloros
-
-&quot; eller &quot;chloros-backend&quot;
+* Se efter processer med navnet "Chloros" eller "chloros-backend"
 
 ### Hukommelsesforbrug (RAM)
 
 **Typisk forbrug:**
 
-* Små projekter (&lt; 100 billeder): 2–4 GB
+* Små projekter (< 100 billeder): 2–4 GB
 * Mellemstore projekter (100–500 billeder): 4–8 GB
 * Store projekter (500+ billeder): 8–16 GB
-* Chloros
-
-+ i parallel tilstand bruger mere RAM
+* Chloros+ i parallel tilstand bruger mere RAM
 
 **Hvis der er lidt hukommelse:**
 
@@ -303,13 +251,11 @@ Opgavelister (Ctrl+Shift+Esc)
 * Luk andre programmer
 * Opgrader RAM, hvis du regelmæssigt behandler store datasæt
 
-### GPU-forbrug (Chloros
-
-+ med CUDA)
+### GPU-forbrug (Chloros+ med CUDA)
 
 Når GPU-acceleration er aktiveret:
 
-* NVIDIA-GPU&#x27;en viser høj udnyttelse (60–90 %)
+* NVIDIA-GPU'en viser høj udnyttelse (60–90 %)
 * VRAM-forbruget stiger (kræver 4 GB+ VRAM; 7 GB+ ved samtidig Texture Aware-debayering)
 * Kalibreringsfasen er betydeligt hurtigere
 
@@ -343,9 +289,7 @@ Når GPU-acceleration er aktiveret:
 
 * Tjek fejlloggen for fejl
 * Kontroller, om der er ledig diskplads
-* Tjek Opgavelederen for at sikre, at Chloros
-
-kører
+* Tjek Opgavelederen for at sikre, at Chloros kører
 
 **Der vises hyppigt fejlmeddelelser:**
 
@@ -355,9 +299,7 @@ kører
 
 **Systemet reagerer ikke:**
 
-* Chloros
-
-i parallel tilstand bruger for mange ressourcer
+* Chloros i parallel tilstand bruger for mange ressourcer
 * Overvej at reducere antallet af samtidige opgaver eller opgradere hardwaren
 * Fri tilstand er mindre ressourcekrævende
 
@@ -365,7 +307,7 @@ i parallel tilstand bruger for mange ressourcer
 
 Stop behandlingen, hvis du ser:
 
-* ❌ Fejlmeddelelser som &quot;Disk fuld&quot; eller &quot;Kan ikke skrive fil&quot;
+* ❌ Fejlmeddelelser som "Disk fuld" eller "Kan ikke skrive fil"
 * ❌ Gentagne fejlmeddelelser om beskadigede billedfiler
 * ❌ Systemet er helt frosset fast (reagerer ikke)
 * ❌ Du har opdaget, at der er konfigureret forkerte indstillinger
@@ -374,7 +316,7 @@ Stop behandlingen, hvis du ser:
 **Sådan stopper du:**
 
 1. Klik på**Stop-knappen** (erstatter Start-knappen) — én gang er nok
-2. Statusbjælken viser &quot;Stopper...&quot;, mens den igangværende billedbehandling afsluttes, hvorefter kørslen afsluttes i en stoppet tilstand
+2. Statusbjælken viser "Stopper...", mens den igangværende billedbehandling afsluttes, hvorefter kørslen afsluttes i en stoppet tilstand
 3. Produkter, der allerede er eksporteret, forbliver på disken; loggen viser en præcis oversigt over, hvad der er afsluttet
 4. Løs problemerne og genstart — kørslen starter forfra
 
@@ -394,13 +336,11 @@ Stop behandlingen, hvis du ser:
 
 **Løsninger:**
 
-1. Hvis processen lige er startet og er i &quot;Detecting&quot;-fasen: Stop, markér mål, genstart
+1. Hvis processen lige er startet og er i "Detecting"-fasen: Stop, markér mål, genstart
 2. Fremover: Brug SSD, reducer antallet af indekser, opgrader hardware
-3. Overvej at bruge CLI
+3. Overvej at bruge CLI til batchbehandling af store datasæt
 
-til batchbehandling af store datasæt
-
-### Advarsler om &quot;diskplads&quot;
+### Advarsler om "diskplads"
 
 **Løsninger:**
 
@@ -408,11 +348,9 @@ til batchbehandling af store datasæt
 2. Flyt projektet til et drev med mere plads
 3. Reducer antallet af indekser, der skal eksporteres
 4. Deaktiver LATTICE-eksportprodukter, du ikke har brug for (Projektindstillinger → Behandling)
-5. Brug JPG-format i stedet for TIFF
+5. Brug JPG-format i stedet for TIFF (mindre filer)
 
-(mindre filer)
-
-### Hyppige meddelelser om &quot;beskadigede filer&quot;
+### Hyppige meddelelser om "beskadigede filer"
 
 **Løsninger:**
 
@@ -427,9 +365,7 @@ til batchbehandling af store datasæt
 
 1. Sørg for tilstrækkelig ventilation
 2. Fjern støv fra computerens ventilationsåbninger
-3. Reducer behandlingsbelastningen (brug Free-tilstand i stedet for Chloros
-
-+)
+3. Reducer behandlingsbelastningen (brug Free-tilstand i stedet for Chloros+)
 4. Udfør behandlingen på køligere tidspunkter af døgnet
 
 ***

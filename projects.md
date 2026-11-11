@@ -17,23 +17,23 @@ Medmindre du ændrer det i [Projektindstillinger](project-settings/project-setti
 
 ## Nyt projekt
 
-<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>Vælg &quot;Nyt projekt&quot; i hovedmenuen, og indtast et unikt navn til dit projekt.
+<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>Vælg "Nyt projekt" i hovedmenuen, og indtast et unikt navn til dit projekt.
 
-Hvis du har gemt projektmaler, vises en rullemenu med **Vælg mal** under navnefeltet — hvis du vælger en, starter det nye projekt med indstillingerne fra den pågældende mal. Skabeloner gemmes fra [Projektindstillinger](project-settings/project-settings.md): Indtast et navn i feltet &quot;Gem projekt skabelonnavn&quot; og klik på gem-ikonet.
+Hvis du har gemt projektmaler, vises en rullemenu med **Vælg mal** under navnefeltet — hvis du vælger en, starter det nye projekt med indstillingerne fra den pågældende mal. Skabeloner gemmes fra [Projektindstillinger](project-settings/project-settings.md): Indtast et navn i feltet "Gem projekt skabelonnavn" og klik på gem-ikonet.
 
 ## Åbn projekt
 
-<figure><img src=".gitbook/assets/v120-open-project.jpg" alt=""><figcaption><p>&quot;Åbn projekt&quot; viser en liste over alle projekter i din projektmappe, med <strong>Åbn projektmappe</strong> nederst</p></figcaption></figure>
+<figure><img src=".gitbook/assets/v120-open-project.jpg" alt=""><figcaption><p>"Åbn projekt" viser en liste over alle projekter i din projektmappe, med <strong>Åbn projektmappe</strong> nederst</p></figcaption></figure>
 
-Vælg »Åbn projekt« for at se en liste over eksisterende projekter i projektmappen. Hvis der ikke findes nogen projekter, åbnes den sekundære sidemenu ikke. Du kan se nogle GUI-oprettede projekter (t1, t2, t3) opført på ovenstående billede. Projekterne DATE\_TIME blev oprettet af CLI&#x27;en ved hjælp af standardnavngivningsskemaet for projekter. Hvis du klikker på et projektnavn, åbnes projektet.
+Vælg »Åbn projekt« for at se en liste over eksisterende projekter i projektmappen. Hvis der ikke findes nogen projekter, åbnes den sekundære sidemenu ikke. Du kan se nogle GUI-oprettede projekter (t1, t2, t3) opført på ovenstående billede. Projekterne DATE\_TIME blev oprettet af CLI'en ved hjælp af standardnavngivningsskemaet for projekter. Hvis du klikker på et projektnavn, åbnes projektet.
 
-Hvis du klikker på knappen &quot;Åbn projektmappe&quot;, åbnes din computers filudforsker i projektstien. Du kan justere projektstien i [Projektindstillinger](project-settings/project-settings.md).
+Hvis du klikker på knappen "Åbn projektmappe", åbnes din computers filudforsker i projektstien. Du kan justere projektstien i [Projektindstillinger](project-settings/project-settings.md).
 
 Hvis nogle af projektets kildebilledfiler er blevet flyttet eller slettet, siden det sidst blev åbnet, viser Chloros en dialogboks, der angiver præcis, hvilke filer der mangler, i stedet for at åbne et tomt gitter.
 
 ## Dupliker projekt
 
-Funktionen er tilgængelig, når et projekt er åbent. Vælg &quot;Dupliker projekt&quot; for at kopiere det aktuelle projekt under et nyt navn — Chloros foreslår det næste ledige navn (f.eks. &quot;MitProjekt (2)&quot;) — og duplikatet åbnes straks.
+Funktionen er tilgængelig, når et projekt er åbent. Vælg "Dupliker projekt" for at kopiere det aktuelle projekt under et nyt navn — Chloros foreslår det næste ledige navn (f.eks. "MitProjekt (2)") — og duplikatet åbnes straks.
 
 ## Tilføj filer
 
@@ -41,11 +41,11 @@ Når et projekt er åbnet, skal du vælge »Tilføj filer« fra hovedmenuen for 
 
 ## Tilføj mappe
 
-Når et projekt er åbnet, skal du vælge &quot;Tilføj mappe&quot; fra hovedmenuen for at tilføje mapper med billeder til det aktuelle projekt. Du kan vælge flere mapper på én gang. Duplikerede filer ignoreres.
+Når et projekt er åbnet, skal du vælge "Tilføj mappe" fra hovedmenuen for at tilføje mapper med billeder til det aktuelle projekt. Du kan vælge flere mapper på én gang. Duplikerede filer ignoreres.
 
 ## Start/stop behandling
 
-Når filer er tilføjet til et projekt, bliver &quot;Start behandling&quot; tilgængeligt i hovedmenuen. Dette svarer til at klikke på knappen Afspil/Start i den øverste overskrift. Under behandlingen skifter menupunktet til &quot;Stop behandling&quot;, så du kan standse processen.
+Når filer er tilføjet til et projekt, bliver "Start behandling" tilgængeligt i hovedmenuen. Dette svarer til at klikke på knappen Afspil/Start i den øverste overskrift. Under behandlingen skifter menupunktet til "Stop behandling", så du kan standse processen.
 
 ## Tilslut til kamera / Tilslut til lyssensor
 

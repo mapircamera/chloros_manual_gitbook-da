@@ -13,7 +13,7 @@ Chloros 1.3.0 anvender en behandlingspipeline med 4 tråde, der fungerer som et 
 Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: Processing] → [Thread 4: Export] → Files Out
 ```
 
-Hvert billede gennemløber alle fire tråde i rækkefølge. Med Chloros&#x27; multitrådede behandling optager flere billeder forskellige tråde samtidigt — mens tråd 3 behandler ét billede, kan tråd 1 detektere det næste, tråd 2 kalibrere et andet, og tråd 4 skrive et færdigbehandlet billede til disken.
+Hvert billede gennemløber alle fire tråde i rækkefølge. Med Chloros' multitrådede behandling optager flere billeder forskellige tråde samtidigt — mens tråd 3 behandler ét billede, kan tråd 1 detektere det næste, tråd 2 kalibrere et andet, og tråd 4 skrive et færdigbehandlet billede til disken.
 
 Fremskridt rapporteres pr. tråd og streames via Server-Sent Events (backend’et offentliggør dem på `/api/events`). I CLI’s live-fremskridtsvisning er de fire faser mærket **Detektering, Analyse, Behandling, Eksport**.***
 
@@ -110,11 +110,11 @@ Thread 4:                               [Image 1] ...
 GUI’ens statusbjælke viser de fire trin; hold musen over den for at se fremskridtet pr. tråd. I CLI vises de samme fire trin live som **Detecting, Analyzing, Processing, Exporting**.
 
 {% hint style="info" %}
-**Én betegnelse, to navne.** CLI&#x27;en kalder fase 3 for _Processing_. Backendens fremskridtsfeed i premium-tilstand — den, som GUI-statusbjælken viser — betegner den samme fase som _Calibrating_. Det er den samme tråd, der udfører det samme arbejde (Tråd 3: debayer, korrektioner, indekser).
+**Én betegnelse, to navne.** CLI'en kalder fase 3 for _Processing_. Backendens fremskridtsfeed i premium-tilstand — den, som GUI-statusbjælken viser — betegner den samme fase som _Calibrating_. Det er den samme tråd, der udfører det samme arbejde (Tråd 3: debayer, korrektioner, indekser).
 {% endhint %}
 
 {% hint style="success" %}
-**Pipelined-behandling med Chloros+** kan være 3-5 gange hurtigere end sekventiel behandling, afhængigt af din hardware og datasættets størrelse. Hastighedsforøgelsen er størst på systemer med hurtige GPU&#x27;er og SSD&#x27;er.
+**Pipelined-behandling med Chloros+** kan være 3-5 gange hurtigere end sekventiel behandling, afhængigt af din hardware og datasættets størrelse. Hastighedsforøgelsen er størst på systemer med hurtige GPU'er og SSD'er.
 {% endhint %}
 
 ***
@@ -139,7 +139,7 @@ print(f"Export: {status['export']['percent']}% - Phase: {status['export']['phase
 Behandlingen er afsluttet, når tråd 4 når 100 %.
 
 {% hint style="info" %}
-**En kørsel, der ikke skriver nogen billeder, betragtes som en fejl.**Ved succes rapporterer `chloros-cli process`, hvor mange billedprodukter der blev skrevet (`Image products written: N`). Hvis der blev anmodet om produkter, og**ingen**blev skrevet — kun `project.json` og `calibration_data.json` — udskriver CLI&#x27;en `Processing finished but wrote no image products.` og**afslutter med en værdi forskellig fra nul**, hvorved projektmappen og de sædvanlige årsager angives (indgangsmappen blev ikke genkendt som en optagelse — kontroller layoutet og `--input-level` — eller alle de anmodede produkter var uanvendelige for disse kameraer). Skripter kan stole på afslutningskoden.
+**En kørsel, der ikke skriver nogen billeder, betragtes som en fejl.**Ved succes rapporterer `chloros-cli process`, hvor mange billedprodukter der blev skrevet (`Image products written: N`). Hvis der blev anmodet om produkter, og**ingen**blev skrevet — kun `project.json` og `calibration_data.json` — udskriver CLI'en `Processing finished but wrote no image products.` og**afslutter med en værdi forskellig fra nul**, hvorved projektmappen og de sædvanlige årsager angives (indgangsmappen blev ikke genkendt som en optagelse — kontroller layoutet og `--input-level` — eller alle de anmodede produkter var uanvendelige for disse kameraer). Skripter kan stole på afslutningskoden.
 {% endhint %}
 
 ***
@@ -148,7 +148,7 @@ Behandlingen er afsluttet, når tråd 4 når 100 %.
 
 [Dynamisk beregnings tilpasning](dynamic-compute-adaptation.md) påvirker primært **Tråd 3 (Behandling)**:
 
-* **`GPU_PARALLEL`**: Tråd 3 kører flere billeder gennem GPU&#x27;en samtidigt ved hjælp af `fused_gpu`-pipeline
+* **`GPU_PARALLEL`**: Tråd 3 kører flere billeder gennem GPU'en samtidigt ved hjælp af `fused_gpu`-pipeline
 * **`GPU_SINGLE`**: Tråd 3 serieliserer GPU-adgangen med en semafor, mens arbejdsprocesser overlapper I/O, ved hjælp af `fused_gpu` eller den hukommelseseffektive `tiled_gpu`-pipeline
 * **`CPU_PARALLEL`**: Tråd 3 anvender CPU-baseret behandling med multitrådet parallelisme
 

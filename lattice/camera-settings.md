@@ -1,12 +1,8 @@
 # Kameraindstillinger
 
-Fanen **Kameraer** er Chloros
+Fanen **Kameraer** er Chloros’ live-kontrolpanel til LATTICE-kameraer: et hovedområde, der viser alle tilsluttede kameraer som live-felter, samt en sidebjælke, der skifter mellem tre sider — **kameralisten**, et**indstillingspanel**(indstillinger pr. kamera, for kameraopstillinger eller optagelsesindstillinger — én ad gangen) samt**Indeksberegneren**. Denne side beskriver alle kontrolelementer i kameralisten, indstillingspanelet pr. kamera og indstillingspanelet for kameraopstillinger. Optagelsestilstande, valg af eksporttype og »Capture All«-forløbet findes på den tilhørende side [Optagelsesindstillinger og -tilstande](capture.md).
 
-’ live-kontrolpanel til LATTICE-kameraer: et hovedområde, der viser alle tilsluttede kameraer som live-felter, samt en sidebjælke, der skifter mellem tre sider — **kameralisten**, et**indstillingspanel**(indstillinger pr. kamera, for kameraopstillinger eller optagelsesindstillinger — én ad gangen) samt**Indeksberegneren**. Denne side beskriver alle kontrolelementer i kameralisten, indstillingspanelet pr. kamera og indstillingspanelet for kameraopstillinger. Optagelsestilstande, valg af eksporttype og »Capture All«-forløbet findes på den tilhørende side [Optagelsesindstillinger og -tilstande](capture.md).
-
-Fanen »Kameraer« vises i sidepanelet, så snart Chloros
-
--backend er klar. Alle nedenstående kontrolelementer kommunikerer med det lokale backend via `127.0.0.1:5000`; ændringer gælder straks for live-kameraet, medmindre andet er angivet.
+Fanen »Kameraer« vises i sidepanelet, så snart Chloros-backend er klar. Alle nedenstående kontrolelementer kommunikerer med det lokale backend via `127.0.0.1:5000`; ændringer gælder straks for live-kameraet, medmindre andet er angivet.
 
 ## Kameratyper, der anvendes på denne side
 
@@ -14,40 +10,12 @@ Kontrolelementerne vises eller skjules afhængigt af, hvilken type kamera der er
 
 | Term | Betydning | Filterkanaler |
 | --- | --- | --- |
-| **RGB
-
--kamera** | LATTICE M3C med FRGB-filter (modellen indeholder `-FRGB`) | Red
-
-/ Green
-
-/ Blue
-
-|
-| **Bayer-multispektralt** | LATTICE M3C med FRGN, FOCN eller FNGB | FRGN: Red
-
-t / Green
-
-t / NIR
-
-· FOCN: Orange
-
-t / Cyan
-
-t / NIR
-
-· FNGB: NIR
-
-/ Green
-
-t / Blue
-
-t |
+| **RGB-kamera** | LATTICE M3C med FRGB-filter (modellen indeholder `-FRGB`) | Red / Green / Blue |
+| **Bayer-multispektralt** | LATTICE M3C med FRGN, FOCN eller FNGB | FRGN: Red / Green / NIR · FOCN: Orange / Cyan / NIR · FNGB: NIR / Green / Blue |
 | **Mono (M3M)** | LATTICE M3M — ét smalbåndsfilter, ét kalibreret bånd | Enkeltbånd |
 | **Array-medlem** | Et kamera tilsluttet som del af et synkroniseret array (kombineret eller separat visning) | I henhold til dets filter |
 
- RGB
-
--kameraer gennemgår fotometrisk behandling (hvidbalance, farveprofiler, gamma); multispektrale og mono-kameraer gennemgår den radiometriske kæde og springer de fotometriske indstillinger over. Array-medlemmer overfører indstillinger på stream-niveau (pixelformat, opløsning, binning, trigger, billedhastighed) til arrayet — disse rækker bliver skrivebeskyttede i panelet pr. kamera og flyttes i stedet til panelet med arrayindstillinger.
+ RGB-kameraer gennemgår fotometrisk behandling (hvidbalance, farveprofiler, gamma); multispektrale og mono-kameraer gennemgår den radiometriske kæde og springer de fotometriske indstillinger over. Array-medlemmer overfører indstillinger på stream-niveau (pixelformat, opløsning, binning, trigger, billedhastighed) til arrayet — disse rækker bliver skrivebeskyttede i panelet pr. kamera og flyttes i stedet til panelet med arrayindstillinger.
 
 ## Hovedfeedområdet
 
@@ -55,9 +23,7 @@ t |
 
 
 
-Når der ikke er tilsluttet kameraer, viser feedområdet en velkomstskærm med teksten **&quot;Tilslut et kamera for at komme i gang&quot;**med to knapper:**Tilslut kamera**(grøn, åbner dialogboksen til tilslutning af et enkelt kamera) og**Tilslut array** (blå, åbner dialogboksen til tilslutning af et array). Selve tilslutningsdialogboksene er beskrevet i [Tilslutning af kameraer](connecting.md); array-begreber (synkronisering, lag, båndbredde) i [Kameraopstillinger med flere kameraer](arrays.md). Når du åbner et gemt projekt, der indeholder kameraer, viser startskærmbilledet i stedet en spinner med teksten &quot;Genåbner N gemte kameraer…&quot;, mens Chloros
-
-gendanner streamene fra den sidste session.
+Når der ikke er tilsluttet kameraer, viser feedområdet en velkomstskærm med teksten **"Tilslut et kamera for at komme i gang"**med to knapper:**Tilslut kamera**(grøn, åbner dialogboksen til tilslutning af et enkelt kamera) og**Tilslut array** (blå, åbner dialogboksen til tilslutning af et array). Selve tilslutningsdialogboksene er beskrevet i [Tilslutning af kameraer](connecting.md); array-begreber (synkronisering, lag, båndbredde) i [Kameraopstillinger med flere kameraer](arrays.md). Når du åbner et gemt projekt, der indeholder kameraer, viser startskærmbilledet i stedet en spinner med teksten "Genåbner N gemte kameraer…", mens Chloros gendanner streamene fra den sidste session.
 
 <!-- SCREENSHOT-NEEDED: Cameras tab empty state — the "Connect a camera to get started" splash with the green Connect Camera and blue Connect Array buttons. -->
 
@@ -87,13 +53,13 @@ Når gitteret er låst op, kan du trække en vilkårlig flise til en vilkårlig 
 
 Den første side i sidepanelet viser en liste over alle tilsluttede kameraer og arrayer:
 
-* **Tilslut kamera**(grøn) /**Tilslut array** (blå, viser &quot;Registrerer...&quot; under scanning). Begge er deaktiveret, mens en tilslutningsdialog er åben.
+* **Tilslut kamera**(grøn) /**Tilslut array** (blå, viser "Registrerer..." under scanning). Begge er deaktiveret, mens en tilslutningsdialog er åben.
 * **Optag alt** (rød) — optager alle kameraer på listen med de eksporttyper, der er valgt i Optagelsesindstillinger. Kræver et åbent projekt. Fuldt dokumenteret i [Optagelsesindstillinger og -tilstande](capture.md).
 * **Tandhjul for optagelsesindstillinger** (ved siden af Optag alt) — åbner [panelet Optagelsesindstillinger](capture.md#the-capture-settings-pane). Deaktiveret uden et projekt eller under optagelse.
 
 ### Kamerarækker
 
-Hver kamerarække viser en farvekodet ramme (kameraets brugerdefinerede farve), en &quot;CAM&quot;-mærkat — med et blåt **M**(master) eller et grønt**S** (slave) som rollebogstav for array-medlemmer — samt visningsnavnet. Standardnavnet er `LATTICE-MODEL (serial)`; omdøb det fra indstillingspanelet for det enkelte kamera. Række-knapper:
+Hver kamerarække viser en farvekodet ramme (kameraets brugerdefinerede farve), en "CAM"-mærkat — med et blåt **M**(master) eller et grønt**S** (slave) som rollebogstav for array-medlemmer — samt visningsnavnet. Standardnavnet er `LATTICE-MODEL (serial)`; omdøb det fra indstillingspanelet for det enkelte kamera. Række-knapper:
 
 | Knap | Effekt |
 | --- | --- |
@@ -104,7 +70,7 @@ Hver kamerarække viser en farvekodet ramme (kameraets brugerdefinerede farve), 
 
 ### Array-rækker
 
-En array-række viser et &quot;ARRAY&quot;-mærke i arrayets farve, arrayets navn (kan omdøbes i array-indstillingerne) og en **DAQ · til/fra**-knap —**til**, når lyssensoren på array-niveau er aktiveret *eller* et hvilket som helst medlem har en sensor pr. kamera; dens værktøjstip viser præcist, hvilken sensor der leverer signaler til hvad. Medlemskameraerne vises indrykket nedenunder med deres egne rækker. Array-række-knapper: **øje**(skjuler/viser ALLE medlemmer samlet),**tandhjul**(array-indstillingspanel),**X**(afbryder forbindelsen til hele arrayet).
+En array-række viser et "ARRAY"-mærke i arrayets farve, arrayets navn (kan omdøbes i array-indstillingerne) og en **DAQ · til/fra**-knap —**til**, når lyssensoren på array-niveau er aktiveret *eller* et hvilket som helst medlem har en sensor pr. kamera; dens værktøjstip viser præcist, hvilken sensor der leverer signaler til hvad. Medlemskameraerne vises indrykket nedenunder med deres egne rækker. Array-række-knapper: **øje**(skjuler/viser ALLE medlemmer samlet),**tandhjul**(array-indstillingspanel),**X**(afbryder forbindelsen til hele arrayet).
 
 Lyssensorens (DLS) status, der bruges i array-rækker og i array-indstillingspanelet, har fire tilstande:**slukket**,**venter**(intet spektrum endnu),**aktiv**(et spektrum er ankommet inden for de sidste 3 sekunder) og**forældet** — intet nyt spektrum i 3 sekunder, men den sidste aflæsning *bruges stadig* (DAQ-målinger udløber aldrig på indlæsningsstien).
 
@@ -122,21 +88,11 @@ Indtil du ændrer rækkefølgen, viser listen først arrayer, derefter enkeltst�
 
 ### Live-histogram
 
-Øverst i ruden vises et live-luma-histogram, der beregnes ud fra JPEG
+Øverst i ruden vises et live-luma-histogram, der beregnes ud fra JPEG-forhåndsvisningen med en frekvens på ca. 8 Hz. Gennemsnittet er Bayer-vægtet — (R+2G+B)/4 — for at matche kameraets egen AE-lysmåling.
 
--forhåndsvisningen med en frekvens på ca. 8 Hz. Gennemsnittet er Bayer-vægtet — (R+2G+B)/4 — for at matche kameraets egen AE-lysmåling.
-
-* **Den Orange
-
-, stiplede linje**= AE-målet.**Træk den vandret for at ændre målet** — der sendes en kommando, når du slipper, og ved at trække skifter AE-mål-tilstanden til Manuel.
-* **Den Green
-
-, fuldt optrukne linje** = den faktiske gennemsnitlige luma (det, som AE leverer i øjeblikket).
-* **RGB
-
--knap** (øverst til højre): skifter mellem båndvise overlejrede histogrammer farvet efter kameraets filter (f.eks. på FRGN: gråt NIR
-
-, grønt, rødt). På monokameraer (M3M) står der »MONO« på knappen, og den er deaktiveret — mono viser altid det enkeltbåndede luma-histogram.
+* **Den Orange, stiplede linje**= AE-målet.**Træk den vandret for at ændre målet** — der sendes en kommando, når du slipper, og ved at trække skifter AE-mål-tilstanden til Manuel.
+* **Den Green, fuldt optrukne linje** = den faktiske gennemsnitlige luma (det, som AE leverer i øjeblikket).
+* **RGB-knap** (øverst til højre): skifter mellem båndvise overlejrede histogrammer farvet efter kameraets filter (f.eks. på FRGN: gråt NIR, grønt, rødt). På monokameraer (M3M) står der »MONO« på knappen, og den er deaktiveret — mono viser altid det enkeltbåndede luma-histogram.
 * Mærkaterne på X-aksen følger sensorens bitdybde for det aktuelle pixelformat: 0..255, 0..1023, 0..4095 eller 0..65535.
 
 ### Rækker
@@ -148,56 +104,22 @@ med kameraoplysninger
 | Række | Adfærd |
 | --- | --- |
 | **Model** | Skrivebeskyttet (f.eks. `LATT-M3C-L87-FRGN`). |
-| **Radiometrisk kalibrering** | Green
-
-t **&quot;Aktiv&quot;**-mærke med en billedtekst, der viser kalibreringsniveau, hash, kalibreringsdato og båndliste, indlæst fra kameraets kalibreringspakke (se [Fabriksradiometrisk kalibrering](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Skjult for RGB
-
--kameraer** — disse har en fotometrisk hvidbalancekalibrering, ikke strålingsintensitet pr. bånd. |
-| **Kalibreringsrapport**|**Download**-knap — åbner kameraets NIST-kalibreringscertifikat (pr. serienummer) som PDF i din operativsystems visningsprogram. Hvis certifikatet endnu ikke er gemt i cachen, viser Chloros
-
-i stedet et tip. |
+| **Radiometrisk kalibrering** | Green **"Aktiv"**-mærke med en billedtekst, der viser kalibreringsniveau, hash, kalibreringsdato og båndliste, indlæst fra kameraets kalibreringspakke (se [Fabriksradiometrisk kalibrering](https://mapir.gitbook.io/lattice-camera/calibration/factory-radiometric-calibration)).**Skjult for RGB-kameraer** — disse har en fotometrisk hvidbalancekalibrering, ikke strålingsintensitet pr. bånd. |
+| **Kalibreringsrapport**|**Download**-knap — åbner kameraets NIST-kalibreringscertifikat (pr. serienummer) som PDF i din operativsystems visningsprogram. Hvis certifikatet endnu ikke er gemt i cachen, viser Chloros i stedet et tip. |
 | **Serienummer** | Skrivebeskyttet. |
-| **Firmware**| Viser den aktuelle version og finder derefter den tilgængelige version til denne model (gemt i cachen pr. model — en gruppe på N kameraer tjekker serveren én gang). Status: „Tjekker…“ →**„Opdater til X“**-knap → „Oplader…“ → „Opdateret fra A til B“ / „Mislykkedes: …“ / &quot;Springet over: …&quot; / grøn**&quot;Opdateret&quot;**. Værktøjstip til opdateringsknappen: &quot;Fabriksindstilling + flash + omprogrammering af UserSet1. Ca. 2–3 minutter; afbryd ikke forbindelsen.&quot; |
+| **Firmware**| Viser den aktuelle version og finder derefter den tilgængelige version til denne model (gemt i cachen pr. model — en gruppe på N kameraer tjekker serveren én gang). Status: „Tjekker…“ →**„Opdater til X“**-knap → „Oplader…“ → „Opdateret fra A til B“ / „Mislykkedes: …“ / "Springet over: …" / grøn**"Opdateret"**. Værktøjstip til opdateringsknappen: "Fabriksindstilling + flash + omprogrammering af UserSet1. Ca. 2–3 minutter; afbryd ikke forbindelsen." |
 | **IP** | Skrivebeskyttet. |
 | **Temperatur** | Skrivebeskyttet, opdateres hvert 3. sekund. Bliver orange ved ≥65 °C og rød med et ⚠ ved ≥75 °C. |
-| **Kalibreringsmål** afkrydsningsfelt | Aktiverer ArUco-reflektansmåldetektion med en NDVI
-
--valideringstabel pr. panel under live-feedet (listevisning) — se [Tabellen med kalibreringsmål](#the-calibration-target-table). Gælder kun for den aktuelle session — åbnes altid i slukket tilstand. |
-| **Lyssensor**-rullemenu | Tilknytter en DAQ-lyssensor (DAQ-E/M/U, fra listen under fanen »Lyssensorer«) til dette kamera til korrektion af nedadgående lys (DLS) og forudsigelig automatisk eksponering. &quot;”Ingen” fjerner tilknytningen. Hvis der ikke er tilsluttet nogen sensorer, viser rullemenuen ”(ingen sensorer tilsluttet — åbn fanen DAQ)”. Tilknytningen gemmes sammen med projektet. |
+| **Kalibreringsmål** afkrydsningsfelt | Aktiverer ArUco-reflektansmåldetektion med en NDVI-valideringstabel pr. panel under live-feedet (listevisning) — se [Tabellen med kalibreringsmål](#the-calibration-target-table). Gælder kun for den aktuelle session — åbnes altid i slukket tilstand. |
+| **Lyssensor**-rullemenu | Tilknytter en DAQ-lyssensor (DAQ-E/M/U, fra listen under fanen »Lyssensorer«) til dette kamera til korrektion af nedadgående lys (DLS) og forudsigelig automatisk eksponering. "”Ingen” fjerner tilknytningen. Hvis der ikke er tilsluttet nogen sensorer, viser rullemenuen ”(ingen sensorer tilsluttet — åbn fanen DAQ)”. Tilknytningen gemmes sammen med projektet. |
 
 #### Tabellen »Kalibreringsmål«
 
-Tabellen er **kun til valideringsformål** (&quot;kun validering — ændrer ikke kalibreringen&quot;). Overskriften angiver kameraets serienummer, filter, målnummer og markørstørrelse i pixels, og den har én række pr. panel:
+Tabellen er **kun til valideringsformål** ("kun validering — ændrer ikke kalibreringen"). Overskriften angiver kameraets serienummer, filter, målnummer og markørstørrelse i pixels, og den har én række pr. panel:
 
-* **Panel**, derefter én kolonne pr. bånd med panelets værdi — et Bayer-kamera viser sine tre bånd efter navn og bølgelængde (f.eks. FRGN: Red
-
-660 nm / Green
-
-550 nm / NIR
-
-850 nm); et **mono (M3M)-kamera viser sit eneste bånd** (f.eks. `F750`) og har ingen NDVI
-
--kolonner.
+* **Panel**, derefter én kolonne pr. bånd med panelets værdi — et Bayer-kamera viser sine tre bånd efter navn og bølgelængde (f.eks. FRGN: Red 660 nm / Green 550 nm / NIR 850 nm); et **mono (M3M)-kamera viser sit eneste bånd** (f.eks. `F750`) og har ingen NDVI-kolonner.
 * **Sat** — andelen af panelets pixels, der er mættede (gult fra 1 %, rødt fra 5 %).
-* **NDVI
-
-Meas**,**NDVI
-
-Theo** (panelets reference-reflektans-NDVI
-
-) og **Δ**— kun Bayer-multispektralkameraer. Et lille tegn efter »NDVI
-
-Meas« angiver, hvad den målte NDVI
-
-er beregnet ud fra:**ρ**(reflektans — der foreligger en lyssensoraflæsning),**L**(radiance — ingen lyssensorværdi) eller**DN**(rå kameraværdier). Kun en**ρ**-NDVI
-
-kan sammenlignes med NDVI
-
-Theo: for L og DN er Δ-kolonnen nedtonet, og en note angiver dette (»Ingen lyssensorværdi: NDVI
-
-er baseret på strålingsintensitet, så Δ er ikke en kalibreringskontrol« / »NDVI
-
-er baseret på rå kameraværdier, så Δ er ikke en kalibreringskontrol«). Med ρ er Δ grøn under 0,02, gul under 0,05 og rød i alle andre tilfælde.
+* **NDVI Meas**,**NDVI Theo** (panelets reference-reflektans-NDVI) og **Δ**— kun Bayer-multispektralkameraer. Et lille tegn efter »NDVI Meas« angiver, hvad den målte NDVI er beregnet ud fra:**ρ**(reflektans — der foreligger en lyssensoraflæsning),**L**(radiance — ingen lyssensorværdi) eller**DN**(rå kameraværdier). Kun en**ρ**-NDVI kan sammenlignes med NDVI Theo: for L og DN er Δ-kolonnen nedtonet, og en note angiver dette (»Ingen lyssensorværdi: NDVI er baseret på strålingsintensitet, så Δ er ikke en kalibreringskontrol« / »NDVI er baseret på rå kameraværdier, så Δ er ikke en kalibreringskontrol«). Med ρ er Δ grøn under 0,02, gul under 0,05 og rød i alle andre tilfælde.
 
 <!-- SCREENSHOT-NEEDED: a 1.3.0 Calibration Target table under a live feed in list view — a Bayer camera's table showing the band columns, Sat, and "NDVI Meas ρ" / NDVI Theo / Δ; ideally next to a mono camera's single-band table with no NDVI columns. -->
 
@@ -205,34 +127,24 @@ er baseret på rå kameraværdier, så Δ er ikke en kalibreringskontrol«). Med
 
 <!-- SCREENSHOT-NEEDED: per-camera Exposure & Gain section — Exposure (us) and Gain (dB) rows with Auto/Manual toggles, AE Target Brightness, AE Smoothing slider, AE Region of Interest row with the Aim button, and (on an array camera) AE Tune Speed and Highlight Protection rows. -->
 
-Alle numeriske indtastninger her bruger drejeknapper, der accelererer, når man holder dem nede: tryk = ±1, hold &gt;1,5 s = ±10, hold &gt;3 s = ±100. Værdien sendes til kameraet, når du slipper.
+Alle numeriske indtastninger her bruger drejeknapper, der accelererer, når man holder dem nede: tryk = ±1, hold >1,5 s = ±10, hold >3 s = ±100. Værdien sendes til kameraet, når du slipper.
 
 | Kontrol | Interval / valgmuligheder | Standard | Gælder for | Hvad den gør |
 | --- | --- | --- | --- | --- |
 | **Eksponering (us)**| Kameraets live min./maks. | Auto | Alle | Eksponeringstid i mikrosekunder, med en**Auto/Manuel**vælger. Auto = kontinuerlig automatisk eksponering på kamerasiden. Hvis du indstiller en manuel eksponering, forbliver**Gain** på Auto, hvis den var det, og du kan frit bruge kameraets fulde forstærkningsområde, indtil du redigerer forstærkningen eller indstiller den til Manuel. |
 | **Forstærkning (dB)**| Kameraets aktuelle min./maks. (f.eks. op til 48 dB) | Manuel (slået fra) | Alle | Analog/digital forstærkning med sin egen**Auto/Manuel**-knap. |
 | **AE-mållysstyrke**| 0–255 | 80, tilstand**Auto**| Alle (kan redigeres, når AE eller automatisk forstærkning er aktiveret) | Den lysstyrke, som AE sigter mod. I**Auto**(standardindstillingen) vælger en histogrambaseret bagvedliggende controller selv målet og holder eksponeringen på 60–75 % af sensorens maksimum. Hvis du indtaster en værdi eller trækker i histogrammets orange linje, skifter den til**Manuel**. |
-| **AE-udjævning** | 0,5–40, trin 0,1 | 8,0 | Alle | AE-dæmpning. Værktøjstip: &quot;Lavere = AE reagerer hurtigere (kan pulsere ved høje fps). Højere = jævnere / langsommere.&quot; Værdier langt under standardindstillingen kan få AE til at pulsere og destabilisere streamingen ved høje billedhastigheder; 8,0 er den stabile standardindstilling. |
+| **AE-udjævning** | 0,5–40, trin 0,1 | 8,0 | Alle | AE-dæmpning. Værktøjstip: "Lavere = AE reagerer hurtigere (kan pulsere ved høje fps). Højere = jævnere / langsommere." Værdier langt under standardindstillingen kan få AE til at pulsere og destabilisere streamingen ved høje billedhastigheder; 8,0 er den stabile standardindstilling. |
 | **AE-interesseområde**| Afkrydsningsfelt for aktivering +**Sigt**-knap | Fra | Alle | Når denne funktion er aktiveret, måler AE kun det grønne, stiplede område i stedet for hele billedet.**Sigt** aktiverer »klik-for-at-placere« på livefeedet: et klik centrerer et område ved 30 % af billedet; klik-og-træk tegner et brugerdefineret rektangel (minimum 5 % × 5 %). *Aim* deaktiveres automatisk efter én placering. Området kortlægges tilbage til kameraets oprindelige koordinater i henhold til enhver rotation/spejling, du har indstillet, og gemmes sammen med projektet. |
 | **AE Tune Speed** | 0,1–5, trin 0,1 | 1,0 | Kun for array-medlemmer | Hvor hurtigt det automatiske AE-mål sporer ændringer i scenens lysstyrke; 1,0× kontrollerer igen hvert 2,5. sekund. |
 | **Højlysbeskyttelse** | Streng (1 %) / Normal (5 %) / Lempet (15 %) | Streng | Kameraer, der eksponerer indstillingen | Hvor stor en del af billedet der må klippes til hvidt, før AE mørkner billedet. |
 
 {% hint style="info" %}
-**Lyskrav til Bayer-multispektralkameraer (RGN
-
-/ OCN
-
-/ NGB
-
-):** Motivet skal have tilstrækkeligt lys i alle tre kanaler, ellers fungerer kalibreringen ikke korrekt — en enkelt sensoreksponering dækker alle tre spektre. Brug en DAQ-lyssensor til at måle lyset, eller skift til fuld mono (M3M), så hvert bånd får sin egen eksponering. Hvis en optagelse overtræder dette, registrerer Chloros
-
-det og advarer dig (unmix-clamp-meddelelsen). I realtid viser en kanalopdelt flise **»Banddata med lav pålidelighed · N %«**, når unmix har begrænset det pågældende bånd på 25 % eller flere af dets pixels.
+**Lyskrav til Bayer-multispektralkameraer (RGN / OCN / NGB):** Motivet skal have tilstrækkeligt lys i alle tre kanaler, ellers fungerer kalibreringen ikke korrekt — en enkelt sensoreksponering dækker alle tre spektre. Brug en DAQ-lyssensor til at måle lyset, eller skift til fuld mono (M3M), så hvert bånd får sin egen eksponering. Hvis en optagelse overtræder dette, registrerer Chloros det og advarer dig (unmix-clamp-meddelelsen). I realtid viser en kanalopdelt flise **»Banddata med lav pålidelighed · N %«**, når unmix har begrænset det pågældende bånd på 25 % eller flere af dets pixels.
 {% endhint %}
 
 {% hint style="info" %}
-**Sådan fordeler autoeksponeringen eksponering og forstærkning (1.3.0).** Når forstærkningen er sat til &quot;Auto&quot;, holder Chloros
-
-forstærkningen på 0 dB, indtil eksponeringen har nået den længste tilladte værdi (AE-øvre grænse, et arrays triggerperiode eller DAQ-eksponeringsloftet); først derefter stiger forstærkningen. I et array kommer triggerfrekvensen først: autoeksponeringen udfylder den periode, som frekvensen angiver, hvorefter forstærkningen hæves, så en mørkere scene ikke længere sænker en automatisk triggerhastighed (i 1.2.0 gjorde den det). En **manuel**eksponering på et array-medlem, der varer længere end triggerperioden, sænker arrayets triggerhastighed for at tilpasse sig den; en automatisk frekvens genoprettes, når hvert element, der bremsede den, er tilbage på automatisk eksponering. Når både**Eksponering**og**AE-mållysstyrke** er sat til Auto, og en DAQ-lyssensor leverer en måling, holdes hvert kameras eksponering fast, når den automatiske eksponering har stabiliseret sig, så længe det målte lys forbliver inden for ca. ±25 %; en større, vedvarende lysændring, en genstart af indstillingerne (f.eks. en ændring af ROI) eller din egen ændring af eksponeringen aktiverer den igen.
+**Sådan fordeler autoeksponeringen eksponering og forstærkning (1.3.0).** Når forstærkningen er sat til "Auto", holder Chloros forstærkningen på 0 dB, indtil eksponeringen har nået den længste tilladte værdi (AE-øvre grænse, et arrays triggerperiode eller DAQ-eksponeringsloftet); først derefter stiger forstærkningen. I et array kommer triggerfrekvensen først: autoeksponeringen udfylder den periode, som frekvensen angiver, hvorefter forstærkningen hæves, så en mørkere scene ikke længere sænker en automatisk triggerhastighed (i 1.2.0 gjorde den det). En **manuel**eksponering på et array-medlem, der varer længere end triggerperioden, sænker arrayets triggerhastighed for at tilpasse sig den; en automatisk frekvens genoprettes, når hvert element, der bremsede den, er tilbage på automatisk eksponering. Når både**Eksponering**og**AE-mållysstyrke** er sat til Auto, og en DAQ-lyssensor leverer en måling, holdes hvert kameras eksponering fast, når den automatiske eksponering har stabiliseret sig, så længe det målte lys forbliver inden for ca. ±25 %; en større, vedvarende lysændring, en genstart af indstillingerne (f.eks. en ændring af ROI) eller din egen ændring af eksponeringen aktiverer den igen.
 {% endhint %}
 
 {% hint style="info" %}
@@ -250,13 +162,13 @@ forstærkningen på 0 dB, indtil eksponeringen har nået den længste tilladte v
 
 <!-- SCREENSHOT-NEEDED: per-camera Pixel Format & Resolution section on a STANDALONE camera — Pixel Format, Resolution, and Binning dropdowns plus the Current WxH readout. A second capture on an array member showing the read-only "Set in array settings" state would also be useful. -->
 
-**Array-medlemmer** viser skrivebeskyttede rækker med &quot;Aktuel&quot; (format + BxH) og &quot;Binning&quot; med bemærkningen &quot;Indstilles i array-indstillinger&quot; — en genstart af streamen på et medlem ville bryde synkroniseringen, så disse administreres i [array-indstillingspanelet](#array-settings-pane).**Fritstående kameraer** har:
+**Array-medlemmer** viser skrivebeskyttede rækker med "Aktuel" (format + BxH) og "Binning" med bemærkningen "Indstilles i array-indstillinger" — en genstart af streamen på et medlem ville bryde synkroniseringen, så disse administreres i [array-indstillingspanelet](#array-settings-pane).**Fritstående kameraer** har:
 
 | Kontrol | Valgmuligheder | Hvad det gør |
 | --- | --- | --- |
 | **Pixelformat** | 8-bit / 10-bit / 12-bit / 16-bit | Sensorens bitdybde; formatfamilien er sensorens. Standardindstillingen er 12-bit, og et projekt gemmer den indstilling, du vælger, inklusive 8-bit, og genopretter forbindelsen med denne indstilling. |
 | **Opløsning** | Fuld / Halv / Kvart | I forhold til den aktuelle binning: Fuld = 2048/N × 1536/N for N×N-binning. |
-| **Binning** | 1x1 (ingen) / 2x2 / 4x4 | Hardware N×N-binning — større værdier sænker opløsningen, men øger SNR og billedfrekvensen. Ændring af indstillingen genstarter streamingen og nulstiller eventuelle ROI&#x27;er til det nye fulde synsfelt. |
+| **Binning** | 1x1 (ingen) / 2x2 / 4x4 | Hardware N×N-binning — større værdier sænker opløsningen, men øger SNR og billedfrekvensen. Ændring af indstillingen genstarter streamingen og nulstiller eventuelle ROI'er til det nye fulde synsfelt. |
 | **Aktuel** | skrivebeskyttet | Den faktiske WxH og (x, y)-forskydning, der er aktiv. |
 
 ### Live-forhåndsvisning
@@ -273,34 +185,18 @@ Alt i dette afsnit gælder **kun på skærmen**— det ændrer det, du ser i liv
 | --- | --- | --- | --- | --- |
 | **Renderingsopløsning** | 360p (hurtigst) / 480p / 720p / 1080p / Sensorens oprindelige opløsning (langsomst) | 720p | Alle | Den højde, hvorpå backend kører den radiometriske forhåndsvisningskæde. En lavere indstilling giver højere billedfrekvens uden at ændre synsfeltet. |
 | **Indeks**| Afkrydsningsfelt „Aktiver“ + tandhjul | Fra | Kun Bayer-multispektral,**ikke** medlemmer af kombinerede arrays | Live forhåndsvisning af vegetationsindeks. Tandhjulet åbner det delte [Indeksberegner](#index-calculator-pane), der er forudindlæst med kameraets filter-naturlige bånd (f.eks. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). Det brugerdefinerede udtryk plus LUT (til/fra, standardniveau 7-stop, standardmin. 0,2, standardmaks. 1) beregnes for hvert forhåndsvisningsbillede. Medlemmer af den kombinerede matrix skjuler denne række — matrixen har ét fælles indeks. |
-| **Hvidbalance** | Fra / En gang / Kontinuerlig + en genoptagelsesknap | Kontinuerlig | Kun RGB
-
-| Live hvidbalance. Opdateringsknappen genoptager hvidbalancen fra det aktuelle DLS-spektrum (deaktiveret, når tilstanden er Fra). |
-| **Gamma** | Til / Fra | Til | Kun RGB
-
-| Vis gamma (γ = 2,2 LUT) i live-forhåndsvisningen. Gemte optagelser forbliver lineære. |
+| **Hvidbalance** | Fra / En gang / Kontinuerlig + en genoptagelsesknap | Kontinuerlig | Kun RGB | Live hvidbalance. Opdateringsknappen genoptager hvidbalancen fra det aktuelle DLS-spektrum (deaktiveret, når tilstanden er Fra). |
+| **Gamma** | Til / Fra | Til | Kun RGB | Vis gamma (γ = 2,2 LUT) i live-forhåndsvisningen. Gemte optagelser forbliver lineære. |
 | **Støjfjernelse** | Afkrydsningsfelt + styrke 0–100 | Fra / 50 | Alle (pr. kamera, også inden for arrayer) | Bilateralt filter i live-forhåndsvisningen. Højere værdi = glattere, men blødere detaljer. |
 | **Skarphed** | Afkrydsningsfelt + styrke 0–100 | Fra / 30 | Alle | Unsharp mask i live-forhåndsvisningen, anvendes som det sidste. Kan forstærke støj. Kun i forhåndsvisningen. |
 | **Vignettering**| Afkrydsningsfelt + styrke 0–100 | Fra / 0 | Alle | Manuel fjernelse af resterende vignettering (lysner hjørnerne), lagt oven på arrayets Smart Vignette-estimering.**Radiometrisk — påvirker livevisningen OG eksporten**, i modsætning til Støjfjernelse/Skarphed. |
-| **Farveprofil** | Raw / Lineær / Naturlig / Forbedret / Brugerdefineret temperatur | Naturlig | Kun RGB
-
-| Se nedenfor. |
-| **Farvetemperatur** | 2000–10000 K, trin 100 | 5500 K | Kun RGB
-
-, brugerdefineret temperaturprofil | Fastlåser hvidbalancen til en fast korreleret farvetemperatur (DLS-indgang ignoreres). Den senest valgte Kelvin-værdi huskes på tværs af profilskift. |
-| **Højlys** | −100 til 0, trin 1 | 0 (slået fra) | Kun RGB
-
-| Nyt i 1.3.0. Mørkner de lyseste, hvideste områder af billedet (0 = uændret, −100 = stærkest). Gælder for live-forhåndsvisning **og for optagelser på skærmniveau (Preview)**, som gemmer indstillingen (`Chloros:DisplayHighlights`); eksport af strålingsintensitet og reflektans påvirkes aldrig. Det kan ikke gendanne sensordata, der er klippet — sænk eksponeringen for at undgå dette. Zebra-overlayet følger det mørkere billede. Deaktiveret med Raw-farveprofilen (»Anvendes ikke med Raw-farveprofilen.«). |
-| **Mætning** | 0–200 (100 = neutral) | 100 | Kun RGB
-
-| HSV-mætning i live-forhåndsvisningen. |
-| **Kontrast** | 0–200 (100 = neutral) | 100 | Kun RGB
-
-| Lineær kontrast omkring mellemgrå i live-forhåndsvisningen. |
+| **Farveprofil** | Raw / Lineær / Naturlig / Forbedret / Brugerdefineret temperatur | Naturlig | Kun RGB | Se nedenfor. |
+| **Farvetemperatur** | 2000–10000 K, trin 100 | 5500 K | Kun RGB, brugerdefineret temperaturprofil | Fastlåser hvidbalancen til en fast korreleret farvetemperatur (DLS-indgang ignoreres). Den senest valgte Kelvin-værdi huskes på tværs af profilskift. |
+| **Højlys** | −100 til 0, trin 1 | 0 (slået fra) | Kun RGB | Nyt i 1.3.0. Mørkner de lyseste, hvideste områder af billedet (0 = uændret, −100 = stærkest). Gælder for live-forhåndsvisning **og for optagelser på skærmniveau (Preview)**, som gemmer indstillingen (`Chloros:DisplayHighlights`); eksport af strålingsintensitet og reflektans påvirkes aldrig. Det kan ikke gendanne sensordata, der er klippet — sænk eksponeringen for at undgå dette. Zebra-overlayet følger det mørkere billede. Deaktiveret med Raw-farveprofilen (»Anvendes ikke med Raw-farveprofilen.«). |
+| **Mætning** | 0–200 (100 = neutral) | 100 | Kun RGB | HSV-mætning i live-forhåndsvisningen. |
+| **Kontrast** | 0–200 (100 = neutral) | 100 | Kun RGB | Lineær kontrast omkring mellemgrå i live-forhåndsvisningen. |
 | **Spejl H / Spejl V** | Afkrydsningsfelter | Fra | Alle | Spejl forhåndsvisningen vandret / lodret. |
-| **Rotation**| 0° / 90° / 180° / 270° | 0° | Alle | Roter forhåndsvisningen. Retningen anvendes i slutningen af backend-forhåndsvisningskæden.**Gemte optagelser (1.3.0):**Forhåndsvisning, Radiance, Reflectance og Index-produkter fra et enkeltstående kamera vendes ved hjælp af Spejling/Rotation, mens**Raw og Debayered forbliver i kameraets oprindelige orientering**; hver optagelsesfil gemmer indstillingen i sin XMP, så bearbejdning af en raw-fil senere anvender den på samme måde.**Filer i et array forbliver i deres oprindelige orientering** (indstillingen gemmes, men anvendes ikke), og sammensatte visninger af arrayet ignorerer den. |**Farveprofil-semantik** (RGB
-
--kameraer):
+| **Rotation**| 0° / 90° / 180° / 270° | 0° | Alle | Roter forhåndsvisningen. Retningen anvendes i slutningen af backend-forhåndsvisningskæden.**Gemte optagelser (1.3.0):**Forhåndsvisning, Radiance, Reflectance og Index-produkter fra et enkeltstående kamera vendes ved hjælp af Spejling/Rotation, mens**Raw og Debayered forbliver i kameraets oprindelige orientering**; hver optagelsesfil gemmer indstillingen i sin XMP, så bearbejdning af en raw-fil senere anvender den på samme måde.**Filer i et array forbliver i deres oprindelige orientering** (indstillingen gemmes, men anvendes ikke), og sammensatte visninger af arrayet ignorerer den. |**Farveprofil-semantik** (RGB-kameraer):
 
 * **Raw** — omgår behandlingskæden fuldstændigt.
 * **Lineær** — mørkt signal + flat-field + hvidbalance; ingen farvematrix, ingen gamma.
@@ -325,20 +221,12 @@ Disse findes kun i frontend — de lægges oven på videoen og påvirker aldrig 
 | **Gitter** | Fra / 3 × 3 / 9 × 9 | Fra | Kompositionsgitter. |
 | **Histogram** | Afkrydsningsfelt + bredde 0,10–0,90 af billedet | Fra / 0,25 | En histogramstribe på feedet. |
 | **Fokuspeak** | Afkrydsningsfelt + tærskel 20–200 + farveprøve | Fra / 80 / `#ff5722` | Sobel-kantfremhævning til fokusering. |
-| **Kanalopdelinger** | &quot;Vis opdelinger (Red
-
-/ Green
-
-/ NIR
-
-)&quot; / &quot;Skjul opdelinger&quot;-knap | Skjult | Tilføjer tre uafhængige gråtonekort pr. kanal ved siden af det sammensatte billede (knapteksten følger kameraets filterkanaler). Hvert opdelt kort kan trækkes og har samme kantfarve som kameraet. Ikke tilgængeligt på monokameraer. Gemmes sammen med projektet. |
+| **Kanalopdelinger** | "Vis opdelinger (Red / Green / NIR)" / "Skjul opdelinger"-knap | Skjult | Tilføjer tre uafhængige gråtonekort pr. kanal ved siden af det sammensatte billede (knapteksten følger kameraets filterkanaler). Hvert opdelt kort kan trækkes og har samme kantfarve som kameraet. Ikke tilgængeligt på monokameraer. Gemmes sammen med projektet. |
 
 ### Spotmåler
 
 * **Klik for at måle**-afkrydsningsfelt: Klik på livebilledet for at måle en enkelt pixel (et sigtekorn markerer den), eller klik og træk et område for at få et pixelgennemsnit.**Ryd**sletter målingen og sigtekornet. Kan ikke bruges sammen med AE-ROI**Aim**-tilstanden.
-* ****Vis**-rullemenu:**Raw (bitdybde)**— oprindelige digitale tal i sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Display (8-bit)** (standard). Når et live-indeks er aktivt, viser Display i stedet den beregnede indeksværdi (f.eks. NDVI
-
-).
+* ****Vis**-rullemenu:**Raw (bitdybde)**— oprindelige digitale tal i sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Display (8-bit)** (standard). Når et live-indeks er aktivt, viser Display i stedet den beregnede indeksværdi (f.eks. NDVI).
 * Aflæsningspanelet viser pixelkoordinater, billedstørrelse, pixelformat, bitdybde og en kanaltabel (Chan / Værdi / %) med båndbetegnelser og bølgelængder; Bayer-grønpar er gennemsnitsberegnet; regionprøver viser »N px avg«.
 
 Spotmålerens tilstand gælder kun for den aktuelle session.
@@ -360,18 +248,10 @@ Dette afsnit vises kun, når **mindst én DAQ-lyssensor er tilsluttet** — bere
 | **Scenens reflektans**|**Rekalibrer ρ**-knap | — | Genberegner den scenereflektansfaktor, som solveren bruger. |
 
 {% hint style="info" %}
-**Array-tilslutning deaktiverer som standard den prædiktive AE** — for arrays håndterer Chloros
-
-&#x27; smarte AE samt kameraets automatiske eksponering eksponeringen (med mætningsbeskyttelse), og den prædiktive AE&#x27;s estimat af en enkelt scenes-refleksionsskøn er ikke pålideligt på tværs af blandede scener. Du kan genaktivere den pr. kamera her, hvis du specifikt ønsker DLS-drevet radiometrisk eksponering.
+**Array-tilslutning deaktiverer som standard den prædiktive AE** — for arrays håndterer Chloros' smarte AE samt kameraets automatiske eksponering eksponeringen (med mætningsbeskyttelse), og den prædiktive AE's estimat af en enkelt scenes-refleksionsskøn er ikke pålideligt på tværs af blandede scener. Du kan genaktivere den pr. kamera her, hvis du specifikt ønsker DLS-drevet radiometrisk eksponering.
 {% endhint %}
 
-**DAQ-drevet eksponeringsloft og indfaldsfastlåst AE.** Uafhængigt af afkrydsningsfeltet ovenfor beregner Chloros
-
-— når en DAQ-lyssensor er tildelt et RGB
-
--kamera — ud fra den målte absolutte nedadgående irradians den maksimale eksponering×forstærkning, hvor en overflade med 100 % reflektans forbliver under clipping, og anvender den som et **loft**for den automatiske eksponering. Siden version 1.3.0 gælder loftet kun, mens et kalibreringsmål er i kameraets synsfelt (set i billedet inden for de sidste 10 sekunder); når der ikke er noget mål i synsfeltet, kører kameraets almindelige automatiske eksponering i stedet med sin egen højlysbeskyttelse, så resten af scenen ikke holdes mørkere, end den behøver at være. Mens loftet er aktivt, er kameraet**fastlåst på indfaldende lys**: det kører i åben sløjfe ved den indfaldsmålte eksponering med forstærkning på 0 dB — eksponeringen følger det målte lys, ikke motivets indhold. Da loftet kun kan forkorte eksponeringstiden, kan det ikke i sig selv forårsage udklipning. Siden version 1.3.0 beregnes loftet ud fra kameraets egen eksponeringskonstant fra dets kalibreringspakke (en flåde-gennemsnitsværdi kun, når pakken ikke indeholder en sådan). Loftet deaktiveres automatisk — og normal scene-AE genoptages — når der ikke er noget kalibreringsmål i billedet, DAQ-aflæsningen mangler, er forældet (&gt;30 s), mørk, eller hvis ≥15 % af billedet klipper ved den fastsatte eksponering (hvilket betyder, at sensoren og kameraet registrerer forskellig belysning). Der er ingen GUI-kontakt; dette er standardadfærd, når et RGB
-
--kamera har en DAQ-binding.
+**DAQ-drevet eksponeringsloft og indfaldsfastlåst AE.** Uafhængigt af afkrydsningsfeltet ovenfor beregner Chloros — når en DAQ-lyssensor er tildelt et RGB-kamera — ud fra den målte absolutte nedadgående irradians den maksimale eksponering×forstærkning, hvor en overflade med 100 % reflektans forbliver under clipping, og anvender den som et **loft**for den automatiske eksponering. Siden version 1.3.0 gælder loftet kun, mens et kalibreringsmål er i kameraets synsfelt (set i billedet inden for de sidste 10 sekunder); når der ikke er noget mål i synsfeltet, kører kameraets almindelige automatiske eksponering i stedet med sin egen højlysbeskyttelse, så resten af scenen ikke holdes mørkere, end den behøver at være. Mens loftet er aktivt, er kameraet**fastlåst på indfaldende lys**: det kører i åben sløjfe ved den indfaldsmålte eksponering med forstærkning på 0 dB — eksponeringen følger det målte lys, ikke motivets indhold. Da loftet kun kan forkorte eksponeringstiden, kan det ikke i sig selv forårsage udklipning. Siden version 1.3.0 beregnes loftet ud fra kameraets egen eksponeringskonstant fra dets kalibreringspakke (en flåde-gennemsnitsværdi kun, når pakken ikke indeholder en sådan). Loftet deaktiveres automatisk — og normal scene-AE genoptages — når der ikke er noget kalibreringsmål i billedet, DAQ-aflæsningen mangler, er forældet (>30 s), mørk, eller hvis ≥15 % af billedet klipper ved den fastsatte eksponering (hvilket betyder, at sensoren og kameraet registrerer forskellig belysning). Der er ingen GUI-kontakt; dette er standardadfærd, når et RGB-kamera har en DAQ-binding.
 
 ### Indsamling og udløser
 
@@ -395,7 +275,7 @@ Array-medlemmer viser desuden skrivebeskyttede rækker for **Rolle**(Master i bl
 
 ### Optagelse
 
-Ruden afsluttes med en **&quot;Åbn optagelsesindstillinger…&quot;**-knap, der fører til [ruden Optagelsesindstillinger](capture.md#the-capture-settings-pane) (deaktiveret, indtil et projekt er åbent — &quot;Opret eller åbn et projekt for at gemme optagelser&quot;). Hvis kameraet er skjult eller sat på pause, minder et tip dig om at vise det igen/genoptage det, før du optager.
+Ruden afsluttes med en **"Åbn optagelsesindstillinger…"**-knap, der fører til [ruden Optagelsesindstillinger](capture.md#the-capture-settings-pane) (deaktiveret, indtil et projekt er åbent — "Opret eller åbn et projekt for at gemme optagelser"). Hvis kameraet er skjult eller sat på pause, minder et tip dig om at vise det igen/genoptage det, før du optager.
 
 ## Vinduet Array-indstillinger
 
@@ -414,22 +294,18 @@ Skrivebeskyttede rækker for **Master**,**Slaves**og**Synkroniseringslinje**.
 Vises for både kombinerede og separate arrayer:
 
 * **Lyssensor**-rullemenu — knytter én DAQ til hele arrayet. Valget træder i kraft med det samme, overføres til hvert enkelt kameras egen rullemenu for lyssensor (du kan stadig tilsidesætte indstillingen for hvert kamera) og begynder at videresende spektre til arrayet.
-* Live **Status**-linje: Fra · &quot;Venter på første spektrum…&quot; · &quot;Aktiv — alle kameraer i arrayet er belysningskorrigeret&quot; · &quot;Intet nyt spektrum i de sidste 3 sekunder — bruger stadig den sidste aflæsning (ingen timeout for forældede data)…&quot;.
-* Bemærkning i ruden: &quot;Radiometrisk korrektion for hele arrayet. Indstillinger pr. kamera tilsidesætter dette.&quot;
+* Live **Status**-linje: Fra · "Venter på første spektrum…" · "Aktiv — alle kameraer i arrayet er belysningskorrigeret" · "Intet nyt spektrum i de sidste 3 sekunder — bruger stadig den sidste aflæsning (ingen timeout for forældede data)…".
+* Bemærkning i ruden: "Radiometrisk korrektion for hele arrayet. Indstillinger pr. kamera tilsidesætter dette."
 
 ### Kalibreringsmål
 
 Sin egen gruppe umiddelbart efter Omgivende lyssensor, både for kombinerede og separate arrayer:
 
-* **Aktiver**-afkrydsningsfelt — &quot;Registrer MAPIR
-
-ArUco-mål og valider NDVI
-
-mod panelrefleksions-LUT&quot;; styrer den kombinerede flises måloverlay og valideringstabeller. På et **separat** array aktiverer den hvert medlems egen [kalibreringsmåltabel](#the-calibration-target-table) (én pr. kamerarække i listevisningen).
+* **Aktiver**-afkrydsningsfelt — "Registrer MAPIR ArUco-mål og valider NDVI mod panelrefleksions-LUT"; styrer den kombinerede flises måloverlay og valideringstabeller. På et **separat** array aktiverer den hvert medlems egen [kalibreringsmåltabel](#the-calibration-target-table) (én pr. kamerarække i listevisningen).
 
 ### Optagelse — ensartede sensorindstillinger
 
-Vises for både kombinerede og separate arrays (gruppeoverskriften lyder &quot;Optagelse (ensartet på tværs af kameraer)&quot;). Disse indstillinger gælder ensartet for alle medlemmer (ændringer pr. medlem ville ødelægge synkroniseringen). Redigeringer lagres midlertidigt og anvendes samlet med **Anvend**— undtagen vippeknappen**ROI til / ROI fra**, som anvendes med det samme.
+Vises for både kombinerede og separate arrays (gruppeoverskriften lyder "Optagelse (ensartet på tværs af kameraer)"). Disse indstillinger gælder ensartet for alle medlemmer (ændringer pr. medlem ville ødelægge synkroniseringen). Redigeringer lagres midlertidigt og anvendes samlet med **Anvend**— undtagen vippeknappen**ROI til / ROI fra**, som anvendes med det samme.
 
 <!-- SCREENSHOT-NEEDED: array settings Capture section (1.3.0) — Pixel Format, Binning, Resolution preset, the ROI crop row with the "ROI on" toggle, the "Select" button, the "max WxH" hint and Reset button, the W/H/X/Y fields, the full-sensor ROI map below them with the orange crop box and its "W×H @ X,Y" label above the box, Trigger Rate row in Auto showing the derived fps, and the Apply/Cancel buttons. -->
 
@@ -447,9 +323,9 @@ Bemærk i ruden: »Ændringer af format/opløsning genstarter alle kameraer kort
 
 Nyt i 1.3.0. ROI-beskæringsrækken og kortet nedenunder fungerer sammen:
 
-* **ROI til / ROI fra**— slår sensorbeskæringen til eller fra**øjeblikkeligt**(kameraerne genstarter kortvarigt; array-brikken viser &quot;Anvender indstillinger…&quot;).**Fra**læser hele sensoren og**husk din beskæring**— felterne viser den fortsat;**Til** anvender den igen. Hvis du aktiverer ROI uden at have indstillet en beskæring, anvendes en centreret beskæring i halv størrelse (&quot;Der blev ikke indstillet nogen beskæring, så der blev anvendt en centreret beskæring i halv størrelse. Juster den med felterne.&quot;).
+* **ROI til / ROI fra**— slår sensorbeskæringen til eller fra**øjeblikkeligt**(kameraerne genstarter kortvarigt; array-brikken viser "Anvender indstillinger…").**Fra**læser hele sensoren og**husk din beskæring**— felterne viser den fortsat;**Til** anvender den igen. Hvis du aktiverer ROI uden at have indstillet en beskæring, anvendes en centreret beskæring i halv størrelse ("Der blev ikke indstillet nogen beskæring, så der blev anvendt en centreret beskæring i halv størrelse. Juster den med felterne.").
 * **Vælg**— tegner beskæringen på kortet: træk hen over den, eller klik på to modstående hjørner (Esc annullerer). Rektanglet placeres i felterne B/H/X/Y, justeret efter ovenstående trin; intet anvendes, før du trykker på**Anvend**, så du kan finjustere det med feltpilene først. Ét rektangel pr. tryk på Vælg.
-* **Kortet**viser beskæringen på hele sensoren, så du kan udvide den igen: »Fuld sensor, live«, mens kameraerne læser hele sensoren, eller »Full-frame-øjebliksbillede fra {tidspunkt}. Kameraerne læser kun beskæringen«, mens de er beskåret. Hvis arrayet kun nogensinde har streamet beskåret, viser kortet »Ingen full-frame-visning endnu: dette array har kun streamet beskåret.&quot; med en**Vis fuld ramme**-knap, som slår ROI fra. Udsnittets `W×H @ X,Y`-mærke sidder uden for boksen (over den eller under, når boksen rører toppen), på kortet og på live-flisen.
+* **Kortet**viser beskæringen på hele sensoren, så du kan udvide den igen: »Fuld sensor, live«, mens kameraerne læser hele sensoren, eller »Full-frame-øjebliksbillede fra {tidspunkt}. Kameraerne læser kun beskæringen«, mens de er beskåret. Hvis arrayet kun nogensinde har streamet beskåret, viser kortet »Ingen full-frame-visning endnu: dette array har kun streamet beskåret." med en**Vis fuld ramme**-knap, som slår ROI fra. Udsnittets `W×H @ X,Y`-mærke sidder uden for boksen (over den eller under, når boksen rører toppen), på kortet og på live-flisen.
 * **Anvend**bekræfter indstillingerne: et beskæringsbillede aktiverer ROI’en; fuldformatet (efter**Nulstil**) deaktiverer den, mens det tidligere beskæringsbillede stadig huskes; en ROI, der er deaktiveret, og hvis felter stadig viser det huskede beskæringsbillede, forbliver deaktiveret, når du anvender en anden ændring (format, binning, hastighed).
 * **På et justeret array placeres hvert medlems beskæringsvindue i henhold til justeringen**, så hvert kamera indrammer det samme område af scenen. Et array, der er beskåret, før det overhovedet blev justeret, justeres først på den fulde sensor (beskæringen fjernes, justeringen udføres, og beskæringen gendannes med vinduer for hvert kamera).
 * Efter en beskæringsændring tilpasses den automatiske eksponering til den nye indramning. Under en beskæring kan et medlems eksponering stadig køre op til udløsningsperioden.
@@ -463,41 +339,41 @@ Vises for **både kombinerede og separate arrays** (1.2.0 viste det kun for komb
 
 
 
-* **Rest**-felt: &quot;RMS x,xx px&quot; — grøn ved under 1 px, gul ved under 3 px, rød i alle andre tilfælde eller hvis et kamera fejlede; &quot;ingen profil&quot; før den første løsning.
-* Oversigtslinje: &quot;✓ Alle kameraer justeret (N)&quot; / &quot;⚠ p/N kameraer justeret —  <serial (filter)="">fejl&quot; / &quot;Beskæring aktiv — Kalibrer igen for at justere (bruger hele sensoren)&quot; / »Venter på, at eksponeringen stabiliserer sig…« / »Anvender indstillinger…« (kameraerne genstarter) / »Array leverer ikke længere billeder — tilslut arrayet igen«.
-* Tabel pr. kamera: kamera (de sidste 4 cifre i serienummeret + filter), reprojiceringsfejl i px med antal match (&quot;ref&quot; for masteren) og den normaliserede krydskorrelationsscore for overlapningen i forhold til tærskelværdien på 0,35.
-* **Rekalibrer justering** knap (viser &quot;Kalibrer justering&quot; før den første profil) — kører samregistrering igen på nye billeder.
-* **Afkrydsningsfeltet &quot;Auto-eksponer kameraer til justering&quot;** (markeret som standard) — lyser midlertidigt mørke eller flade kameraer op (først eksponering, derefter forstærkning), så de har tekstur, der kan matches, og gendanner derefter AE.
+* **Rest**-felt: "RMS x,xx px" — grøn ved under 1 px, gul ved under 3 px, rød i alle andre tilfælde eller hvis et kamera fejlede; "ingen profil" før den første løsning.
+* Oversigtslinje: "✓ Alle kameraer justeret (N)" / "⚠ p/N kameraer justeret —  <serial (filter)="">fejl" / "Beskæring aktiv — Kalibrer igen for at justere (bruger hele sensoren)" / »Venter på, at eksponeringen stabiliserer sig…« / »Anvender indstillinger…« (kameraerne genstarter) / »Array leverer ikke længere billeder — tilslut arrayet igen«.
+* Tabel pr. kamera: kamera (de sidste 4 cifre i serienummeret + filter), reprojiceringsfejl i px med antal match ("ref" for masteren) og den normaliserede krydskorrelationsscore for overlapningen i forhold til tærskelværdien på 0,35.
+* **Rekalibrer justering** knap (viser "Kalibrer justering" før den første profil) — kører samregistrering igen på nye billeder.
+* **Afkrydsningsfeltet "Auto-eksponer kameraer til justering"** (markeret som standard) — lyser midlertidigt mørke eller flade kameraer op (først eksponering, derefter forstærkning), så de har tekstur, der kan matches, og gendanner derefter AE.
 
 Chloros justerer automatisk alle arrayer efter tilslutning, i begge visningstilstande, så snart medlemmernes automatiske eksponering har fundet et stabilt niveau (programmet fortsætter med at forsøge i op til 5 minutter); den kombinerede forhåndsvisning justeres også ved åbning. Et separat array har ingen sammensat flise, så dette afsnit aflæser justeringsstatus og kører Recalibrate selv. Kalibrer om, hvis fokus eller scenedybde ændres. Justering er **kun for den aktuelle session** — den gemmes aldrig i en profil, da den afhænger af den aktuelle scenedistance. Optagelser kan stadig eksporteres med pixelregistrering (se [Justerede eksporter](capture.md#per-array-controls)).
 
 ### Smart vignettering
 
 * Afkrydsningsfeltet **Aktiver korrektion**— anvender vignetteringsestimatet pr. kamera på den radiometriske kæde (live**og** eksporter).
-* **Kalibrer fra nuværende visning**— ret først arrayet mod et ensartet mål (fladskærm, væg eller himmel); hvert kamera udjævnes individuelt, og statusrapporterer &quot;n/N kameraer · −x,x %&quot; udjævningsgevinst.**Ryd** fjerner estimatet.
-* Status: &quot;Kalibreret&quot;, &quot;Ikke kalibreret&quot; eller &quot;Delvist kalibreret — kør igen&quot;, når kun nogle medlemmers estimater stadig gælder ved deres nuværende billedramme (for eksempel efter at en *Rekalibrer* har flyttet et medlems beskæringsvindue) — kør *Kalibrer* igen.
+* **Kalibrer fra nuværende visning**— ret først arrayet mod et ensartet mål (fladskærm, væg eller himmel); hvert kamera udjævnes individuelt, og statusrapporterer "n/N kameraer · −x,x %" udjævningsgevinst.**Ryd** fjerner estimatet.
+* Status: "Kalibreret", "Ikke kalibreret" eller "Delvist kalibreret — kør igen", når kun nogle medlemmers estimater stadig gælder ved deres nuværende billedramme (for eksempel efter at en *Rekalibrer* har flyttet et medlems beskæringsvindue) — kør *Kalibrer* igen.
 * Finjuster pr. kamera med skyderen **Vignette** pr. kamera i [Live Preview](#live-preview).
 
 ### Live Preview
 
 * **Histogram**-afkrydsningsfelt + breddeskyder (0,10–0,90 af billedet) — histogramstriben på feedet vises på alle medlemmers fliser på én gang (inklusive fliser med opdelte kanaler), det kamera-specifikke [Histogramoverlay](#display-overlays-drawn-over-the-live-feed), der er indstillet for hele arrayet. Det vises som aktiveret, når alle medlemmer allerede har det. På et**separat** array er dette den eneste række i gruppen.
-* *Kun kombineret:* **Indeks**: aktiver afkrydsningsfelt + tandhjul — åbner den delte [Indeksberegner](#index-calculator-pane) med bånd tegnet fra**alle** medlemskameraer. En linje med udtryksforhåndsvisning nedenunder viser det aktuelle udtryk (&quot;Intet udtryk angivet — åbn beregneren for at oprette et&quot;), der opdateres hvert sekund.
-* *Kun kombineret:* Rullemenuen **Renderopløsning**(samme forudindstillinger som pr. kamera, standard 720p): højden på live-view-streamen**og** den gemte størrelse på den sammensatte eksport. Bemærk i panelet: &quot;Forhåndsvisning + størrelse på gemt sammensat billede. Billeder pr. kamera eksporteres altid i fuld opløsning.&quot;
+* *Kun kombineret:* **Indeks**: aktiver afkrydsningsfelt + tandhjul — åbner den delte [Indeksberegner](#index-calculator-pane) med bånd tegnet fra**alle** medlemskameraer. En linje med udtryksforhåndsvisning nedenunder viser det aktuelle udtryk ("Intet udtryk angivet — åbn beregneren for at oprette et"), der opdateres hvert sekund.
+* *Kun kombineret:* Rullemenuen **Renderopløsning**(samme forudindstillinger som pr. kamera, standard 720p): højden på live-view-streamen**og** den gemte størrelse på den sammensatte eksport. Bemærk i panelet: "Forhåndsvisning + størrelse på gemt sammensat billede. Billeder pr. kamera eksporteres altid i fuld opløsning."
 
 ### Visningslag *(kun kombineret)** **Aktivér**-afkrydsningsfelt (standard: fra — hovedkameraet vises direkte; til = lagdelt sammensætning).
 * **Rullemenuerne**Forgrund**/**Baggrund**: hvert medlemskamera (efter navn) eller**Indeks**. Når Forgrund er Indeks, viser pixels uden for LUT Min/Max baggrundslaget.
 
 ### Delt visning *(kun kombineret)*
 
-**&quot;Vis medlemskameraer&quot;**— en**Del / Skjul medlemskameraer**-knap, der tilføjer hvert medlems eget livefeed som separate gitterfelter ved siden af sammensætningen. Felterne læser arrayets eksisterende billedbuffer (ingen ekstra kameratilslutning). Kun gittervisning; gemmes pr. array sammen med projektet.
+**"Vis medlemskameraer"**— en**Del / Skjul medlemskameraer**-knap, der tilføjer hvert medlems eget livefeed som separate gitterfelter ved siden af sammensætningen. Felterne læser arrayets eksisterende billedbuffer (ingen ekstra kameratilslutning). Kun gittervisning; gemmes pr. array sammen med projektet.
 
 ### Funktioner
 
 Et skrivebeskyttet panel, der opdateres hvert 5. sekund:
 
-* **Niveaumærke**: &quot;Samtidig optagelse&quot; (grøn) · &quot;Samtidig optagelse (FTD-forskudt udsendelse)&quot; (grøn) · &quot;Forskudt optagelse (100 ms afdrift)&quot; (gul) · &quot;Konfigurationen er for stor&quot; (rød).
-* **Rammestatus**: &quot;x,xx % ufuldstændig&quot; — grøn under 1 %, gul under 5 %, rød ved 5 % eller mere.
-* **Linklinje**: &quot;NIC {mbps} Mbps – vedvarende {MB/s} MB/s&quot;.
+* **Niveaumærke**: "Samtidig optagelse" (grøn) · "Samtidig optagelse (FTD-forskudt udsendelse)" (grøn) · "Forskudt optagelse (100 ms afdrift)" (gul) · "Konfigurationen er for stor" (rød).
+* **Rammestatus**: "x,xx % ufuldstændig" — grøn under 1 %, gul under 5 %, rød ved 5 % eller mere.
+* **Linklinje**: "NIC {mbps} Mbps – vedvarende {MB/s} MB/s".
 
 Dette er arrayets aktuelle båndbreddebudget. For de underliggende fps og netværksmodeller — samt hvad der skal ændres, når niveauet skifter til gult eller rødt — se [Multi-Camera Arrays](arrays.md) og [CLI-referencen](../reference/cli-reference.md).
 

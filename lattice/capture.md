@@ -6,9 +6,9 @@ Optagelse under fanen »Kameraer« styres via en rød **Capture All**-knap og et
 **Optagelser kræver, at der er et åbent projekt.** ”Optag alt” og tandhjulet til optagelsesindstillinger er deaktiveret, indtil der er åbnet et projekt (“Opret eller åbn et projekt for at gemme optagelser”). Hver optagelse gemmes i projektmappen i `captures/`.
 {% endhint %}
 
-## Panelet &quot;Optagelsesindstillinger&quot;
+## Panelet "Optagelsesindstillinger"
 
-Åbn det med **tandhjulet ved siden af &quot;Optag alt&quot;**i kameralisten i sidepanelet eller med knappen**&quot;Åbn optagelsesindstillinger…&quot;** nederst i ethvert kameraspecifikt indstillingspanel. Overskriften lyder &quot;Optagelsesindstillinger&quot; med en ←-tilbage-knap.
+Åbn det med **tandhjulet ved siden af "Optag alt"**i kameralisten i sidepanelet eller med knappen**"Åbn optagelsesindstillinger…"** nederst i ethvert kameraspecifikt indstillingspanel. Overskriften lyder "Optagelsesindstillinger" med en ←-tilbage-knap.
 
 <!-- SCREENSHOT-NEEDED: the full Capture Settings pane — Single/Continuous/Interval mode buttons at top, the bulk export-type toggle rows (All Raw … All Index), the orange Fastest Capture toggle, an array group card with the Aligned checkbox and Record buttons, and an expanded per-camera row showing per-type checkboxes. -->
 
@@ -26,28 +26,10 @@ Tre tilstandsknapper øverst i panelet:
 | **Kontinuerlig**| Optagelser i træk, indtil en stopbetingelse opfyldes. | Stop ved**antal optagelser** (standard 1) *eller* **optagelsestid** (standard 10 s; enheder: sekunder / minutter / timer / dage). |
 | **Interval**(timelapse) | Optagelser i serier efter en timer. |**Optagelser pr. interval**(standard 1) ·**Hver**N enheder (standard 5 s) ·**I** N enheder (standard 1 m). |
 
-I tilstanden Kontinuerlig eller Interval ændres knappen Optag alt til en **Stop (N)**-knap under kørsel, hvor optagelserne tælles, efterhånden som de kommer ind. Et fuldt drev stopper kørslen (se [&quot;Capture All&quot;-forløbet](#the-capture-all-flow)).**Kontinuerlig på arrays kører inde i backend&#x27;en (nyt i 1.3.0).** Når alle kameraer på listen tilhører et array (fritstående kameraer er skjult eller udelukket), sender &quot;Kontinuerlig&quot; ikke længere én anmodning pr. optagelse: Chloros
-
--backendet kører selv optagelsessløjfen, hvor det skriver én synkroniseret gruppe, mens det vælger den næste, og knappen aflæser antallet. Med fritstående kameraer på listen foretager Chloros
-
-optagelser pass for pass som før.
+I tilstanden Kontinuerlig eller Interval ændres knappen Optag alt til en **Stop (N)**-knap under kørsel, hvor optagelserne tælles, efterhånden som de kommer ind. Et fuldt drev stopper kørslen (se ["Capture All"-forløbet](#the-capture-all-flow)).**Kontinuerlig på arrays kører inde i backend'en (nyt i 1.3.0).** Når alle kameraer på listen tilhører et array (fritstående kameraer er skjult eller udelukket), sender "Kontinuerlig" ikke længere én anmodning pr. optagelse: Chloros-backendet kører selv optagelsessløjfen, hvor det skriver én synkroniseret gruppe, mens det vælger den næste, og knappen aflæser antallet. Med fritstående kameraer på listen foretager Chloros optagelser pass for pass som før.
 
 {% hint style="warning" %}
-**Hurtig optagelse på Windows
-
-: Sørg for, at Chloros
-
--backend er undtaget fra Microsoft Defender.** Realtidsscanning af hver fil, som en optagelse med høj hastighed skriver, koster ca. 30 % af optagelseshastigheden i MAPIR
-
-’s tests (hundredvis af filer pr. sekund ved et lille ROI). Windows
-
--installationsprogrammet tilbyder **&quot;Undtag Chloros
-
--backend fra Microsoft Defender-scanning (meget hurtigere kameraoptagelse; anbefales)&quot;**, som er markeret som standard, og fjerner undtagelsen ved afinstallation. Hvis du har fjernet markeringen, skal du køre installationsprogrammet igen med markeringen aktiveret eller tilføje en undtagelse for Defender-processen for `chloros-backend.exe` (i mappen `backend` i Chloros
-
--installationsmappen). Når Defender bruger en eller flere CPU-kerner under en arrays kontinuerlige optagelse, noterer Chloros
-
--backend det én gang i sin log med disse to samme løsninger.
+**Hurtig optagelse på Windows: Sørg for, at Chloros-backend er undtaget fra Microsoft Defender.** Realtidsscanning af hver fil, som en optagelse med høj hastighed skriver, koster ca. 30 % af optagelseshastigheden i MAPIR’s tests (hundredvis af filer pr. sekund ved et lille ROI). Windows-installationsprogrammet tilbyder **"Undtag Chloros-backend fra Microsoft Defender-scanning (meget hurtigere kameraoptagelse; anbefales)"**, som er markeret som standard, og fjerner undtagelsen ved afinstallation. Hvis du har fjernet markeringen, skal du køre installationsprogrammet igen med markeringen aktiveret eller tilføje en undtagelse for Defender-processen for `chloros-backend.exe` (i mappen `backend` i Chloros-installationsmappen). Når Defender bruger en eller flere CPU-kerner under en arrays kontinuerlige optagelse, noterer Chloros-backend det én gang i sin log med disse to samme løsninger.
 {% endhint %}
 
 <!-- SCREENSHOT-NEEDED: the capture-mode area of Capture Settings with Interval selected — showing the "Captures / interval", "Every N (unit)" and "For N (unit)" rows with their defaults (1, 5 s, 1 m). -->
@@ -67,26 +49,16 @@ Hjælpeteksten i ruden opsummerer det: Vælg, hvilke kameraer og eksporttyper »
 
 Der findes seks eksporttyper: **Raw, Debayered, Radiance, Reflectance, Preview, Index**. Kun de relevante vises i rækken for hvert kamera:
 
-| Eksporttype | Indhold | RGB
-
-(FRGB) | Bayer-multispektral (FRGN/FOCN/FNGB) | Mono (M3M) |
+| Eksporttype | Indhold | RGB (FRGB) | Bayer-multispektral (FRGN/FOCN/FNGB) | Mono (M3M) |
 | --- | --- | --- | --- | --- |
 | **Raw** | Bayer-mosaik (mono: det enkelte bånd) direkte fra sensoren | ✓ | ✓ | ✓ |
-| **Debayered** | Lineær demosaik: kalibreringspakkens mørkeforskydning (DSNU) fjernet fra RAW-filen, efterfulgt af en kantbevidst demosaik — ingen linearitetskorrektion, flat field eller unmix. Gemt som en 3-kanals RGB
-
--TIFF
-
--fil (mono: 1-kanals gråtoner) | ✓ | ✓ | ✓ |
-| **Forhåndsvisning** | Fuld visningskæde (hvidbalance + gamma i henhold til kameraets profil samt RGB
-
--kameraets indstilling for højlys; multispektral: falskfarvestrækning) | ✓ | ✓ | ✓ |
+| **Debayered** | Lineær demosaik: kalibreringspakkens mørkeforskydning (DSNU) fjernet fra RAW-filen, efterfulgt af en kantbevidst demosaik — ingen linearitetskorrektion, flat field eller unmix. Gemt som en 3-kanals RGB-TIFF-fil (mono: 1-kanals gråtoner) | ✓ | ✓ | ✓ |
+| **Forhåndsvisning** | Fuld visningskæde (hvidbalance + gamma i henhold til kameraets profil samt RGB-kameraets indstilling for højlys; multispektral: falskfarvestrækning) | ✓ | ✓ | ✓ |
 | **Strålingsintensitet** | float32 W/m²/sr/nm via den fulde radiometriske kæde | — (tilbydes ikke) | ✓ | ✓ |
 | **Reflektans** | uint16 ρ (32768 = 1,0) | — (tilbydes ikke) | ✓ — vises kun, når kameraet har en DAQ-lyssensor (sin egen eller arvet fra sit array) | det samme som multispektral |
 | **Indeks** | Vegetationsindeks (LUT)-gengivelse | — | ✓ — kræver et aktiveret, ikke-tomt indeksudtryk på kameraet og tilbydes ikke til medlemmer af kombinerede arrays (arrayet har ét fælles indeks) | — (et indeks kræver ≥2 bånd; se [Monokameraer og vegetationsindekser](mono-indices.md)) |
 
-Strålingsintensitet og reflektans tilbydes aldrig til RGB
-
--kameraer — strålingsintensitet pr. Bayer-pixel er ikke meningsfuld for en bredbåndsfotometrisk sensor.
+Strålingsintensitet og reflektans tilbydes aldrig til RGB-kameraer — strålingsintensitet pr. Bayer-pixel er ikke meningsfuld for en bredbåndsfotometrisk sensor.
 
 ### Hurtigst mulig optagelse
 
@@ -125,7 +97,7 @@ Tryk på **Capture All** i kameralisten i sidepanelet:
 2. Skjulte (øje) eller pausede kameraer springes over. Et array er kun fuldt blokeret, når *alle* dets medlemmer er skjulte eller pausede.
 3. Når der tildeles en lyssensor, gemmes den tilhørende DAQ-måling af nedadgående lys som en `.daq`-fil i optagelsernes `daq/`-mappe — selv for optagelser, der kun indeholder rådata — så der altid senere kan udledes radiometriske produkter.
 4. Knappen viser fremskridt i realtid — »Optager… færdig/i alt« — og skifter i kontinuerlig/interval-tilstand til **Stop (N)**. Hvert optagelseselement har en timeout på 300 s.
-5. Når gennemløbet er færdigt, viser en resultatmeddelelse **&quot;N filer gemt&quot;**eller**&quot;N gemt, F mislykkedes&quot;**samt &quot;(S skjult/sat på pause/sprunget over)&quot;, når kameraer blev sprunget over. Hvis drevet bliver fyldt op, stopper kørslen og viser**&quot;Stoppet: drev fuldt. Gemt N, F mislykkedes&quot;** — hver fil, der ikke kunne skrives, tæller som mislykket.
+5. Når gennemløbet er færdigt, viser en resultatmeddelelse **"N filer gemt"**eller**"N gemt, F mislykkedes"**samt "(S skjult/sat på pause/sprunget over)", når kameraer blev sprunget over. Hvis drevet bliver fyldt op, stopper kørslen og viser**"Stoppet: drev fuldt. Gemt N, F mislykkedes"** — hver fil, der ikke kunne skrives, tæller som mislykket.
 
 ## Hvor optagelserne gemmes
 
@@ -151,15 +123,11 @@ Optagelserne gemmes under det åbne projekt i mappen `<project>/captures/`. Hver
 * **En uregelmæssighed, man skal være opmærksom på:** visningsniveauet gemmes i en mappe med navnet `preview/`, mens filerne beholder `_display` i navnet — mappe og suffiks adskiller sig kun for dette niveau.
 * Ukendte niveauer gemmes i en mappe med deres eget navn; hvis der ikke kan oprettes en undermappe, skrives filen til rodmappen for optagelser i stedet for at gå tabt.
 * TIFF-optagelser komprimeres som standard tabsfrit (DEFLATE) og indeholder alle deres kalibrerings- og behandlingsmetadata **inde i filens XMP** — optagelserne er selvbeskrivende og har ingen sidecar-filer ud over `.daq`-læsningen (og dens `.daq.cameras.json`).
-* **Clamp-masker (nyt i 1.3.0).**Hvor den 3×3 spektrale adskillelse var nødt til at begrænse et bånd til 0 på mindst én pixel, får produkterne for strålingsintensitet, reflektans og indeks en maskering pr. pixel, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = båndet i produktets R-kanal, bit 1 = G, bit 2 = B); produktets `Chloros:UnmixClampMask` XMP-tag peger på den. Maskerne ligger**ved siden af** produktmapperne, aldrig inde i en, så en produktmappe som f.eks. `reflectance/` kan overføres til fotogrammetri-software, som den er. Chloros
-
-’ egen import springer maskerne over.
+* **Clamp-masker (nyt i 1.3.0).**Hvor den 3×3 spektrale adskillelse var nødt til at begrænse et bånd til 0 på mindst én pixel, får produkterne for strålingsintensitet, reflektans og indeks en maskering pr. pixel, `clamp_masks/<product folder>/<product name>_clampmask.tif` (bit 0 = båndet i produktets R-kanal, bit 1 = G, bit 2 = B); produktets `Chloros:UnmixClampMask` XMP-tag peger på den. Maskerne ligger**ved siden af** produktmapperne, aldrig inde i en, så en produktmappe som f.eks. `reflectance/` kan overføres til fotogrammetri-software, som den er. Chloros’ egen import springer maskerne over.
 * **Orientering (1.3.0).** Et enkeltstående kameras Preview-, Radiance-, Reflectance- og Index-produkter drejes i henhold til dets Mirror/Rotation-indstilling; Raw- og Debayered-filer forbliver, som sensoren har aflæst dem. Alle filer i arrayet forbliver i deres oprindelige format. Hver fil gemmer indstillingen i sin XMP, så genbehandlingen anvender den på samme måde.
 * **Hvilket kamera en `.daq` tilhører (1.3.0).** En optagelses `.daq` matches ved behandlingstidspunktet kun med billeder fra de kameraer, som dens `.daq.cameras.json` angiver. Et selvstændigt kamera uden egen lyssensor låner derfor ikke længere et andet kameras måling — knyt en sensor til det, eller registrer en i fanen Lyssensorer. En lyssensorregistrering (og enhver `.daq` uden den pågældende fil, inklusive ældre optagelser) fungerer stadig for alle kameraer.
 
-Dette er det samme layout, som `chloros-cli lattice capture` / `array-capture` skriver til deres `-o`-mappe — dokumenteret i [CLI
-
--reference § Sådan ser en optagelsesmappe ud](../reference/cli-reference.md#what-a-captures-folder-looks-like).
+Dette er det samme layout, som `chloros-cli lattice capture` / `array-capture` skriver til deres `-o`-mappe — dokumenteret i [CLI-reference § Sådan ser en optagelsesmappe ud](../reference/cli-reference.md#what-a-captures-folder-looks-like).
 
 <!-- SCREENSHOT-NEEDED: OS file explorer showing a real <project>/captures/ folder after a multi-level array capture — the raw/debayered/radiance/reflectance/preview subfolders, the daq/ and clamp_masks/ folders, and sync_<ts>_SN<serial>_<level>.tif filenames visible inside one subfolder. -->
 
@@ -179,11 +147,7 @@ chloros-cli process "C:/ChlorosProjects/MyField/captures"
 Det fungerer også at navngive en undermappe på et niveau direkte (f.eks. `…/captures/raw/`), men det efterlader mappen `daq/` – kopier den med, når du-afleder et radiometrisk produkt fra `raw/`, ellers har tidsstemplet intet at matche mod.
 
 {% hint style="warning" %}
-**Behandlingen starter altid fra `raw`.** Inden for hver optagelse er råbilledet kilden til pipelinen; `debayered`, `radiance`, `reflectance`, og `preview` følger med som visningsmodi, men føres aldrig tilbage gennem pipelinen — genbehandling af et afledt produkt ville genanvende vignettering, farve og strålingsberegninger, der allerede er indbagt i dets pixels, så Chloros
-
--funktionen afviser dette frem for at foretage dobbeltbehandling. Renderingerne `index/` og `composite/` behandles slet ikke (de er output, ikke optagelser). En *captures*-mappe gemmes **uden** råimport og vises normalt, men `process` springer den over og angiver dette; `--input-level {raw,debayered,processed}` er den bevidste nødudgang, der tvinger et indgangssted frem. Se [CLI
-
--referencen](../reference/cli-reference.md#what-a-captures-folder-looks-like) for de nøjagtige spring-over-meddelelser.
+**Behandlingen starter altid fra `raw`.** Inden for hver optagelse er råbilledet kilden til pipelinen; `debayered`, `radiance`, `reflectance`, og `preview` følger med som visningsmodi, men føres aldrig tilbage gennem pipelinen — genbehandling af et afledt produkt ville genanvende vignettering, farve og strålingsberegninger, der allerede er indbagt i dets pixels, så Chloros-funktionen afviser dette frem for at foretage dobbeltbehandling. Renderingerne `index/` og `composite/` behandles slet ikke (de er output, ikke optagelser). En *captures*-mappe gemmes **uden** råimport og vises normalt, men `process` springer den over og angiver dette; `--input-level {raw,debayered,processed}` er den bevidste nødudgang, der tvinger et indgangssted frem. Se [CLI-referencen](../reference/cli-reference.md#what-a-captures-folder-looks-like) for de nøjagtige spring-over-meddelelser.
 {% endhint %}
 
 To yderligere adfærdsmønstre, der er værd at kende, når man skriver scripts til genbehandling:
@@ -191,15 +155,11 @@ To yderligere adfærdsmønstre, der er værd at kende, når man skriver scripts 
 * En `chloros-cli process`-kørsel, der anmodede om produkter, men ikke skrev **nogen billedprodukter, mislykkes med en tydelig fejlmeddelelse og afsluttes med en værdi forskellig fra nul** — du vil aldrig få en lydløs, tom kørsel. Vellykkede kørsler rapporterer antallet af produkter. (En bevidst kørsel, der kun omfatter metadata, tæller stadig som en succes.)
 * Genimporterede, behandlede eksporter indtager aldrig en captures rå slot — den oprindelige rådata forbliver altid kilden til pipelinen.
 
-## CLI
-
--ækvivalenter
+## CLI-ækvivalenter
 
 Alt på denne side kan køres headless. GUI-capture-tilstandene svarer direkte til `chloros-cli lattice array-capture`:
 
-| GUI | CLI
-
-|
+| GUI | CLI |
 | --- | --- |
 | Enkelt | `chloros-cli lattice array-capture` |
 | Kontinuerlig | `array-capture --continuous [--count N] [--duration S]` |
@@ -210,6 +170,4 @@ Alt på denne side kan køres headless. GUI-capture-tilstandene svarer direkte t
 | Optag indeksvideo | `chloros-cli lattice array-record` |
 | Optag rå burst / Opret video | `chloros-cli lattice array-burst` / `array-build-video` |
 
-De fulde flagtabeller, indstillingen for smart-AE-optagelse (`--smart`) og modellen med konstant hastighed findes i [CLI
-
--reference § Optagelsestilstande, optagere og offline-genbehandling](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).
+De fulde flagtabeller, indstillingen for smart-AE-optagelse (`--smart`) og modellen med konstant hastighed findes i [CLI-reference § Optagelsestilstande, optagere og offline-genbehandling](../reference/cli-reference.md#capture-modes-recorders--offline-reprocess).

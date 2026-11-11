@@ -12,7 +12,7 @@ Nedenstående indeksformler anvender en kombination af gennemsnitlige transmissi
 
 <table><thead><tr><th align="center">Survey3-filterfarve</th><th width="196.199951171875" align="center">Survey3-filternavn</th><th width="159.800048828125" align="center">Transmissionsområde (FWHM)</th><th align="center">Gennemsnitlig transmission</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468–483 nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476–512 nm</td><td align="center">494 nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543–558 nm</td><td align="center">547 nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598–640 nm</td><td align="center">619 nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653–668 nm</td><td align="center">661 nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re-RedEdge</td><td align="center">712–735 nm</td><td align="center">724 nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798–848 nm</td><td align="center">823 nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835–865 nm</td><td align="center">850 nm</td></tr></tbody></table>
 
-Når disse formler anvendes, kan navnet slutte på &quot;\_1&quot; eller &quot;\_2&quot;, hvilket angiver, hvilket NIR-filter – enten NIR1 eller NIR2 – der er blevet brugt.
+Når disse formler anvendes, kan navnet slutte på "\_1" eller "\_2", hvilket angiver, hvilket NIR-filter – enten NIR1 eller NIR2 – der er blevet brugt.
 
 For LATTICE M3C-kameraer (Bayer-tredobbeltbåndspas) anvender den samme indeksmotor M3C-filterbåndene:
 
@@ -23,7 +23,7 @@ For LATTICE M3C-kameraer (Bayer-tredobbeltbåndspas) anvender den samme indeksmo
 | FOCN | Orange 615 nm / 21 nm | Cyan 490 nm / 38 nm | NIR 808 nm / 14 nm |
 | FNGB | Blue 475 nm / 30 nm | Green 550 nm / 30 nm | NIR 850 nm / 30 nm |
 
-LATTICE M3M-kameraer er enkeltbåndskameraer (ét smalbåndsfilter pr. kamera), så der beregnes ikke multibåndsindekser for et enkelt M3M-billede. For at beregne indekser med M3M skal du kombinere to eller flere kameraer til en justeret multibåndsstak og bruge LATTICE-indeksmotoren (`chloros-cli lattice index` eller GUI&#x27;ens live-indeksberegner).
+LATTICE M3M-kameraer er enkeltbåndskameraer (ét smalbåndsfilter pr. kamera), så der beregnes ikke multibåndsindekser for et enkelt M3M-billede. For at beregne indekser med M3M skal du kombinere to eller flere kameraer til en justeret multibåndsstak og bruge LATTICE-indeksmotoren (`chloros-cli lattice index` eller GUI'ens live-indeksberegner).
 
 ***
 
@@ -38,7 +38,7 @@ I Chloros findes der **tre** indeksflader, og deres forudindstillede lister er i
 | `chloros-cli process --indices NDVI,NDRE` | Overflade 2 | 22 |
 | SDK `process_folder(indices=[...])` | Overflade 2 | 22 |
 | `chloros-cli lattice index --preset` | Overflade 3 | 22 (et andet 22) |
-| Fanen &quot;Kameraer&quot; – live indeksberegner | Overflade 3 | 22 (et andet 22) |
+| Fanen "Kameraer" – live indeksberegner | Overflade 3 | 22 (et andet 22) |
 
 Surface 1 og 2 arbejder med **ét billede ad gangen fra ét kamera**, ved hjælp af symbolpladserne `x`/`y`/`z`(/`a`), der er knyttet til det pågældende kameras filterkanaler. Overflade 3 arbejder med en**justeret multibåndsstak** — flere LATTICE-kameraer, der er samregistreret i én kube — og henviser til kanaler ved hjælp af navne med små bogstaver.
 
@@ -48,9 +48,9 @@ Dropdown-menuen viser dem i denne rækkefølge (det er indsættelsesrækkefølge
 
 `NDVI, GNDVI, CVI, ENDVI, EVI, MSR, OSAVI, TDVI, LAI, FCI1, FCI2, GARI, GCI, GEMI, GLI, GOSAVI, GRVI, GSAVI, LCI, MNLI, MSAVI2, NDRE, NLI, RDVI, SAVI, VARI, WDRVI`
 
-I GUI&#x27;en trækker du dit kameras filterkanaler over på formelens båndpladser, så enhver formel kan bruges med enhver båndtildeling, som dit kamera understøtter. Brugerdefinerede formler, du har gemt, tilføjes under denne liste.
+I GUI'en trækker du dit kameras filterkanaler over på formelens båndpladser, så enhver formel kan bruges med enhver båndtildeling, som dit kamera understøtter. Brugerdefinerede formler, du har gemt, tilføjes under denne liste.
 
-De **fem formler, der kun findes i GUI&#x27;en** — dem, som CLI-/SDK-listen `--indices` ikke accepterer — er implementeret som:
+De **fem formler, der kun findes i GUI'en** — dem, som CLI-/SDK-listen `--indices` ikke accepterer — er implementeret som:
 
 | Forudindstilling kun i GUI | Formel (som implementeret) | Pladser |
 | --- | --- | --- |
@@ -69,7 +69,7 @@ Indstillingen `chloros-cli process --indices` (og SDK-parameteren `indices`) acc
 `NDVI, GNDVI, NDRE, OSAVI, SAVI, MSAVI2, EVI, MSR, TDVI, LAI, GCI, GRVI, GSAVI, GOSAVI, NLI, MNLI, RDVI, WDRVI, CVI, ENDVI, GLI, VARI`
 
 {% hint style="warning" %}
-**Ukendte indeksnavne springes over uden advarsel.** Et navn uden for denne liste (herunder de fem formler, der kun findes i GUI’en: `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` samt eventuelle brugerdefinerede formler, du har gemt i GUI&#x27;en) udelades med blot en logmeddelelse — kørslen fortsætter uden det pågældende indeks, og selve kørslen rapporteres stadig som vellykket. Meddelelsen vises som:
+**Ukendte indeksnavne springes over uden advarsel.** Et navn uden for denne liste (herunder de fem formler, der kun findes i GUI’en: `FCI1`, `FCI2`, `GARI`, `GEMI`, `LCI` samt eventuelle brugerdefinerede formler, du har gemt i GUI'en) udelades med blot en logmeddelelse — kørslen fortsætter uden det pågældende indeks, og selve kørslen rapporteres stadig som vellykket. Meddelelsen vises som:
 
 ```
 [INDEX_EXPAND] skipping unknown preset 'LCI'; known: ['CVI', 'ENDVI', 'EVI', ...]
@@ -163,9 +163,9 @@ $$
 CVI = NIR * {Red \over Green^{2}}
 $$
 
-I GUI&#x27;en og på listen over forudindstillinger i CLI/SDK er symbolformlen `(z/y)*(x/y)`, hvor x=Red, y=Green, z=NIR (båndene i et RGN-kamera); LATTICE-indeksmotorens forudindstilling er `nir * red / green**2`. Hver overflade beregner det samme indeks.
+I GUI'en og på listen over forudindstillinger i CLI/SDK er symbolformlen `(z/y)*(x/y)`, hvor x=Red, y=Green, z=NIR (båndene i et RGN-kamera); LATTICE-indeksmotorens forudindstilling er `nir * red / green**2`. Hver overflade beregner det samme indeks.
 
-_Reference: Vincini, M., E. Frazzi og P. D&#x27;Alessio. »A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.« Precision Agriculture 9 (2008): 303-319._
+_Reference: Vincini, M., E. Frazzi og P. D'Alessio. »A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.« Precision Agriculture 9 (2008): 303-319._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Skovområder vil have lavere FCI1-værdier på grund af træernes lavere reflektans og tilstedeværelsen af skygger i kronetaget.
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. &quot;Robust forest cover indices for multispectral images.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. "Robust forest cover indices for multispectral images." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Skovområder vil have lavere FCI2-værdier på grund af træernes lavere reflektans og tilstedeværelsen af skygger i kronetaget.
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. »Robust forest cover indices for multispectral images.« Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Reference: Becker, Sarah J., Craig S.T. Daughtry og Andrew L. Russ. »Robust forest cover indices for multispectral images.« Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -273,13 +273,13 @@ $$
 
 Brug af brede NIR- og grønne bølgelængder giver en bedre forudsigelse af klorofylindholdet, samtidig med at det muliggør større følsomhed og et højere signal-støj-forhold.
 
-_Reference: Gitelson, A., Y. Gritz og M. Merzlyak. &quot;Sammenhængen mellem bladets klorofylindhold og spektralreflektans samt algoritmer til ikke-destruktiv vurdering af klorofylindholdet i højere planters blade.&quot; Journal of Plant Physiology 160 (2003): 271-282._
+_Reference: Gitelson, A., Y. Gritz og M. Merzlyak. "Sammenhængen mellem bladets klorofylindhold og spektralreflektans samt algoritmer til ikke-destruktiv vurdering af klorofylindholdet i højere planters blade." Journal of Plant Physiology 160 (2003): 271-282._
 
 ***
 
 ## GLI – Green Leaf Index
 
-Dette indeks blev oprindeligt udviklet til brug med et digitalt RGB-kamera til måling af hvededække, hvor de røde, grønne og blå digitale tal (DN&#x27;er) varierer fra 0 til 255.
+Dette indeks blev oprindeligt udviklet til brug med et digitalt RGB-kamera til måling af hvededække, hvor de røde, grønne og blå digitale tal (DN'er) varierer fra 0 til 255.
 
 $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
@@ -369,7 +369,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Reference: Datt, B. &quot;Remote Sensing of Water Content in Eucalyptus Leaves.&quot; Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
+_Reference: Datt, B. "Remote Sensing of Water Content in Eucalyptus Leaves." Journal of Plant Physiology 154, nr. 1 (1999): 30-36._
 
 ***
 
@@ -441,7 +441,7 @@ $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Reference: Goel, N., og W. Qin. &quot;Indflydelse af kronedækket på sammenhængen mellem forskellige vegetationsindekser og LAI og Fpar: En computersimulering.&quot; Remote Sensing Reviews 10 (1994): 309-347._
+_Reference: Goel, N., og W. Qin. "Indflydelse af kronedækket på sammenhængen mellem forskellige vegetationsindekser og LAI og Fpar: En computersimulering." Remote Sensing Reviews 10 (1994): 309-347._
 
 ***
 
@@ -465,7 +465,7 @@ $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_Reference: Roujean, J., og F. Breon. &quot;Estimating PAR Absorbed by Vegetation from Bidirectional Reflectance Measurements.&quot; Remote Sensing of Environment 51 (1995): 375-384._
+_Reference: Roujean, J., og F. Breon. "Estimating PAR Absorbed by Vegetation from Bidirectional Reflectance Measurements." Remote Sensing of Environment 51 (1995): 375-384._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Reference: Bannari, A., H. Asalhi og P. Teillet. »Transformed Difference Vegetation Index (TDVI) til kortlægning af vegetationsdække« I Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS &#x27;02, IEEE International, bind 5 (2002)._
+_Reference: Bannari, A., H. Asalhi og P. Teillet. »Transformed Difference Vegetation Index (TDVI) til kortlægning af vegetationsdække« I Proceedings of the Geoscience and Remote Sensing Symposium, IGARSS '02, IEEE International, bind 5 (2002)._
 
 ***
 
