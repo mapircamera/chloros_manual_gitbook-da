@@ -62,7 +62,9 @@ output/
 * En optagelsesmappe, der er gemt **uden** rå-filer, importeres og vises normalt, men behandlingen springer den over og angiver dette i loggen. (CLI-flagget `--input-level` kan tvinge et indgangspunkt i dette tilfælde — se [CLI-referencen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Fra og med version 1.3.0 kan en optagelsesmappe også indeholde en `clamp_masks/`-mappe (masker pr. pixel for strålings- og reflektansniveauer — se [Output-billedformater](../output-image-formats.md#clamp-masks)). Masker er ikke billeder af scenen, og Chloros springer dem over ved import, uanset hvor de befinder sig.
 
-**LATTICE-hub-sessioner** importeres på samme måde: Vælg »Add Folder« (Tilføj mappe) til den sessionsmappe, der er kopieret fra hubben (den indeholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logfiler for nedadgående stråling. Hvis kameraets eller DAQ'ens kalibrering endnu ikke er gemt i cachen på din computer, henter Chloros den automatisk via serienummeret ved import (kræver internetforbindelse én gang).***
+**LATTICE-hub-sessioner** importeres på samme måde: Vælg »Add Folder« (Tilføj mappe) til den sessionsmappe, der er kopieret fra hubben (den indeholder `raw/` samt `previews/`), sammen med eventuelle DAQ-M `.csv`-logfiler for nedadgående stråling. Hvis kameraets eller DAQ'ens kalibrering endnu ikke er gemt i cachen på din computer, henter Chloros den automatisk via serienummeret ved import (kræver internetforbindelse én gang).
+
+***
 
 ## Sådan forstår du filbrowsertabellen
 
@@ -104,7 +106,9 @@ Ved at klikke på skifteknappen i øverste højre hjørne over tabellen vises de
 
 * `.daq`- og `.csv`-filer vises i listen i filbrowseren, men er ikke billeder, man kan klikke på — de leverer nedadgående strålingsintensitet til reflektanskalibrering.
 * Hver importeret `.daq`/`.csv` vises under **Projektindstillinger → DAQ-lyssensor**, hvor du kan gennemgå den gældende korrektion for diffusorhætten for hver fil. Se [Justering af projektindstillinger](adjusting-project-settings.md).
-* Optagelser, du foretager i fanen **Lyssensorer**, føjes automatisk til det åbne projekt — der er ikke behov for manuel import.***
+* Optagelser, du foretager i fanen **Lyssensorer**, føjes automatisk til det åbne projekt — der er ikke behov for manuel import.
+
+***
 
 ## Administration af filer i dit projekt
 
@@ -221,7 +225,9 @@ Hvis dit projekt indeholder billeder fra flere MAPIR-kameraer:
 
 ### Genåbnet projekt rapporterer manglende filer
 
-Hvis kildefilerne er blevet flyttet eller slettet, siden projektet sidst blev åbnet, fortæller Chloros dig, **hvilke**filer der mangler, i stedet for at åbne et tomt gitter. Hvis selve projektmappen er flyttet, omdirigerer Chloros sine kildebaner til den mappe, hvor `project.json` nu befinder sig, og opretter en sikkerhedskopi (`project.json.before-relink-<date>-<time>`). Når filerne ikke kan findes, viser vinduet**Kildefiler ikke fundet**en**Gennemse**-knap til den nye placering, hvorefter du kan vælge Nyt projekt eller Slet projekt. Fra CLI skal du bruge `chloros-cli project open PATH --relink FOLDER`; fra SDK skal du bruge `open_project(path, relink=...)`.***
+Hvis kildefilerne er blevet flyttet eller slettet, siden projektet sidst blev åbnet, fortæller Chloros dig, **hvilke**filer der mangler, i stedet for at åbne et tomt gitter. Hvis selve projektmappen er flyttet, omdirigerer Chloros sine kildebaner til den mappe, hvor `project.json` nu befinder sig, og opretter en sikkerhedskopi (`project.json.before-relink-<date>-<time>`). Når filerne ikke kan findes, viser vinduet**Kildefiler ikke fundet**en**Gennemse**-knap til den nye placering, hvorefter du kan vælge Nyt projekt eller Slet projekt. Fra CLI skal du bruge `chloros-cli project open PATH --relink FOLDER`; fra SDK skal du bruge `open_project(path, relink=...)`.
+
+***
 
 ## Næste trin
 

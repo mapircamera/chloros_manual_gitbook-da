@@ -34,7 +34,9 @@ i venstre sidepanel
 * **Valgmuligheder**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Standard**: Standard (512 px)
 * **Beskrivelse**: Opløsning (den længste kant, i pixels), hvormed miniaturerne i billedgitteret gengives. Højere værdier ser skarpere ud, når der zoomes ind, men indlæses langsommere og bruger mere hukommelse. Fuld opløsning svarer til den originale billedstørrelse.
-* **Bemærk**: Kun til visning — dette påvirker aldrig behandlingen eller eksporterede filer.***
+* **Bemærk**: Kun til visning — dette påvirker aldrig behandlingen eller eksporterede filer.
+
+***
 
 ## Målregistrering
 
@@ -184,7 +186,9 @@ Den gemte værdi matches uden skelnen mellem store og små bogstaver, og nogle f
   * Ét kamera + én pin: Pin 2 indstilles automatisk til "Brug ikke"
   * Ét kamera + to pins: Pin 2 indstilles automatisk til "Brug ikke"
   * Flere kameraer: Manuel valg kræves
-* **Bemærk**: Det samme kamera kan ikke tildeles både pin 1 og pin 2 samtidigt.***
+* **Bemærk**: Det samme kamera kan ikke tildeles både pin 1 og pin 2 samtidigt.
+
+***
 
 ## DAQ-lyssensor
 
@@ -205,7 +209,9 @@ Hver række viser filen, sensormodellen og den diffusorhætte-korrektion, der fa
 * **Beskrivelse**: `Auto` bruger den registrerede kappe for hver fil (Sunshine-kappen antages, hvis der ikke er registreret noget, men DAQ-U, DAQ-M og DAQ-E leveres uden kappe, og Chloros kan ikke se, hvad der er monteret, så behandlingen viser en advarsel om en antaget kappe: vælg den kappe, der var monteret). Valg af en specifik kappe tilsidesætter **alle** nedadgående filer i projektet undtagen en DAQ-E-S's, hvis diffusor er en del af dens kalibrering; et projekt bestående udelukkende af DAQ-E-S viser ingen rullemenu: råoptagelser korrigeres med den, og optagelser, der allerede har en kappe, omrefereres (den indspillede korrektion fortrydes, og den valgte anvendes).
 * **Vigtigt**: Den valgte kappe skal matche den kappe, der fysisk var monteret under optagelsen. Hverken sensoren eller softwaren kan registrere den fysiske kappe — et uoverensstemmende kappe-ID korrigerer spektrene forkert.
 
-Der er bevidst **én** projektdækkende indstilling i stedet for rullemenuer pr. fil: indstillingen gælder for alle nedadrettede kilder i projektet.***
+Der er bevidst **én** projektdækkende indstilling i stedet for rullemenuer pr. fil: indstillingen gælder for alle nedadrettede kilder i projektet.
+
+***
 
 ## Array-justering
 

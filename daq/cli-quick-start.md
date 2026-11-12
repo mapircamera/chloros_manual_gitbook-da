@@ -170,7 +170,9 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` viser sensorens firmware (og om denne Chloros-udgave indeholder en nyere version), dens adresse og hvordan den fik den, den gemte netværksindstilling, hvis den adskiller sig fra den aktuelle, streaming ved opstart og PTP. `pool-set-network` genstarter sensoren for at anvende ændringen og genopretter forbindelsen med de indstillinger, den havde; `--no-reboot` gemmer den blot. Der skal være en statisk adresse på denne computers netværk, ellers afviser Chloros den; `--force` tilsidesætter dette, men kun for en computer, der vil blive omadresseret eller dirigeret til den. Genstart afvises, mens sensoren registrerer data. `pool-update-firmware` svarer til GUI'ens **Update to \<version\>** for kommandolinjen og er metoden til at opdatere en DAQ-E på Linux, som ikke har en GUI. Nyt i 1.3.0.***
+`pool-info` viser sensorens firmware (og om denne Chloros-udgave indeholder en nyere version), dens adresse og hvordan den fik den, den gemte netværksindstilling, hvis den adskiller sig fra den aktuelle, streaming ved opstart og PTP. `pool-set-network` genstarter sensoren for at anvende ændringen og genopretter forbindelsen med de indstillinger, den havde; `--no-reboot` gemmer den blot. Der skal være en statisk adresse på denne computers netværk, ellers afviser Chloros den; `--force` tilsidesætter dette, men kun for en computer, der vil blive omadresseret eller dirigeret til den. Genstart afvises, mens sensoren registrerer data. `pool-update-firmware` svarer til GUI'ens **Update to \<version\>** for kommandolinjen og er metoden til at opdatere en DAQ-E på Linux, som ikke har en GUI. Nyt i 1.3.0.
+
+***
 
 ## Kommandooversigt
 

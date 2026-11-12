@@ -100,4 +100,4 @@ Detaljer for brugere, der kræver streng synkronisering:
 | Broadcast-domæne | Vært og sensor er på samme L2-segment; mDNS routes ikke |
 | Firewall | Windows: Installationsprogrammets regel **Chloros Backend (UDP-In)** tillader DAQ-E-stream (UDP 5002), mDNS (5353) og PTP (319/320) at komme ind; en tredjeparts-firewall skal have de samme indstillinger. Linux: `.deb` åbner disse porte i `ufw` / `firewalld` kun, hvis firewallen var aktiv under installationen — tillad dem selv, hvis den aktiveres senere |
 | Vært med flere netværkskort | Opdagelsen gennemsøger mDNS med ARP som reserve; `--eth-host <ip-or-hostname>` springer opdagelsen over og opretter forbindelse direkte |
-| Gen-scanning via GUI | Opdagelsen kører kun, mens forbindelsesdialogen er åben; brug Opdater |</version>
+| Gen-scanning via GUI | Opdagelsen kører kun, mens forbindelsesdialogen er åben; brug Opdater |

@@ -78,7 +78,9 @@ Hvert billede med GPS-data får en markør ved dets koordinater.
 | Udbyder        | Bemærkninger                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Bred global dækning; understøtter alle fire flisetyper                                                                                                            |
-| **Esri ArcGIS**| Ofte luftfotos med højere opløsning i bestemte regioner. Flisetypen**Terræn** tilbydes ikke for Esri, og knappen er deaktiveret, når Esri er valgt |***
+| **Esri ArcGIS**| Ofte luftfotos med højere opløsning i bestemte regioner. Flisetypen**Terræn** tilbydes ikke for Esri, og knappen er deaktiveret, når Esri er valgt |
+
+***
 
 ## Kortflisetyper
 
@@ -93,7 +95,9 @@ Vælg kortlagstypen med knapperne (fra venstre mod højre):
 | **Satellit**        | Detaljerede satellitbilleder, ingen etiketter — den løsning, der kræver mest båndbredde |
 | **Hybrid** (standard) | Satellitbilleder med veje og etiketter tegnet ovenpå                |
 
-Fanen »Kort« åbnes i indstillingen **Hybrid**. Dit valg overføres til udbyderomskifteren, hvor udbyderen understøtter dette.***
+Fanen »Kort« åbnes i indstillingen **Hybrid**. Dit valg overføres til udbyderomskifteren, hvor udbyderen understøtter dette.
+
+***
 
 ## Kortnavigation
 
@@ -141,7 +145,9 @@ Fanen »Kort« åbnes i indstillingen **Hybrid**. Dit valg overføres til udbyde
 
 ### Kortet er tomt, eller fliserne holder op med at indlæses
 
-Kortfliseudbyderne er onlinetjenester. Hvis kortfliserne holder op med at komme ind, skal du kontrollere maskinens netværksforbindelse og derefter prøve at skifte udbyder. Hvis du havde zoomet meget ind, skal du trykke på **×**-nulstillingsknappen for at vende tilbage til et normalt zoomniveau og lade kortet anmode om kortfliserne igen.***
+Kortfliseudbyderne er onlinetjenester. Hvis kortfliserne holder op med at komme ind, skal du kontrollere maskinens netværksforbindelse og derefter prøve at skifte udbyder. Hvis du havde zoomet meget ind, skal du trykke på **×**-nulstillingsknappen for at vende tilbage til et normalt zoomniveau og lade kortet anmode om kortfliserne igen.
+
+***
 
 ## Relaterede sider
 

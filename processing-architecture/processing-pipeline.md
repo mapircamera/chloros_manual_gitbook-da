@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Hvert billede gennemløber alle fire tråde i rækkefølge. Med Chloros' multitrådede behandling optager flere billeder forskellige tråde samtidigt — mens tråd 3 behandler ét billede, kan tråd 1 detektere det næste, tråd 2 kalibrere et andet, og tråd 4 skrive et færdigbehandlet billede til disken.
 
-Fremskridt rapporteres pr. tråd og streames via Server-Sent Events (backend’et offentliggør dem på `/api/events`). I CLI’s live-fremskridtsvisning er de fire faser mærket **Detektering, Analyse, Behandling, Eksport**.***
+Fremskridt rapporteres pr. tråd og streames via Server-Sent Events (backend’et offentliggør dem på `/api/events`). I CLI’s live-fremskridtsvisning er de fire faser mærket **Detektering, Analyse, Behandling, Eksport**.
+
+***
 
 ## Tråddetaljer
 

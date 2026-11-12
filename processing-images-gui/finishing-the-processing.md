@@ -110,7 +110,9 @@ Reflektansen gemmes som et heltal (DN), og **den DN-værdi, der svarer til ρ = 
 | LATTICE (M3C/M3M) | **32768** (margin op til ρ 2,0) | XMP-tagget `Chloros:PixelScale=32768` er indsat i filen |
 | Survey3          | **65535** (begrænset til ρ 1,0)     | Intet `Chloros:PixelScale`-tag — denne fravær er selve signalet (Survey3-produkter indeholder andre `Chloros:*`-behandlingsmærker) |
 
-**Læs `Chloros:PixelScale`-mærket og divider med det** i stedet for at antage en generel værdi på 65535 — at dividere LATTICE-reflektansen med 65535 halverer automatisk alle værdier. En reflektansfil fra før version 1.3.0, der er skrevet som 8-bit, blev beskåret, ikke omskaleret, og har ingen skalatag: Eksporter den igen i 16-bit eller 32-bit i stedet for at dividere den. Se [Output Image Formats](../output-image-formats.md) for den fulde forklaring.***
+**Læs `Chloros:PixelScale`-mærket og divider med det** i stedet for at antage en generel værdi på 65535 — at dividere LATTICE-reflektansen med 65535 halverer automatisk alle værdier. En reflektansfil fra før version 1.3.0, der er skrevet som 8-bit, blev beskåret, ikke omskaleret, og har ingen skalatag: Eksporter den igen i 16-bit eller 32-bit i stedet for at dividere den. Se [Output Image Formats](../output-image-formats.md) for den fulde forklaring.
+
+***
 
 ## Metadata, der overføres til eksportfilerne
 
@@ -165,7 +167,9 @@ For at gemme en oversigt over behandlingen eller sende den til MAPIR-support:
 3. Vedlæg den med projektdokumentationen
 4. Send den til MAPIR-support, hvis der opstår problemer
 
-For at sende et problem direkte til MAPIR skal du bruge fejlikonet (**Rapporter en fejl**) øverst på fanen Debug Log — se [Rapportering af en fejl fra fanen Log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+For at sende et problem direkte til MAPIR skal du bruge fejlikonet (**Rapporter en fejl**) øverst på fanen Debug Log — se [Rapportering af en fejl fra fanen Log](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Almindelige problemer med output og løsninger
 

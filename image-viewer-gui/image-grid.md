@@ -10,7 +10,9 @@ Brug zoomskyderen øverst til højre til at justere størrelsen på billedminiat
 * **Ctrl + `+`**/**Ctrl + `=`**og**Ctrl + `−`** ændrer størrelsen med 4 px pr. tryk. Tastaturgenvejen stopper ved 64 px i den lille ende og, i den store ende, ved den størrelse, der passer nøjagtigt til to miniaturer pr. række i det aktuelle vindue.
 * Den størrelse, du vælger, gemmes sammen med projektet (`UI → Grid thumbnail size` i `project.json`, standard `160`), så den gendannes, når projektet åbnes igen.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Miniaturernes *opløsning* er en separat indstilling fra miniaturernes *størrelse*: se **Visning → Opløsning af billedminiaturer** i [Projektindstillinger](../project-settings/project-settings.md) (standard 512 px på den lange side). Størrelsen angiver, hvor stor flisen tegnes; opløsningen angiver, hvor mange detaljer der hentes for at udfylde den.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>Miniaturernes *opløsning* er en separat indstilling fra miniaturernes *størrelse*: se **Visning → Opløsning af billedminiaturer** i [Projektindstillinger](../project-settings/project-settings.md) (standard 512 px på den lange side). Størrelsen angiver, hvor stor flisen tegnes; opløsningen angiver, hvor mange detaljer der hentes for at udfylde den.
+
+***
 
 ## Værktøjslinjen til gitteret
 
@@ -20,7 +22,9 @@ Rækken af knapper over gitteret har op til tre grupper, fra venstre mod højre:
 2. **Kamerafilterknapper** — én pr. LATTICE-kamera. Vises kun i Per Kamera-tilstand.
 3. **Knapper til eksport-/visningstilstand** — hvilket produkt hver miniature viser.
 
-Når vinduet er for smalt til at rumme dem alle, foldes grupperne sammen fra højre mod venstre til dropdown-menuer, der vises ved musepeger: eksport-/visningsknapperne foldes først sammen, derefter kameraknapperne. Den sammenklappede gruppe efterlader en enkelt knap mærket med det aktuelt aktive valg, og når man holder markøren over den, glider hele sætket ned. **"Per Trigger / Per Camera" klappes aldrig sammen.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+Når vinduet er for smalt til at rumme dem alle, foldes grupperne sammen fra højre mod venstre til dropdown-menuer, der vises ved musepeger: eksport-/visningsknapperne foldes først sammen, derefter kameraknapperne. Den sammenklappede gruppe efterlader en enkelt knap mærket med det aktuelt aktive valg, og når man holder markøren over den, glider hele sætket ned. **"Per Trigger / Per Camera" klappes aldrig sammen.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->
+
+***
 
 ## Knapper til eksportvisning
 
@@ -43,10 +47,8 @@ I et blandet projekt følger etiketten den filtypenavn, som flest billeder bruge
 | Knap | Viser | Når den vises |
 | --- | --- | --- |
 | **Mål** | Billeder med et registreret kalibreringsmål | Efter en kørsel, der har registreret mål |
-| **Reflektans** | Kalibrerede reflektansbilleder | Kun iSurvey3
-
--projekter — LATTICE-projekter bruger i stedet `RAW (Reflectance)`, så gitteret viser aldrig to reflektansknapper |
-| **Hvidbalanceret** | Det hvidbalancerede produkt (kameraer fraRGB) | Efter behandling |
+| **Reflektans** | Kalibrerede reflektansbilleder | Kun i Survey3-projekter — LATTICE-projekter bruger i stedet `RAW (Reflectance)`, så gitteret viser aldrig to reflektansknapper |
+| **Hvidbalanceret** | Det hvidbalancerede produkt (kameraer fra RGB) | Efter behandling |
 | **Vignettekorrigeret** | Den ukalibrerede vignettekorrigerede standardindstilling | Efter en kørsel, hvor reflektanskalibrering ikke kunne anvendes, og *Vignettekorrektion* var aktiveret |
 | **Sensorreaktion** | Den ukalibrerede fallback med sensorreaktion | Det samme, men med *Vignettekorrektion* slået fra |
 | **`RAW (<INDEX> Index)`** | Én knap pr. beregnet indeks | Efter en kørsel med konfigurerede indekser |

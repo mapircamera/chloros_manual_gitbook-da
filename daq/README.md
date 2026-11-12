@@ -17,7 +17,9 @@ MAPIRs **DAQ**-lyssensorer måler det omgivende lys som radiometrisk kalibrerede
 | --- | --- | --- |
 | **DAQ-U** | USB (seriel) | scanning af seriel port |
 | **DAQ-M** | Bluetooth Low Energy | BLE-scanning efter navn |
-| **DAQ-E** | Ethernet (IPv4, PoE-strømforsyning) | mDNS `_daq-e._tcp` (værtsnavn `daq-e-<id>.local`) |**DAQ-E-S (nyt i 1.3.0).** En DAQ-E med en fast diffusor og en hældningssensor. Chloros opfører den som `DAQ-E-S` og kører den nøjagtigt som en DAQ-E, bortset fra at den ikke foretager nogen cap-korrektion, og at hver aflæsning indeholder enhedens hældning, rullning og stigning. Se [DAQ-E-S: fast diffusor og hældning](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, PoE-strømforsyning) | mDNS `_daq-e._tcp` (værtsnavn `daq-e-<id>.local`) |
+
+**DAQ-E-S (nyt i 1.3.0).** En DAQ-E med en fast diffusor og en hældningssensor. Chloros opfører den som `DAQ-E-S` og kører den nøjagtigt som en DAQ-E, bortset fra at den ikke foretager nogen cap-korrektion, og at hver aflæsning indeholder enhedens hældning, rullning og stigning. Se [DAQ-E-S: fast diffusor og hældning](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Alle tre bruger den samme kommunikationsprotokol og leverer identiske data:
 

@@ -180,7 +180,9 @@ Når den er startet, kører hele pipelinen automatisk:
 * En afbrudt kørsel rapporterer præcist, hvad den har gennemført (se linjerne `[RUN-SUMMARY]` i loggen)
 * En ny kørsel starter pipelinen fra begyndelsen
 
-**Planlægningstip:** Ved meget store projekter bør du overveje at behandle i batches eller bruge CLI for bedre kontrol.***
+**Planlægningstip:** Ved meget store projekter bør du overveje at behandle i batches eller bruge CLI for bedre kontrol.
+
+***
 
 ## Overvågning af din behandling
 

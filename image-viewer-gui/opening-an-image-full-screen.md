@@ -57,7 +57,9 @@ Den »effektive« forstørrelse tager højde for GSD-blokstørrelsen: med en blo
 | **←**                           | Fuld skærm | Forrige billede                      |
 | **Ctrl + R**                    | Fuld skærm | Nulstil indeks/LUT-sandkassen         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Gitter        | Større miniaturer (4 px pr. tryk)  |
-| **Ctrl + `−`**                  | Gitter        | Mindre miniaturer (4 px pr. tryk) |***
+| **Ctrl + `−`**                  | Gitter        | Mindre miniaturer (4 px pr. tryk) |
+
+***
 
 ## Cursorværdier
 
@@ -100,7 +102,9 @@ Visningsprogrammet, indeks-/LUT-sandkassen og indekseksporten løser alle skaler
 To konsekvenser, der er værd at kende:
 
 * En **32-bit procent**TIFF gemmer DN/65535 som et float-tal, og en**8-bit** PNG/JPG-eksport gemmer DN × 255/65535 — visningsprogrammet konverterer begge værdier tilbage, før der vises en procent.
-* Ét tilfælde kan ikke gendannes: en **8-bit TIFF-eksport af en optagelse med 8-bit-kilde** beskæres til 0–255 i stedet for at blive omskaleret og bærer bevidst ingen skaleringsmærke. For disse filer udskriver panelet kun DN uden procentkolonne. Dette er det ærlige svar, ikke en fejl.***
+* Ét tilfælde kan ikke gendannes: en **8-bit TIFF-eksport af en optagelse med 8-bit-kilde** beskæres til 0–255 i stedet for at blive omskaleret og bærer bevidst ingen skaleringsmærke. For disse filer udskriver panelet kun DN uden procentkolonne. Dette er det ærlige svar, ikke en fejl.
+
+***
 
 ## Lagets histogram
 
@@ -126,7 +130,9 @@ Der er tre knapper over histogrammet:
 | **INDEX**| Til      | Vises kun, mens et indeks er aktivt. Skifter histogrammet fra kildebåndene til**indeksværdifordelingen**, hvor de to klip-tærskler er tegnet som orange stiplede linjer, og markørens indeksværdi som en hvid linje                                                          |
 | **RGB**| Fra     | Skifter fra den samlede kurve til kurver pr. kanal. På en monosensor viser denne knap**MONO** og er deaktiveret — der er kun én kanal at vise                                                                                                                                  |
 
-Histogrammet beregnes ud fra de **blokke, du kan se**, ikke de underliggende kildepixels: ændrer du GSD-blokstørrelsen, beregnes fordelingen på ny, så histogrammet, markøren og det viste billede altid stemmer overens.***
+Histogrammet beregnes ud fra de **blokke, du kan se**, ikke de underliggende kildepixels: ændrer du GSD-blokstørrelsen, beregnes fordelingen på ny, så histogrammet, markøren og det viste billede altid stemmer overens.
+
+***
 
 ## GSD-blokstørrelse
 
@@ -185,7 +191,9 @@ Anvend multispektrale indekser og farve-LUT'er fra sidepanelet:
 
 3. Vælg dit kameras filter og en indeksformel, og træk derefter kanalkredsene ind i formelens felter
 4. Tilføj en LUT, og vælg en gradient, tærskelværdier og en beskæringsindstilling
-5. Se værdierne ved markøren, og gem resultatet med **Eksporter/Gem billede(r)**Se [Index/LUT Sandbox](index-lut-sandbox.md) for den fulde vejledning.***
+5. Se værdierne ved markøren, og gem resultatet med **Eksporter/Gem billede(r)**Se [Index/LUT Sandbox](index-lut-sandbox.md) for den fulde vejledning.
+
+***
 
 ## Fejlfinding
 

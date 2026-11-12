@@ -154,7 +154,9 @@ Dette afsnit vises **kun**, når mindst ét billede i projektet indeholder den m
 
 * **Anvend array-justering** (standard: aktiveret): tilpasser hvert behandlet produkt (debayered / preview / radiance / reflectance / index) til arrayets fælles referencegeometri. Deaktiveret = eksport i sensorens oprindelige geometri.
 * **Beskær til fælles overlapning** (standard: aktiveret): beskær justerede eksporter til det område, som alle moduler deler, så hvert bånd har samme dækningsområde. Deaktiveret bevarer det fulde sensorområde (sort udfyldning uden for kilden).
-* **Resampling**:**Bilineær (glat, standard)**,**Nærmeste (bevarer nøjagtige værdier)**— ingen blanding mellem pixels, til streng radiometrisk analyse — eller**Kubisk (skarpest)**.***
+* **Resampling**:**Bilineær (glat, standard)**,**Nærmeste (bevarer nøjagtige værdier)**— ingen blanding mellem pixels, til streng radiometrisk analyse — eller**Kubisk (skarpest)**.
+
+***
 
 ## Gemme og indlæse indstillinger
 
