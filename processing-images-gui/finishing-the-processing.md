@@ -81,7 +81,9 @@ Tæl ikke ud fra en formel — antallet af output afhænger af, hvilke produkter
 
 ### Forhåndsvisning i eksterne billedvisere
 
-**Anbefalede billedvisere:*** **QGIS** – Gratis GIS-software (bedst til georefereret multispektral analyse)
+**Anbefalede billedvisere:**
+
+* **QGIS** – Gratis GIS-software (bedst til georefereret multispektral analyse)
 * **IrfanView** – Hurtig, letvægts billedfremviser (understøtter TIFF)
 * **Adobe Photoshop** – Professionel redigering (understøtter TIFF)
 * **GIMP** – Gratis alternativ til Photoshop
@@ -221,7 +223,9 @@ For at sende et problem direkte til MAPIR skal du bruge fejlikonet (**Rapporter 
 
 ### Problem: NDVI-værdierne ser forkerte ud
 
-**Forventede NDVI-intervaller:*** **Vand, klipper, jord**: -0,1 til 0,2
+**Forventede NDVI-intervaller:**
+
+* **Vand, klipper, jord**: -0,1 til 0,2
 * **Tynd/usund vegetation**: 0,2 til 0,4
 * **Moderat vegetation**: 0,4 til 0,6
 * **Sund, tæt vegetation**: 0,6 til 0,9**Hvis værdierne ligger uden for disse intervaller:**
@@ -275,12 +279,18 @@ For at sende et problem direkte til MAPIR skal du bruge fejlikonet (**Rapporter 
 
 ### Anbefalet sikkerhedskopieringsstrategi
 
-**Hvad der skal gemmes:*** ✅ **Originale RAW/JPG-billeder eller LATTICE-råoptagelser** – Arkiver på separat drev/i skyen; rådata er kilden til behandlingsforløbet, og alt andet kan gendannes ud fra disse
+**Hvad der skal gemmes:**
+
+* ✅ **Originale RAW/JPG-billeder eller LATTICE-råoptagelser** – Arkiver på separat drev/i skyen; rådata er kilden til behandlingsforløbet, og alt andet kan gendannes ud fra disse
 * ✅ **`.daq` / `.csv` lyssensorfiler** – Nødvendige for senere at kunne genberegne reflektansen
 * ✅ **Bearbejdede resultater** – Gem kalibrerede billeder og indekser
 * ✅ **Projektmappe** (`project.json` og tilhørende filer) – Indeholder alle indstillinger til genbehandling, hvis det bliver nødvendigt
 * ✅ **Fejlfindingslog** – Dokumenterer detaljer om behandlingen
-* ✅ **Kalibreringsmålbilleder** – Til verifikation og genbehandling**Anbefalinger til opbevaring:*** **Umiddelbar sikkerhedskopi**: Ekstern harddisk
+* ✅ **Kalibreringsmålbilleder** – Til verifikation og genbehandling
+
+**Anbefalinger til opbevaring:**
+
+* **Umiddelbar sikkerhedskopi**: Ekstern harddisk
 * **Langtidsarkiv**: Cloud-lager (Google Drive, Dropbox osv.)
 * **Kritiske data**: Opbevar 2-3 kopier på forskellige steder***
 

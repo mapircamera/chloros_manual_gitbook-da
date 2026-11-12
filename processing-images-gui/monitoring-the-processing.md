@@ -28,7 +28,11 @@ For brugere med Chloros+-licens:
 1.**Detektering** – Findes kalibreringsmål
 2. **Analyse** – Undersøgelse af billeder og forberedelse af pipeline
 3. **Kalibrering** – Anvendelse af vignetterings- og reflektanskorrektioner
-4. **Eksport** – Gemning af behandlede filer**Interaktive funktioner:*** **Hold musen over** statusbjælken for at se det udvidede panel med de 4 trin
+4. **Eksport** – Gemning af behandlede filer
+
+**Interaktive funktioner:**
+
+* **Hold musen over** statusbjælken for at se det udvidede panel med de 4 trin
 * **Klik på** statusbjælken for at fastfryse/fastgøre det udvidede panel
 * **Klik igen** for at ophæve fastfrysningen, så panelet skjules automatisk, når musen fjernes
 * Hvert trin viser den individuelle fremdrift (0-100 %)
@@ -92,7 +96,9 @@ For brugere med Chloros+-licens:
 
 ### Trin 3: Kalibrering
 
-**Hvad sker der:*** **Debayering**: Konvertering af RAW-Bayer-mønster til 3 kanaler (overspringes for LATTICE-monomoduler, med en bemærkning)
+**Hvad sker der:**
+
+* **Debayering**: Konvertering af RAW-Bayer-mønster til 3 kanaler (overspringes for LATTICE-monomoduler, med en bemærkning)
 * **Vignetteringskorrektion**: Fjernelse af mørkningen ved objektivets kanter
 * **Reflektanskalibrering**: Normalisering med målværdier og/eller DAQ-downwelling
 * **Indeksberegning**: Beregning af multispektrale indekser
@@ -104,7 +110,9 @@ For brugere med Chloros+-licens:
 * Det aktuelle billede behandles
 * Færdigbehandlede billeder / Samlet antal billeder
 
-**Behandlingsadfærd:*** **Fri tilstand**: Behandler ét billede ad gangen sekventielt
+**Behandlingsadfærd:**
+
+* **Fri tilstand**: Behandler ét billede ad gangen sekventielt
 * **Chloros+-tilstand**: Kører en hardware-adaptiv arbejdspool — 1–4 samtidige arbejdsprocesser på GPU-systemer (afhængigt af VRAM), én arbejdsproces pr. fysisk kerne (minus én) på rene CPU-systemer. Se [Dynamisk beregnings tilpasning](../processing-architecture/dynamic-compute-adaptation.md)
 * **GPU-acceleration**: Fremskynder denne fase betydeligt**Hvad du skal holde øje med:**
 

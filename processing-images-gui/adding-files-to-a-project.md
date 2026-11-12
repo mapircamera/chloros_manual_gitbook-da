@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Vælg "Tilføj mappe" i rodmappen for optagelserne** (`output/` ovenfor). Når den valgte mappe ikke selv indeholder billeder, men har undermapper, går Chloros automatisk ned i dem — undermapperne på det pågældende niveau og rodmappen `.daq` hentes alle på én gang.**Sådan importeres optagelser:*** Hver optagelse importeres som et **enkelt billede**, grupperet efter optagelse (ikke én post pr. niveau). De øvrige niveauer i den samme optagelse vises som visningstilstande for det pågældende billede.
+**Vælg "Tilføj mappe" i rodmappen for optagelserne** (`output/` ovenfor). Når den valgte mappe ikke selv indeholder billeder, men har undermapper, går Chloros automatisk ned i dem — undermapperne på det pågældende niveau og rodmappen `.daq` hentes alle på én gang.
+
+**Sådan importeres optagelser:**
+
+* Hver optagelse importeres som et **enkelt billede**, grupperet efter optagelse (ikke én post pr. niveau). De øvrige niveauer i den samme optagelse vises som visningstilstande for det pågældende billede.
 * **Behandlingen starter altid fra det rå billede.** De andre niveauer kan ses, men kun `raw` sendes nogensinde gennem behandlingskæden — at genbehandle et allerede behandlet produkt ville medføre dobbelt anvendelse af korrektioner, så Chloros afviser dette. En genimporteret eksport kan aldrig indtage en optagelses rå-plads.
 * En optagelsesmappe, der er gemt **uden** rå-filer, importeres og vises normalt, men behandlingen springer den over og angiver dette i loggen. (CLI-flagget `--input-level` kan tvinge et indgangspunkt i dette tilfælde — se [CLI-referencen](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Fra og med version 1.3.0 kan en optagelsesmappe også indeholde en `clamp_masks/`-mappe (masker pr. pixel for strålings- og reflektansniveauer — se [Output-billedformater](../output-image-formats.md#clamp-masks)). Masker er ikke billeder af scenen, og Chloros springer dem over ved import, uanset hvor de befinder sig.

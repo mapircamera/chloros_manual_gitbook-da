@@ -21,7 +21,7 @@ LATTICE-serien er et modulært multispektralt kamerasystem baseret på Sony IMX2
 
 ```
 <sensor>-<lens>-F<filter>        e.g.  M3C-L41-FRGN,  M3M-L87-F550
-```.
+```
 
 Chloros viser den med præfikset `LATT-` (for eksempel `LATT-M3M-L41-F550`), og modelstrengen styrer alt det efterfølgende — sensorprofil, båndlayout og kalibrering fastlægges automatisk; der er intet, der skal konfigureres for hvert enkelt kamera. Objektivnummeret angiver det **horisontale synsfelt i grader**: `L41` = smalt 41°, `L87` = bredt 87°.
 

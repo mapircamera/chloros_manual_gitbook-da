@@ -228,7 +228,7 @@ Disse findes kun i frontend — de lægges oven på videoen og påvirker aldrig 
 ### Spotmåler
 
 * **Klik for at måle**-afkrydsningsfelt: Klik på livebilledet for at måle en enkelt pixel (et sigtekorn markerer den), eller klik og træk et område for at få et pixelgennemsnit.**Ryd**sletter målingen og sigtekornet. Kan ikke bruges sammen med AE-ROI**Aim**-tilstanden.
-* ****Vis**-rullemenu:**Raw (bitdybde)**— oprindelige digitale tal i sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Display (8-bit)** (standard). Når et live-indeks er aktivt, viser Display i stedet den beregnede indeksværdi (f.eks. NDVI).
+* **Vis** -rullemenu:**Raw (bitdybde)**— oprindelige digitale tal i sensorens bitdybde (f.eks. 12-bit → 0..4095) — eller**Display (8-bit)** (standard). Når et live-indeks er aktivt, viser Display i stedet den beregnede indeksværdi (f.eks. NDVI).
 * Aflæsningspanelet viser pixelkoordinater, billedstørrelse, pixelformat, bitdybde og en kanaltabel (Chan / Værdi / %) med båndbetegnelser og bølgelængder; Bayer-grønpar er gennemsnitsberegnet; regionprøver viser »N px avg«.
 
 Spotmålerens tilstand gælder kun for den aktuelle session.
@@ -401,7 +401,7 @@ Hurtig oversigt over, hvad der findes hvor, når et kamera er medlem af et array
 Anden tværgående adfærd:
 
 * **Kombineret vs. separat visning** vælges ved array-tilslutning: kombineret = én justeret sammensat flise (medlemmer sender kun via Split View); separat = hvert medlem gengiver sin egen synkroniserede flise. Et kamera viser aldrig både et selvstændigt feed og en array-flise.
-* ****Automatisk genforbindelse**: Når et gemt projekt åbnes, gendannes dets kameraer og arrays, og alle gemte indstillinger anvendes igen på backend, før streamene genoptages.
+* **Automatisk genforbindelse**: Når et gemt projekt åbnes, gendannes dets kameraer og arrays, og alle gemte indstillinger anvendes igen på backend, før streamene genoptages.
 * **Capture-gating**: Skjulte eller pausede kameraer udelades fra Capture All; et array blokeres fuldstændigt kun, når ALLE medlemmer er skjulte/pausede. Se [Optagelsesindstillinger og -tilstande](capture.md).
 
 ## Hvordan indstillingerne gemmes

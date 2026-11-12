@@ -32,7 +32,9 @@ Hvis der **ikke** er markeret nogen billeder, falder Chloros tilbage til at scan
 
 Gennemse dine importerede billeder i filbrowseren, og identificer, hvilke billeder der indeholder kalibreringsmål.
 
-**Almindelige scenarier:*** **Mål før optagelse**: Optaget før sessionen startes
+**Almindelige scenarier:**
+
+* **Mål før optagelse**: Optaget før sessionen startes
 * **Mål efter optagelse**: Optaget efter afslutning af sessionen
 * **Mål i feltet**: Mål placeret inden for optagelsesområdet
 * **Flere mål**: 2–3 målbilleder pr. session (anbefales)
@@ -140,9 +142,17 @@ Brug denne kolonne til at kontrollere, at du har markeret mål for hver kameraty
 
 ### Justering af detektionsfølsomhed
 
-Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillinger i [Projektindstillinger](adjusting-project-settings.md):**Minimalt kalibreringsprøveområde (px):*** **Standard**: 25 pixels
+Hvis Chloros ikke detekterer dine mål korrekt, skal du justere disse indstillinger i [Projektindstillinger](adjusting-project-settings.md):
+
+**Minimalt kalibreringsprøveområde (px):**
+
+* **Standard**: 25 pixels
 * **Forøg**, hvis der opstår falske registreringer på små artefakter
-* **Sænk**, hvis målene ikke registreres**Minimum målgruppering (0-100):*** **Standard**: 60
+* **Sænk**, hvis målene ikke registreres
+
+**Minimum målgruppering (0-100):**
+
+* **Standard**: 60
 * **Forøg**, hvis målene opdeles i flere registreringer
 * **Sænk**, hvis mål med farvevariationer ikke registreres fuldt ud
 

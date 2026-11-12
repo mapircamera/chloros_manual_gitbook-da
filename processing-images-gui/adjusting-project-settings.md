@@ -44,7 +44,9 @@ Panelet Projektindstillinger er opdelt i nedenstående sektioner. To yderligere 
 
 Styrer, hvordan Chloros identificerer kalibreringsmål i dine billeder.
 
-**Vigtige indstillinger:*** **Minimalt kalibreringsprøveområde (px)**: Størrelsestærskel for målregistrering (standard:**25**, interval 0–10000)
+**Vigtige indstillinger:**
+
+* **Minimalt kalibreringsprøveområde (px)**: Størrelsestærskel for målregistrering (standard:**25**, interval 0–10000)
 * **Minimum målgruppering (0–100)**: Tærskelværdi for lighed ved gruppering af målområder (standard:**60**)**Hvornår skal du justere:**
 
 * Øg prøveområdet, hvis der opstår falske detektioner
@@ -59,19 +61,26 @@ Disse indstillinger er nedtonede, når **Reflektanskalibrering / hvidbalance** e
 
 Vigtigste indstillinger for billedbehandling og kalibrering.
 
-**Vigtige indstillinger:*** **Vignetteringskorrektion**: Kompenserer for mørkningen ved kanterne ✅ Anbefales
+**Vigtige indstillinger:**
+
+* **Vignetteringskorrektion**: Kompenserer for mørkningen ved kanterne ✅ Anbefales
 * **Reflektanskalibrering / hvidbalance**: Kalibrerer billeder ved hjælp af detekterede mål (Survey3) og/eller data fra DAQ-lyssensoren (LATTICE) ✅ Anbefales
 * **Debayer-metode**: Algoritme til konvertering af RAW til 3-kanals multispektral
 * **Minimalt rekalibreringsinterval**: Mindste tid i sekunder mellem brug af kalibreringsmål (standard:**0** = brug alle, interval 0–3600)**Ukalibrerede reserveprodukter:**Når et billede ikke kan refleksionskalibreres (intet mål tilgængeligt eller kalibrering deaktiveret), eksporteres det som et af to reserveprodukter —**der findes nøjagtigt ét af parret pr. kørsel**, valgt via Vignette-korrektionsknappen:
 
-* **Eksporter sensorrespons**: skriver `Sensor_Response_Images` — bruges, når vignettkorrektion er**slået fra*** **Eksporter vignettekorrigeret**: skriver `Vignette_Corrected_Images` — bruges, når vignettekorrektion er**aktiveret**Det afkrydsningsfelt, der ikke er aktivt, er nedtonet. Hvis du fjerner markeringen fra det aktive felt, forhindres den pågældende fil i at blive skrevet overhovedet.**LATTICE-eksportprodukter** (vises for hvert projekt; de gælder for LATTICE-optagelser):
+* **Eksporter sensorrespons**: skriver `Sensor_Response_Images` — bruges, når vignettkorrektion er**slået fra**
+* **Eksporter vignettekorrigeret**: skriver `Vignette_Corrected_Images` — bruges, når vignettekorrektion er**aktiveret**Det afkrydsningsfelt, der ikke er aktivt, er nedtonet. Hvis du fjerner markeringen fra det aktive felt, forhindres den pågældende fil i at blive skrevet overhovedet.**LATTICE-eksportprodukter** (vises for hvert projekt; de gælder for LATTICE-optagelser):
 
 * **Eksporter debayered**: det lineære debayered-billede (`Debayered_Images`): kalibreringspakkens mørkeforskydning fjernes, hvorefter billedet demosaiceres uden flat field eller unmix — den samme fil, som en optagelse gemmer på sit debayered-niveau — i sensorens oprindelige retning. Gælder for RGB- og multispektrale moduler.
 * **Eksporter forhåndsvisning**: skærmforhåndsvisningen (`Preview_Images`). RGB = hvidbalance (DAQ-lysart, når tilgængelig, ellers gråskala) + gamma; multispektral = falskfarvestrækning.
 * **Eksport af strålingsintensitet**: float32 spektral strålingsintensitet (`Radiance_Images`, W/m²/sr/nm). Gælder kun multispektrale moduler — gælder ikke for RGB-masterfiler.
 * **Eksporter reflektans**: uint16-reflektans (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1,0), når en `.daq`-nedstrålingsmåling eller et mål inden for billedrammen dækker billedrammen. Gælder kun multispektrale moduler.
 
-Alle fire er **aktiveret som standard**— et importeret LATTICE-råbillede fordeles til alle aktiverede og relevante produkter i én enkelt behandlingsomgang. Afkrydsningsfeltet**Eksporter reflektans** er nedtonet, når reflektankalibrering er deaktiveret. Indstillinger, som ikke kan vælges på grund af en overordnet indstilling, er altid nedtonet med et værktøjstip, der angiver, hvilken indstilling der skal ændres.**Avancerede indstillinger:*** **Tidszoneforskydning for lyssensor**: Antal timer fra UTC til tidsjustering af lyssensoren (standard: 0, interval −12 til +12)
+Alle fire er **aktiveret som standard**— et importeret LATTICE-råbillede fordeles til alle aktiverede og relevante produkter i én enkelt behandlingsomgang. Afkrydsningsfeltet**Eksporter reflektans** er nedtonet, når reflektankalibrering er deaktiveret. Indstillinger, som ikke kan vælges på grund af en overordnet indstilling, er altid nedtonet med et værktøjstip, der angiver, hvilken indstilling der skal ændres.
+
+**Avancerede indstillinger:**
+
+* **Tidszoneforskydning for lyssensor**: Antal timer fra UTC til tidsjustering af lyssensoren (standard: 0, interval −12 til +12)
 * **Anvend PPK-korrektioner**: Bruger GPS-/eksponeringspin-data fra `.daq`-filer (standard: slået fra)
 * **Eksponeringspin 1/2**: Tildeler kameraer til eksponeringspins ved opsætninger med to kameraer
 
@@ -105,7 +114,9 @@ Konfigurer, hvilke vegetationsindekser der skal beregnes og eksporteres. Rulleme
 3. Konfigurer visualiseringsindstillinger (LUT-farver, værdiintervaller)
 4. Tilføj flere indekser efter behov
 
-**Populære indekser:*** **NDVI**: Generel vegetationssundhed (mest almindelig)
+**Populære indekser:**
+
+* **NDVI**: Generel vegetationssundhed (mest almindelig)
 * **NDRE**: Tidlig stressdetektering med RedEdge
 * **GNDVI**: Følsom over for klorofylkoncentration
 * **OSAVI**: Fungerer godt med synlig jord
@@ -216,7 +227,11 @@ Hvis du bruger MAPIR DAQ-optagere med GPS til præcis geolokalisering:
 3. Indstil**"Tidszoneforskydning for lyssensor"**, hvis nødvendigt (standard: 0 for UTC)
 4. Tildel kameraer til eksponeringsstik:
    * **Enkelt kamera**: Tildeles automatisk til stik 1
-   * **To kameraer**: Tildel hvert kamera manuelt til det korrekte stik**Tildeling af eksponeringsstik:*** **Eksponeringsstik 1**: Vælg kameramodel fra rullemenuen
+   * **To kameraer**: Tildel hvert kamera manuelt til det korrekte stik
+
+**Tildeling af eksponeringsstik:**
+
+* **Eksponeringsstik 1**: Vælg kameramodel fra rullemenuen
 * **Eksponeringsstik 2**: Vælg det andet kamera eller "Brug ikke"
 * Det samme kamera kan ikke tildeles til begge stik
 

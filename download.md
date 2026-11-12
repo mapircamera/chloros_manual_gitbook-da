@@ -255,10 +255,15 @@ Chloros tjekker for opdateringer, meddeler, når en ny version er tilgængelig, 
 
 **Udgivelsesdato: 10. februar 2026**
 
-**Nye funktioner*** **Teksturbevidst debayer-metode \[Kun Chloros+] -** Teksturbevidst bruger en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayer-støj.
-* **Understøttelse af T4P-kalibreringsmål*** **Hurtigere Chloros+ GPU-behandling, bedre hukommelsesstyring**
+**Nye funktioner**
 
-**Fejlrettelser*** Helt nyt brugergrænseflade (GUI), som nu bør fungere på alle Windows-computere.
+* **Teksturbevidst debayer-metode \[Kun Chloros+] -** Teksturbevidst bruger en højkvalitets kantbevidst debayer kombineret med en AI/ML-støjfjernelsesmodel, der fjerner næsten al debayer-støj.
+* **Understøttelse af T4P-kalibreringsmål**
+* **Hurtigere Chloros+ GPU-behandling, bedre hukommelsesstyring**
+
+**Fejlrettelser**
+
+* Helt nyt brugergrænseflade (GUI), som nu bør fungere på alle Windows-computere.
 
 </details>
 
@@ -268,14 +273,18 @@ Chloros tjekker for opdateringer, meddeler, når en ny version er tilgængelig, 
 
 **Udgivelsesdato: 5. januar 2026**
 
-**Nye funktioner*** **Skift mellem billede og metadata**: Der er tilføjet en skifteknap i filbrowseren, så man kan se det valgte billedes metadata i en tabel i stedet for i billedgitteret
+**Nye funktioner**
+
+* **Skift mellem billede og metadata**: Der er tilføjet en skifteknap i filbrowseren, så man kan se det valgte billedes metadata i en tabel i stedet for i billedgitteret
 * **Zoom-skyder til billedgitter**: Ny skyder i brugergrænsefladen til at justere størrelsen på miniaturerne (understøtter også CTRL + musehjul)
 * **Eksportknapper til billedgitter**: Knapper i den øverste række til at skifte miniaturer fra JPG til bearbejdede eksportformater (Targets, Reflectance, Index, LUT)
 * **Fanen Kort**: Nyt interaktivt 2D-kort, der viser GPS-positionsmarkører for billederne
   * Understøtter Google Maps og ESRI-kortfliser (vælger automatisk den bedste flisetjeneste baseret på tilgængelighed ved det aktuelle zoomniveau)
   * Forhåndsvisning af miniaturer ved musemarkering på kortmarkører
 
-**Fejlrettelser*** Forbedret understøttelse af installation af Chloros på computere med andre sprog end engelsk
+**Fejlrettelser**
+
+* Forbedret understøttelse af installation af Chloros på computere med andre sprog end engelsk
 
 </details>
 
@@ -285,13 +294,21 @@ Chloros tjekker for opdateringer, meddeler, når en ny version er tilgængelig, 
 
 **Udgivelsesdato: 20. december 2025**
 
-**Nye funktioner*** Første udgivelse
+**Nye funktioner**
 
-**Forbedringer*** Første udgivelse
+* Første udgivelse
 
-**Fejlrettelser*** Første udgivelse
+**Forbedringer**
 
-**Kendte problemer*** Første udgivelse
+* Første udgivelse
+
+**Fejlrettelser**
+
+* Første udgivelse
+
+**Kendte problemer**
+
+* Første udgivelse
 
 </details>
 
