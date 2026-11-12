@@ -206,7 +206,7 @@ Array-optagelsesfladerne kan tydeligt opdeles i **overvågningskvalitet**(optag 
 
 | Arbejdsgang | Kvalitet | Hvad der gemmes | GUI | CLI |
 | --- | --- | --- | --- | --- |
-| **Optagelse**(stillbilleder) | Analyse | Én synkroniseret billedgruppe pr. gennemløb; filer pr. kamera på hvert valgt eksportniveau (rå/debayered/radiance/reflektans/forhåndsvisning/indeks) + `.daq` sidecar |****Capture All**-knap + Optagelsesindstillinger | `lattice array-capture` |
+| **Optagelse**(stillbilleder) | Analyse | Én synkroniseret billedgruppe pr. gennemløb; filer pr. kamera på hvert valgt eksportniveau (rå/debayered/radiance/reflektans/forhåndsvisning/indeks) + `.daq` sidecar |**Capture All**-knap + Optagelsesindstillinger | `lattice array-capture` |
 | **Optag indeksvideo** | Overvågning | Den kombinerede live-indekskomposit, som den vises — 8-bit, forhåndsvisningsopløsning, indbygget LUT. Fra CLI'en uden åben GUI-visning renderer backend-systemet arrayets NDVI (eller `--expr`), så snart arrayet er justeret; en optagelse, der ikke skriver nogen ramme, mislykkes | ● Optag indeksvideo (kombinerede arrays) | `lattice array-record` |
 | **Rå burst → opbyg video**| Analyse | Rå sensor-frames ved fuld indlæsningshastighed + manifest + `.daq`, derefter offline-rekonstruktion til kalibreret radiance-/reflektans-/indeksvideo, tidsmatchet til DAQ-målinger | ⦿ Optag rå burst →**Opbyg video** | `lattice array-burst` → `lattice array-build-video` |
 
